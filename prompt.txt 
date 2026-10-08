@@ -1,0 +1,190 @@
+ROLE
+You are a senior front-end developer and technical SEO specialist. Build a complete, production-ready, static website of free online file-size tools. Output all files in full (no placeholders, no "rest of code here").
+
+GOAL
+A free website where users shrink images and PDFs to an exact size (for example "under 50 KB") for job forms, exam forms, university admissions and government portals. Income comes from Google AdSense, so the site must rank on Google, load fast, work well on cheap phones, and meet AdSense approval requirements.
+
+SITE NAME: {SITE_NAME}
+DOMAIN: {DOMAIN}
+CONTACT EMAIL: {CONTACT_EMAIL}
+LANGUAGE: English, using very simple words (a school student must understand everything).
+TARGET AUDIENCE: Mostly Pakistan, also India and other English-speaking countries. Most visitors are on mobile.
+
+------------------------------------------------------------
+1. TECH REQUIREMENTS
+------------------------------------------------------------
+- Static site: plain HTML, CSS and vanilla JavaScript. No frameworks, no build step, no backend.
+- ALL file processing happens in the user's browser. Files are never uploaded to any server. Say this clearly on every tool page in one short line: "Your file never leaves your phone or computer."
+- Libraries only from cdnjs.cloudflare.com, with pinned versions:
+  - pdf.js (render PDF pages to canvas)
+  - jsPDF (build the compressed PDF)
+- One shared CSS file and one shared JS file for common code, plus a small JS file per tool type (image tool, PDF tool, signature tool).
+- The tool code must be reusable: each tool page only sets a config such as { type: "image", targetKB: 50 } and the shared script does the rest.
+- Mobile-first, responsive, works down to 320px width.
+- Fast: no heavy images, use inline SVG icons, system font stack, lazy-load anything below the fold. Target Lighthouse 90+ on mobile.
+- Accessible: large tap targets (minimum 48px), good contrast, labels on all buttons, keyboard usable.
+
+------------------------------------------------------------
+2. DESIGN RULES (VERY IMPORTANT)
+------------------------------------------------------------
+- Extremely simple and clean. Very little text. No long paragraphs above the tool.
+- The tool is the first thing on the page, right under the title.
+- Always show a clear 3-step flow with big numbered icons:
+  Step 1: Upload  ->  Step 2: Size (already chosen on that page)  ->  Step 3: Download
+- Huge primary buttons: "Choose Image" / "Choose PDF" and "Download".
+- Drag and drop on desktop, tap to choose on mobile.
+- After processing, show: original size, new size, a green "Done" message, and one big Download button.
+- Plain error messages in simple words, for example "This file is too big to shrink to 20 KB. Try 50 KB."
+- Show a progress indicator while working.
+- One calm color theme (white background, one strong accent color), light and dark friendly. No clutter, no popups, no autoplay.
+- Header: logo/name + simple menu (Image Tools, PDF Tools). Footer: About, Contact, Privacy Policy, Terms.
+- Reserve clearly marked ad slots (empty div with class "ad-slot", fixed min-height to avoid layout shift): one above the tool, one below the tool, one inside the text section. Do not put ads inside or touching the tool box. Do NOT insert AdSense code yet, leave a comment where it goes.
+
+------------------------------------------------------------
+3. PAGES TO BUILD (14 total)
+------------------------------------------------------------
+Use clean, lowercase, hyphenated URLs.
+
+Homepage        /
+Image tools:
+ 1  /compress-image-to-20kb/
+ 2  /compress-image-to-50kb/
+ 3  /compress-image-to-100kb/
+ 4  /compress-image-to-200kb/
+ 5  /signature-resizer/
+PDF tools:
+ 6  /compress-pdf-to-100kb/
+ 7  /compress-pdf-to-200kb/
+ 8  /compress-pdf-to-500kb/
+ 9  /compress-pdf-to-1mb/
+Required pages:
+10  /about/
+11  /contact/
+12  /privacy-policy/
+13  /terms/
+Also generate: sitemap.xml, robots.txt, ads.txt (placeholder comment), 404.html, favicon (SVG).
+
+------------------------------------------------------------
+4. TOOL BEHAVIOR
+------------------------------------------------------------
+A) COMPRESS IMAGE TO TARGET KB (pages 1-4)
+- Accept JPG, JPEG, PNG, WEBP. Output JPG.
+- Algorithm: draw image to canvas, then binary-search the JPEG quality (1.0 down to 0.05) to land just under the target size. If the lowest quality is still too big, scale the image dimensions down in steps (for example 90%, 80%...) and repeat. Stop when the file is at or under the target KB, and aim to be as close to the target as possible (do not over-compress).
+- If the original is already smaller than the target, tell the user and offer to download the original anyway.
+- Show a small before/after preview.
+- Output filename: originalname-50kb.jpg (use the page's target).
+
+B) SIGNATURE RESIZER (page 5)
+- Upload image, then choose a preset size: 140x60 px, 200x80 px, 256x128 px, or custom width and height.
+- Optional "keep under ___ KB" field with quick buttons for 20 KB, 50 KB, 100 KB.
+- Resize, then compress with the same quality search as above. Output JPG.
+
+C) COMPRESS PDF TO TARGET SIZE (pages 6-9)
+- Accept PDF only.
+- Algorithm: render each page with pdf.js to canvas, export as JPEG, rebuild a PDF with jsPDF. Loop over combinations of render scale (1.5 down to 0.5) and JPEG quality (0.9 down to 0.1) until the PDF is at or under the target size.
+- Be honest: tell the user that text in the result becomes an image (not selectable). Show this as one short line near the result.
+- If the target cannot be reached, show a friendly message and suggest the next size up.
+- If the original is already under the target, say so.
+- Show page progress ("Page 2 of 5").
+- Output filename: originalname-200kb.pdf (use the page's target).
+- Large files: warn above 50 MB that it may be slow on phones.
+
+------------------------------------------------------------
+5. CONTENT PER TOOL PAGE (KEEP SHORT)
+------------------------------------------------------------
+Each tool page has exactly this order:
+1. H1 (contains the primary keyword)
+2. One short subtitle line (max 15 words)
+3. The tool (3 steps)
+4. Privacy line: "Your file never leaves your phone or computer."
+5. "How to" section: 3 numbered steps, one short line each
+6. FAQ: 3 short questions with 1-2 sentence answers. Questions and answers must be UNIQUE for each page (different wording, different use cases). Do not just swap the number.
+7. "More tools" section: 4 related tool links with big buttons (internal links)
+Total visible text outside the tool: about 120-200 words. Unique per page, never duplicated.
+
+------------------------------------------------------------
+6. SEO (EACH PAGE)
+------------------------------------------------------------
+Keywords come from Semrush research (Pakistan database).
+Use ONLY the keywords listed in the map below. Do not invent or add any other keywords.
+Use the primary keyword in: title tag, H1, meta description, URL slug, first sentence of the text, one image alt text, and one FAQ.
+Supporting keywords are used once each, naturally, never stuffed.
+
+Title tag: under 60 characters, primary keyword first, format "Primary Keyword - Free Online | {SITE_NAME}".
+Meta description: 140-155 characters, includes primary keyword, mentions "free", "no signup", "no watermark".
+
+PAGE-BY-PAGE KEYWORD MAP (data from Semrush, Pakistan database)
+
+/compress-image-to-20kb/    primary: compress image to 20kb   (vol 1,900, KD 25)
+   supporting: reduce photo size in kb (vol 20, KD 37)
+/compress-image-to-50kb/    primary: compress image to 50kb   (vol 1,000, KD 26)
+   supporting: reduce photo size in kb
+/compress-image-to-100kb/   primary: compress image to 100kb  (vol 880, KD 37)
+   supporting: reduce photo size in kb
+/compress-image-to-200kb/   primary: compress image to 200kb  (vol 2,900, KD 31)
+   supporting: reduce photo size in kb
+/signature-resizer/         primary: signature resizer        (vol n/a, KD 12)
+   supporting: none
+/compress-pdf-to-100kb/     primary: compress pdf to 100kb    (vol 590, KD 11)
+   supporting: none
+/compress-pdf-to-200kb/     primary: compress pdf to 200kb    (vol 1,000)
+   supporting: none
+/compress-pdf-to-500kb/     primary: compress pdf to 500kb    (vol 480, KD 29)
+   supporting: reduce pdf size without losing quality (vol 20, KD 65), used once in the FAQ only
+/compress-pdf-to-1mb/       primary: compress pdf to 1mb      (vol 720, KD 40)
+   supporting: reduce pdf size without losing quality, used once in the FAQ only
+Homepage: no single keyword. Use the exact tool names (compress image to 20kb, 50kb, 100kb, 200kb; compress pdf to 100kb, 200kb, 500kb, 1mb; signature resizer) as card titles and size-picker links.
+   Title: "Compress Image & PDF to KB - Free Online | {SITE_NAME}"
+   Add one line of natural text mentioning use cases: job forms, exam forms, admission forms, government portals.
+
+Honesty rule: for the PDF FAQ that uses "without losing quality", the answer must say that bigger target sizes (500KB, 1MB) keep better quality, and that text in the result becomes an image.
+
+Technical SEO to include on every page:
+- Unique title, meta description, canonical URL, viewport tag, lang="en"
+- Open Graph and Twitter card tags
+- One H1 only, logical H2/H3 structure
+- JSON-LD structured data:
+  - WebApplication (name, url, applicationCategory "UtilitiesApplication", operatingSystem "Any", offers price 0)
+  - FAQPage (matching the visible FAQ)
+  - BreadcrumbList
+  - Organization + WebSite on the homepage
+- Internal linking: every tool page links to 4 related tools; homepage links to all tools; footer links to all required pages.
+- Breadcrumbs on tool pages (Home > Image Tools > Compress Image to 50KB)
+- sitemap.xml listing all 14 URLs, robots.txt pointing to it
+- Descriptive alt text on all images/icons that carry meaning
+- No duplicate content between pages
+
+------------------------------------------------------------
+7. HOMEPAGE
+------------------------------------------------------------
+- Big headline, one short line below it.
+- Two sections of large tool cards: "Image Tools" and "PDF Tools". Each card: icon, tool name, one short line, big "Open" button.
+- A quick size picker: "I need my file under: 20KB / 50KB / 100KB / 200KB / 500KB / 1MB" that sends the user to the right page. Let the user choose Image or PDF first, because not every size exists for both (images: 20, 50, 100, 200 KB; PDF: 100, 200, 500 KB, 1 MB).
+- Short "How it works" strip: Upload, Choose size, Download.
+- 3 trust badges: Free, No signup, Files stay on your device.
+- Very short FAQ (3 questions).
+
+------------------------------------------------------------
+8. REQUIRED PAGES (ADSENSE)
+------------------------------------------------------------
+- About: who runs the site, why it is free, privacy-first approach. Short and honest, around 150 words.
+- Contact: contact email and a simple contact form (HTML form that opens the user's email app or uses a placeholder action). Use {CONTACT_EMAIL}.
+- Privacy Policy: complete. Cover: files are processed locally and never uploaded; cookies; Google AdSense and third-party advertising cookies; Google Analytics (if used); how users can opt out of personalized ads; contact details; last-updated date.
+- Terms: use of service, no warranty, user responsibility for their files, limitation of liability, changes to terms.
+- Add a simple cookie/consent banner (one line, one "OK" button) placeholder for ad consent.
+
+------------------------------------------------------------
+9. QUALITY CHECKLIST (verify before finishing)
+------------------------------------------------------------
+- All 14 pages exist and link to each other correctly.
+- Each tool really works and reaches the target size when possible.
+- Mobile layout tested at 320px, 375px and 768px.
+- No console errors, no external requests except the allowed CDN libraries.
+- Titles under 60 characters, meta descriptions under 155 characters.
+- Text is short, simple, and unique on every page.
+- Only keywords from the keyword map are used.
+- Ad slots reserved but empty, with no layout shift.
+- Folder structure provided, with a short README on how to deploy (Cloudflare Pages / Netlify / GitHub Pages) and where to paste the AdSense code later.
+
+OUTPUT FORMAT
+First show the folder structure. Then give every file in full, one by one, with its file path as a heading.
