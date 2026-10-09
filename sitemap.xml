@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Homepage -->
   <url>
-    <loc>https://fileshrink.com/</loc>
+    <loc>https://fileshrink.vercel.app/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -10,61 +10,61 @@
 
   <!-- Image Tools -->
   <url>
-    <loc>https://fileshrink.com/compress-image-to-20kb/</loc>
+    <loc>https://fileshrink.vercel.app/compress-image-to-20kb/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fileshrink.com/compress-image-to-30kb/</loc>
+    <loc>https://fileshrink.vercel.app/compress-image-to-30kb/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fileshrink.com/compress-image-to-50kb/</loc>
+    <loc>https://fileshrink.vercel.app/compress-image-to-50kb/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fileshrink.com/compress-image-to-100kb/</loc>
+    <loc>https://fileshrink.vercel.app/compress-image-to-100kb/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fileshrink.com/compress-image-to-150kb/</loc>
+    <loc>https://fileshrink.vercel.app/compress-image-to-150kb/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fileshrink.com/compress-image-to-200kb/</loc>
+    <loc>https://fileshrink.vercel.app/compress-image-to-200kb/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fileshrink.com/compress-image-to-500kb/</loc>
+    <loc>https://fileshrink.vercel.app/compress-image-to-500kb/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fileshrink.com/reduce-image-size-in-kb/</loc>
+    <loc>https://fileshrink.vercel.app/reduce-image-size-in-kb/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fileshrink.com/signature-resizer/</loc>
+    <loc>https://fileshrink.vercel.app/signature-resizer/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fileshrink.com/passport-photo-size-in-pixels/</loc>
+    <loc>https://fileshrink.vercel.app/passport-photo-size-in-pixels/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -72,55 +72,55 @@
 
   <!-- PDF Tools -->
   <url>
-    <loc>https://fileshrink.com/compress-pdf-to-100kb/</loc>
+    <loc>https://fileshrink.vercel.app/compress-pdf-to-100kb/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fileshrink.com/compress-pdf-to-200kb/</loc>
+    <loc>https://fileshrink.vercel.app/compress-pdf-to-200kb/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fileshrink.com/compress-pdf-to-500kb/</loc>
+    <loc>https://fileshrink.vercel.app/compress-pdf-to-500kb/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fileshrink.com/compress-pdf-to-1mb/</loc>
+    <loc>https://fileshrink.vercel.app/compress-pdf-to-1mb/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fileshrink.com/compress-pdf-to-2mb/</loc>
+    <loc>https://fileshrink.vercel.app/compress-pdf-to-2mb/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fileshrink.com/merge-pdf-files/</loc>
+    <loc>https://fileshrink.vercel.app/merge-pdf-files/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fileshrink.com/split-pdf/</loc>
+    <loc>https://fileshrink.vercel.app/split-pdf/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fileshrink.com/extract-pages-from-pdf/</loc>
+    <loc>https://fileshrink.vercel.app/extract-pages-from-pdf/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fileshrink.com/remove-pages-from-pdf/</loc>
+    <loc>https://fileshrink.vercel.app/remove-pages-from-pdf/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -128,49 +128,49 @@
 
   <!-- Converter Tools -->
   <url>
-    <loc>https://fileshrink.com/jpeg-to-png/</loc>
+    <loc>https://fileshrink.vercel.app/jpeg-to-png/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fileshrink.com/png-to-jpg-converter/</loc>
+    <loc>https://fileshrink.vercel.app/png-to-jpg-converter/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fileshrink.com/heic-to-jpg/</loc>
+    <loc>https://fileshrink.vercel.app/heic-to-jpg/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fileshrink.com/webp-to-jpg/</loc>
+    <loc>https://fileshrink.vercel.app/webp-to-jpg/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fileshrink.com/webp-to-png/</loc>
+    <loc>https://fileshrink.vercel.app/webp-to-png/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fileshrink.com/pdf-to-jpg-converter/</loc>
+    <loc>https://fileshrink.vercel.app/pdf-to-jpg-converter/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fileshrink.com/pdf-to-png/</loc>
+    <loc>https://fileshrink.vercel.app/pdf-to-png/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fileshrink.com/images-to-pdf/</loc>
+    <loc>https://fileshrink.vercel.app/images-to-pdf/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -178,25 +178,25 @@
 
   <!-- Required Information Pages -->
   <url>
-    <loc>https://fileshrink.com/about/</loc>
+    <loc>https://fileshrink.vercel.app/about/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://fileshrink.com/contact/</loc>
+    <loc>https://fileshrink.vercel.app/contact/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://fileshrink.com/privacy-policy/</loc>
+    <loc>https://fileshrink.vercel.app/privacy-policy/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://fileshrink.com/terms/</loc>
+    <loc>https://fileshrink.vercel.app/terms/</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
