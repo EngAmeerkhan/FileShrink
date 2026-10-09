@@ -1,0 +1,11 @@
+COMMON RULES (apply to every new page)
+- Use the SAME shared CSS and JS. Do not duplicate code. Do not change working tool code unless needed.
+- All processing happens in the browser. Show on every page: "Your file never leaves your phone or computer."
+- Libraries only from cdnjs.cloudflare.com with pinned versions. If a needed library is not on cdnjs, STOP and tell me before using any other host.
+- Same design as the other pages: 3 steps (Upload, Choose, Download), big buttons, very little text, plain error messages, progress indicator, before/after sizes, one big Download button.
+- Each page has: H1 with the primary keyword, subtitle (max 15 words), the tool, privacy line, 3-step how-to, 3 UNIQUE FAQs (different wording and use cases on every page), 4 "More tools" links. About 120 to 200 words outside the tool.
+- Title tag under 60 characters: "Primary Keyword - Free Online | {SITE_NAME}". Meta description 140 to 155 characters with "free", "no signup", "no watermark".
+- Use ONLY the keywords I list in each prompt. Do not invent others.
+- Include JSON-LD (WebApplication, FAQPage, BreadcrumbList), canonical URL, Open Graph tags, and the reserved ad slots.
+- Site updates for every new page: add it to the homepage cards, header menu, footer or tool lists where relevant, sitemap.xml, and the "More tools" links of related pages. Keep the header menu simple (use dropdown groups: Image Tools, PDF Tools, Converters).
+- When finished, list every file you changed and stop.

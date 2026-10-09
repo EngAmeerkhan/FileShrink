@@ -7,9 +7,10 @@
   'use strict';
 
   window.initImageTool = function (config) {
-    const targetKB = config.targetKB || 50;
-    const targetBytes = targetKB * 1024;
-    const suffix = config.outputSuffix || `${targetKB}kb`;
+    const isCustom = !!config.isCustom;
+    let targetKB = config.targetKB || 50;
+    let targetBytes = targetKB * 1024;
+    let suffix = config.outputSuffix || `${targetKB}kb`;
 
     // DOM Elements
     const dropzone = document.getElementById('dropzone');
@@ -20,6 +21,9 @@
     const resultArea = document.getElementById('resultArea');
     const errorArea = document.getElementById('errorArea');
     const errorMessage = document.getElementById('errorMessage');
+
+    const customTargetInput = document.getElementById('customTargetInput');
+    const quickSizeBtns = document.querySelectorAll('.quick-size-btn');
 
     const previewImg = document.getElementById('previewImg');
     const originalSizeEl = document.getElementById('originalSize');
@@ -36,6 +40,16 @@
 
     let currentResultBlob = null;
     let currentFileName = `image-${suffix}.jpg`;
+    let currentLoadedFile = null;
+
+    function getCustomTargetKB() {
+      if (!isCustom) return targetKB;
+      const val = parseFloat(customTargetInput ? customTargetInput.value : targetKB);
+      if (isNaN(val) || val <= 0 || val > 10000) {
+        return null;
+      }
+      return val;
+    }
 
     // Update Step Indicators
     function setStep(step) {
@@ -54,6 +68,7 @@
     function resetTool() {
       if (fileInput) fileInput.value = '';
       currentResultBlob = null;
+      currentLoadedFile = null;
       if (uploadArea) uploadArea.classList.remove('is-hidden');
       if (processingArea) processingArea.classList.add('is-hidden');
       if (resultArea) resultArea.classList.add('is-hidden');
@@ -83,16 +98,25 @@
 
     // Core Compression Algorithm
     async function compressImage(file) {
+      currentLoadedFile = file;
+      const curTargetKB = getCustomTargetKB();
+      if (!curTargetKB) {
+        showError('Please enter a valid target size in KB (between 1 and 10000).');
+        return;
+      }
+
+      const activeTargetBytes = curTargetKB * 1024;
+      const activeSuffix = isCustom ? `${curTargetKB}kb` : suffix;
       const originalBytes = file.size;
 
       // Extract base filename without extension
       const originalBaseName = file.name.replace(/\.[^/.]+$/, '').replace(/[^a-zA-Z0-9_-]/g, '_');
-      currentFileName = `${originalBaseName}-${suffix}.jpg`;
+      currentFileName = `${originalBaseName}-${activeSuffix}.jpg`;
 
       // Check if original is already smaller than target
-      if (originalBytes <= targetBytes) {
+      if (originalBytes <= activeTargetBytes) {
         currentResultBlob = file;
-        showSuccessResult(file, originalBytes, originalBytes, true);
+        showSuccessResult(file, originalBytes, originalBytes, true, curTargetKB, activeTargetBytes);
         return;
       }
 
@@ -153,7 +177,7 @@
 
           if (!blob) break;
 
-          if (blob.size <= targetBytes) {
+          if (blob.size <= activeTargetBytes) {
             scaleBestBlob = blob;
             minQ = midQ; // Try higher quality to get closer to target
           } else {
@@ -164,7 +188,7 @@
         // Test lowest quality on this scale if no match yet
         if (!scaleBestBlob) {
           const lowestBlob = await canvasToBlob(canvas, 0.05);
-          if (lowestBlob && lowestBlob.size <= targetBytes) {
+          if (lowestBlob && lowestBlob.size <= activeTargetBytes) {
             scaleBestBlob = lowestBlob;
           }
         }
@@ -190,16 +214,16 @@
       }
 
       if (!bestBlob) {
-        showError(`This file is too large to shrink to ${targetKB} KB. Try a larger size like 100 KB or 200 KB.`);
+        showError(`This file is too large to shrink to ${curTargetKB} KB. Try a larger size like 100 KB or 200 KB.`);
         return;
       }
 
       currentResultBlob = bestBlob;
-      showSuccessResult(bestBlob, originalBytes, bestBlob.size, false);
+      showSuccessResult(bestBlob, originalBytes, bestBlob.size, false, curTargetKB, activeTargetBytes);
     }
 
     // Render Success UI
-    function showSuccessResult(blob, originalSize, newSize, isAlreadySmaller) {
+    function showSuccessResult(blob, originalSize, newSize, isAlreadySmaller, activeKB, activeBytes) {
       if (uploadArea) uploadArea.classList.add('is-hidden');
       if (processingArea) processingArea.classList.add('is-hidden');
       if (errorArea) errorArea.classList.add('is-hidden');
@@ -230,10 +254,10 @@
 
       if (statusNoteEl) {
         if (isAlreadySmaller) {
-          statusNoteEl.textContent = `Your image is already ${window.formatBytes(originalSize)}, which is under the ${targetKB} KB target. You can still download it below.`;
+          statusNoteEl.textContent = `Your image is already ${window.formatBytes(originalSize)}, which is under the ${activeKB} KB target. You can still download it below.`;
           statusNoteEl.classList.remove('is-hidden');
-        } else if (newSize > targetBytes) {
-          statusNoteEl.textContent = `Compressed to the smallest possible size (${window.formatBytes(newSize)}). For an exact fit under ${targetKB} KB, try our next size up.`;
+        } else if (newSize > activeBytes) {
+          statusNoteEl.textContent = `Compressed to the smallest possible size (${window.formatBytes(newSize)}). For an exact fit under ${activeKB} KB, try our next size up.`;
           statusNoteEl.classList.remove('is-hidden');
         } else {
           statusNoteEl.classList.add('is-hidden');
@@ -264,6 +288,35 @@
           showError('An unexpected error occurred while compressing. Please try again.');
         });
       }, 50);
+    }
+
+    // Quick size buttons in custom mode
+    if (quickSizeBtns && quickSizeBtns.length > 0) {
+      quickSizeBtns.forEach((btn) => {
+        btn.addEventListener('click', function () {
+          const size = this.getAttribute('data-size');
+          if (size && customTargetInput) {
+            customTargetInput.value = size;
+            quickSizeBtns.forEach((b) => b.classList.remove('active'));
+            this.classList.add('active');
+            if (currentLoadedFile) {
+              handleFile(currentLoadedFile);
+            }
+          }
+        });
+      });
+    }
+
+    if (customTargetInput) {
+      customTargetInput.addEventListener('change', function () {
+        const val = this.value;
+        quickSizeBtns.forEach((b) => {
+          b.classList.toggle('active', b.getAttribute('data-size') === val);
+        });
+        if (currentLoadedFile) {
+          handleFile(currentLoadedFile);
+        }
+      });
     }
 
     // Attach Event Listeners
