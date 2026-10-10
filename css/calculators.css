@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 16px;
   margin-bottom: 1.5rem;
   padding: 8px 12px;
@@ -872,4 +873,343 @@
     flex-direction: row;
   }
 }
+
+/* ==========================================================================
+   Cover Letter Generator Styles (/cover-letter-generator/)
+   ========================================================================== */
+.letter-generator-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 2rem;
+}
+
+.letter-form-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.letter-form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+@media (min-width: 640px) {
+  .letter-form-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Fresh Graduate Toggle Switch */
+.switch-control-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  margin-bottom: 1.25rem;
+}
+
+.switch-label-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.switch-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.switch-desc {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #cbd5e1;
+  transition: 0.2s ease;
+  border-radius: 9999px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #ffffff;
+  transition: 0.2s ease;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.toggle-switch input:checked + .toggle-slider {
+  background-color: var(--primary);
+}
+
+.toggle-switch input:focus-visible + .toggle-slider {
+  outline: 2px solid var(--border-focus);
+}
+
+.toggle-switch input:checked + .toggle-slider:before {
+  transform: translateX(22px);
+}
+
+/* Template Choice Buttons */
+.template-options-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-bottom: 1.25rem;
+}
+
+@media (min-width: 540px) {
+  .template-options-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.template-option-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 12px;
+  background-color: var(--bg-primary);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+  font-family: inherit;
+  width: 100%;
+}
+
+.template-option-btn:hover {
+  border-color: var(--primary-border);
+}
+
+.template-option-btn.active {
+  border-color: var(--primary);
+  background-color: var(--primary-light);
+}
+
+.template-btn-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.template-option-btn.active .template-btn-title {
+  color: var(--primary);
+}
+
+.template-btn-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Split Workspace: Editable Text Box + Live Preview */
+.letter-editor-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (min-width: 860px) {
+  .letter-editor-split {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.letter-panel-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.letter-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+  flex-wrap: wrap;
+}
+
+.letter-panel-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.letter-counter-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background-color: var(--bg-subtle);
+  border-radius: var(--radius-full);
+  padding: 3px 10px;
+}
+
+/* Textarea for Manual Edits */
+.letter-textarea-wrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.letter-textarea {
+  width: 100%;
+  min-height: 440px;
+  padding: 16px;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-main);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  resize: vertical;
+  white-space: pre-wrap;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  box-sizing: border-box;
+}
+
+.letter-textarea:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Paper-style Live Preview */
+.letter-preview-sheet {
+  background-color: #ffffff;
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-sm);
+  padding: 24px;
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  min-height: 440px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+@media (min-width: 640px) {
+  .letter-preview-sheet {
+    padding: 32px;
+  }
+}
+
+/* Honest Info & Tips */
+.letter-honest-banner {
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--primary);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  font-size: 0.8125rem;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.letter-honest-banner svg {
+  flex-shrink: 0;
+  color: var(--primary);
+}
+
+/* Action & Download Bar */
+.letter-actions-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.letter-buttons-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (min-width: 640px) {
+  .letter-buttons-row {
+    flex-direction: row;
+  }
+}
+
+/* Alert Box for Non-Latin PDF Characters */
+.letter-pdf-notice {
+  display: none;
+  background-color: var(--warning-bg);
+  border: 1px solid var(--warning-border);
+  color: #92400e;
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  font-size: 0.875rem;
+  margin-top: 12px;
+  line-height: 1.5;
+}
+
+.letter-pdf-notice.is-visible {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.letter-pdf-notice svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
 
