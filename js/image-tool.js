@@ -98,6 +98,10 @@
 
     // Core Compression Algorithm
     async function compressImage(file) {
+      if (!file || file.size === 0) {
+        showError('The selected file is empty (0 KB). Please choose a valid image.');
+        return;
+      }
       currentLoadedFile = file;
       const curTargetKB = getCustomTargetKB();
       if (!curTargetKB) {
@@ -271,6 +275,11 @@
     function handleFile(file) {
       if (!file) return;
 
+      if (file.size === 0) {
+        showError('The selected file is empty (0 KB). Please choose a valid image.');
+        return;
+      }
+
       const validTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
       if (!validTypes.includes(file.type.toLowerCase()) && !/\.(jpe?g|png|webp)$/i.test(file.name)) {
         showError('Please select a valid image file (JPG, JPEG, PNG, or WEBP).');
@@ -308,10 +317,26 @@
     }
 
     if (customTargetInput) {
-      customTargetInput.addEventListener('change', function () {
-        const val = this.value;
+      customTargetInput.addEventListener('input', function () {
+        const val = parseFloat(this.value);
+        if (isNaN(val) || val <= 0 || val > 10000) {
+          showError('Please enter a valid target size in KB (between 1 and 10000).');
+        } else if (errorArea) {
+          errorArea.classList.add('is-hidden');
+        }
         quickSizeBtns.forEach((b) => {
-          b.classList.toggle('active', b.getAttribute('data-size') === val);
+          b.classList.toggle('active', b.getAttribute('data-size') === this.value);
+        });
+      });
+
+      customTargetInput.addEventListener('change', function () {
+        const val = parseFloat(this.value);
+        if (isNaN(val) || val <= 0 || val > 10000) {
+          showError('Please enter a valid target size in KB (between 1 and 10000).');
+          return;
+        }
+        quickSizeBtns.forEach((b) => {
+          b.classList.toggle('active', b.getAttribute('data-size') === this.value);
         });
         if (currentLoadedFile) {
           handleFile(currentLoadedFile);

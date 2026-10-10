@@ -125,6 +125,10 @@
 
     // Main PDF Compression Routine
     async function compressPdf(file) {
+      if (!file || file.size === 0) {
+        showError('The selected file is empty (0 KB). Please choose a valid PDF file.');
+        return;
+      }
       const originalBytes = file.size;
       const originalBaseName = file.name.replace(/\.[^/.]+$/, '').replace(/[^a-zA-Z0-9_-]/g, '_');
       currentFileName = `${originalBaseName}-${suffix}.pdf`;
@@ -145,7 +149,7 @@
       let pdfDoc;
 
       try {
-        pdfDoc = await window.pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+        pdfDoc = await window.pdfjsLib.getDocument({ data: arrayBuffer.slice(0) }).promise;
       } catch (err) {
         showError('Could not read PDF. The document may be password-protected or damaged.');
         return;
@@ -252,6 +256,11 @@
 
     function handleFile(file) {
       if (!file) return;
+
+      if (file.size === 0) {
+        showError('The selected PDF file is empty (0 KB). Please upload a valid document.');
+        return;
+      }
 
       if (file.type !== 'application/pdf' && !/\.pdf$/i.test(file.name)) {
         showError('Please upload a valid PDF file.');

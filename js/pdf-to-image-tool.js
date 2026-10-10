@@ -87,6 +87,11 @@
     async function processPdf(file) {
       if (!file) return;
 
+      if (file.size === 0) {
+        showError('The selected file is empty (0 KB). Please choose a valid PDF file.');
+        return;
+      }
+
       if (!file.type.includes('pdf') && !file.name.toLowerCase().endsWith('.pdf')) {
         showError('Please select a valid PDF file.');
         return;
@@ -115,7 +120,7 @@
 
       try {
         const arrayBuffer = await file.arrayBuffer();
-        const loadingTask = window.pdfjsLib.getDocument({ data: arrayBuffer });
+        const loadingTask = window.pdfjsLib.getDocument({ data: arrayBuffer.slice(0) });
         currentPdfDoc = await loadingTask.promise;
         const numPages = currentPdfDoc.numPages;
 
@@ -143,11 +148,29 @@
 
           await page.render({ canvasContext: ctx, viewport: viewport }).promise;
 
-          const blob = await new Promise(resolve => {
-            canvas.toBlob(b => resolve(b), mimeType, imageQuality);
+          let blob = await new Promise(resolve => {
+            if (isPng) {
+              canvas.toBlob(b => resolve(b), 'image/png');
+            } else {
+              canvas.toBlob(b => resolve(b), 'image/jpeg', imageQuality);
+            }
           });
 
+          if (!blob) {
+            try {
+              const dataUrl = canvas.toDataURL(mimeType, isPng ? undefined : imageQuality);
+              const res = await fetch(dataUrl);
+              blob = await res.blob();
+            } catch (fbErr) {
+              // ignore
+            }
+          }
+
           if (!blob) throw new Error(`Could not render page ${i}`);
+
+          if (blob.type !== mimeType) {
+            blob = new Blob([blob], { type: mimeType });
+          }
 
           const pageFileName = `${baseFileName}-page-${i}.${fileExt}`;
           const url = URL.createObjectURL(blob);
@@ -184,7 +207,7 @@
           `;
 
           card.querySelector('button').addEventListener('click', function () {
-            window.downloadBlob(pageItem.blob, pageItem.name);
+            window.downloadBlob(pageItem.blob, pageItem.name, mimeType);
           });
 
           pagesGrid.appendChild(card);

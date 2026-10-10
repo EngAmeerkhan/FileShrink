@@ -68,11 +68,12 @@
     .picker-tabs {
       display: flex;
       justify-content: center;
-      gap: 10px;
+      flex-wrap: wrap;
+      gap: 8px;
       margin-bottom: 1.25rem;
     }
     .picker-tab-btn {
-      padding: 10px 24px;
+      padding: 10px 16px;
       border-radius: var(--radius-full);
       font-weight: 700;
       font-size: 0.9375rem;
@@ -209,6 +210,11 @@
       margin: 0;
     }
 
+    @media (max-width: 599px) {
+      .trust-strip {
+        grid-template-columns: 1fr;
+      }
+    }
     @media (min-width: 640px) {
       .hero-title {
         font-size: 2.6rem;

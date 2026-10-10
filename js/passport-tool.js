@@ -250,6 +250,10 @@
     // Load photo
     async function loadPhoto(file) {
       if (!file) return;
+      if (file.size === 0) {
+        showError('The selected file is empty (0 KB). Please choose a valid photo.');
+        return;
+      }
       if (!file.type.startsWith('image/') && !/\.(jpe?g|png|webp)$/i.test(file.name)) {
         showError('Please choose a valid photo (JPG, PNG, or WEBP).');
         return;

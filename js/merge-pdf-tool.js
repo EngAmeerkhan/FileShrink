@@ -142,6 +142,11 @@
           continue;
         }
 
+        if (file.size === 0) {
+          showError(`The file "${file.name}" is empty (0 KB). Please choose a valid PDF file.`);
+          continue;
+        }
+
         try {
           const buffer = await file.arrayBuffer();
           let pageCount = 1;

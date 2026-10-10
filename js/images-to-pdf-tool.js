@@ -129,6 +129,10 @@
 
       for (let i = 0; i < files.length; i++) {
         const file = files[i];
+        if (file.size === 0) {
+          showError(`The file "${file.name}" is empty (0 KB).`);
+          continue;
+        }
         if (!/\.(jpe?g|png|webp)$/i.test(file.name) && !file.type.startsWith('image/')) {
           continue;
         }

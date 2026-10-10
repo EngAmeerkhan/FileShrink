@@ -7,10 +7,13 @@
   'use strict';
 
   window.initConverterTool = function (config) {
-    const fromFormat = (config.fromFormat || 'jpeg').toLowerCase();
-    const toFormat = (config.toFormat || 'png').toLowerCase();
-    const outputMime = toFormat === 'png' ? 'image/png' : (toFormat === 'webp' ? 'image/webp' : 'image/jpeg');
-    const outputExt = toFormat === 'png' ? 'png' : (toFormat === 'webp' ? 'webp' : 'jpg');
+    if (!config) config = {};
+    const toFormat = (config.toFormat || config.format || config.to || config.outputFormat || 'png').toLowerCase();
+    const fromFormat = (config.fromFormat || config.inputFormat || config.from || 'jpeg').toLowerCase();
+    const isPng = toFormat === 'png';
+    const isWebp = toFormat === 'webp';
+    const outputMime = isPng ? 'image/png' : (isWebp ? 'image/webp' : 'image/jpeg');
+    const outputExt = isPng ? 'png' : (isWebp ? 'webp' : 'jpg');
     const defaultQuality = typeof config.quality === 'number' ? config.quality : 0.92;
 
     // DOM Elements
@@ -56,6 +59,9 @@
       });
       convertedFiles = [];
       rawFiles = [];
+      if (singlePreviewImg) singlePreviewImg.src = '';
+      if (singleOriginalSize) singleOriginalSize.textContent = '0 KB';
+      if (singleNewSize) singleNewSize.textContent = '0 KB';
       if (uploadArea) uploadArea.classList.remove('is-hidden');
       if (processingArea) processingArea.classList.add('is-hidden');
       if (resultArea) resultArea.classList.add('is-hidden');
@@ -89,6 +95,9 @@
 
     // Convert HEIC file to standard blob if needed
     async function normalizeFileBlob(file) {
+      if (!file || file.size === 0) {
+        throw new Error(`The file "${file ? file.name : 'selected'}" is empty (0 KB). Please choose a valid image.`);
+      }
       const nameLower = file.name.toLowerCase();
       if (nameLower.endsWith('.heic') || nameLower.endsWith('.heif') || file.type.includes('heic') || file.type.includes('heif')) {
         if (typeof window.heic2any !== 'function') {
@@ -110,6 +119,9 @@
 
     // Convert a single image file via HTML5 Canvas
     async function convertSingleFile(file, quality) {
+      if (!file || file.size === 0) {
+        throw new Error(`The file "${file ? file.name : 'selected'}" is empty (0 KB). Please choose a valid image.`);
+      }
       const normalizedBlob = await normalizeFileBlob(file);
       const img = new Image();
       const objectUrl = URL.createObjectURL(normalizedBlob);
@@ -117,7 +129,7 @@
       try {
         await new Promise((resolve, reject) => {
           img.onload = () => resolve();
-          img.onerror = () => reject(new Error(`Failed to load ${file.name}`));
+          img.onerror = () => reject(new Error(`Failed to load ${file.name}. It may be corrupted or unsupported.`));
           img.src = objectUrl;
         });
       } finally {
@@ -137,12 +149,33 @@
 
       ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-      const blob = await new Promise(resolve => {
-        canvas.toBlob(b => resolve(b), outputMime, quality);
+      let blob = await new Promise(resolve => {
+        if (outputMime === 'image/png') {
+          // PNG does not accept quality parameter
+          canvas.toBlob(b => resolve(b), 'image/png');
+        } else {
+          canvas.toBlob(b => resolve(b), outputMime, quality);
+        }
       });
+
+      // Browser fallback if toBlob returned null
+      if (!blob) {
+        try {
+          const dataUrl = canvas.toDataURL(outputMime, outputMime === 'image/png' ? undefined : quality);
+          const res = await fetch(dataUrl);
+          blob = await res.blob();
+        } catch (fbErr) {
+          // ignore
+        }
+      }
 
       if (!blob) {
         throw new Error(`Failed to convert ${file.name}`);
+      }
+
+      // Guarantee strict target MIME type on the resulting Blob
+      if (blob.type !== outputMime) {
+        blob = new Blob([blob], { type: outputMime });
       }
 
       const baseName = file.name.replace(/\.[^/.]+$/, '').replace(/[^a-zA-Z0-9_-]/g, '_');
@@ -204,7 +237,7 @@
 
         if (singleDownloadBtn) {
           singleDownloadBtn.onclick = function () {
-            window.downloadBlob(item.blob, item.name);
+            window.downloadBlob(item.blob, item.name, outputMime);
           };
         }
       } else {
@@ -230,7 +263,7 @@
             `;
 
             row.querySelector('[data-idx]').addEventListener('click', function () {
-              window.downloadBlob(item.blob, item.name);
+              window.downloadBlob(item.blob, item.name, outputMime);
             });
 
             fileListEl.appendChild(row);

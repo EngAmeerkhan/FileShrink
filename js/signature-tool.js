@@ -147,6 +147,10 @@
     // File selected
     function handleFile(file) {
       if (!file) return;
+      if (file.size === 0) {
+        showError('The selected file is empty (0 KB). Please choose a valid signature image.');
+        return;
+      }
       const validTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
       if (!validTypes.includes(file.type.toLowerCase()) && !/\.(jpe?g|png|webp)$/i.test(file.name)) {
         showError('Please select a valid signature image (JPG, PNG, or WEBP).');

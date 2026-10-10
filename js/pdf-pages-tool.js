@@ -125,6 +125,10 @@
     // Load and render page thumbnails
     async function loadPdfForEditing(file) {
       if (!file) return;
+      if (file.size === 0) {
+        showError('The selected PDF file is empty (0 KB). Please choose a valid file.');
+        return;
+      }
       if (!file.type.includes('pdf') && !file.name.toLowerCase().endsWith('.pdf')) {
         showError('Please choose a valid PDF file.');
         return;
@@ -140,7 +144,7 @@
 
       try {
         rawPdfBytes = await file.arrayBuffer();
-        const loadingTask = window.pdfjsLib.getDocument({ data: rawPdfBytes });
+        const loadingTask = window.pdfjsLib.getDocument({ data: rawPdfBytes.slice(0) });
         const pdfDoc = await loadingTask.promise;
         totalPageCount = pdfDoc.numPages;
 
@@ -246,7 +250,7 @@
       }
 
       const { PDFDocument } = window.PDFLib;
-      const srcDoc = await PDFDocument.load(rawPdfBytes);
+      const srcDoc = await PDFDocument.load(rawPdfBytes.slice(0));
 
       if (mode === 'extract') {
         if (selectedPageIndices.size === 0) {
