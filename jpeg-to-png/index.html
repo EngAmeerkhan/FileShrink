@@ -219,7 +219,7 @@
 
         <!-- Step 1: Upload Dropzone Area -->
         <div id="uploadArea">
-          <input type="file" id="fileInput" accept="image/jpeg,image/jpg" multiple class="is-hidden" aria-label="Upload JPEG images to convert to PNG">
+          <input type="file" id="fileInput" accept="image/jpeg,image/jpg,.jpg,.jpeg,.JPG,.JPEG" multiple class="is-hidden" aria-label="Upload JPEG images to convert to PNG">
           <div id="dropzone" class="dropzone" role="button" tabindex="0" aria-label="Drop JPEG files here or tap to choose">
             <div class="dropzone-icon">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -395,8 +395,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 
   <!-- Shared & Tool Scripts -->
-  <script src="/js/main.js"></script>
-  <script src="/js/converter-tool.js"></script>
+  <script src="/js/main.js?v=2"></script>
+  <script src="/js/converter-tool.js?v=2"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       window.initConverterTool({

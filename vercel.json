@@ -1,0 +1,15 @@
+{
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/jpg-to-png",
+      "destination": "/jpeg-to-png/",
+      "permanent": true
+    },
+    {
+      "source": "/jpg-to-png/:path*",
+      "destination": "/jpeg-to-png/",
+      "permanent": true
+    }
+  ]
+}

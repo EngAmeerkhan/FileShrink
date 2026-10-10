@@ -132,63 +132,63 @@
           img.onerror = () => reject(new Error(`Failed to load ${file.name}. It may be corrupted or unsupported.`));
           img.src = objectUrl;
         });
+
+        const canvas = document.createElement('canvas');
+        canvas.width = img.naturalWidth || img.width;
+        canvas.height = img.naturalHeight || img.height;
+        const ctx = canvas.getContext('2d');
+
+        // White background for JPG conversion to prevent transparent areas from turning black
+        if (outputMime === 'image/jpeg') {
+          ctx.fillStyle = '#FFFFFF';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+        let blob = await new Promise(resolve => {
+          if (outputMime === 'image/png') {
+            // PNG does not accept quality parameter
+            canvas.toBlob(b => resolve(b), 'image/png');
+          } else {
+            canvas.toBlob(b => resolve(b), outputMime, quality);
+          }
+        });
+
+        // Browser fallback if toBlob returned null
+        if (!blob) {
+          try {
+            const dataUrl = canvas.toDataURL(outputMime, outputMime === 'image/png' ? undefined : quality);
+            const res = await fetch(dataUrl);
+            blob = await res.blob();
+          } catch (fbErr) {
+            // ignore
+          }
+        }
+
+        if (!blob) {
+          throw new Error(`Failed to convert ${file.name}`);
+        }
+
+        // Guarantee strict target MIME type on the resulting Blob
+        if (blob.type !== outputMime) {
+          blob = new Blob([blob], { type: outputMime });
+        }
+
+        const baseName = file.name.replace(/\.[^/.]+$/, '').replace(/[^a-zA-Z0-9_-]/g, '_');
+        const outName = `${baseName}.${outputExt}`;
+        const previewUrl = URL.createObjectURL(blob);
+
+        return {
+          blob: blob,
+          name: outName,
+          originalSize: file.size,
+          newSize: blob.size,
+          url: previewUrl
+        };
       } finally {
         URL.revokeObjectURL(objectUrl);
       }
-
-      const canvas = document.createElement('canvas');
-      canvas.width = img.naturalWidth || img.width;
-      canvas.height = img.naturalHeight || img.height;
-      const ctx = canvas.getContext('2d');
-
-      // White background for JPG conversion to prevent transparent areas from turning black
-      if (outputMime === 'image/jpeg') {
-        ctx.fillStyle = '#FFFFFF';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-      }
-
-      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-      let blob = await new Promise(resolve => {
-        if (outputMime === 'image/png') {
-          // PNG does not accept quality parameter
-          canvas.toBlob(b => resolve(b), 'image/png');
-        } else {
-          canvas.toBlob(b => resolve(b), outputMime, quality);
-        }
-      });
-
-      // Browser fallback if toBlob returned null
-      if (!blob) {
-        try {
-          const dataUrl = canvas.toDataURL(outputMime, outputMime === 'image/png' ? undefined : quality);
-          const res = await fetch(dataUrl);
-          blob = await res.blob();
-        } catch (fbErr) {
-          // ignore
-        }
-      }
-
-      if (!blob) {
-        throw new Error(`Failed to convert ${file.name}`);
-      }
-
-      // Guarantee strict target MIME type on the resulting Blob
-      if (blob.type !== outputMime) {
-        blob = new Blob([blob], { type: outputMime });
-      }
-
-      const baseName = file.name.replace(/\.[^/.]+$/, '').replace(/[^a-zA-Z0-9_-]/g, '_');
-      const outName = `${baseName}.${outputExt}`;
-      const previewUrl = URL.createObjectURL(blob);
-
-      return {
-        blob: blob,
-        name: outName,
-        originalSize: file.size,
-        newSize: blob.size,
-        url: previewUrl
-      };
     }
 
     // Process list of files

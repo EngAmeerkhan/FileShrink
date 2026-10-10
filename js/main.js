@@ -22,7 +22,10 @@
     const finalBlob = (targetType && blob.type !== targetType) ? new Blob([blob], { type: targetType }) : blob;
     const url = URL.createObjectURL(finalBlob);
     const a = document.createElement('a');
-    a.style.display = 'none';
+    a.style.position = 'fixed';
+    a.style.left = '-9999px';
+    a.style.top = '-9999px';
+    a.style.opacity = '0';
     a.href = url;
     a.setAttribute('download', filename);
     a.download = filename;
