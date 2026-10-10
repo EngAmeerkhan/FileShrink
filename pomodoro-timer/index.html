@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Attendance Calculator - Free Online | FileShrink</title>
-  <meta name="description" content="Calculate attendance percentage and find classes needed to meet target. Free online attendance calculator with instant results, no signup, no watermark.">
-  <link rel="canonical" href="https://fileshrink.vercel.app/attendance-calculator/">
+  <title>Pomodoro Timer - Free Online | FileShrink</title>
+  <meta name="description" content="Focus better and manage study breaks with an accurate pomodoro timer. Free online timer with custom intervals, no signup, and no watermark.">
+  <link rel="canonical" href="https://fileshrink.vercel.app/pomodoro-timer/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Attendance Calculator - Free Online | FileShrink">
-  <meta property="og:description" content="Calculate attendance percentage and find classes needed to meet target. Free online attendance calculator with instant results, no signup, no watermark.">
-  <meta property="og:url" content="https://fileshrink.vercel.app/attendance-calculator/">
+  <meta property="og:title" content="Pomodoro Timer - Free Online | FileShrink">
+  <meta property="og:description" content="Focus better and manage study breaks with an accurate pomodoro timer. Free online timer with custom intervals, no signup, and no watermark.">
+  <meta property="og:url" content="https://fileshrink.vercel.app/pomodoro-timer/">
   <meta property="og:type" content="website">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Attendance Calculator - Free Online | FileShrink">
-  <meta name="twitter:description" content="Calculate attendance percentage and find classes needed to meet target. Free online attendance calculator with instant results, no signup, no watermark.">
+  <meta name="twitter:title" content="Pomodoro Timer - Free Online | FileShrink">
+  <meta name="twitter:description" content="Focus better and manage study breaks with an accurate pomodoro timer. Free online timer with custom intervals, no signup, and no watermark.">
 
   <!-- Shared CSS -->
   <link rel="stylesheet" href="/css/style.css">
@@ -30,9 +30,9 @@
     "@graph": [
       {
         "@type": "WebApplication",
-        "name": "Attendance Calculator",
-        "url": "https://fileshrink.vercel.app/attendance-calculator/",
-        "applicationCategory": "EducationalApplication",
+        "name": "Pomodoro Timer",
+        "url": "https://fileshrink.vercel.app/pomodoro-timer/",
+        "applicationCategory": "ProductivityApplication",
         "operatingSystem": "All",
         "browserRequirements": "Requires JavaScript. Works directly in your browser.",
         "offers": {
@@ -53,8 +53,8 @@
           {
             "@type": "ListItem",
             "position": 2,
-            "name": "Attendance Calculator",
-            "item": "https://fileshrink.vercel.app/attendance-calculator/"
+            "name": "Pomodoro Timer",
+            "item": "https://fileshrink.vercel.app/pomodoro-timer/"
           }
         ]
       },
@@ -63,26 +63,26 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "How many consecutive lectures do I need to attend after taking sick leave?",
+            "name": "Why is timestamp-based timing more accurate than counting seconds?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The tool uses the target recovery formula: Consecutive Classes Needed = ⌈(Required % × Held - Attended) ÷ (1 - Required %)⌉. It calculates the exact number of back-to-back classes you must attend without absence."
+              "text": "Browsers often throttle JavaScript timers in background tabs to save power. Our tool calculates remaining time by comparing the exact current system timestamp against the target end time, ensuring 100% precision."
             }
           },
           {
             "@type": "Question",
-            "name": "Can attendance be calculated if my course includes laboratory sessions?",
+            "name": "How many Pomodoro sessions should I do before taking a long break?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. If labs carry equal attendance weight, sum lab sessions into classes held and attended. If labs are calculated separately by your department, run the calculator once for lectures and once for lab hours."
+              "text": "The classic technique recommends four consecutive 25-minute focus intervals separated by short 5-minute pauses, followed by an extended 15 to 30-minute restorative break."
             }
           },
           {
             "@type": "Question",
-            "name": "What happens if I miss a class after reaching the minimum attendance percentage?",
+            "name": "Does the timer keep running if I switch tabs or lock my phone screen?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Enter the total planned classes for your course into the optional box. The calculator will determine exactly how many more classes you can safely miss while keeping your attendance above your institution threshold."
+              "text": "Yes. The timer updates live in your browser tab title. You can also turn on the 'Keep screen on' toggle on supported devices so your display stays awake during your study session."
             }
           }
         ]
@@ -160,6 +160,8 @@
           <li class="nav-item-dropdown">
             <a href="/#student-tools" class="nav-link dropdown-toggle">Student Tools <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
             <ul class="dropdown-menu">
+              <li><a href="/pomodoro-timer/" class="dropdown-item">Pomodoro Timer</a></li>
+              <li><a href="/assignment-cover-page/" class="dropdown-item">Assignment Cover Page</a></li>
               <li><a href="/gpa-calculator/" class="dropdown-item">GPA Calculator</a></li>
               <li><a href="/cgpa-calculator/" class="dropdown-item">CGPA Calculator</a></li>
               <li><a href="/cgpa-to-percentage/" class="dropdown-item">CGPA to Percentage</a></li>
@@ -180,14 +182,14 @@
       <nav class="breadcrumbs" aria-label="Breadcrumb">
         <ol>
           <li><a href="/">Home</a></li>
-          <li aria-current="page">Attendance Calculator</li>
+          <li aria-current="page">Pomodoro Timer</li>
         </ol>
       </nav>
 
       <!-- Page Intro Header -->
       <header class="page-intro">
-        <h1>Attendance Calculator</h1>
-        <p class="page-subtitle">Track your attendance percentage and find classes needed to meet requirements.</p>
+        <h1>Pomodoro Timer</h1>
+        <p class="page-subtitle">Track focused study sessions and scheduled rest intervals with high precision timekeeping.</p>
       </header>
 
       <!-- Privacy Callout -->
@@ -199,7 +201,7 @@
         <span>Nothing is uploaded or saved. Everything works on your device.</span>
       </div>
 
-      <!-- Ad Slot 1: Above Calculator -->
+      <!-- Ad Slot 1: Above Clean Timer Area -->
       <div class="ad-slot" aria-hidden="true">
         <div class="ad-slot-placeholder">Advertisement</div>
       </div>
@@ -208,107 +210,120 @@
       <div class="calc-steps" aria-hidden="true">
         <div class="calc-step-item active">
           <span class="calc-step-num">1</span>
-          <span>Enter your numbers</span>
+          <span>Choose your times</span>
         </div>
         <div class="calc-step-divider"></div>
         <div class="calc-step-item active">
           <span class="calc-step-num">2</span>
-          <span>See your result</span>
+          <span>Press Start</span>
         </div>
       </div>
 
-      <!-- Main Attendance Calculator Card -->
-      <section class="calc-card" aria-label="Attendance Calculator Form">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
-          <!-- Classes Held -->
-          <div class="calc-field-group">
-            <label for="attHeldInput" class="calc-label">Classes Held So Far</label>
-            <input type="text" id="attHeldInput" inputmode="decimal" class="calc-input" placeholder="e.g. 40">
-            <div class="calc-hint">Total lectures delivered by instructor</div>
-          </div>
-
-          <!-- Classes Attended -->
-          <div class="calc-field-group">
-            <label for="attAttendedInput" class="calc-label">Classes Attended</label>
-            <input type="text" id="attAttendedInput" inputmode="decimal" class="calc-input" placeholder="e.g. 30">
-            <div class="calc-hint">Total lectures you attended</div>
-          </div>
+      <!-- Clean Pomodoro Timer Card (No ads inside or touching) -->
+      <section class="pomodoro-card" aria-label="Pomodoro Timer">
+        <!-- Mode Tabs -->
+        <div class="pomodoro-mode-tabs" role="tablist">
+          <button type="button" class="pomodoro-mode-btn active" data-mode="focus" role="tab" aria-selected="true">Focus</button>
+          <button type="button" class="pomodoro-mode-btn" data-mode="shortBreak" role="tab" aria-selected="false">Short Break</button>
+          <button type="button" class="pomodoro-mode-btn" data-mode="longBreak" role="tab" aria-selected="false">Long Break</button>
         </div>
 
-        <!-- Required Percentage -->
-        <div class="calc-field-group" style="margin-top: 6px;">
-          <label for="attReqInput" class="calc-label">Minimum Required Attendance (%)</label>
-          <input type="text" id="attReqInput" inputmode="decimal" class="calc-input" value="75" placeholder="e.g. 75">
-          <div class="calc-hint">Change this to your institution's rule</div>
-          <div class="preset-pills-row">
-            <span style="font-size: 0.75rem; color: var(--text-light); margin-right: 4px;">Quick Pick:</span>
-            <button type="button" class="preset-pill att-req-pill" data-req="60">60%</button>
-            <button type="button" class="preset-pill att-req-pill" data-req="65">65%</button>
-            <button type="button" class="preset-pill att-req-pill" data-req="70">70%</button>
-            <button type="button" class="preset-pill att-req-pill active" data-req="75">75%</button>
-            <button type="button" class="preset-pill att-req-pill" data-req="80">80%</button>
-            <button type="button" class="preset-pill att-req-pill" data-req="85">85%</button>
-          </div>
+        <!-- Session Status Badge -->
+        <div>
+          <span id="sessionInfoBadge" class="pomodoro-session-info">Focus Session 1 of 4</span>
         </div>
 
-        <!-- Optional Total Course Classes Planned -->
-        <div class="calc-field-group" style="margin-top: 14px;">
-          <label for="attTotalPlannedInput" class="calc-label">Total Classes Planned in Whole Course (Optional)</label>
-          <input type="text" id="attTotalPlannedInput" inputmode="decimal" class="calc-input" placeholder="e.g. 60">
-          <div class="calc-hint">Enter total term lectures to see how many classes you can still miss</div>
+        <!-- Timer Big Display -->
+        <div id="timerDisplay" class="pomodoro-timer-display" aria-live="polite">25:00</div>
+
+        <!-- Controls: Start/Pause, Reset, Skip -->
+        <div class="pomodoro-main-controls">
+          <button type="button" id="startPauseBtn" class="btn btn-primary btn-pomodoro-start">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            Start
+          </button>
+          <button type="button" id="skipBtn" class="btn-pomodoro-sec" title="Skip to next session">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" y1="5" x2="19" y2="19"></line></svg>
+            Skip
+          </button>
+          <button type="button" id="resetBtn" class="btn-pomodoro-sec" title="Reset current session">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+            Reset
+          </button>
         </div>
 
-        <!-- Result Box -->
-        <div class="calc-result-box" aria-live="polite">
-          <div id="attStatusBadge" class="calc-status-badge" style="display: none;"></div>
-          <div class="calc-result-title">Current Attendance</div>
-          <div id="attResultValue" class="calc-result-primary">0.00%</div>
-          <p id="attSubMessage" style="font-size: 0.875rem; color: var(--text-muted); margin: 6px 0;"></p>
+        <!-- Settings Expander -->
+        <div>
+          <button type="button" id="settingsToggleBtn" class="pomodoro-settings-toggle" aria-expanded="false">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+            Timer Settings
+          </button>
+        </div>
 
-          <!-- Needed Consecutive Classes Alert Box -->
-          <div id="attConsecutiveBox" style="display: none; background-color: var(--bg-surface); border: 1px solid var(--danger-border); border-radius: var(--radius-sm); padding: 10px 14px; margin: 10px auto; max-width: 460px; font-size: 0.875rem; color: var(--text-main);"></div>
-
-          <!-- Missable Classes Alert Box -->
-          <div id="attMissableBox" style="display: none; background-color: var(--bg-surface); border: 1px solid var(--primary-border); border-radius: var(--radius-sm); padding: 10px 14px; margin: 10px auto; max-width: 460px; font-size: 0.875rem; color: var(--text-main);"></div>
-
-          <div class="calc-formula-text">
-            Formula: Attendance % = (Classes Attended ÷ Classes Held) × 100.
+        <!-- Collapsible Settings Panel -->
+        <div id="settingsBox" class="pomodoro-settings-box" style="display: none;">
+          <div class="pomodoro-settings-grid">
+            <div>
+              <label for="focusMinInput" class="calc-label" style="font-size: 0.8125rem;">Focus (min)</label>
+              <input type="text" id="focusMinInput" inputmode="decimal" class="calc-input" value="25" style="text-align: center;">
+            </div>
+            <div>
+              <label for="shortBreakMinInput" class="calc-label" style="font-size: 0.8125rem;">Short Break</label>
+              <input type="text" id="shortBreakMinInput" inputmode="decimal" class="calc-input" value="5" style="text-align: center;">
+            </div>
+            <div>
+              <label for="longBreakMinInput" class="calc-label" style="font-size: 0.8125rem;">Long Break</label>
+              <input type="text" id="longBreakMinInput" inputmode="decimal" class="calc-input" value="15" style="text-align: center;">
+            </div>
+            <div>
+              <label for="intervalInput" class="calc-label" style="font-size: 0.8125rem;">Long Break Every</label>
+              <input type="text" id="intervalInput" inputmode="decimal" class="calc-input" value="4" style="text-align: center;">
+            </div>
           </div>
-          <div class="calc-result-btns">
-            <button type="button" id="copyAttBtn" class="btn-calc-action btn-calc-copy">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>
-              Copy Result
-            </button>
-            <button type="button" id="clearAttBtn" class="btn-calc-action btn-calc-clear">
-              Clear
-            </button>
+
+          <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px; border-top: 1px solid var(--border-color); padding-top: 10px;">
+            <label class="calc-checkbox-label" style="margin-bottom: 0;">
+              <input type="checkbox" id="soundToggle" checked>
+              <span>Play sound chime on completion</span>
+            </label>
+            <div id="wakeLockGroup">
+              <label class="calc-checkbox-label" style="margin-bottom: 0;">
+                <input type="checkbox" id="wakeLockToggle">
+                <span>Keep screen on while timer runs</span>
+              </label>
+            </div>
+            <div style="margin-top: 4px;">
+              <button type="button" id="notifToggleBtn" class="btn btn-outline" style="font-size: 0.8125rem; min-height: 36px; padding: 4px 12px;">
+                Enable Notifications
+              </button>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Ad Slot 2: Between Sections -->
+      <!-- Ad Slot 2: Below Clean Timer Area -->
       <div class="ad-slot" aria-hidden="true">
         <div class="ad-slot-placeholder">Advertisement</div>
       </div>
 
       <!-- How to Section (Short 3 lines) -->
       <section class="info-section" aria-labelledby="howToHeading">
-        <h2 id="howToHeading">How to Check Attendance in 3 Steps</h2>
+        <h2 id="howToHeading">How to Use the Pomodoro Timer in 3 Steps</h2>
         <div class="steps-grid">
           <div class="step-card">
             <span class="step-number" aria-hidden="true">1</span>
-            <h3>Enter Your Attendance</h3>
-            <p>Type total classes conducted so far and how many of them you attended.</p>
+            <h3>Choose Your Durations</h3>
+            <p>Stick to standard 25-minute study intervals or customize your preferred focus time.</p>
           </div>
           <div class="step-card">
             <span class="step-number" aria-hidden="true">2</span>
-            <h3>Set Required Percentage</h3>
-            <p>Pick your university requirement such as 75% or 80% with quick preset pills.</p>
+            <h3>Start Single-Tasking</h3>
+            <p>Hit Start and commit to working distraction-free until the soft audio bell rings.</p>
           </div>
           <div class="step-card">
             <span class="step-number" aria-hidden="true">3</span>
-            <h3>Check Safe Bunks or Target</h3>
-            <p>See your current attendance rate, status, and classes needed to reach eligibility.</p>
+            <h3>Rest and Recharge</h3>
+            <p>Take your 5-minute pause, and enjoy an automatic longer break every 4 sessions.</p>
           </div>
         </div>
       </section>
@@ -318,16 +333,16 @@
         <h2 id="faqHeading">Frequently Asked Questions</h2>
         <div class="faq-list">
           <div class="faq-item">
-            <h3 class="faq-question">How many consecutive lectures do I need to attend after taking sick leave?</h3>
-            <p class="faq-answer">The tool uses the target recovery formula: Consecutive Classes Needed = ⌈(Required % × Held - Attended) ÷ (1 - Required %)⌉. It calculates the exact number of back-to-back classes you must attend without absence.</p>
+            <h3 class="faq-question">Why is timestamp-based timing more accurate than counting seconds?</h3>
+            <p class="faq-answer">Browsers often throttle JavaScript timers in background tabs to save power. Our tool calculates remaining time by comparing the exact current system timestamp against the target end time, ensuring 100% precision.</p>
           </div>
           <div class="faq-item">
-            <h3 class="faq-question">Can attendance be calculated if my course includes laboratory sessions?</h3>
-            <p class="faq-answer">Yes. If labs carry equal attendance weight, sum lab sessions into classes held and attended. If labs are calculated separately by your department, run the calculator once for lectures and once for lab hours.</p>
+            <h3 class="faq-question">How many Pomodoro sessions should I do before taking a long break?</h3>
+            <p class="faq-answer">The classic technique recommends four consecutive 25-minute focus intervals separated by short 5-minute pauses, followed by an extended 15 to 30-minute restorative break.</p>
           </div>
           <div class="faq-item">
-            <h3 class="faq-question">What happens if I miss a class after reaching the minimum attendance percentage?</h3>
-            <p class="faq-answer">Enter the total planned classes for your course into the optional box. The calculator will determine exactly how many more classes you can safely miss while keeping your attendance above your institution threshold.</p>
+            <h3 class="faq-question">Does the timer keep running if I switch tabs or lock my phone screen?</h3>
+            <p class="faq-answer">Yes. The timer updates live in your browser tab title. You can also turn on the 'Keep screen on' toggle on supported devices so your display stays awake during your study session.</p>
           </div>
         </div>
       </section>
@@ -336,20 +351,20 @@
       <section class="info-section" aria-labelledby="moreToolsHeading">
         <h2 id="moreToolsHeading">More Free Student Tools</h2>
         <div class="tools-grid">
+          <a href="/attendance-calculator/" class="tool-card-btn">
+            <span>Attendance Calculator</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+          <a href="/assignment-cover-page/" class="tool-card-btn">
+            <span>Assignment Cover Page</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
           <a href="/gpa-calculator/" class="tool-card-btn">
             <span>GPA Calculator</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </a>
           <a href="/cgpa-calculator/" class="tool-card-btn">
             <span>CGPA Calculator</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          </a>
-          <a href="/cgpa-to-percentage/" class="tool-card-btn">
-            <span>CGPA to Percentage</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          </a>
-          <a href="/pomodoro-timer/" class="tool-card-btn">
-            <span>Pomodoro Timer</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </a>
         </div>
@@ -377,12 +392,12 @@
     <button type="button" id="cookieAcceptBtn" class="btn-cookie-ok">OK</button>
   </div>
 
-  <!-- Shared & Calculator Scripts -->
+  <!-- Shared & Pomodoro Scripts -->
   <script src="/js/main.js"></script>
-  <script src="/js/calculators.js"></script>
+  <script src="/js/pomodoro.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      window.initAttendanceCalculator();
+      window.initPomodoroTimer();
     });
   </script>
 </body>
