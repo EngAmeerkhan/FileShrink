@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Percentage Calculator - Free Online | FileShrink</title>
+  <meta name="description" content="Calculate percentages, percent change, marks, and fraction values fast. Free online percentage calculator with instant results, no signup, no watermark.">
+  <link rel="canonical" href="https://fileshrink.vercel.app/percentage-calculator/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Percentage Calculator - Free Online | FileShrink">
+  <meta property="og:description" content="Calculate percentages, percent change, marks, and fraction values fast. Free online percentage calculator with instant results, no signup, no watermark.">
+  <meta property="og:url" content="https://fileshrink.vercel.app/percentage-calculator/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Percentage Calculator - Free Online | FileShrink">
+  <meta name="twitter:description" content="Calculate percentages, percent change, marks, and fraction values fast. Free online percentage calculator with instant results, no signup, no watermark.">
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/calculators.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Percentage Calculator",
+        "url": "https://fileshrink.vercel.app/percentage-calculator/",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://fileshrink.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Percentage Calculator",
+            "item": "https://fileshrink.vercel.app/percentage-calculator/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How is percentage increase or decrease calculated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Percentage change subtracts the initial number from the final number, divides the difference by the absolute initial value, and multiplies by 100. A positive outcome indicates an increase, while negative indicates a decrease."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I calculate exam marks percentage from practical and theory scores?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use the 'Marks Percentage' tab. Add up your obtained scores in theory and practicals for the first box, then sum the maximum available marks for the second box. The tool divides obtained by total."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can this tool handle decimal values and fractions?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. You can enter any positive or negative decimal numbers. Calculations preserve full mathematical precision and round only for display without scientific notation."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-logo" aria-label="FileShrink Home">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path>
+          <path d="M12 12v9"></path>
+          <path d="m8 17 4 4 4-4"></path>
+        </svg>
+        <span>FileShrink</span>
+      </a>
+      <button type="button" class="nav-toggle-btn" id="navToggleBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li class="nav-item-dropdown">
+            <a href="/#image-tools" class="nav-link dropdown-toggle">Image Tools <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <ul class="dropdown-menu">
+              <li><a href="/compress-image-to-20kb/" class="dropdown-item">Compress to 20KB</a></li>
+              <li><a href="/compress-image-to-30kb/" class="dropdown-item">Compress to 30KB</a></li>
+              <li><a href="/compress-image-to-50kb/" class="dropdown-item">Compress to 50KB</a></li>
+              <li><a href="/compress-image-to-100kb/" class="dropdown-item">Compress to 100KB</a></li>
+              <li><a href="/compress-image-to-150kb/" class="dropdown-item">Compress to 150KB</a></li>
+              <li><a href="/compress-image-to-200kb/" class="dropdown-item">Compress to 200KB</a></li>
+              <li><a href="/compress-image-to-500kb/" class="dropdown-item">Compress to 500KB</a></li>
+              <li><a href="/reduce-image-size-in-kb/" class="dropdown-item">Custom Size in KB</a></li>
+              <li><a href="/signature-resizer/" class="dropdown-item">Signature Resizer</a></li>
+              <li><a href="/passport-photo-size-in-pixels/" class="dropdown-item">Passport Photo Maker</a></li>
+              <li><a href="/cnic-front-and-back-in-one-page/" class="dropdown-item">CNIC Front & Back</a></li>
+            </ul>
+          </li>
+          <li class="nav-item-dropdown">
+            <a href="/#pdf-tools" class="nav-link dropdown-toggle">PDF Tools <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <ul class="dropdown-menu">
+              <li><a href="/compress-pdf-to-100kb/" class="dropdown-item">Compress PDF to 100KB</a></li>
+              <li><a href="/compress-pdf-to-200kb/" class="dropdown-item">Compress PDF to 200KB</a></li>
+              <li><a href="/compress-pdf-to-500kb/" class="dropdown-item">Compress PDF to 500KB</a></li>
+              <li><a href="/compress-pdf-to-1mb/" class="dropdown-item">Compress PDF to 1MB</a></li>
+              <li><a href="/compress-pdf-to-2mb/" class="dropdown-item">Compress PDF to 2MB</a></li>
+              <li><a href="/merge-pdf-files/" class="dropdown-item">Merge PDF Files</a></li>
+              <li><a href="/split-pdf/" class="dropdown-item">Split PDF</a></li>
+              <li><a href="/extract-pages-from-pdf/" class="dropdown-item">Extract PDF Pages</a></li>
+              <li><a href="/remove-pages-from-pdf/" class="dropdown-item">Remove PDF Pages</a></li>
+              <li><a href="/add-page-numbers-to-pdf/" class="dropdown-item">Add Page Numbers to PDF</a></li>
+            </ul>
+          </li>
+          <li class="nav-item-dropdown">
+            <a href="/#converters" class="nav-link dropdown-toggle">Converters <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <ul class="dropdown-menu">
+              <li><a href="/jpeg-to-png/" class="dropdown-item">JPEG to PNG</a></li>
+              <li><a href="/png-to-jpg-converter/" class="dropdown-item">PNG to JPG</a></li>
+              <li><a href="/heic-to-jpg/" class="dropdown-item">HEIC to JPG</a></li>
+              <li><a href="/webp-to-jpg/" class="dropdown-item">WebP to JPG</a></li>
+              <li><a href="/webp-to-png/" class="dropdown-item">WebP to PNG</a></li>
+              <li><a href="/pdf-to-jpg-converter/" class="dropdown-item">PDF to JPG</a></li>
+              <li><a href="/pdf-to-png/" class="dropdown-item">PDF to PNG</a></li>
+              <li><a href="/images-to-pdf/" class="dropdown-item">Images to PDF</a></li>
+            </ul>
+          </li>
+          <li class="nav-item-dropdown">
+            <a href="/#student-tools" class="nav-link dropdown-toggle">Student Tools <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <ul class="dropdown-menu">
+              <li><a href="/gpa-calculator/" class="dropdown-item">GPA Calculator</a></li>
+              <li><a href="/cgpa-calculator/" class="dropdown-item">CGPA Calculator</a></li>
+              <li><a href="/cgpa-to-percentage/" class="dropdown-item">CGPA to Percentage</a></li>
+              <li><a href="/percentage-calculator/" class="dropdown-item">Percentage Calculator</a></li>
+              <li><a href="/attendance-calculator/" class="dropdown-item">Attendance Calculator</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li aria-current="page">Percentage Calculator</li>
+        </ol>
+      </nav>
+
+      <!-- Page Intro Header -->
+      <header class="page-intro">
+        <h1>Percentage Calculator</h1>
+        <p class="page-subtitle">Calculate percentages, percentage change, and student marks accurately and instantly.</p>
+      </header>
+
+      <!-- Privacy Callout -->
+      <div class="calc-privacy-note">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+        <span>Nothing is uploaded or saved. Everything works on your device.</span>
+      </div>
+
+      <!-- Ad Slot 1: Above Calculator -->
+      <div class="ad-slot" aria-hidden="true">
+        <div class="ad-slot-placeholder">Advertisement</div>
+      </div>
+
+      <!-- 2-Step Flow Indicator -->
+      <div class="calc-steps" aria-hidden="true">
+        <div class="calc-step-item active">
+          <span class="calc-step-num">1</span>
+          <span>Enter your numbers</span>
+        </div>
+        <div class="calc-step-divider"></div>
+        <div class="calc-step-item active">
+          <span class="calc-step-num">2</span>
+          <span>See your result</span>
+        </div>
+      </div>
+
+      <!-- Main Percentage Calculator Card -->
+      <section class="calc-card" aria-label="Percentage Calculator Form">
+        <!-- Tabs Header -->
+        <div class="calc-tabs" role="tablist">
+          <button type="button" class="calc-tab-btn percent-tab-btn active" data-tab="tab1" role="tab" aria-selected="true">
+            What is X% of Y
+          </button>
+          <button type="button" class="calc-tab-btn percent-tab-btn" data-tab="tab2" role="tab" aria-selected="false">
+            X is what % of Y
+          </button>
+          <button type="button" class="calc-tab-btn percent-tab-btn" data-tab="tab3" role="tab" aria-selected="false">
+            % Change from X to Y
+          </button>
+          <button type="button" class="calc-tab-btn percent-tab-btn" data-tab="tab4" role="tab" aria-selected="false">
+            Marks Percentage
+          </button>
+        </div>
+
+        <!-- Tab Panel 1: What is X% of Y -->
+        <div id="tab1" class="percent-tab-panel" role="tabpanel">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px;">
+            <div class="calc-field-group">
+              <label for="t1_x" class="calc-label">Percentage (%)</label>
+              <input type="text" id="t1_x" inputmode="decimal" class="calc-input pct-input" placeholder="e.g. 20">
+              <div class="calc-hint">Type the percentage rate (X)</div>
+            </div>
+            <div class="calc-field-group">
+              <label for="t1_y" class="calc-label">Of Number (Y)</label>
+              <input type="text" id="t1_y" inputmode="decimal" class="calc-input pct-input" placeholder="e.g. 50">
+              <div class="calc-hint">Type the base number (Y)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab Panel 2: X is what % of Y -->
+        <div id="tab2" class="percent-tab-panel" style="display: none;" role="tabpanel">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px;">
+            <div class="calc-field-group">
+              <label for="t2_x" class="calc-label">Number (X)</label>
+              <input type="text" id="t2_x" inputmode="decimal" class="calc-input pct-input" placeholder="e.g. 10">
+              <div class="calc-hint">Part or subset value (X)</div>
+            </div>
+            <div class="calc-field-group">
+              <label for="t2_y" class="calc-label">Is what % of (Y)</label>
+              <input type="text" id="t2_y" inputmode="decimal" class="calc-input pct-input" placeholder="e.g. 50">
+              <div class="calc-hint">Total base value (Y)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab Panel 3: Percentage change from X to Y -->
+        <div id="tab3" class="percent-tab-panel" style="display: none;" role="tabpanel">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px;">
+            <div class="calc-field-group">
+              <label for="t3_x" class="calc-label">Initial Value (X)</label>
+              <input type="text" id="t3_x" inputmode="decimal" class="calc-input pct-input" placeholder="e.g. 80">
+              <div class="calc-hint">Starting value (X)</div>
+            </div>
+            <div class="calc-field-group">
+              <label for="t3_y" class="calc-label">Final Value (Y)</label>
+              <input type="text" id="t3_y" inputmode="decimal" class="calc-input pct-input" placeholder="e.g. 100">
+              <div class="calc-hint">Ending value (Y)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab Panel 4: Marks Percentage -->
+        <div id="tab4" class="percent-tab-panel" style="display: none;" role="tabpanel">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px;">
+            <div class="calc-field-group">
+              <label for="t4_x" class="calc-label">Marks Obtained</label>
+              <input type="text" id="t4_x" inputmode="decimal" class="calc-input pct-input" placeholder="e.g. 450">
+              <div class="calc-hint">Total score secured by student</div>
+            </div>
+            <div class="calc-field-group">
+              <label for="t4_y" class="calc-label">Total Maximum Marks</label>
+              <input type="text" id="t4_y" inputmode="decimal" class="calc-input pct-input" placeholder="e.g. 600">
+              <div class="calc-hint">Maximum available total marks</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Result Box -->
+        <div class="calc-result-box" aria-live="polite">
+          <div id="percentStatusBadge" class="calc-status-badge" style="display: none;"></div>
+          <div class="calc-result-title">Result</div>
+          <div id="percentPrimaryResult" class="calc-result-primary">—</div>
+          <p id="percentMessage" style="font-size: 0.875rem; color: var(--text-muted); margin: 6px 0;"></p>
+          <div id="percentFormulaText" class="calc-formula-text">
+            Formula: Result = (X ÷ 100) × Y.
+          </div>
+          <div class="calc-result-btns">
+            <button type="button" id="copyPercentBtn" class="btn-calc-action btn-calc-copy">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>
+              Copy Result
+            </button>
+            <button type="button" id="clearPercentBtn" class="btn-calc-action btn-calc-clear">
+              Clear
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ad Slot 2: Between Sections -->
+      <div class="ad-slot" aria-hidden="true">
+        <div class="ad-slot-placeholder">Advertisement</div>
+      </div>
+
+      <!-- How to Section (Short 3 lines) -->
+      <section class="info-section" aria-labelledby="howToHeading">
+        <h2 id="howToHeading">How to Use Percentage Calculator in 3 Steps</h2>
+        <div class="steps-grid">
+          <div class="step-card">
+            <span class="step-number" aria-hidden="true">1</span>
+            <h3>Select Calculation Mode</h3>
+            <p>Choose percentage of number, percentage share, change, or exam marks tab.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-number" aria-hidden="true">2</span>
+            <h3>Enter Your Numbers</h3>
+            <p>Type your initial and target values directly using your numeric keyboard.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-number" aria-hidden="true">3</span>
+            <h3>Instant Answers</h3>
+            <p>See live rounded results with clear formula breakdowns and copy buttons.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Frequently Asked Questions -->
+      <section class="info-section" aria-labelledby="faqHeading">
+        <h2 id="faqHeading">Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3 class="faq-question">How is percentage increase or decrease calculated?</h3>
+            <p class="faq-answer">Percentage change subtracts the initial number from the final number, divides the difference by the absolute initial value, and multiplies by 100. A positive outcome indicates an increase, while negative indicates a decrease.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">How do I calculate exam marks percentage from practical and theory scores?</h3>
+            <p class="faq-answer">Use the 'Marks Percentage' tab. Add up your obtained scores in theory and practicals for the first box, then sum the maximum available marks for the second box. The tool divides obtained by total.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">Can this tool handle decimal values and fractions?</h3>
+            <p class="faq-answer">Yes. You can enter any positive or negative decimal numbers. Calculations preserve full mathematical precision and round only for display without scientific notation.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- More Tools Section (4 Tools) -->
+      <section class="info-section" aria-labelledby="moreToolsHeading">
+        <h2 id="moreToolsHeading">More Free Student Tools</h2>
+        <div class="tools-grid">
+          <a href="/gpa-calculator/" class="tool-card-btn">
+            <span>GPA Calculator</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+          <a href="/cgpa-calculator/" class="tool-card-btn">
+            <span>CGPA Calculator</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+          <a href="/cgpa-to-percentage/" class="tool-card-btn">
+            <span>CGPA to Percentage</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+          <a href="/attendance-calculator/" class="tool-card-btn">
+            <span>Attendance Calculator</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="copyright">&copy; 2026 FileShrink. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+        <li><a href="/terms/">Terms of Service</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookieBanner" class="cookie-banner is-hidden" role="region" aria-label="Cookie consent">
+    <span class="cookie-text">We use cookies to improve your experience and display relevant ads.</span>
+    <button type="button" id="cookieAcceptBtn" class="btn-cookie-ok">OK</button>
+  </div>
+
+  <!-- Shared & Calculator Scripts -->
+  <script src="/js/main.js"></script>
+  <script src="/js/calculators.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      window.initPercentageCalculator();
+    });
+  </script>
+</body>
+</html>

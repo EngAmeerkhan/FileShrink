@@ -295,6 +295,13 @@
         </svg>
         <span>FileShrink</span>
       </a>
+      <button type="button" class="nav-toggle-btn" id="navToggleBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
       <nav aria-label="Main Navigation">
         <ul class="nav-links">
           <li class="nav-item-dropdown">
@@ -341,6 +348,16 @@
               <li><a href="/images-to-pdf/" class="dropdown-item">Images to PDF</a></li>
             </ul>
           </li>
+          <li class="nav-item-dropdown">
+            <a href="/#student-tools" class="nav-link dropdown-toggle">Student Tools <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <ul class="dropdown-menu">
+              <li><a href="/gpa-calculator/" class="dropdown-item">GPA Calculator</a></li>
+              <li><a href="/cgpa-calculator/" class="dropdown-item">CGPA Calculator</a></li>
+              <li><a href="/cgpa-to-percentage/" class="dropdown-item">CGPA to Percentage</a></li>
+              <li><a href="/percentage-calculator/" class="dropdown-item">Percentage Calculator</a></li>
+              <li><a href="/attendance-calculator/" class="dropdown-item">Attendance Calculator</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
     </div>
@@ -356,6 +373,23 @@
         <p class="hero-subtitle">Instantly shrink photos and documents to exact sizes in your browser.</p>
         <p class="hero-usecases">Perfect for job forms, exam forms, admission forms, and government portals.</p>
       </section>
+
+      <!-- Instant Tool Search -->
+      <div class="tool-search-box" role="search">
+        <div class="search-input-wrapper">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="search" id="toolSearchInput" class="tool-search-input" placeholder="Search all tools (e.g. GPA, PDF, compress, 50kb...)" aria-label="Search all tools">
+          <button type="button" id="clearSearchBtn" class="search-clear-btn is-hidden" aria-label="Clear search">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+        <div id="searchNoResults" class="search-no-results is-hidden">
+          <p>No tools found matching "<span id="searchQueryText"></span>". Try searching for <strong>PDF</strong>, <strong>Image</strong>, <strong>GPA</strong>, or <strong>Compress</strong>.</p>
+        </div>
+      </div>
 
       <!-- Ad Slot 1: Above Picker -->
       <div class="ad-slot" aria-hidden="true">
@@ -899,6 +933,86 @@
               </div>
             </div>
             <a href="/images-to-pdf/" class="btn btn-primary btn-block">Open Tool</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Student Tools -->
+      <section id="student-tools" aria-labelledby="studentToolsTitle">
+        <div class="section-header">
+          <h2 id="studentToolsTitle">Student Tools</h2>
+          <p class="section-subtitle">Fast, accurate GPA, CGPA, percentage, and attendance calculators with instant results.</p>
+        </div>
+
+        <div class="tools-grid-cards">
+          <!-- 1. GPA Calculator -->
+          <div class="large-tool-card">
+            <div class="tool-info-top">
+              <div class="tool-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+              </div>
+              <div>
+                <h3 class="tool-title">gpa calculator</h3>
+                <p class="tool-desc">Calculate semester GPA with custom credit hours and editable grade scales.</p>
+              </div>
+            </div>
+            <a href="/gpa-calculator/" class="btn btn-primary btn-block">Open Tool</a>
+          </div>
+
+          <!-- 2. CGPA Calculator -->
+          <div class="large-tool-card">
+            <div class="tool-info-top">
+              <div class="tool-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+              </div>
+              <div>
+                <h3 class="tool-title">cgpa calculator</h3>
+                <p class="tool-desc">Calculate cumulative GPA across all semesters and plan target grades.</p>
+              </div>
+            </div>
+            <a href="/cgpa-calculator/" class="btn btn-primary btn-block">Open Tool</a>
+          </div>
+
+          <!-- 3. CGPA to Percentage -->
+          <div class="large-tool-card">
+            <div class="tool-info-top">
+              <div class="tool-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m4.93 4.93 14.14 14.14"></path></svg>
+              </div>
+              <div>
+                <h3 class="tool-title">cgpa to percentage</h3>
+                <p class="tool-desc">Convert CGPA to percentage or percentage to CGPA with custom scale or multiplier.</p>
+              </div>
+            </div>
+            <a href="/cgpa-to-percentage/" class="btn btn-primary btn-block">Open Tool</a>
+          </div>
+
+          <!-- 4. Percentage Calculator -->
+          <div class="large-tool-card">
+            <div class="tool-info-top">
+              <div class="tool-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="5" x2="5" y2="19"></line><circle cx="6.5" cy="6.5" r="2.5"></circle><circle cx="17.5" cy="17.5" r="2.5"></circle></svg>
+              </div>
+              <div>
+                <h3 class="tool-title">percentage calculator</h3>
+                <p class="tool-desc">Calculate percentages, percentage change, fractions, and exam marks instantly.</p>
+              </div>
+            </div>
+            <a href="/percentage-calculator/" class="btn btn-primary btn-block">Open Tool</a>
+          </div>
+
+          <!-- 5. Attendance Calculator -->
+          <div class="large-tool-card">
+            <div class="tool-info-top">
+              <div class="tool-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              </div>
+              <div>
+                <h3 class="tool-title">attendance calculator</h3>
+                <p class="tool-desc">Track attendance percentage and calculate how many classes you must attend.</p>
+              </div>
+            </div>
+            <a href="/attendance-calculator/" class="btn btn-primary btn-block">Open Tool</a>
           </div>
         </div>
       </section>

@@ -934,52 +934,186 @@ a:hover, a:focus-visible {
   text-decoration: none;
 }
 
-/* Mobile Responsive Header & Nav */
-@media (max-width: 639px) {
+/* Mobile Navigation Toggle Button */
+.nav-toggle-btn {
+  display: none;
+  background: none;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-main);
+  padding: 8px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.nav-toggle-btn:hover {
+  background-color: var(--bg-subtle);
+  color: var(--primary);
+}
+
+/* Mobile Responsive Header & Accordion Menu */
+@media (max-width: 768px) {
   .header-inner {
     height: auto;
     min-height: 56px;
     padding-top: 8px;
     padding-bottom: 8px;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
-    gap: 6px;
   }
 
-  .brand-logo {
-    font-size: 1.15rem;
+  .nav-toggle-btn {
+    display: inline-flex;
+  }
+
+  .site-header nav {
+    display: none;
+    width: 100%;
+    margin-top: 8px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 8px;
+  }
+
+  .site-header nav.is-open {
+    display: block;
   }
 
   .nav-links {
-    justify-content: center;
-    gap: 4px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
     width: 100%;
   }
 
-  .nav-link {
-    font-size: 0.8125rem;
-    padding: 6px 8px;
-    min-height: 48px;
+  .nav-item-dropdown {
+    width: 100%;
   }
 
+  .dropdown-toggle {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 14px;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    color: var(--text-main);
+    font-size: 0.9375rem;
+    min-height: 44px;
+  }
+
+  .dropdown-toggle:hover,
+  .nav-item-dropdown.is-open .dropdown-toggle {
+    border-color: var(--primary);
+    color: var(--primary);
+    background-color: var(--bg-subtle);
+  }
+
+  /* In-flow Accordion panel */
   .nav-item-dropdown .dropdown-menu {
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: calc(100vw - 20px);
-    width: 260px;
+    position: static;
+    display: none;
+    width: 100%;
+    max-width: 100%;
+    transform: none;
+    box-shadow: none;
+    border: 1px solid var(--border-color);
+    border-top: none;
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+    margin-top: -5px;
+    margin-bottom: 6px;
+    max-height: 320px;
+    overflow-y: auto;
+    background-color: var(--bg-primary);
   }
 
-  .nav-item-dropdown:first-child .dropdown-menu {
-    left: 0;
-    transform: none;
+  .nav-item-dropdown.is-open .dropdown-menu {
+    display: block;
   }
 
-  .nav-item-dropdown:last-child .dropdown-menu {
-    left: auto;
-    right: 0;
-    transform: none;
+  .dropdown-item {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--border-color);
   }
+
+  .dropdown-item:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Homepage Tool Search Box */
+.tool-search-box {
+  margin: 1.5rem auto 2rem auto;
+  max-width: 600px;
+  width: 100%;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--text-light);
+  pointer-events: none;
+}
+
+.tool-search-input {
+  width: 100%;
+  padding: 12px 42px 12px 44px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--text-main);
+  background-color: var(--bg-surface);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-full);
+  outline: none;
+  min-height: 50px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.tool-search-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-light);
+}
+
+.search-clear-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--text-light);
+  cursor: pointer;
+  padding: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  min-height: 32px;
+  min-width: 32px;
+}
+
+.search-clear-btn:hover {
+  color: var(--text-main);
+  background-color: var(--bg-subtle);
+}
+
+.search-no-results {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: var(--bg-surface);
+  border: 1px dashed var(--border-color);
+  border-radius: var(--radius-md);
+  margin-top: 1.5rem;
+  color: var(--text-muted);
 }
 
 /* Custom Size & Option Input Controls */
