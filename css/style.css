@@ -302,6 +302,21 @@ a:hover, a:focus-visible {
   color: var(--text-light);
 }
 
+@media (max-width: 480px) {
+  .step-tracker {
+    gap: 4px;
+  }
+  .step-item {
+    gap: 4px;
+    font-size: 0.75rem;
+  }
+  .step-number {
+    width: 24px;
+    height: 24px;
+    font-size: 0.75rem;
+  }
+}
+
 .step-number {
   display: inline-flex;
   align-items: center;
