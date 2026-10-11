@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plot Price Calculator - Free Online | FileShrink</title>
+  <meta name="description" content="Calculate land and property rates with our free plot price calculator. Convert units, add charges, no signup, no watermark. Fast and private tool.">
+  <link rel="canonical" href="https://fileshrink.vercel.app/plot-price-calculator/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Plot Price Calculator - Free Online | FileShrink">
+  <meta property="og:description" content="Calculate land and property rates with our free plot price calculator. Convert units, add charges, no signup, no watermark. Fast and private tool.">
+  <meta property="og:url" content="https://fileshrink.vercel.app/plot-price-calculator/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Plot Price Calculator - Free Online | FileShrink">
+  <meta name="twitter:description" content="Calculate land and property rates with our free plot price calculator. Convert units, add charges, no signup, no watermark. Fast and private tool.">
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/calculators.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Plot Price Calculator",
+        "url": "https://fileshrink.vercel.app/plot-price-calculator/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://fileshrink.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Plot Price Calculator",
+            "item": "https://fileshrink.vercel.app/plot-price-calculator/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does this plot price calculator handle differing land measurement units?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The calculator harmonizes measurements by converting your selected area and rate basis into square feet, accurately accounting for regional marla standards before calculating final totals."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is it important to verify the local marla size when calculating plot prices?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In Pakistan, standard revenue land measurement uses 272.25 square feet per marla, whereas schemes like LDA in Lahore often adopt 225 square feet, and Islamabad CDA societies use 250 square feet."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do development charges and discounts affect the total plot cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Development charges add external infrastructure costs to the base land value, while discount percentages subtract promotional deductions before presenting the final payable price."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-logo" aria-label="FileShrink Home">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path>
+          <path d="M12 12v9"></path>
+          <path d="m8 17 4 4 4-4"></path>
+        </svg>
+        <span>FileShrink</span>
+      </a>
+      <button type="button" class="nav-toggle-btn" id="navToggleBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li class="nav-item-dropdown">
+            <a href="/#image-tools" class="nav-link dropdown-toggle">Image Tools <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <ul class="dropdown-menu">
+              <li><a href="/compress-image-to-20kb/" class="dropdown-item">Compress to 20KB</a></li>
+              <li><a href="/compress-image-to-30kb/" class="dropdown-item">Compress to 30KB</a></li>
+              <li><a href="/compress-image-to-50kb/" class="dropdown-item">Compress to 50KB</a></li>
+              <li><a href="/compress-image-to-100kb/" class="dropdown-item">Compress to 100KB</a></li>
+              <li><a href="/compress-image-to-150kb/" class="dropdown-item">Compress to 150KB</a></li>
+              <li><a href="/compress-image-to-200kb/" class="dropdown-item">Compress to 200KB</a></li>
+              <li><a href="/compress-image-to-500kb/" class="dropdown-item">Compress to 500KB</a></li>
+              <li><a href="/reduce-image-size-in-kb/" class="dropdown-item">Custom Size in KB</a></li>
+              <li><a href="/signature-resizer/" class="dropdown-item">Signature Resizer</a></li>
+              <li><a href="/passport-photo-size-in-pixels/" class="dropdown-item">Passport Photo Maker</a></li>
+              <li><a href="/cnic-front-and-back-in-one-page/" class="dropdown-item">CNIC Front & Back</a></li>
+            </ul>
+          </li>
+          <li class="nav-item-dropdown">
+            <a href="/#pdf-tools" class="nav-link dropdown-toggle">PDF Tools <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <ul class="dropdown-menu">
+              <li><a href="/compress-pdf-to-100kb/" class="dropdown-item">Compress PDF to 100KB</a></li>
+              <li><a href="/compress-pdf-to-200kb/" class="dropdown-item">Compress PDF to 200KB</a></li>
+              <li><a href="/compress-pdf-to-500kb/" class="dropdown-item">Compress PDF to 500KB</a></li>
+              <li><a href="/compress-pdf-to-1mb/" class="dropdown-item">Compress PDF to 1MB</a></li>
+              <li><a href="/compress-pdf-to-2mb/" class="dropdown-item">Compress PDF to 2MB</a></li>
+              <li><a href="/merge-pdf-files/" class="dropdown-item">Merge PDF Files</a></li>
+              <li><a href="/split-pdf/" class="dropdown-item">Split PDF</a></li>
+              <li><a href="/extract-pages-from-pdf/" class="dropdown-item">Extract PDF Pages</a></li>
+              <li><a href="/remove-pages-from-pdf/" class="dropdown-item">Remove PDF Pages</a></li>
+              <li><a href="/add-page-numbers-to-pdf/" class="dropdown-item">Add Page Numbers to PDF</a></li>
+            </ul>
+          </li>
+          <li class="nav-item-dropdown">
+            <a href="/#converters" class="nav-link dropdown-toggle">Converters <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <ul class="dropdown-menu">
+              <li><a href="/jpeg-to-png/" class="dropdown-item">JPEG to PNG</a></li>
+              <li><a href="/png-to-jpg-converter/" class="dropdown-item">PNG to JPG</a></li>
+              <li><a href="/heic-to-jpg/" class="dropdown-item">HEIC to JPG</a></li>
+              <li><a href="/webp-to-jpg/" class="dropdown-item">WebP to JPG</a></li>
+              <li><a href="/webp-to-png/" class="dropdown-item">WebP to PNG</a></li>
+              <li><a href="/pdf-to-jpg-converter/" class="dropdown-item">PDF to JPG</a></li>
+              <li><a href="/pdf-to-png/" class="dropdown-item">PDF to PNG</a></li>
+              <li><a href="/images-to-pdf/" class="dropdown-item">Images to PDF</a></li>
+            </ul>
+          </li>
+          <li class="nav-item-dropdown">
+            <a href="/#student-tools" class="nav-link dropdown-toggle">Student Tools <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <ul class="dropdown-menu">
+              <li><a href="/pomodoro-timer/" class="dropdown-item">Pomodoro Timer</a></li>
+              <li><a href="/assignment-cover-page/" class="dropdown-item">Assignment Cover Page</a></li>
+              <li><a href="/cover-letter-generator/" class="dropdown-item">Cover Letter Generator</a></li>
+              <li><a href="/gpa-calculator/" class="dropdown-item">GPA Calculator</a></li>
+              <li><a href="/cgpa-calculator/" class="dropdown-item">CGPA Calculator</a></li>
+              <li><a href="/cgpa-to-percentage/" class="dropdown-item">CGPA to Percentage</a></li>
+              <li><a href="/percentage-calculator/" class="dropdown-item">Percentage Calculator</a></li>
+              <li><a href="/attendance-calculator/" class="dropdown-item">Attendance Calculator</a></li>
+            </ul>
+          </li>
+          <li class="nav-item-dropdown">
+            <a href="/#property-tools" class="nav-link dropdown-toggle">Property Tools <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <ul class="dropdown-menu">
+              <li><a href="/house-construction-cost-calculator/" class="dropdown-item">House Construction Cost</a></li>
+              <li><a href="/installment-calculator/" class="dropdown-item">Installment Calculator</a></li>
+              <li><a href="/plot-price-calculator/" class="dropdown-item">Plot Price Calculator</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/#property-tools">Property Tools</a></li>
+          <li aria-current="page">Plot Price Calculator</li>
+        </ol>
+      </nav>
+
+      <!-- Page Intro Header -->
+      <header class="page-intro">
+        <h1>Plot Price Calculator</h1>
+        <p class="page-subtitle">Calculate total plot values, land rates, and unit conversions quickly and accurately.</p>
+      </header>
+
+      <!-- Privacy Callout -->
+      <div class="calc-privacy-note">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+        <span>Nothing is uploaded or saved. Everything works on your device.</span>
+      </div>
+
+      <!-- Ad Slot 1: Above Calculator -->
+      <div class="ad-slot" aria-hidden="true">
+        <div class="ad-slot-placeholder">Advertisement</div>
+      </div>
+
+      <!-- 2-Step Flow Indicator -->
+      <div class="calc-steps" aria-hidden="true">
+        <div class="calc-step-item active">
+          <span class="calc-step-num">1</span>
+          <span>Enter your numbers</span>
+        </div>
+        <div class="calc-step-divider"></div>
+        <div class="calc-step-item active">
+          <span class="calc-step-num">2</span>
+          <span>See your result</span>
+        </div>
+      </div>
+
+      <!-- Settings Bar (Shared Preferences) -->
+      <div class="calc-settings-bar" aria-label="Calculator Settings">
+        <div class="calc-settings-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          <span>Display Settings</span>
+        </div>
+        <div class="calc-settings-group">
+          <!-- Number Style -->
+          <div class="calc-setting-item">
+            <span class="calc-setting-label">Style:</span>
+            <div class="calc-toggle-btn-group" role="group" aria-label="Number formatting style">
+              <button type="button" class="calc-toggle-btn setting-num-style-btn active" data-style="standard" aria-pressed="true">1,000,000</button>
+              <button type="button" class="calc-toggle-btn setting-num-style-btn" data-style="lakh" aria-pressed="false">10,00,000</button>
+            </div>
+          </div>
+          <!-- Currency Label -->
+          <div class="calc-setting-item">
+            <label for="settingCurrencySelect" class="calc-setting-label">Currency:</label>
+            <select id="settingCurrencySelect" class="calc-setting-select" aria-label="Currency label display">
+              <option value="PKR">PKR</option>
+              <option value="INR">INR</option>
+              <option value="USD">USD</option>
+              <option value="none">None</option>
+            </select>
+          </div>
+          <!-- Marla Size -->
+          <div class="calc-setting-item">
+            <label for="settingMarlaSelect" class="calc-setting-label">Marla:</label>
+            <select id="settingMarlaSelect" class="calc-setting-select" aria-label="Marla size setting">
+              <option value="272.25">Standard (272.25 sq ft)</option>
+              <option value="250">Islamabad (250 sq ft)</option>
+              <option value="225">Lahore LDA (225 sq ft)</option>
+              <option value="custom">Custom</option>
+            </select>
+            <span id="settingMarlaCustomGroup" style="display: none; align-items: center; gap: 4px;">
+              <input type="text" id="settingMarlaCustomInput" inputmode="decimal" class="calc-setting-select" style="width: 70px; padding: 4px 6px;" placeholder="sq ft">
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Calculator Card -->
+      <section class="calc-card" aria-label="Plot Price Calculator Form">
+        <!-- Input Fields Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+          <!-- Plot Area & Unit -->
+          <div class="calc-field-group">
+            <label for="plotArea" class="calc-label">Plot Area</label>
+            <div style="display: flex; gap: 8px;">
+              <input type="text" id="plotArea" inputmode="decimal" class="calc-input" placeholder="e.g. 5" style="flex: 1;">
+              <select id="plotUnit" class="calc-input" style="width: 140px; cursor: pointer;" aria-label="Plot area unit">
+                <option value="marla">Marla</option>
+                <option value="kanal">Kanal</option>
+                <option value="sqft">Square Feet</option>
+                <option value="sqyd">Square Yard</option>
+                <option value="sqm">Square Meter</option>
+              </select>
+            </div>
+            <div class="calc-hint">
+              Marla size in use: <span class="marla-indicator-badge marla-size-text">272.25 sq ft</span>
+            </div>
+          </div>
+
+          <!-- Price Rate & Basis -->
+          <div class="calc-field-group">
+            <label for="plotRate" class="calc-label">Price Rate & Basis</label>
+            <div style="display: flex; gap: 8px;">
+              <input type="text" id="plotRate" inputmode="decimal" class="calc-input" placeholder="Enter rate" style="flex: 1;">
+              <select id="plotBasis" class="calc-input" style="width: 150px; cursor: pointer;" aria-label="Price rate basis">
+                <option value="marla">per marla</option>
+                <option value="kanal">per kanal</option>
+                <option value="sqft">per square foot</option>
+                <option value="sqyd">per square yard</option>
+              </select>
+            </div>
+            <div class="calc-hint">Enter the quoted price rate per unit</div>
+          </div>
+
+          <!-- Development / Extra Charges -->
+          <div class="calc-field-group">
+            <label for="plotExtras" class="calc-label">Development / Other Charges (Optional)</label>
+            <input type="text" id="plotExtras" inputmode="decimal" class="calc-input" placeholder="e.g. 50000">
+            <div class="calc-hint">Infrastructure, utility, or possession charges</div>
+          </div>
+
+          <!-- Discount % -->
+          <div class="calc-field-group">
+            <label for="plotDiscount" class="calc-label">Discount % (Optional)</label>
+            <input type="text" id="plotDiscount" inputmode="decimal" class="calc-input" placeholder="0">
+            <div class="calc-hint">Lump sum or promotional concession %</div>
+          </div>
+        </div>
+
+        <!-- Result Box -->
+        <div class="calc-result-box" aria-live="polite">
+          <div class="calc-result-title">Estimated Total Plot Price</div>
+          <div id="plotPrimaryResult" class="calc-result-primary">—</div>
+          <p id="plotMessage" style="font-size: 0.875rem; color: var(--text-muted); margin: 6px 0;"></p>
+
+          <!-- Cost Breakdown Grid -->
+          <div class="prop-stats-grid">
+            <div class="prop-stat-card">
+              <span class="prop-stat-label">Base Land Price</span>
+              <span id="plotBasePrice" class="prop-stat-val">—</span>
+              <span class="prop-stat-sub">Area × Quoted Rate</span>
+            </div>
+            <div class="prop-stat-card">
+              <span class="prop-stat-label">Development Charges</span>
+              <span id="plotExtrasAmount" class="prop-stat-val">—</span>
+              <span class="prop-stat-sub">Added charges</span>
+            </div>
+            <div class="prop-stat-card">
+              <span class="prop-stat-label">Discount Amount</span>
+              <span id="plotDiscountAmount" class="prop-stat-val">—</span>
+              <span class="prop-stat-sub">Concession deducted</span>
+            </div>
+          </div>
+
+          <!-- Note Near Result -->
+          <div class="calc-note-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            <span>Prices vary by location and scheme. Enter the rate you were quoted.</span>
+          </div>
+
+          <!-- Formula Text -->
+          <div id="plotFormulaText" class="calc-formula-text">
+            Formula: Total Price = Base Price (Area × Rate) + Development Charges − Discount Amount.
+          </div>
+
+          <!-- Result Buttons -->
+          <div class="calc-result-btns">
+            <button type="button" id="copyPlotBtn" class="btn-calc-action btn-calc-copy">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>
+              Copy Result
+            </button>
+            <button type="button" id="clearPlotBtn" class="btn-calc-action btn-calc-clear">
+              Clear
+            </button>
+          </div>
+        </div>
+
+        <!-- Area in All Common Units Section -->
+        <div id="areaUnitsCard" class="units-breakdown-card">
+          <div class="units-breakdown-title">
+            <span>Area in All Common Units</span>
+            <a href="#areaUnitsCard" class="btn-schedule-action" style="font-size: 0.75rem; text-decoration: none;">
+              Need to convert units?
+            </a>
+          </div>
+          <div class="units-grid">
+            <div class="unit-cell">
+              <div id="unitMarlaVal" class="unit-cell-val">0</div>
+              <div class="unit-cell-lbl">Marla</div>
+            </div>
+            <div class="unit-cell">
+              <div id="unitKanalVal" class="unit-cell-val">0</div>
+              <div class="unit-cell-lbl">Kanal</div>
+            </div>
+            <div class="unit-cell">
+              <div id="unitSqFtVal" class="unit-cell-val">0</div>
+              <div class="unit-cell-lbl">Square Feet</div>
+            </div>
+            <div class="unit-cell">
+              <div id="unitSqYdVal" class="unit-cell-val">0</div>
+              <div class="unit-cell-lbl">Square Yard</div>
+            </div>
+            <div class="unit-cell">
+              <div id="unitSqMVal" class="unit-cell-val">0</div>
+              <div class="unit-cell-lbl">Square Meter</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ad Slot 2: Between Sections -->
+      <div class="ad-slot" aria-hidden="true">
+        <div class="ad-slot-placeholder">Advertisement</div>
+      </div>
+
+      <!-- How to Section (Short 3 lines) -->
+      <section class="info-section" aria-labelledby="howToHeading">
+        <h2 id="howToHeading">How to Calculate Plot Price in 3 Steps</h2>
+        <div class="steps-grid">
+          <div class="step-card">
+            <span class="step-number" aria-hidden="true">1</span>
+            <h3>Enter Area and Unit</h3>
+            <p>Input your land area in marla, kanal, or square feet using your numeric keyboard.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-number" aria-hidden="true">2</span>
+            <h3>Specify Price and Basis</h3>
+            <p>Type your quoted rate and choose whether the pricing is per marla, kanal, or square foot.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-number" aria-hidden="true">3</span>
+            <h3>Inspect Instant Values</h3>
+            <p>Review total price, development fees, and multi-unit area conversions immediately.</p>
+          </div>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-muted); margin-top: 1rem;">
+          Our plot price calculator automatically balances different unit combinations so buyers and sellers can compare rates across diverse housing societies.
+        </p>
+      </section>
+
+      <!-- Ad Slot 3: In-Content -->
+      <div class="ad-slot" aria-hidden="true">
+        <div class="ad-slot-placeholder">Advertisement</div>
+      </div>
+
+      <!-- Frequently Asked Questions -->
+      <section class="info-section" aria-labelledby="faqHeading">
+        <h2 id="faqHeading">Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3 class="faq-question">How does this plot price calculator handle differing land measurement units?</h3>
+            <p class="faq-answer">The calculator harmonizes measurements by converting your selected area and rate basis into square feet, accurately accounting for regional marla standards before calculating final totals.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">Why is it important to verify the local marla size when calculating plot prices?</h3>
+            <p class="faq-answer">In Pakistan, standard revenue land measurement uses 272.25 square feet per marla, whereas schemes like LDA in Lahore often adopt 225 square feet, and Islamabad CDA societies use 250 square feet.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">How do development charges and discounts affect the total plot cost?</h3>
+            <p class="faq-answer">Development charges add external infrastructure costs to the base land value, while discount percentages subtract promotional deductions before presenting the final payable price.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- More Tools Section (4 Tools) -->
+      <section class="info-section" aria-labelledby="moreToolsHeading">
+        <h2 id="moreToolsHeading">More Free Property & Financial Tools</h2>
+        <div class="tools-grid">
+          <a href="/house-construction-cost-calculator/" class="tool-card-btn">
+            <span>House Construction Cost</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+          <a href="/installment-calculator/" class="tool-card-btn">
+            <span>Installment Calculator</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+          <a href="/percentage-calculator/" class="tool-card-btn">
+            <span>Percentage Calculator</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+          <a href="/reduce-image-size-in-kb/" class="tool-card-btn">
+            <span>Reduce Image Size in KB</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="copyright">&copy; 2026 FileShrink. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+        <li><a href="/terms/">Terms of Service</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookieBanner" class="cookie-banner is-hidden" role="region" aria-label="Cookie consent">
+    <span class="cookie-text">We use cookies to improve your experience and display relevant ads.</span>
+    <button type="button" id="cookieAcceptBtn" class="btn-cookie-ok">OK</button>
+  </div>
+
+  <!-- Shared & Calculator Scripts -->
+  <script src="/js/main.js"></script>
+  <script src="/js/calculators.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      window.initPlotPriceCalculator();
+    });
+  </script>
+</body>
+</html>

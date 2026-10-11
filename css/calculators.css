@@ -1212,4 +1212,419 @@
   margin-top: 2px;
 }
 
+/* ==========================================================================
+   Property & Real Estate Calculators Styles (/css/calculators.css)
+   ========================================================================== */
+
+/* Shared Settings Bar (Number Style, Currency Label, Marla Size) */
+.calc-settings-bar {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.calc-settings-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.calc-settings-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.calc-setting-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+}
+
+.calc-setting-label {
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.calc-setting-select {
+  padding: 6px 10px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  outline: none;
+  min-height: 34px;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.calc-setting-select:focus {
+  border-color: var(--primary);
+}
+
+.calc-toggle-btn-group {
+  display: inline-flex;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 2px;
+  gap: 2px;
+}
+
+.calc-toggle-btn {
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  min-height: 28px;
+}
+
+.calc-toggle-btn.active {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.marla-indicator-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary);
+  background-color: var(--primary-light);
+  border: 1px solid var(--primary-border);
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+}
+
+/* Property Stats Grid Breakdown */
+.prop-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 1.25rem 0;
+}
+
+.prop-stat-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.prop-stat-card:hover {
+  border-color: var(--primary-border);
+}
+
+.prop-stat-card.highlight {
+  background: linear-gradient(135deg, var(--bg-surface) 0%, var(--primary-light) 100%);
+  border-color: var(--primary);
+}
+
+.prop-stat-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.prop-stat-val {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.2;
+  word-break: break-word;
+  font-variant-numeric: tabular-nums;
+}
+
+.prop-stat-card.highlight .prop-stat-val {
+  color: var(--primary);
+}
+
+.prop-stat-sub {
+  font-size: 0.6875rem;
+  color: var(--text-light);
+  margin-top: 4px;
+}
+
+/* Calculator Note Box (Disclaimer / Quotes) */
+.calc-note-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 14px;
+  margin: 1.25rem 0;
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid #f59e0b;
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  text-align: left;
+}
+
+.calc-note-box svg {
+  color: #f59e0b;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Payment Schedule Table */
+.schedule-section {
+  margin-top: 1.75rem;
+  text-align: left;
+}
+
+.schedule-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.schedule-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.schedule-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.btn-schedule-action {
+  padding: 6px 12px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-main);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  transition: all 0.15s ease;
+}
+
+.btn-schedule-action:hover {
+  background-color: var(--bg-subtle);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.schedule-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-surface);
+  -webkit-overflow-scrolling: touch;
+  max-height: 520px;
+  overflow-y: auto;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+  font-size: 0.875rem;
+}
+
+.schedule-table th {
+  background-color: var(--bg-subtle);
+  color: var(--text-main);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  padding: 10px 12px;
+  text-align: right;
+  border-bottom: 2px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.schedule-table th:first-child,
+.schedule-table th:nth-child(2) {
+  text-align: left;
+}
+
+.schedule-table td {
+  padding: 8px 12px;
+  text-align: right;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-main);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.schedule-table td:first-child,
+.schedule-table td:nth-child(2) {
+  text-align: left;
+}
+
+.schedule-table tbody tr:nth-child(even) {
+  background-color: var(--bg-primary);
+}
+
+.schedule-table tbody tr:hover {
+  background-color: var(--primary-light);
+}
+
+.schedule-pagination {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.btn-schedule-toggle {
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--primary);
+  cursor: pointer;
+  min-height: 38px;
+  transition: all 0.15s ease;
+}
+
+.btn-schedule-toggle:hover {
+  background-color: var(--primary-light);
+  border-color: var(--primary);
+}
+
+/* Area Common Units Breakdown Grid */
+.units-breakdown-card {
+  margin-top: 1.5rem;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  text-align: left;
+}
+
+.units-breakdown-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.units-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 10px;
+}
+
+.unit-cell {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  text-align: center;
+}
+
+.unit-cell-val {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 2px;
+  font-variant-numeric: tabular-nums;
+  word-break: break-word;
+}
+
+.unit-cell-lbl {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: capitalize;
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt;
+  }
+  .site-header,
+  .site-footer,
+  .breadcrumbs,
+  .page-intro p,
+  .calc-privacy-note,
+  .ad-slot,
+  .calc-steps,
+  .calc-settings-bar,
+  .calc-result-btns,
+  .schedule-actions,
+  .schedule-pagination,
+  .info-section,
+  .cookie-banner {
+    display: none !important;
+  }
+  .calc-card {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+  .schedule-table-wrap {
+    max-height: none !important;
+    overflow: visible !important;
+    border: 1px solid #000 !important;
+  }
+  .schedule-table {
+    min-width: 100% !important;
+  }
+  .schedule-table th,
+  .schedule-table td {
+    padding: 4px 6px !important;
+    font-size: 9pt !important;
+    border: 1px solid #ddd !important;
+  }
+}
+
+
 

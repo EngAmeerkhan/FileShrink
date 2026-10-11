@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Installment Calculator - Free Online | FileShrink</title>
+  <meta name="description" content="Calculate loan schedules with our free installment calculator. View payment tables, total interest, no signup, no watermark. Works on your device.">
+  <link rel="canonical" href="https://fileshrink.vercel.app/installment-calculator/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Installment Calculator - Free Online | FileShrink">
+  <meta property="og:description" content="Calculate loan schedules with our free installment calculator. View payment tables, total interest, no signup, no watermark. Works on your device.">
+  <meta property="og:url" content="https://fileshrink.vercel.app/installment-calculator/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Installment Calculator - Free Online | FileShrink">
+  <meta name="twitter:description" content="Calculate loan schedules with our free installment calculator. View payment tables, total interest, no signup, no watermark. Works on your device.">
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/calculators.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Installment Calculator",
+        "url": "https://fileshrink.vercel.app/installment-calculator/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://fileshrink.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Installment Calculator",
+            "item": "https://fileshrink.vercel.app/installment-calculator/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does this installment calculator determine periodic repayment amounts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When zero interest applies, the calculator divides the financed balance equally across your selected terms. When interest is added, standard financial amortization computes the exact periodic payment."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use this as a plot installment calculator for real estate payment plans?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Buyers regularly use this tool as a plot installment calculator to break down residential and commercial property schedules across quarterly or semi-annual milestones."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is the final balance kept at exactly zero in the schedule table?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "To prevent floating-point rounding drift across long multi-year amortization tables, any fractional penny difference is automatically absorbed into the final installment payment."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-logo" aria-label="FileShrink Home">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path>
+          <path d="M12 12v9"></path>
+          <path d="m8 17 4 4 4-4"></path>
+        </svg>
+        <span>FileShrink</span>
+      </a>
+      <button type="button" class="nav-toggle-btn" id="navToggleBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li class="nav-item-dropdown">
+            <a href="/#image-tools" class="nav-link dropdown-toggle">Image Tools <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <ul class="dropdown-menu">
+              <li><a href="/compress-image-to-20kb/" class="dropdown-item">Compress to 20KB</a></li>
+              <li><a href="/compress-image-to-30kb/" class="dropdown-item">Compress to 30KB</a></li>
+              <li><a href="/compress-image-to-50kb/" class="dropdown-item">Compress to 50KB</a></li>
+              <li><a href="/compress-image-to-100kb/" class="dropdown-item">Compress to 100KB</a></li>
+              <li><a href="/compress-image-to-150kb/" class="dropdown-item">Compress to 150KB</a></li>
+              <li><a href="/compress-image-to-200kb/" class="dropdown-item">Compress to 200KB</a></li>
+              <li><a href="/compress-image-to-500kb/" class="dropdown-item">Compress to 500KB</a></li>
+              <li><a href="/reduce-image-size-in-kb/" class="dropdown-item">Custom Size in KB</a></li>
+              <li><a href="/signature-resizer/" class="dropdown-item">Signature Resizer</a></li>
+              <li><a href="/passport-photo-size-in-pixels/" class="dropdown-item">Passport Photo Maker</a></li>
+              <li><a href="/cnic-front-and-back-in-one-page/" class="dropdown-item">CNIC Front & Back</a></li>
+            </ul>
+          </li>
+          <li class="nav-item-dropdown">
+            <a href="/#pdf-tools" class="nav-link dropdown-toggle">PDF Tools <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <ul class="dropdown-menu">
+              <li><a href="/compress-pdf-to-100kb/" class="dropdown-item">Compress PDF to 100KB</a></li>
+              <li><a href="/compress-pdf-to-200kb/" class="dropdown-item">Compress PDF to 200KB</a></li>
+              <li><a href="/compress-pdf-to-500kb/" class="dropdown-item">Compress PDF to 500KB</a></li>
+              <li><a href="/compress-pdf-to-1mb/" class="dropdown-item">Compress PDF to 1MB</a></li>
+              <li><a href="/compress-pdf-to-2mb/" class="dropdown-item">Compress PDF to 2MB</a></li>
+              <li><a href="/merge-pdf-files/" class="dropdown-item">Merge PDF Files</a></li>
+              <li><a href="/split-pdf/" class="dropdown-item">Split PDF</a></li>
+              <li><a href="/extract-pages-from-pdf/" class="dropdown-item">Extract PDF Pages</a></li>
+              <li><a href="/remove-pages-from-pdf/" class="dropdown-item">Remove PDF Pages</a></li>
+              <li><a href="/add-page-numbers-to-pdf/" class="dropdown-item">Add Page Numbers to PDF</a></li>
+            </ul>
+          </li>
+          <li class="nav-item-dropdown">
+            <a href="/#converters" class="nav-link dropdown-toggle">Converters <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <ul class="dropdown-menu">
+              <li><a href="/jpeg-to-png/" class="dropdown-item">JPEG to PNG</a></li>
+              <li><a href="/png-to-jpg-converter/" class="dropdown-item">PNG to JPG</a></li>
+              <li><a href="/heic-to-jpg/" class="dropdown-item">HEIC to JPG</a></li>
+              <li><a href="/webp-to-jpg/" class="dropdown-item">WebP to JPG</a></li>
+              <li><a href="/webp-to-png/" class="dropdown-item">WebP to PNG</a></li>
+              <li><a href="/pdf-to-jpg-converter/" class="dropdown-item">PDF to JPG</a></li>
+              <li><a href="/pdf-to-png/" class="dropdown-item">PDF to PNG</a></li>
+              <li><a href="/images-to-pdf/" class="dropdown-item">Images to PDF</a></li>
+            </ul>
+          </li>
+          <li class="nav-item-dropdown">
+            <a href="/#student-tools" class="nav-link dropdown-toggle">Student Tools <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <ul class="dropdown-menu">
+              <li><a href="/pomodoro-timer/" class="dropdown-item">Pomodoro Timer</a></li>
+              <li><a href="/assignment-cover-page/" class="dropdown-item">Assignment Cover Page</a></li>
+              <li><a href="/cover-letter-generator/" class="dropdown-item">Cover Letter Generator</a></li>
+              <li><a href="/gpa-calculator/" class="dropdown-item">GPA Calculator</a></li>
+              <li><a href="/cgpa-calculator/" class="dropdown-item">CGPA Calculator</a></li>
+              <li><a href="/cgpa-to-percentage/" class="dropdown-item">CGPA to Percentage</a></li>
+              <li><a href="/percentage-calculator/" class="dropdown-item">Percentage Calculator</a></li>
+              <li><a href="/attendance-calculator/" class="dropdown-item">Attendance Calculator</a></li>
+            </ul>
+          </li>
+          <li class="nav-item-dropdown">
+            <a href="/#property-tools" class="nav-link dropdown-toggle">Property Tools <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <ul class="dropdown-menu">
+              <li><a href="/house-construction-cost-calculator/" class="dropdown-item">House Construction Cost</a></li>
+              <li><a href="/installment-calculator/" class="dropdown-item">Installment Calculator</a></li>
+              <li><a href="/plot-price-calculator/" class="dropdown-item">Plot Price Calculator</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/#property-tools">Property Tools</a></li>
+          <li aria-current="page">Installment Calculator</li>
+        </ol>
+      </nav>
+
+      <!-- Page Intro Header -->
+      <header class="page-intro">
+        <h1>Installment Calculator</h1>
+        <p class="page-subtitle">Calculate periodic installments, amortization schedules, and total interest charges effortlessly.</p>
+      </header>
+
+      <!-- Privacy Callout -->
+      <div class="calc-privacy-note">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+        <span>Nothing is uploaded or saved. Everything works on your device.</span>
+      </div>
+
+      <!-- Ad Slot 1: Above Calculator -->
+      <div class="ad-slot" aria-hidden="true">
+        <div class="ad-slot-placeholder">Advertisement</div>
+      </div>
+
+      <!-- 2-Step Flow Indicator -->
+      <div class="calc-steps" aria-hidden="true">
+        <div class="calc-step-item active">
+          <span class="calc-step-num">1</span>
+          <span>Enter your numbers</span>
+        </div>
+        <div class="calc-step-divider"></div>
+        <div class="calc-step-item active">
+          <span class="calc-step-num">2</span>
+          <span>See your result</span>
+        </div>
+      </div>
+
+      <!-- Settings Bar (Shared Preferences) -->
+      <div class="calc-settings-bar" aria-label="Calculator Settings">
+        <div class="calc-settings-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          <span>Display Settings</span>
+        </div>
+        <div class="calc-settings-group">
+          <!-- Number Style -->
+          <div class="calc-setting-item">
+            <span class="calc-setting-label">Style:</span>
+            <div class="calc-toggle-btn-group" role="group" aria-label="Number formatting style">
+              <button type="button" class="calc-toggle-btn setting-num-style-btn active" data-style="standard" aria-pressed="true">1,000,000</button>
+              <button type="button" class="calc-toggle-btn setting-num-style-btn" data-style="lakh" aria-pressed="false">10,00,000</button>
+            </div>
+          </div>
+          <!-- Currency Label -->
+          <div class="calc-setting-item">
+            <label for="settingCurrencySelect" class="calc-setting-label">Currency:</label>
+            <select id="settingCurrencySelect" class="calc-setting-select" aria-label="Currency label display">
+              <option value="PKR">PKR</option>
+              <option value="INR">INR</option>
+              <option value="USD">USD</option>
+              <option value="none">None</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Calculator Card -->
+      <section class="calc-card" aria-label="Installment Calculator Form">
+        <!-- Input Fields Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+          <!-- Total Price -->
+          <div class="calc-field-group">
+            <label for="instPrice" class="calc-label">Total Price</label>
+            <input type="text" id="instPrice" inputmode="decimal" class="calc-input" placeholder="e.g. 1200000">
+            <div class="calc-hint">Agreed full property or vehicle purchase price</div>
+          </div>
+
+          <!-- Down Payment with Toggle -->
+          <div class="calc-field-group">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+              <label for="instDownPayment" class="calc-label" style="margin-bottom: 0;">Down Payment</label>
+              <div class="calc-toggle-btn-group" role="group" aria-label="Down payment unit mode">
+                <button type="button" class="calc-toggle-btn down-toggle-btn active" data-mode="amount" aria-pressed="true">Amount</button>
+                <button type="button" class="calc-toggle-btn down-toggle-btn" data-mode="percent" aria-pressed="false">%</button>
+              </div>
+            </div>
+            <div style="position: relative;">
+              <input type="text" id="instDownPayment" inputmode="decimal" class="calc-input" placeholder="e.g. 200000">
+              <span id="downPaymentUnitLabel" style="position: absolute; right: 12px; top: 12px; font-size: 0.8125rem; color: var(--text-muted); pointer-events: none;">PKR</span>
+            </div>
+            <div class="calc-hint">Initial advance payment made upfront</div>
+          </div>
+
+          <!-- Number of Installments -->
+          <div class="calc-field-group">
+            <label for="instInstallments" class="calc-label">Number of Installments</label>
+            <input type="text" id="instInstallments" inputmode="decimal" class="calc-input" placeholder="e.g. 10">
+            <div class="calc-hint">Whole number of periods (up to 360)</div>
+          </div>
+
+          <!-- Frequency Selector -->
+          <div class="calc-field-group">
+            <label for="instFrequency" class="calc-label">Payment Frequency</label>
+            <select id="instFrequency" class="calc-input" style="cursor: pointer;" aria-label="Repayment frequency">
+              <option value="monthly">Monthly (Every month)</option>
+              <option value="quarterly">Quarterly (Every 3 months)</option>
+              <option value="half-yearly">Half-Yearly (Every 6 months)</option>
+              <option value="yearly">Yearly (Every 12 months)</option>
+            </select>
+            <div class="calc-hint">Interval between consecutive payments</div>
+          </div>
+
+          <!-- Optional Annual Interest Rate -->
+          <div class="calc-field-group">
+            <label for="instInterest" class="calc-label">Annual Interest Rate (%)</label>
+            <input type="text" id="instInterest" inputmode="decimal" class="calc-input" value="0" placeholder="0">
+            <div class="calc-hint">Optional annual markup (leave 0 for zero-interest plans)</div>
+          </div>
+        </div>
+
+        <!-- Result Box -->
+        <div class="calc-result-box" aria-live="polite">
+          <div class="calc-result-title">Periodic Installment Amount</div>
+          <div id="instPerPeriodResult" class="calc-result-primary">—</div>
+          <p id="instMessage" style="font-size: 0.875rem; color: var(--text-muted); margin: 6px 0;"></p>
+
+          <!-- Breakdown Grid -->
+          <div class="prop-stats-grid">
+            <div class="prop-stat-card">
+              <span class="prop-stat-label">Down Payment</span>
+              <span id="instDownResult" class="prop-stat-val">—</span>
+              <span class="prop-stat-sub">Paid upfront</span>
+            </div>
+            <div class="prop-stat-card">
+              <span class="prop-stat-label">Remaining Balance</span>
+              <span id="instBalanceResult" class="prop-stat-val">—</span>
+              <span class="prop-stat-sub">Principal financed</span>
+            </div>
+            <div class="prop-stat-card">
+              <span class="prop-stat-label">Total Interest</span>
+              <span id="instTotalInterest" class="prop-stat-val">—</span>
+              <span class="prop-stat-sub">Finance markup charges</span>
+            </div>
+            <div class="prop-stat-card highlight">
+              <span class="prop-stat-label">Total Payable</span>
+              <span id="instTotalPayable" class="prop-stat-val">—</span>
+              <span class="prop-stat-sub">Down payment + all installments</span>
+            </div>
+          </div>
+
+          <!-- Formula Text -->
+          <div id="instFormulaText" class="calc-formula-text">
+            Formula: Installment = (Price − Down Payment) ÷ Number of Installments.
+          </div>
+
+          <!-- Result Buttons -->
+          <div class="calc-result-btns">
+            <button type="button" id="copyInstBtn" class="btn-calc-action btn-calc-copy">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>
+              Copy Result
+            </button>
+            <button type="button" id="clearInstBtn" class="btn-calc-action btn-calc-clear">
+              Clear
+            </button>
+          </div>
+        </div>
+
+        <!-- Payment Schedule Section -->
+        <div class="schedule-section">
+          <div class="schedule-header">
+            <h2 class="schedule-title">Amortization Payment Schedule</h2>
+            <div class="schedule-actions">
+              <button type="button" id="copyScheduleBtn" class="btn-schedule-action" aria-label="Copy entire table to clipboard">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>
+                Copy Table
+              </button>
+              <button type="button" id="downloadCsvBtn" class="btn-schedule-action" aria-label="Download payment schedule as CSV">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                Download CSV
+              </button>
+              <button type="button" id="printScheduleBtn" class="btn-schedule-action" aria-label="Print payment schedule">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect width="12" height="8" x="6" y="14"></rect></svg>
+                Print
+              </button>
+            </div>
+          </div>
+
+          <!-- Schedule Table Wrapper (handles up to 360 rows without freezing) -->
+          <div class="schedule-table-wrap" tabindex="0" aria-label="Payment schedule scrollable table">
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Period</th>
+                  <th scope="col">Installment</th>
+                  <th scope="col">Interest Part</th>
+                  <th scope="col">Principal Part</th>
+                  <th scope="col">Balance</th>
+                </tr>
+              </thead>
+              <tbody id="scheduleTableBody">
+                <!-- Dynamically populated rows -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Schedule Toggle Pagination -->
+          <div class="schedule-pagination">
+            <button type="button" id="scheduleToggleBtn" class="btn-schedule-toggle" style="display: none;">
+              Show All Installments
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ad Slot 2: Between Sections -->
+      <div class="ad-slot" aria-hidden="true">
+        <div class="ad-slot-placeholder">Advertisement</div>
+      </div>
+
+      <!-- How to Section (Short 3 lines) -->
+      <section class="info-section" aria-labelledby="howToHeading">
+        <h2 id="howToHeading">How to Use Installment Calculator in 3 Steps</h2>
+        <div class="steps-grid">
+          <div class="step-card">
+            <span class="step-number" aria-hidden="true">1</span>
+            <h3>Enter Price and Down Payment</h3>
+            <p>Input the total price and enter your down payment as a fixed cash amount or percentage.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-number" aria-hidden="true">2</span>
+            <h3>Select Tenor and Frequency</h3>
+            <p>Set your required installment count (up to 360) and repayment schedule frequency.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-number" aria-hidden="true">3</span>
+            <h3>View and Export Schedule</h3>
+            <p>Instantly inspect the complete amortization breakdown, copy rows, download CSV, or print.</p>
+          </div>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-muted); margin-top: 1rem;">
+          Whether structuring personal loans or using it as a plot installment calculator for residential schemes, this tool gives exact period-by-period financial clarity.
+        </p>
+      </section>
+
+      <!-- Ad Slot 3: In-Content -->
+      <div class="ad-slot" aria-hidden="true">
+        <div class="ad-slot-placeholder">Advertisement</div>
+      </div>
+
+      <!-- Frequently Asked Questions -->
+      <section class="info-section" aria-labelledby="faqHeading">
+        <h2 id="faqHeading">Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3 class="faq-question">How does this installment calculator determine periodic repayment amounts?</h3>
+            <p class="faq-answer">When zero interest applies, the calculator divides the financed balance equally across your selected terms. When interest is added, standard financial amortization computes the exact periodic payment.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">Can I use this as a plot installment calculator for real estate payment plans?</h3>
+            <p class="faq-answer">Yes. Buyers regularly use this tool as a plot installment calculator to break down residential and commercial property schedules across quarterly or semi-annual milestones.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">How is the final balance kept at exactly zero in the schedule table?</h3>
+            <p class="faq-answer">To prevent floating-point rounding drift across long multi-year amortization tables, any fractional penny difference is automatically absorbed into the final installment payment.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- More Tools Section (4 Tools) -->
+      <section class="info-section" aria-labelledby="moreToolsHeading">
+        <h2 id="moreToolsHeading">More Free Property & Financial Tools</h2>
+        <div class="tools-grid">
+          <a href="/house-construction-cost-calculator/" class="tool-card-btn">
+            <span>House Construction Cost</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+          <a href="/plot-price-calculator/" class="tool-card-btn">
+            <span>Plot Price Calculator</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+          <a href="/percentage-calculator/" class="tool-card-btn">
+            <span>Percentage Calculator</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+          <a href="/reduce-image-size-in-kb/" class="tool-card-btn">
+            <span>Reduce Image Size in KB</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="copyright">&copy; 2026 FileShrink. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+        <li><a href="/terms/">Terms of Service</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookieBanner" class="cookie-banner is-hidden" role="region" aria-label="Cookie consent">
+    <span class="cookie-text">We use cookies to improve your experience and display relevant ads.</span>
+    <button type="button" id="cookieAcceptBtn" class="btn-cookie-ok">OK</button>
+  </div>
+
+  <!-- Shared & Calculator Scripts -->
+  <script src="/js/main.js"></script>
+  <script src="/js/calculators.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      window.initInstallmentCalculator();
+    });
+  </script>
+</body>
+</html>
