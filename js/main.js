@@ -124,19 +124,119 @@
     });
   }
 
-  // Homepage Instant Tool Search Filter
+  // Homepage Instant Tool Search Filter & Live Autocomplete
   function initToolSearch() {
     const searchInput = document.getElementById('toolSearchInput');
     const clearBtn = document.getElementById('clearSearchBtn');
     const noResults = document.getElementById('searchNoResults');
     const querySpan = document.getElementById('searchQueryText');
+    const searchForm = document.getElementById('toolSearchForm');
+    const dropdown = document.getElementById('toolSearchResultsDropdown');
     if (!searchInput) return;
 
-    const toolCards = document.querySelectorAll('.large-tool-card');
-    const sections = document.querySelectorAll('main section[id]');
+    // Collect all tool cards and sections on the page
+    const toolCardElements = Array.from(document.querySelectorAll('.large-tool-card'));
+    const sections = Array.from(document.querySelectorAll('main section[id]'));
+    const nonToolSections = Array.from(document.querySelectorAll('.picker-box, .trust-strip, .info-section, .ad-slot'));
+
+    // Build tool index
+    const tools = toolCardElements.map(card => {
+      const titleEl = card.querySelector('.tool-title');
+      const descEl = card.querySelector('.tool-desc');
+      const linkEl = card.querySelector('a[href]');
+      const iconEl = card.querySelector('.tool-icon-wrapper');
+      const section = card.closest('section');
+      const sectionTitle = section ? (section.querySelector('h2')?.textContent || '').trim() : '';
+
+      const title = titleEl ? titleEl.textContent.trim() : '';
+      const desc = descEl ? descEl.textContent.trim() : '';
+      const href = linkEl ? linkEl.getAttribute('href') : '';
+      const iconSvg = iconEl ? iconEl.innerHTML : '';
+
+      // Common keywords and synonyms
+      let extraKeywords = '';
+      const lowerTitle = title.toLowerCase();
+      if (lowerTitle.includes('gpa') || lowerTitle.includes('cgpa')) extraKeywords += ' grades marks percentage calculator academic semester';
+      if (lowerTitle.includes('calculator')) extraKeywords += ' calc estimate formula';
+      if (lowerTitle.includes('receipt')) extraKeywords += ' invoice bill voucher rent property token payment format pdf';
+      if (lowerTitle.includes('compress')) extraKeywords += ' shrink reduce size kb mb optimizer';
+      if (lowerTitle.includes('pdf')) extraKeywords += ' document doc adobe';
+      if (lowerTitle.includes('image') || lowerTitle.includes('photo')) extraKeywords += ' picture pic photo jpg jpeg png';
+      if (lowerTitle.includes('cnic')) extraKeywords += ' id card nadra identity card side';
+      if (lowerTitle.includes('passport')) extraKeywords += ' visa photo dimension pixel';
+
+      return {
+        card,
+        section,
+        title,
+        desc,
+        href,
+        category: sectionTitle,
+        iconSvg,
+        searchString: (title + ' ' + desc + ' ' + sectionTitle + ' ' + href + ' ' + extraKeywords).toLowerCase()
+      };
+    });
+
+    let selectedIndex = -1;
+    let currentMatches = [];
+
+    function escapeHtml(str) {
+      return (str || '').replace(/[&<>'"]/g, tag => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        "'": '&#39;',
+        '"': '&quot;'
+      }[tag] || tag));
+    }
+
+    function renderDropdown(matches, query) {
+      if (!dropdown) return;
+
+      if (!query) {
+        dropdown.classList.add('is-hidden');
+        dropdown.innerHTML = '';
+        selectedIndex = -1;
+        return;
+      }
+
+      currentMatches = matches;
+      selectedIndex = -1;
+
+      if (matches.length === 0) {
+        dropdown.innerHTML = '<div class="search-dropdown-empty">No tools found matching "<strong>' + escapeHtml(query) + '</strong>". Try searching for <em>GPA</em>, <em>PDF</em>, <em>Compress</em>, or <em>Receipt</em>.</div>';
+        dropdown.classList.remove('is-hidden');
+        return;
+      }
+
+      let html = '<div class="search-dropdown-header">';
+      html += '<span>Tools Found (' + matches.length + ')</span>';
+      html += '<span style="font-weight:400; text-transform:none; font-size:0.75rem;">Press Enter to open</span>';
+      html += '</div>';
+
+      matches.forEach((tool, idx) => {
+        html += '<a href="' + tool.href + '" class="search-dropdown-item" data-index="' + idx + '" role="option">';
+        html += '<div class="dropdown-item-icon">' + tool.iconSvg + '</div>';
+        html += '<div class="dropdown-item-info">';
+        html += '<div class="dropdown-item-title-row">';
+        html += '<span class="dropdown-item-title">' + escapeHtml(tool.title) + '</span>';
+        if (tool.category) {
+          html += '<span class="dropdown-item-badge">' + escapeHtml(tool.category) + '</span>';
+        }
+        html += '</div>';
+        html += '<p class="dropdown-item-desc">' + escapeHtml(tool.desc) + '</p>';
+        html += '</div>';
+        html += '<svg class="dropdown-item-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>';
+        html += '</a>';
+      });
+
+      dropdown.innerHTML = html;
+      dropdown.classList.remove('is-hidden');
+    }
 
     function filterTools() {
-      const q = searchInput.value.trim().toLowerCase();
+      const rawQuery = searchInput.value;
+      const q = rawQuery.trim().toLowerCase();
 
       if (clearBtn) {
         if (q.length > 0) {
@@ -147,36 +247,45 @@
       }
 
       if (q === '') {
-        toolCards.forEach(c => c.style.display = '');
+        // Reset everything to default homepage view
+        toolCardElements.forEach(c => c.style.display = '');
         sections.forEach(s => s.style.display = '');
+        nonToolSections.forEach(s => s.style.display = '');
         if (noResults) noResults.classList.add('is-hidden');
+        renderDropdown([], '');
         return;
       }
 
-      let totalVisible = 0;
-      toolCards.forEach(card => {
-        const text = (card.textContent || '').toLowerCase();
-        if (text.includes(q)) {
-          card.style.display = 'flex';
-          totalVisible++;
+      const terms = q.split(/\s+/).filter(Boolean);
+      const matched = tools.filter(tool => {
+        return terms.every(term => tool.searchString.includes(term));
+      });
+
+      // Update instant dropdown
+      renderDropdown(matched, rawQuery.trim());
+
+      // Update on-page layout: hide clutter so user immediately sees results
+      nonToolSections.forEach(s => s.style.display = 'none');
+
+      // Update card display
+      tools.forEach(tool => {
+        if (matched.includes(tool)) {
+          tool.card.style.display = 'flex';
         } else {
-          card.style.display = 'none';
+          tool.card.style.display = 'none';
         }
       });
 
-      // Show/hide sections based on child visibility
+      // Show/hide sections based on whether they contain any visible cards
       sections.forEach(sec => {
-        const visibleInSec = sec.querySelectorAll('.large-tool-card[style*="display: flex"], .large-tool-card:not([style*="display: none"])');
-        if (visibleInSec.length === 0) {
-          sec.style.display = 'none';
-        } else {
-          sec.style.display = '';
-        }
+        const hasVisible = Array.from(sec.querySelectorAll('.large-tool-card')).some(c => c.style.display !== 'none');
+        sec.style.display = hasVisible ? '' : 'none';
       });
 
+      // No results message on the page
       if (noResults) {
-        if (totalVisible === 0) {
-          if (querySpan) querySpan.textContent = searchInput.value.trim();
+        if (matched.length === 0) {
+          if (querySpan) querySpan.textContent = rawQuery.trim();
           noResults.classList.remove('is-hidden');
         } else {
           noResults.classList.add('is-hidden');
@@ -185,6 +294,74 @@
     }
 
     searchInput.addEventListener('input', filterTools);
+
+    searchInput.addEventListener('focus', function () {
+      if (searchInput.value.trim().length > 0 && currentMatches.length > 0) {
+        if (dropdown) dropdown.classList.remove('is-hidden');
+      }
+    });
+
+    // Keyboard navigation (Arrow keys, Enter, Escape)
+    searchInput.addEventListener('keydown', function (e) {
+      if (!dropdown || dropdown.classList.contains('is-hidden')) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          if (currentMatches.length > 0) {
+            window.location.href = currentMatches[0].href;
+          }
+        }
+        return;
+      }
+
+      const items = dropdown.querySelectorAll('.search-dropdown-item');
+      if (items.length === 0) return;
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        selectedIndex = (selectedIndex + 1) % items.length;
+        updateSelected(items);
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        selectedIndex = (selectedIndex - 1 + items.length) % items.length;
+        updateSelected(items);
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        if (selectedIndex >= 0 && items[selectedIndex]) {
+          window.location.href = items[selectedIndex].getAttribute('href');
+        } else if (currentMatches.length > 0) {
+          window.location.href = currentMatches[0].href;
+        }
+      } else if (e.key === 'Escape') {
+        dropdown.classList.add('is-hidden');
+      }
+    });
+
+    function updateSelected(items) {
+      items.forEach((item, idx) => {
+        if (idx === selectedIndex) {
+          item.classList.add('is-selected');
+          item.scrollIntoView({ block: 'nearest' });
+        } else {
+          item.classList.remove('is-selected');
+        }
+      });
+    }
+
+    // Close dropdown on click outside
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.tool-search-box')) {
+        if (dropdown) dropdown.classList.add('is-hidden');
+      }
+    });
+
+    if (searchForm) {
+      searchForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (currentMatches.length > 0) {
+          window.location.href = currentMatches[0].href;
+        }
+      });
+    }
 
     if (clearBtn) {
       clearBtn.addEventListener('click', function () {

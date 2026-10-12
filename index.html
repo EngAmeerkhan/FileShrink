@@ -389,16 +389,18 @@
 
       <!-- Instant Tool Search -->
       <div class="tool-search-box" role="search">
-        <div class="search-input-wrapper">
+        <form class="search-input-wrapper" id="toolSearchForm" action="javascript:void(0);" autocomplete="off">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon" aria-hidden="true">
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
-          <input type="search" id="toolSearchInput" class="tool-search-input" placeholder="Search all tools (e.g. GPA, PDF, compress, 50kb...)" aria-label="Search all tools">
+          <input type="search" id="toolSearchInput" class="tool-search-input" placeholder="Search all tools (e.g. GPA, PDF, compress, 50kb...)" aria-label="Search all tools" autocomplete="off">
           <button type="button" id="clearSearchBtn" class="search-clear-btn is-hidden" aria-label="Clear search">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
           </button>
-        </div>
+          <!-- Live Autocomplete Dropdown -->
+          <div id="toolSearchResultsDropdown" class="search-dropdown is-hidden" role="listbox" aria-label="Tool search results"></div>
+        </form>
         <div id="searchNoResults" class="search-no-results is-hidden">
           <p>No tools found matching "<span id="searchQueryText"></span>". Try searching for <strong>PDF</strong>, <strong>Image</strong>, <strong>GPA</strong>, or <strong>Compress</strong>.</p>
         </div>
@@ -1207,7 +1209,7 @@
   </div>
 
   <!-- Shared Script -->
-  <script src="/js/main.js"></script>
+  <script src="/js/main.js?v=20261012-2"></script>
   <script>
     // Quick Size Picker Tab Toggle
     document.addEventListener('DOMContentLoaded', function () {
