@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rent Receipt Generator - Free Online | FileShrink</title>
+  <meta name="description" content="Create instant receipts with our free rent receipt generator. Professional house rent receipt format, live preview, no signup, no watermark. Download PDF.">
+  <link rel="canonical" href="https://fileshrink.vercel.app/rent-receipt-generator/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Rent Receipt Generator - Free Online | FileShrink">
+  <meta property="og:description" content="Create instant receipts with our free rent receipt generator. Professional house rent receipt format, live preview, no signup, no watermark. Download PDF.">
+  <meta property="og:url" content="https://fileshrink.vercel.app/rent-receipt-generator/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Rent Receipt Generator - Free Online | FileShrink">
+  <meta name="twitter:description" content="Create instant receipts with our free rent receipt generator. Professional house rent receipt format, live preview, no signup, no watermark. Download PDF.">
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/calculators.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Rent Receipt Generator",
+        "url": "https://fileshrink.vercel.app/rent-receipt-generator/",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://fileshrink.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Rent Receipt Generator",
+            "item": "https://fileshrink.vercel.app/rent-receipt-generator/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What details should be included in a house rent receipt?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A complete house rent receipt format should state the tenant name, landlord name, rented property address, rent amount received, payment date, payment method, and rental period."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does a rent receipt format require a physical signature or revenue stamp?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "While many landlords and tenants prefer signing receipts for personal record keeping, requirements can vary depending on individual rental agreements and mutual understanding between parties."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can tenants and landlords keep accurate rental payment records?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Using an online rent receipt generator allows you to create numbered monthly receipts for your records, helping both parties track payment history clearly throughout the lease duration."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-logo" aria-label="FileShrink Home">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path>
+          <path d="M12 12v9"></path>
+          <path d="m8 17 4 4 4-4"></path>
+        </svg>
+        <span>FileShrink</span>
+      </a>
+      <button type="button" class="nav-toggle-btn" id="navToggleBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li class="nav-item-dropdown">
+            <a href="/#image-tools" class="nav-link dropdown-toggle">Image Tools <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <ul class="dropdown-menu">
+              <li><a href="/compress-image-to-20kb/" class="dropdown-item">Compress to 20KB</a></li>
+              <li><a href="/compress-image-to-30kb/" class="dropdown-item">Compress to 30KB</a></li>
+              <li><a href="/compress-image-to-50kb/" class="dropdown-item">Compress to 50KB</a></li>
+              <li><a href="/compress-image-to-100kb/" class="dropdown-item">Compress to 100KB</a></li>
+              <li><a href="/compress-image-to-150kb/" class="dropdown-item">Compress to 150KB</a></li>
+              <li><a href="/compress-image-to-200kb/" class="dropdown-item">Compress to 200KB</a></li>
+              <li><a href="/compress-image-to-500kb/" class="dropdown-item">Compress to 500KB</a></li>
+              <li><a href="/reduce-image-size-in-kb/" class="dropdown-item">Custom Size in KB</a></li>
+              <li><a href="/signature-resizer/" class="dropdown-item">Signature Resizer</a></li>
+              <li><a href="/passport-photo-size-in-pixels/" class="dropdown-item">Passport Photo Maker</a></li>
+              <li><a href="/cnic-front-and-back-in-one-page/" class="dropdown-item">CNIC Front & Back</a></li>
+            </ul>
+          </li>
+          <li class="nav-item-dropdown">
+            <a href="/#pdf-tools" class="nav-link dropdown-toggle">PDF Tools <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <ul class="dropdown-menu">
+              <li><a href="/compress-pdf-to-100kb/" class="dropdown-item">Compress PDF to 100KB</a></li>
+              <li><a href="/compress-pdf-to-200kb/" class="dropdown-item">Compress PDF to 200KB</a></li>
+              <li><a href="/compress-pdf-to-500kb/" class="dropdown-item">Compress PDF to 500KB</a></li>
+              <li><a href="/compress-pdf-to-1mb/" class="dropdown-item">Compress PDF to 1MB</a></li>
+              <li><a href="/compress-pdf-to-2mb/" class="dropdown-item">Compress PDF to 2MB</a></li>
+              <li><a href="/merge-pdf-files/" class="dropdown-item">Merge PDF Files</a></li>
+              <li><a href="/split-pdf/" class="dropdown-item">Split PDF</a></li>
+              <li><a href="/extract-pages-from-pdf/" class="dropdown-item">Extract PDF Pages</a></li>
+              <li><a href="/remove-pages-from-pdf/" class="dropdown-item">Remove PDF Pages</a></li>
+              <li><a href="/add-page-numbers-to-pdf/" class="dropdown-item">Add Page Numbers to PDF</a></li>
+            </ul>
+          </li>
+          <li class="nav-item-dropdown">
+            <a href="/#converters" class="nav-link dropdown-toggle">Converters <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <ul class="dropdown-menu">
+              <li><a href="/jpeg-to-png/" class="dropdown-item">JPEG to PNG</a></li>
+              <li><a href="/png-to-jpg-converter/" class="dropdown-item">PNG to JPG</a></li>
+              <li><a href="/heic-to-jpg/" class="dropdown-item">HEIC to JPG</a></li>
+              <li><a href="/webp-to-jpg/" class="dropdown-item">WebP to JPG</a></li>
+              <li><a href="/webp-to-png/" class="dropdown-item">WebP to PNG</a></li>
+              <li><a href="/pdf-to-jpg-converter/" class="dropdown-item">PDF to JPG</a></li>
+              <li><a href="/pdf-to-png/" class="dropdown-item">PDF to PNG</a></li>
+              <li><a href="/images-to-pdf/" class="dropdown-item">Images to PDF</a></li>
+            </ul>
+          </li>
+          <li class="nav-item-dropdown">
+            <a href="/#student-tools" class="nav-link dropdown-toggle">Student Tools <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <ul class="dropdown-menu">
+              <li><a href="/pomodoro-timer/" class="dropdown-item">Pomodoro Timer</a></li>
+              <li><a href="/assignment-cover-page/" class="dropdown-item">Assignment Cover Page</a></li>
+              <li><a href="/cover-letter-generator/" class="dropdown-item">Cover Letter Generator</a></li>
+              <li><a href="/gpa-calculator/" class="dropdown-item">GPA Calculator</a></li>
+              <li><a href="/cgpa-calculator/" class="dropdown-item">CGPA Calculator</a></li>
+              <li><a href="/cgpa-to-percentage/" class="dropdown-item">CGPA to Percentage</a></li>
+              <li><a href="/percentage-calculator/" class="dropdown-item">Percentage Calculator</a></li>
+              <li><a href="/attendance-calculator/" class="dropdown-item">Attendance Calculator</a></li>
+            </ul>
+          </li>
+          <li class="nav-item-dropdown">
+            <a href="/#property-tools" class="nav-link dropdown-toggle">Property Tools <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <ul class="dropdown-menu">
+              <li><a href="/rent-receipt-generator/" class="dropdown-item">Rent Receipt Generator</a></li>
+              <li><a href="/payment-receipt-format/" class="dropdown-item">Payment Receipt Format</a></li>
+              <li><a href="/house-construction-cost-calculator/" class="dropdown-item">House Construction Cost</a></li>
+              <li><a href="/installment-calculator/" class="dropdown-item">Installment Calculator</a></li>
+              <li><a href="/plot-price-calculator/" class="dropdown-item">Plot Price Calculator</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/#property-tools">Property Tools</a></li>
+          <li aria-current="page">Rent Receipt Generator</li>
+        </ol>
+      </nav>
+
+      <!-- Page Intro Header -->
+      <header class="page-intro">
+        <h1>Rent Receipt Generator</h1>
+        <p class="page-subtitle">Generate printable house rent receipts with live preview, amount in words, and PDF download.</p>
+      </header>
+
+      <!-- Privacy Callout -->
+      <div class="calc-privacy-note">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+        <span>Your details never leave your phone or computer.</span>
+      </div>
+
+      <!-- Notice: Only make receipts for real payments -->
+      <div class="receipt-notice-real" role="note">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <span>Only make receipts for real payments.</span>
+      </div>
+
+      <!-- Ad Slot 1: Above Tool -->
+      <div class="ad-slot" aria-hidden="true">
+        <div class="ad-slot-placeholder">Advertisement</div>
+      </div>
+
+      <!-- 3-Step Flow Indicator -->
+      <div class="calc-steps" aria-hidden="true">
+        <div class="calc-step-item active">
+          <span class="calc-step-num">1</span>
+          <span>Fill in the details</span>
+        </div>
+        <div class="calc-step-divider"></div>
+        <div class="calc-step-item active">
+          <span class="calc-step-num">2</span>
+          <span>Check the preview</span>
+        </div>
+        <div class="calc-step-divider"></div>
+        <div class="calc-step-item active">
+          <span class="calc-step-num">3</span>
+          <span>Download</span>
+        </div>
+      </div>
+
+      <!-- Settings Bar (Number Style & Currency Label) -->
+      <div class="calc-settings-bar" aria-label="Format Settings">
+        <div class="calc-settings-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          <span>Receipt Settings</span>
+        </div>
+        <div class="calc-settings-group">
+          <!-- Number Style -->
+          <div class="calc-setting-item">
+            <span class="calc-setting-label">Style:</span>
+            <div class="calc-toggle-btn-group" role="group" aria-label="Number formatting style">
+              <button type="button" class="calc-toggle-btn setting-num-style-btn" data-style="standard" id="numStyleStandardBtn">1,000,000</button>
+              <button type="button" class="calc-toggle-btn setting-num-style-btn active" data-style="lakh" id="numStyleLakhBtn">10,00,000</button>
+            </div>
+          </div>
+          <!-- Currency Label -->
+          <div class="calc-setting-item">
+            <label for="settingCurrencySelect" class="calc-setting-label">Currency:</label>
+            <select id="settingCurrencySelect" class="calc-setting-select" aria-label="Currency label display">
+              <option value="PKR">PKR</option>
+              <option value="INR">INR</option>
+              <option value="USD">USD</option>
+              <option value="none">None</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Tool Grid: Form on Left, Live Preview on Right -->
+      <div class="receipt-layout-grid">
+
+        <!-- Form Card -->
+        <section class="calc-card" aria-label="Rent Receipt Details Form">
+          <h2 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-main);">1. Rental Information</h2>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
+            <!-- Tenant Name -->
+            <div class="calc-field-group">
+              <label for="tenantName" class="calc-label">Tenant Name <span style="color: #dc2626;">*</span></label>
+              <input type="text" id="tenantName" class="calc-input" placeholder="e.g. Tariq Mehmood" required>
+            </div>
+
+            <!-- Landlord Name -->
+            <div class="calc-field-group">
+              <label for="landlordName" class="calc-label">Landlord Name <span style="color: #dc2626;">*</span></label>
+              <input type="text" id="landlordName" class="calc-input" placeholder="e.g. Muhammad Aslam" required>
+            </div>
+          </div>
+
+          <!-- Property Address -->
+          <div class="calc-field-group" style="margin-top: 14px;">
+            <label for="propertyAddress" class="calc-label">Property Address <span style="color: #dc2626;">*</span></label>
+            <input type="text" id="propertyAddress" class="calc-input" placeholder="e.g. House No. 14, Street 7, Sector F-8/2, Islamabad" required>
+          </div>
+
+          <!-- Rent Amount & Payment Mode -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 14px;">
+            <div class="calc-field-group">
+              <label for="rentAmount" class="calc-label">Monthly Rent Amount <span style="color: #dc2626;">*</span></label>
+              <input type="text" id="rentAmount" inputmode="decimal" class="calc-input" placeholder="e.g. 55000" required>
+            </div>
+
+            <div class="calc-field-group">
+              <label for="paymentMode" class="calc-label">Payment Mode</label>
+              <select id="paymentMode" class="calc-input" style="cursor: pointer;">
+                <option value="Cash">Cash</option>
+                <option value="Bank Transfer">Bank Transfer</option>
+                <option value="Cheque">Cheque</option>
+                <option value="Online Payment">Online Payment</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Cheque Number (Conditional) -->
+          <div class="calc-field-group" id="chequeFieldGroup" style="display: none; margin-top: 14px;">
+            <label for="chequeNo" class="calc-label">Cheque Number</label>
+            <input type="text" id="chequeNo" class="calc-input" placeholder="e.g. CHQ-984210">
+          </div>
+
+          <!-- Rental Period Range (From Month/Year to To Month/Year) -->
+          <div style="background-color: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 14px; margin-top: 16px;">
+            <div style="font-size: 0.875rem; font-weight: 700; color: var(--text-main); margin-bottom: 10px;">
+              Rental Period Range (Generates 1 receipt per month, up to 12 months)
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
+              <!-- From Month & Year -->
+              <div>
+                <label for="fromMonth" class="calc-label">From Month & Year</label>
+                <div style="display: flex; gap: 6px;">
+                  <select id="fromMonth" class="calc-input" style="flex: 1.3;">
+                    <option value="0">January</option>
+                    <option value="1">February</option>
+                    <option value="2">March</option>
+                    <option value="3">April</option>
+                    <option value="4">May</option>
+                    <option value="5">June</option>
+                    <option value="6">July</option>
+                    <option value="7">August</option>
+                    <option value="8">September</option>
+                    <option value="9">October</option>
+                    <option value="10">November</option>
+                    <option value="11">December</option>
+                  </select>
+                  <input type="number" id="fromYear" class="calc-input" style="width: 86px;" value="2026" min="2000" max="2099">
+                </div>
+              </div>
+
+              <!-- To Month & Year -->
+              <div>
+                <label for="toMonth" class="calc-label">To Month & Year</label>
+                <div style="display: flex; gap: 6px;">
+                  <select id="toMonth" class="calc-input" style="flex: 1.3;">
+                    <option value="0">January</option>
+                    <option value="1">February</option>
+                    <option value="2">March</option>
+                    <option value="3">April</option>
+                    <option value="4">May</option>
+                    <option value="5">June</option>
+                    <option value="6">July</option>
+                    <option value="7">August</option>
+                    <option value="8">September</option>
+                    <option value="9">October</option>
+                    <option value="10">November</option>
+                    <option value="11" selected>December</option>
+                  </select>
+                  <input type="number" id="toYear" class="calc-input" style="width: 86px;" value="2026" min="2000" max="2099">
+                </div>
+              </div>
+            </div>
+
+            <!-- Receipt Day of the Month -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 12px;">
+              <div class="calc-field-group">
+                <label for="receiptDayOfMonth" class="calc-label">Receipt Date (Day of Month: 1–31)</label>
+                <input type="number" id="receiptDayOfMonth" class="calc-input" value="1" min="1" max="31">
+                <div class="calc-hint">If a month has fewer days, the last day of that month is used automatically.</div>
+              </div>
+
+              <!-- Receipt Numbering -->
+              <div class="calc-field-group">
+                <label for="receiptStartNum" class="calc-label">Receipt No. Start & Prefix</label>
+                <div style="display: flex; gap: 6px;">
+                  <input type="text" id="receiptPrefix" class="calc-input" value="RCP-" style="width: 80px;" placeholder="Prefix">
+                  <input type="number" id="receiptStartNum" class="calc-input" value="1001" min="1" style="flex: 1;" placeholder="Start No.">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Optional Fields: Landlord ID & Notes -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 16px;">
+            <div class="calc-field-group">
+              <label for="landlordId" class="calc-label">Landlord ID / CNIC (Optional)</label>
+              <input type="text" id="landlordId" class="calc-input" placeholder="e.g. 35201-1234567-1">
+            </div>
+
+            <div class="calc-field-group">
+              <label for="receiptNotes" class="calc-label">Notes (Optional)</label>
+              <input type="text" id="receiptNotes" class="calc-input" placeholder="e.g. Includes maintenance charges">
+            </div>
+          </div>
+
+          <!-- Toggles: Words & Stamp Box -->
+          <div style="display: flex; flex-wrap: wrap; gap: 18px; margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border-color);">
+            <label style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.875rem; font-weight: 600; cursor: pointer; color: var(--text-main);">
+              <input type="checkbox" id="showAmountWordsToggle" checked style="accent-color: var(--primary); width: 16px; height: 16px;">
+              <span>Show amount in words</span>
+            </label>
+
+            <label style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.875rem; font-weight: 600; cursor: pointer; color: var(--text-main);">
+              <input type="checkbox" id="showStampBoxToggle" checked style="accent-color: var(--primary); width: 16px; height: 16px;">
+              <span>Include blank "Affix Stamp" box</span>
+            </label>
+          </div>
+
+          <!-- Optional Landlord Signature -->
+          <div class="receipt-sig-container" style="margin-top: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <span style="font-size: 0.875rem; font-weight: 700; color: var(--text-main);">Landlord Signature (Optional)</span>
+              <button type="button" id="sigClearBtn" class="calc-reset-btn" style="font-size: 0.75rem; padding: 2px 8px;">Clear Drawing</button>
+            </div>
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 8px;">Draw on the pad below or upload an existing signature image.</p>
+            <canvas id="sigCanvas" class="receipt-sig-canvas"></canvas>
+            <div class="receipt-sig-actions">
+              <label class="receipt-sig-upload-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                <span>Upload Signature</span>
+                <input type="file" id="sigUploadInput" accept="image/png,image/jpeg,image/webp" style="display: none;">
+              </label>
+              <label style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.75rem; cursor: pointer; color: var(--text-muted);">
+                <input type="checkbox" id="sigWhiteBgToggle" checked style="accent-color: var(--primary);">
+                <span>White background (preserves transparent PNGs)</span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <!-- Preview & Export Card -->
+        <section class="cover-preview-card" aria-label="Receipt Live Preview and Download">
+          <div class="receipt-preview-header">
+            <span style="font-size: 0.9375rem; font-weight: 700; color: var(--text-main);">2. Check the preview</span>
+            <span class="receipt-preview-badge" id="receiptSummaryBadge">12 Receipts (6 A4 Pages)</span>
+          </div>
+
+          <!-- A4 Viewport displaying the high-res 300 DPI Canvas -->
+          <div class="cover-preview-viewport" id="previewViewport">
+            <canvas id="receiptPreviewCanvas" class="cover-canvas" width="2480" height="3508"></canvas>
+          </div>
+
+          <!-- Page Navigation (2 receipts per A4 page) -->
+          <div class="receipt-page-controls" id="pageControls">
+            <button type="button" class="receipt-page-btn" id="prevPageBtn" aria-label="Previous Page">&larr; Prev Page</button>
+            <span class="receipt-page-indicator" id="pageIndicatorText">Page 1 of 6</span>
+            <button type="button" class="receipt-page-btn" id="nextPageBtn" aria-label="Next Page">Next Page &rarr;</button>
+          </div>
+
+          <!-- Step 3: Download & Print Buttons -->
+          <div style="font-size: 0.9375rem; font-weight: 700; color: var(--text-main); margin-bottom: 8px; text-align: left;">3. Download</div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <button type="button" class="calc-btn-primary" id="downloadPdfBtn" style="width: 100%; justify-content: center; padding: 12px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              <span>Download PDF (A4)</span>
+            </button>
+            <div style="display: flex; gap: 8px;">
+              <button type="button" class="calc-btn-secondary" id="downloadJpgBtn" style="flex: 1; justify-content: center; padding: 10px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path></svg>
+                <span>Download JPG</span>
+              </button>
+              <button type="button" class="calc-btn-secondary" id="printReceiptBtn" style="flex: 1; justify-content: center; padding: 10px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect width="12" height="8" x="6" y="14"></rect></svg>
+                <span>Print</span>
+              </button>
+            </div>
+          </div>
+
+          <p class="receipt-pdf-disclaimer">
+            The text in this PDF is rendered as a sharp image from your browser.
+          </p>
+        </section>
+
+      </div>
+
+      <!-- Ad Slot 2: Middle of Content -->
+      <div class="ad-slot" aria-hidden="true" style="margin-top: 2rem;">
+        <div class="ad-slot-placeholder">Advertisement</div>
+      </div>
+
+      <!-- Content Section: How to (3 lines), FAQ (3 unique), More Tools -->
+      <section class="calc-info-section" style="margin-top: 2rem;" aria-label="Instructions and Rental Guide">
+        <h2>How to Generate Rent Receipts</h2>
+        <ol style="margin-left: 1.25rem; line-height: 1.7; color: var(--text-main);">
+          <li>Fill in your tenant, landlord, property address, and monthly rent details.</li>
+          <li>Check the live receipt preview and add an optional signature or stamp box.</li>
+          <li>Download your rent receipt format as an A4 PDF or print it directly.</li>
+        </ol>
+
+        <h2 style="margin-top: 2rem;">Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3 class="faq-question">What details should be included in a house rent receipt?</h3>
+            <p class="faq-answer">
+              A complete house rent receipt format should state the tenant name, landlord name, rented property address, rent amount received, payment date, payment method, and rental period.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">Does a rent receipt format require a physical signature or revenue stamp?</h3>
+            <p class="faq-answer">
+              While many landlords and tenants prefer signing receipts for personal record keeping, requirements can vary depending on individual rental agreements and mutual understanding between parties.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">How can tenants and landlords keep accurate rental payment records?</h3>
+            <p class="faq-answer">
+              Using an online rent receipt generator allows you to create numbered monthly receipts for your records, helping both parties track payment history clearly throughout the lease duration.
+            </p>
+          </div>
+        </div>
+
+        <!-- More Tools (Related) -->
+        <h2 style="margin-top: 2rem;">More Tools</h2>
+        <div class="calc-related-grid">
+          <a href="/payment-receipt-format/" class="calc-related-card">
+            <div class="calc-related-title">Payment Receipt Format</div>
+            <div class="calc-related-desc">Generate receipts for token money, advances, and part payments.</div>
+          </a>
+          <a href="/house-construction-cost-calculator/" class="calc-related-card">
+            <div class="calc-related-title">House Construction Cost</div>
+            <div class="calc-related-desc">Estimate building material rates, grey structure, and finishing costs.</div>
+          </a>
+          <a href="/installment-calculator/" class="calc-related-card">
+            <div class="calc-related-title">Installment Calculator</div>
+            <div class="calc-related-desc">Calculate down payments, monthly installments, and balloon payments.</div>
+          </a>
+          <a href="/plot-price-calculator/" class="calc-related-card">
+            <div class="calc-related-title">Plot Price Calculator</div>
+            <div class="calc-related-desc">Compute plot rates, regional marla conversions, and net prices.</div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Ad Slot 3: Bottom of Page -->
+      <div class="ad-slot" aria-hidden="true" style="margin-top: 2rem;">
+        <div class="ad-slot-placeholder">Advertisement</div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 FileShrink. All rights reserved. Free online browser utilities.</p>
+      <ul class="footer-links">
+        <li><a href="/about/">About</a></li>
+        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+        <li><a href="/terms/">Terms of Use</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- External Libraries: jsPDF and JSZip from cdnjs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+  <!-- Shared Receipt Engine -->
+  <script src="/js/receipt-tool.js"></script>
+
+  <!-- Page Controller Script -->
+  <script>
+  (function () {
+    'use strict';
+
+    const RE = window.ReceiptEngine;
+    if (!RE) return;
+
+    // Mobile nav toggle
+    const navBtn = document.getElementById('navToggleBtn');
+    if (navBtn) {
+      navBtn.addEventListener('click', function () {
+        const links = document.querySelector('.nav-links');
+        if (links) links.classList.toggle('open');
+      });
+    }
+
+    // State & Settings
+    const settings = RE.getReceiptSettings();
+    let currentNumStyle = settings.numStyle || 'lakh';
+    let currentCurrency = settings.currency || 'PKR';
+    let currentPageIndex = 0;
+    let pageCanvases = [];
+
+    // DOM Elements
+    const numStyleStdBtn = document.getElementById('numStyleStandardBtn');
+    const numStyleLakhBtn = document.getElementById('numStyleLakhBtn');
+    const currencySelect = document.getElementById('settingCurrencySelect');
+
+    const tenantInput = document.getElementById('tenantName');
+    const landlordInput = document.getElementById('landlordName');
+    const propertyInput = document.getElementById('propertyAddress');
+    const rentAmountInput = document.getElementById('rentAmount');
+    const paymentModeSelect = document.getElementById('paymentMode');
+    const chequeFieldGroup = document.getElementById('chequeFieldGroup');
+    const chequeNoInput = document.getElementById('chequeNo');
+
+    const fromMonthSelect = document.getElementById('fromMonth');
+    const fromYearInput = document.getElementById('fromYear');
+    const toMonthSelect = document.getElementById('toMonth');
+    const toYearInput = document.getElementById('toYear');
+    const dayOfMonthInput = document.getElementById('receiptDayOfMonth');
+
+    const receiptPrefixInput = document.getElementById('receiptPrefix');
+    const receiptStartNumInput = document.getElementById('receiptStartNum');
+    const landlordIdInput = document.getElementById('landlordId');
+    const receiptNotesInput = document.getElementById('receiptNotes');
+
+    const wordsToggle = document.getElementById('showAmountWordsToggle');
+    const stampToggle = document.getElementById('showStampBoxToggle');
+
+    const sigCanvas = document.getElementById('sigCanvas');
+    const sigClearBtn = document.getElementById('sigClearBtn');
+    const sigUploadInput = document.getElementById('sigUploadInput');
+    const sigWhiteBgToggle = document.getElementById('sigWhiteBgToggle');
+
+    const previewCanvas = document.getElementById('receiptPreviewCanvas');
+    const prevPageBtn = document.getElementById('prevPageBtn');
+    const nextPageBtn = document.getElementById('nextPageBtn');
+    const pageIndicator = document.getElementById('pageIndicatorText');
+    const summaryBadge = document.getElementById('receiptSummaryBadge');
+
+    const downloadPdfBtn = document.getElementById('downloadPdfBtn');
+    const downloadJpgBtn = document.getElementById('downloadJpgBtn');
+    const printReceiptBtn = document.getElementById('printReceiptBtn');
+
+    // Initialize UI settings
+    if (currencySelect) currencySelect.value = currentCurrency;
+    updateNumStyleButtons();
+
+    function updateNumStyleButtons() {
+      if (numStyleStdBtn) {
+        numStyleStdBtn.classList.toggle('active', currentNumStyle === 'standard');
+        numStyleStdBtn.setAttribute('aria-pressed', currentNumStyle === 'standard');
+      }
+      if (numStyleLakhBtn) {
+        numStyleLakhBtn.classList.toggle('active', currentNumStyle === 'lakh');
+        numStyleLakhBtn.setAttribute('aria-pressed', currentNumStyle === 'lakh');
+      }
+    }
+
+    if (numStyleStdBtn) {
+      numStyleStdBtn.addEventListener('click', function () {
+        currentNumStyle = 'standard';
+        RE.saveReceiptSetting('fs_property_num_style', 'standard');
+        updateNumStyleButtons();
+        renderAllPages();
+      });
+    }
+
+    if (numStyleLakhBtn) {
+      numStyleLakhBtn.addEventListener('click', function () {
+        currentNumStyle = 'lakh';
+        RE.saveReceiptSetting('fs_property_num_style', 'lakh');
+        updateNumStyleButtons();
+        renderAllPages();
+      });
+    }
+
+    if (currencySelect) {
+      currencySelect.addEventListener('change', function () {
+        currentCurrency = currencySelect.value;
+        RE.saveReceiptSetting('fs_property_currency', currentCurrency);
+        renderAllPages();
+      });
+    }
+
+    // Toggle cheque field on payment mode change
+    if (paymentModeSelect) {
+      paymentModeSelect.addEventListener('change', function () {
+        if (chequeFieldGroup) {
+          chequeFieldGroup.style.display = paymentModeSelect.value === 'Cheque' ? 'block' : 'none';
+        }
+        renderAllPages();
+      });
+    }
+
+    // Signature Pad Initialization
+    const sigPad = RE.initSignaturePad(sigCanvas, sigClearBtn, sigUploadInput, sigWhiteBgToggle, function () {
+      renderAllPages();
+    });
+
+    // Event listeners on form inputs
+    const inputsToWatch = [
+      tenantInput, landlordInput, propertyInput, rentAmountInput,
+      chequeNoInput, fromMonthSelect, fromYearInput, toMonthSelect,
+      toYearInput, dayOfMonthInput, receiptPrefixInput, receiptStartNumInput,
+      landlordIdInput, receiptNotesInput, wordsToggle, stampToggle
+    ];
+
+    inputsToWatch.forEach(el => {
+      if (!el) return;
+      el.addEventListener('input', renderAllPages);
+      el.addEventListener('change', renderAllPages);
+    });
+
+    // Page navigation
+    if (prevPageBtn) {
+      prevPageBtn.addEventListener('click', function () {
+        if (currentPageIndex > 0) {
+          currentPageIndex--;
+          updateDisplayCanvas();
+        }
+      });
+    }
+
+    if (nextPageBtn) {
+      nextPageBtn.addEventListener('click', function () {
+        if (currentPageIndex < pageCanvases.length - 1) {
+          currentPageIndex++;
+          updateDisplayCanvas();
+        }
+      });
+    }
+
+    // Core render function
+    function renderAllPages() {
+      const tenantVal = (tenantInput ? tenantInput.value.trim() : '') || 'Tenant Name';
+      const landlordVal = (landlordInput ? landlordInput.value.trim() : '') || 'Landlord Name';
+      const propertyVal = (propertyInput ? propertyInput.value.trim() : '') || 'Property Address';
+      const rentAmtNum = parseFloat((rentAmountInput ? rentAmountInput.value.replace(/,/g, '') : '') || 0);
+
+      const fMonth = parseInt(fromMonthSelect ? fromMonthSelect.value : 0, 10);
+      const fYear = parseInt(fromYearInput ? fromYearInput.value : 2026, 10);
+      const tMonth = parseInt(toMonthSelect ? toMonthSelect.value : 11, 10);
+      const tYear = parseInt(toYearInput ? toYearInput.value : 2026, 10);
+      const targetDay = parseInt(dayOfMonthInput ? dayOfMonthInput.value : 1, 10) || 1;
+
+      const prefix = receiptPrefixInput ? receiptPrefixInput.value : 'RCP-';
+      const startNum = parseInt(receiptStartNumInput ? receiptStartNumInput.value : 1001, 10) || 1001;
+
+      const showWords = wordsToggle ? wordsToggle.checked : true;
+      const showStamp = stampToggle ? stampToggle.checked : true;
+      const pMode = paymentModeSelect ? paymentModeSelect.value : 'Cash';
+      const chequeVal = chequeNoInput ? chequeNoInput.value.trim() : '';
+      const landlordIdVal = landlordIdInput ? landlordIdInput.value.trim() : '';
+      const notesVal = receiptNotesInput ? receiptNotesInput.value.trim() : '';
+
+      const sigImg = sigPad.getImage();
+
+      // Generate Month list (up to 12 months)
+      const months = RE.generateMonthRange(fYear, fMonth, tYear, tMonth);
+      const totalReceipts = months.length;
+      const totalPages = Math.ceil(totalReceipts / 2);
+
+      pageCanvases = [];
+
+      for (let p = 0; p < totalPages; p++) {
+        const topIdx = p * 2;
+        const botIdx = p * 2 + 1;
+
+        const offCanvas = document.createElement('canvas');
+        offCanvas.width = RE.RECEIPT_CONFIG.a4WidthPx;
+        offCanvas.height = RE.RECEIPT_CONFIG.a4HeightPx;
+        const offCtx = offCanvas.getContext('2d');
+
+        // Top receipt data
+        const topMonthObj = months[topIdx];
+        const topDateStr = RE.getCalculatedReceiptDate(topMonthObj.year, topMonthObj.monthIndex, targetDay);
+        const topReceiptNo = `${prefix}${startNum + topIdx}`;
+        const topAmtFormatted = RE.formatMoneyNumber(rentAmtNum, currentNumStyle, currentCurrency, 0);
+        const topAmtWords = showWords ? RE.numberToWords(rentAmtNum, currentNumStyle, currentCurrency) : '';
+
+        const receiptTopData = {
+          receiptNo: topReceiptNo,
+          dateStr: topDateStr,
+          periodStr: topMonthObj.label,
+          tenantName: tenantVal,
+          landlordName: landlordVal,
+          propertyAddress: propertyVal,
+          formattedAmount: topAmtFormatted,
+          amountWords: topAmtWords,
+          showAmountWords: showWords,
+          paymentModeLabel: pMode,
+          chequeNo: pMode === 'Cheque' ? chequeVal : '',
+          landlordId: landlordIdVal,
+          notes: notesVal
+        };
+
+        // Bottom receipt data (if exists)
+        let receiptBotData = null;
+        if (botIdx < totalReceipts) {
+          const botMonthObj = months[botIdx];
+          const botDateStr = RE.getCalculatedReceiptDate(botMonthObj.year, botMonthObj.monthIndex, targetDay);
+          const botReceiptNo = `${prefix}${startNum + botIdx}`;
+          const botAmtFormatted = RE.formatMoneyNumber(rentAmtNum, currentNumStyle, currentCurrency, 0);
+          const botAmtWords = showWords ? RE.numberToWords(rentAmtNum, currentNumStyle, currentCurrency) : '';
+
+          receiptBotData = {
+            receiptNo: botReceiptNo,
+            dateStr: botDateStr,
+            periodStr: botMonthObj.label,
+            tenantName: tenantVal,
+            landlordName: landlordVal,
+            propertyAddress: propertyVal,
+            formattedAmount: botAmtFormatted,
+            amountWords: botAmtWords,
+            showAmountWords: showWords,
+            paymentModeLabel: pMode,
+            chequeNo: pMode === 'Cheque' ? chequeVal : '',
+            landlordId: landlordIdVal,
+            notes: notesVal
+          };
+        }
+
+        RE.renderRentReceiptPage(offCtx, receiptTopData, receiptBotData, showStamp, sigImg);
+        pageCanvases.push(offCanvas);
+      }
+
+      if (currentPageIndex >= totalPages) {
+        currentPageIndex = Math.max(0, totalPages - 1);
+      }
+
+      if (summaryBadge) {
+        summaryBadge.textContent = `${totalReceipts} Receipt${totalReceipts > 1 ? 's' : ''} (${totalPages} A4 Page${totalPages > 1 ? 's' : ''})`;
+      }
+
+      updateDisplayCanvas();
+    }
+
+    function updateDisplayCanvas() {
+      if (pageCanvases.length === 0 || !previewCanvas) return;
+      const curOffCanvas = pageCanvases[currentPageIndex];
+      const previewCtx = previewCanvas.getContext('2d');
+      previewCtx.clearRect(0, 0, previewCanvas.width, previewCanvas.height);
+      previewCtx.drawImage(curOffCanvas, 0, 0);
+
+      if (pageIndicator) {
+        pageIndicator.textContent = `Page ${currentPageIndex + 1} of ${pageCanvases.length}`;
+      }
+      if (prevPageBtn) prevPageBtn.disabled = (currentPageIndex === 0);
+      if (nextPageBtn) nextPageBtn.disabled = (currentPageIndex === pageCanvases.length - 1);
+    }
+
+    // Export buttons
+    if (downloadPdfBtn) {
+      downloadPdfBtn.addEventListener('click', function () {
+        if (pageCanvases.length === 0) return;
+        RE.exportCanvasesToPdf(pageCanvases, 'rent-receipts.pdf');
+      });
+    }
+
+    if (downloadJpgBtn) {
+      downloadJpgBtn.addEventListener('click', function () {
+        if (pageCanvases.length === 0) return;
+        RE.exportCanvasesToJpg(pageCanvases, 'rent-receipt');
+      });
+    }
+
+    if (printReceiptBtn) {
+      printReceiptBtn.addEventListener('click', function () {
+        if (pageCanvases.length === 0) return;
+        RE.printCanvases(pageCanvases);
+      });
+    }
+
+    // Initial render
+    renderAllPages();
+
+  })();
+  </script>
+</body>
+</html>
