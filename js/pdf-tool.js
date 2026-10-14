@@ -267,11 +267,9 @@
         return;
       }
 
-      // Warn above 50 MB
+      // Warn above 50 MB via status message instead of blocking modal popup
       if (file.size > 50 * 1024 * 1024) {
-        if (!confirm('This PDF is over 50 MB and may take 1-2 minutes on mobile devices. Continue?')) {
-          return;
-        }
+        setProgress('Large PDF detected (> 50 MB). Processing may take up to 2 minutes...', 5);
       }
 
       if (errorArea) errorArea.classList.add('is-hidden');

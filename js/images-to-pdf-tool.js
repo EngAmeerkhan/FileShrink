@@ -51,6 +51,8 @@
       if (processingArea) processingArea.classList.add('is-hidden');
       if (resultArea) resultArea.classList.add('is-hidden');
       if (errorArea) errorArea.classList.add('is-hidden');
+      const successCard = document.getElementById('imagesPdfSuccessCard');
+      if (successCard) successCard.classList.add('is-hidden');
       if (fileListEl) fileListEl.innerHTML = '';
       setStep(1);
     }

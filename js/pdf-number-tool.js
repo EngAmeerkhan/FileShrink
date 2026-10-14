@@ -173,13 +173,6 @@
         return;
       }
 
-      // Warn above 50 MB
-      if (file.size > 50 * 1024 * 1024) {
-        if (!confirm('This PDF is over 50 MB and may take longer to process on mobile devices. Continue?')) {
-          return;
-        }
-      }
-
       currentFile = file;
       baseFileName = file.name.replace(/\.[^/.]+$/, '').replace(/[^a-zA-Z0-9_-]/g, '_');
       hideError();

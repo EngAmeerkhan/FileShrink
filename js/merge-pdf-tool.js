@@ -50,6 +50,8 @@
       if (processingArea) processingArea.classList.add('is-hidden');
       if (resultArea) resultArea.classList.add('is-hidden');
       if (errorArea) errorArea.classList.add('is-hidden');
+      const mergedSuccessCard = document.getElementById('mergedSuccessCard');
+      if (mergedSuccessCard) mergedSuccessCard.classList.add('is-hidden');
       if (fileListEl) fileListEl.innerHTML = '';
       setStep(1);
     }

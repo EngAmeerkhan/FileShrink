@@ -67,6 +67,10 @@
     // Reset Tool State
     function resetTool() {
       if (fileInput) fileInput.value = '';
+      if (previewImg && previewImg.src && previewImg.src.startsWith('blob:')) {
+        URL.revokeObjectURL(previewImg.src);
+        previewImg.src = '';
+      }
       currentResultBlob = null;
       currentLoadedFile = null;
       if (uploadArea) uploadArea.classList.remove('is-hidden');
@@ -117,8 +121,9 @@
       const originalBaseName = file.name.replace(/\.[^/.]+$/, '').replace(/[^a-zA-Z0-9_-]/g, '_');
       currentFileName = `${originalBaseName}-${activeSuffix}.jpg`;
 
-      // Check if original is already smaller than target
-      if (originalBytes <= activeTargetBytes) {
+      // Check if original is already smaller than target AND is already a valid JPEG
+      const isJpeg = (file.type === 'image/jpeg' || file.type === 'image/jpg') || /\.(jpe?g)$/i.test(file.name);
+      if (originalBytes <= activeTargetBytes && isJpeg) {
         currentResultBlob = file;
         showSuccessResult(file, originalBytes, originalBytes, true, curTargetKB, activeTargetBytes);
         return;
