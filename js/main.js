@@ -164,6 +164,7 @@
       if (lowerTitle.includes('image') || lowerTitle.includes('photo')) extraKeywords += ' picture pic photo jpg jpeg png';
       if (lowerTitle.includes('cnic')) extraKeywords += ' id card nadra identity card side';
       if (lowerTitle.includes('passport')) extraKeywords += ' visa photo dimension pixel';
+      if (lowerTitle.includes('handwriting')) extraKeywords += ' handwriting text notes assignment letter generator convert pen paper script';
 
       return {
         card,

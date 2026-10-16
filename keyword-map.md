@@ -49,3 +49,5 @@
 | `/terms/` | **terms of service** | Terms of Service - FileShrink | Terms of Service | 29 | 48 | Yes | Yes | Yes | Yes |
 | `/webp-to-jpg/` | **webp to jpg** | WebP to JPG - Free Online | FileShrink | WebP to JPG | 38 | 149 | Yes | Yes | Yes | Yes |
 | `/webp-to-png/` | **webp to png** | WebP to PNG - Free Online | FileShrink | WebP to PNG | 38 | 141 | Yes | Yes | Yes | Yes |
+| `/text-to-handwriting-converter/` | **text to handwriting converter** (Secondaries: convert text to handwriting, text to handwriting, handwriting generator, assignment handwriting generator) | Text to Handwriting Converter - Free Online \| FileShrink | Text to Handwriting Converter | 57 | 154 | Yes | Yes | Yes | Yes |
+
