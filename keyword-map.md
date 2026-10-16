@@ -50,4 +50,11 @@
 | `/webp-to-jpg/` | **webp to jpg** | WebP to JPG - Free Online | FileShrink | WebP to JPG | 38 | 149 | Yes | Yes | Yes | Yes |
 | `/webp-to-png/` | **webp to png** | WebP to PNG - Free Online | FileShrink | WebP to PNG | 38 | 141 | Yes | Yes | Yes | Yes |
 | `/text-to-handwriting-converter/` | **text to handwriting converter** (Secondaries: convert text to handwriting, text to handwriting, handwriting generator, assignment handwriting generator) | Text to Handwriting Converter - Free Online \| FileShrink | Text to Handwriting Converter | 57 | 154 | Yes | Yes | Yes | Yes |
+| `/youtube-thumbnail-size/` | **youtube thumbnail size** (Secondary: youtube thumbnail maker) | YouTube Thumbnail Size - Free Online \| FileShrink | YouTube Thumbnail Size | 49 | 140 | Yes | Yes | Yes | Yes |
+| `/instagram-profile-picture-size/` | **instagram profile picture size** (Secondary: instagram post size) | Instagram Profile Picture Size - Free \| FileShrink | Instagram Profile Picture Size | 49 | 142 | Yes | Yes | Yes | Yes |
+| `/whatsapp-dp-size/` | **whatsapp dp size** (Secondaries: whatsapp status size, whatsapp dp maker) | WhatsApp DP Size - Free Online \| FileShrink | WhatsApp DP Size | 42 | 141 | Yes | Yes | Yes | Yes |
+| `/make-photo-square/` | **make photo square** (Secondaries: (*) make picture square, (*) square crop image) | Make Photo Square - Free Online \| FileShrink | Make Photo Square | 43 | 140 | Yes | Yes | Yes | Yes |
+| `/add-white-border-to-photo/` | **add white border to photo** (Secondaries: (*) add border to photo, (*) white frame for photo) | Add White Border to Photo - Free Online \| FileShrink | Add White Border to Photo | 51 | 140 | Yes | Yes | Yes | Yes |
+| `/black-and-white-photo-converter/` | **black and white photo converter** (Secondaries: (*) convert photo to black and white, (*) grayscale image online) | Black and White Photo Converter - Free \| FileShrink | Black and White Photo Converter | 50 | 143 | Yes | Yes | Yes | Yes |
+| `/blur-image-online/` | **blur image online** (Secondaries: (*) blur photo, (*) blur face in photo) | Blur Image Online - Free Privacy Tool \| FileShrink | Blur Image Online | 49 | 141 | Yes | Yes | Yes | Yes |
 

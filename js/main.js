@@ -163,8 +163,14 @@
       if (lowerTitle.includes('pdf')) extraKeywords += ' document doc adobe';
       if (lowerTitle.includes('image') || lowerTitle.includes('photo')) extraKeywords += ' picture pic photo jpg jpeg png';
       if (lowerTitle.includes('cnic')) extraKeywords += ' id card nadra identity card side';
-      if (lowerTitle.includes('passport')) extraKeywords += ' visa photo dimension pixel';
       if (lowerTitle.includes('handwriting')) extraKeywords += ' handwriting text notes assignment letter generator convert pen paper script';
+      if (lowerTitle.includes('youtube') || lowerTitle.includes('thumbnail')) extraKeywords += ' youtube yt thumbnail maker video cover channel 1280x720';
+      if (lowerTitle.includes('instagram')) extraKeywords += ' instagram insta ig profile picture avatar post 1080x1080 circular crop';
+      if (lowerTitle.includes('whatsapp') || lowerTitle.includes('dp')) extraKeywords += ' whatsapp wa dp profile status story 640x640 no crop maker';
+      if (lowerTitle.includes('square')) extraKeywords += ' square make photo square picture 1:1 ratio fit background blur';
+      if (lowerTitle.includes('border')) extraKeywords += ' border white border frame photo white frame padding';
+      if (lowerTitle.includes('black and white') || lowerTitle.includes('white photo')) extraKeywords += ' black and white bw monochrome grayscale convert photo';
+      if (lowerTitle.includes('blur')) extraKeywords += ' blur photo censor privacy hide face license plate pixelate';
 
       return {
         card,
