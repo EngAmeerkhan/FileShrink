@@ -171,6 +171,10 @@
       if (lowerTitle.includes('border')) extraKeywords += ' border white border frame photo white frame padding';
       if (lowerTitle.includes('black and white') || lowerTitle.includes('white photo')) extraKeywords += ' black and white bw monochrome grayscale convert photo';
       if (lowerTitle.includes('blur')) extraKeywords += ' blur photo censor privacy hide face license plate pixelate';
+      if (lowerTitle.includes('text') && lowerTitle.includes('pdf')) extraKeywords += ' extract text from pdf ocr copy words txt document converter';
+      if (lowerTitle.includes('rotate')) extraKeywords += ' rotate pdf pages turn flip orientation landscape portrait upside down';
+      if (lowerTitle.includes('reorder')) extraKeywords += ' rearrange pdf pages organize pdf pages sort duplicate delete move sheets';
+
 
       return {
         card,

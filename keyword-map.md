@@ -57,4 +57,7 @@
 | `/add-white-border-to-photo/` | **add white border to photo** (Secondaries: (*) add border to photo, (*) white frame for photo) | Add White Border to Photo - Free Online \| FileShrink | Add White Border to Photo | 51 | 140 | Yes | Yes | Yes | Yes |
 | `/black-and-white-photo-converter/` | **black and white photo converter** (Secondaries: (*) convert photo to black and white, (*) grayscale image online) | Black and White Photo Converter - Free \| FileShrink | Black and White Photo Converter | 50 | 143 | Yes | Yes | Yes | Yes |
 | `/blur-image-online/` | **blur image online** (Secondaries: (*) blur photo, (*) blur face in photo) | Blur Image Online - Free Privacy Tool \| FileShrink | Blur Image Online | 49 | 141 | Yes | Yes | Yes | Yes |
+| `/pdf-to-text/` | **pdf to text** (Secondary: extract text from pdf) | PDF to Text - Free Online \| FileShrink | PDF to Text | 38 | 154 | Yes | Yes | Yes | Yes |
+| `/rotate-pdf/` | **rotate pdf** (Secondary: rotate pdf pages) | Rotate PDF - Free Online \| FileShrink | Rotate PDF | 36 | 150 | Yes | Yes | Yes | Yes |
+| `/reorder-pdf-pages/` | **reorder pdf pages** (Secondaries: rearrange pdf pages, (*) organize pdf pages) | Reorder PDF Pages - Free Online \| FileShrink | Reorder PDF Pages | 43 | 149 | Yes | Yes | Yes | Yes |
 
