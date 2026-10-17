@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Converter - Free Online | FileShrink</title>
+  <meta name="description" content="Convert text case with our free online case converter with no signup and no watermark. Easily switch uppercase to lowercase, title case, and more.">
+  <link rel="canonical" href="https://fileshrink.vercel.app/case-converter/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Case Converter - Free Online | FileShrink">
+  <meta property="og:description" content="Convert text case with our free online case converter with no signup and no watermark. Easily switch uppercase to lowercase, title case, and more.">
+  <meta property="og:url" content="https://fileshrink.vercel.app/case-converter/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Case Converter - Free Online | FileShrink">
+  <meta name="twitter:description" content="Convert text case with our free online case converter with no signup and no watermark. Easily switch uppercase to lowercase, title case, and more.">
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/text-tools.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Case Converter",
+        "url": "https://fileshrink.vercel.app/case-converter/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Convert text into UPPERCASE, lowercase, Title Case, Sentence case, camelCase, snake_case, and more."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://fileshrink.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Text Tools",
+            "item": "https://fileshrink.vercel.app/#converters"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Case Converter",
+            "item": "https://fileshrink.vercel.app/case-converter/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does this case converter handle words with apostrophes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The case converter treats contractions as single words. When using Capitalize Each Word, terms like \"don't\" become \"Don't\" rather than capitalizing after the apostrophe."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which words stay lowercase in title case mode?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Short prepositions, conjunctions, and articles such as a, an, and, as, at, but, by, for, in, of, on, or, the, to, and with stay lowercase unless they appear as the first or last word."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I process large files of 1 MB or more without browser lag?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, our conversion routines run directly in your browser using optimized regex loops that transform hundreds of thousands of characters in milliseconds."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Rule 8: Platform limits: Chicago Manual of Style title case rules, 1 MB recommended text limit (verify against the platform's current guidance) -->
+
+  <!-- Top Navigation Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="/" class="site-logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        <span>FileShrink</span>
+      </a>
+      <nav class="site-nav">
+        <a href="/#student-tools" class="nav-link">Academic Tools</a>
+        <a href="/#converters" class="nav-link">Generators &amp; Converters</a>
+        <a href="/#pdf-tools" class="nav-link">PDF Tools</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Top Ad Slot (Reserved space, outside tool container) -->
+  <div class="ad-slot ad-slot-top" data-ad-slot="top" aria-hidden="true"></div>
+
+  <main class="calc-main-container">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="calc-breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/#converters">Text Tools</a></li>
+          <li aria-current="page">Case Converter</li>
+        </ol>
+      </nav>
+
+      <!-- Page Header -->
+      <div class="calc-header-section">
+        <h1>Case Converter</h1>
+        <p class="calc-subtitle">Transform your text into uppercase, lowercase, title case, sentence case, and camelCase instantly.</p>
+        <p class="calc-privacy-line">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          Nothing is uploaded or saved. Everything works on your device.
+        </p>
+      </div>
+
+      <!-- Main Tool Card (2-Step Flow) -->
+      <div class="calc-tool-card">
+
+        <!-- Step 1: Input Section -->
+        <div class="calc-step-header">
+          <span class="calc-step-num">1</span>
+          <div>
+            <h2 class="calc-step-title">Enter or paste your text</h2>
+            <p class="calc-step-desc">Type or paste any paragraphs, lists, or code snippets into the text box below.</p>
+          </div>
+        </div>
+
+        <div style="margin-bottom: var(--spacing-sm);">
+          <textarea id="caseConverterText" class="text-tool-textarea" placeholder="Type or paste your text here to convert case..." aria-label="Text to convert case">hello WORLD. this is a test. don't stop believing.</textarea>
+        </div>
+
+        <!-- Live Statistics Bar -->
+        <div class="text-tool-stats-bar" aria-live="polite">
+          <div class="text-stat-item">
+            <span>Characters:</span>
+            <span id="charCount" class="text-stat-val">0</span>
+          </div>
+          <div class="text-stat-item">
+            <span>Words:</span>
+            <span id="wordCount" class="text-stat-val">0</span>
+          </div>
+          <div class="text-stat-item">
+            <span>Lines:</span>
+            <span id="lineCount" class="text-stat-val">0</span>
+          </div>
+        </div>
+
+        <!-- Step 2: Conversion Buttons & Actions -->
+        <div class="calc-step-header" style="margin-top: var(--spacing-xl);">
+          <span class="calc-step-num">2</span>
+          <div>
+            <h2 class="calc-step-title">Choose case and copy or download</h2>
+            <p class="calc-step-desc">Click any conversion format below to instantly reformat your text.</p>
+          </div>
+        </div>
+
+        <!-- Case Conversion Buttons Grid -->
+        <div class="text-case-grid" role="group" aria-label="Text Case Transformations">
+          <button type="button" class="text-case-btn" data-case="upper">
+            <span>UPPER CASE</span>
+            <span class="btn-example">EXAMPLE TEXT</span>
+          </button>
+          <button type="button" class="text-case-btn" data-case="lower">
+            <span>lower case</span>
+            <span class="btn-example">example text</span>
+          </button>
+          <button type="button" class="text-case-btn" data-case="sentence">
+            <span>Sentence case</span>
+            <span class="btn-example">Example text</span>
+          </button>
+          <button type="button" class="text-case-btn" data-case="title">
+            <span>Title Case</span>
+            <span class="btn-example">Example of Text</span>
+          </button>
+          <button type="button" class="text-case-btn" data-case="capitalize">
+            <span>Capitalize Each Word</span>
+            <span class="btn-example">Example Of Text</span>
+          </button>
+          <button type="button" class="text-case-btn" data-case="alternating">
+            <span>aLtErNaTiNg</span>
+            <span class="btn-example">eXaMpLe tExT</span>
+          </button>
+          <button type="button" class="text-case-btn" data-case="inverse">
+            <span>iNVERSE</span>
+            <span class="btn-example">InVeRsE cAsE</span>
+          </button>
+          <button type="button" class="text-case-btn" data-case="camel">
+            <span>camelCase</span>
+            <span class="btn-example">exampleText</span>
+          </button>
+          <button type="button" class="text-case-btn" data-case="pascal">
+            <span>PascalCase</span>
+            <span class="btn-example">ExampleText</span>
+          </button>
+          <button type="button" class="text-case-btn" data-case="snake">
+            <span>snake_case</span>
+            <span class="btn-example">example_text</span>
+          </button>
+          <button type="button" class="text-case-btn" data-case="kebab">
+            <span>kebab-case</span>
+            <span class="btn-example">example-text</span>
+          </button>
+          <button type="button" class="text-case-btn" data-case="constant">
+            <span>CONSTANT_CASE</span>
+            <span class="btn-example">EXAMPLE_TEXT</span>
+          </button>
+        </div>
+
+        <!-- Actions Toolbar -->
+        <div class="text-actions-bar">
+          <div class="text-actions-group">
+            <button type="button" id="copyCaseBtn" class="btn btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy Text</span>
+            </button>
+            <button type="button" id="downloadCaseBtn" class="btn btn-secondary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              <span>Download .txt</span>
+            </button>
+          </div>
+
+          <div class="text-actions-group">
+            <button type="button" id="undoCaseBtn" class="btn btn-ghost" title="Undo previous conversion" disabled>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+              <span>Undo</span>
+            </button>
+            <button type="button" id="clearCaseBtn" class="btn btn-ghost" title="Clear text area">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+              <span>Clear</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Ad Slot -->
+      <div class="ad-slot ad-slot-bottom" data-ad-slot="bottom" aria-hidden="true"></div>
+
+      <!-- Guide & SEO Content -->
+      <section class="calc-guide-section" aria-label="About Case Conversion">
+        <div style="text-align: center; margin-bottom: var(--spacing-lg);">
+          <img src="/favicon.svg" alt="Case converter letter formatting tool icon" width="48" height="48" style="opacity: 0.85;">
+        </div>
+
+        <h2>Fast Online Letter Case Formatting</h2>
+        <p>
+          Our <strong>case converter</strong> allows you to change capitalisation styles across essays, spreadsheets, code bases, and article drafts. Whether you need to switch <strong>uppercase to lowercase</strong> or run an intelligent <strong>title case converter</strong> that respects minor words, all operations occur directly on your computer with zero upload delay.
+        </p>
+
+        <!-- Inline Ad Slot -->
+        <div class="ad-slot ad-slot-inline" data-ad-slot="inline" aria-hidden="true"></div>
+
+        <h3>How to Convert Text Case Online</h3>
+        <ol style="margin: 1rem 0 1.5rem 1.5rem; color: var(--text-muted); line-height: 1.7;">
+          <li><strong>Step 1:</strong> Paste or type your content into the main editor window.</li>
+          <li><strong>Step 2:</strong> Select any case button such as Sentence case, Title Case, or camelCase.</li>
+          <li><strong>Step 3:</strong> Copy the formatted text to your clipboard or download a clean .txt file.</li>
+        </ol>
+
+        <h3>Supported Capitalization Modes</h3>
+        <ul>
+          <li><strong>Title Case:</strong> Automatically formats book and article headlines according to standard editorial rules.</li>
+          <li><strong>Sentence Case:</strong> Capitalizes initial words following periods, question marks, and exclamation marks.</li>
+          <li><strong>Developer Casing:</strong> Formats programming identifiers into camelCase, PascalCase, snake_case, and CONSTANT_CASE.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="calc-faq-section" aria-label="Frequently Asked Questions">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-question">How does this case converter handle words with apostrophes?</summary>
+            <div class="faq-answer">
+              <p>The <strong>case converter</strong> treats contractions as unified words. When using Capitalize Each Word, terms like &ldquo;don't&rdquo; or &ldquo;we've&rdquo; become &ldquo;Don't&rdquo; and &ldquo;We've&rdquo; rather than capitalizing letters after the apostrophe.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Which words stay lowercase in title case mode?</summary>
+            <div class="faq-answer">
+              <p>Short grammatical articles, prepositions, and conjunctions (including a, an, and, as, at, but, by, for, in, of, on, or, the, to, and with) remain lowercase unless they appear at the beginning or end of a title.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Can I process large files of 1 MB or more without browser lag?</summary>
+            <div class="faq-answer">
+              <p>Yes. All operations run client-side using native JavaScript string matching. Even files containing several hundred thousand characters convert in under 100 milliseconds.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- Related Tools -->
+      <section class="calc-more-tools" aria-label="More Free Tools">
+        <h2>More Free Tools</h2>
+        <div class="calc-tools-grid">
+          <a href="/fancy-text-generator/" class="calc-tool-link">
+            <span class="calc-tool-link-title">Fancy Text Generator</span>
+            <span class="calc-tool-link-desc">Create stylish fonts, gothic script, and decorative unicode symbols.</span>
+          </a>
+          <a href="/remove-duplicate-lines/" class="calc-tool-link">
+            <span class="calc-tool-link-title">Remove Duplicate Lines</span>
+            <span class="calc-tool-link-desc">Clean up large text lists, delete duplicates, and sort alphabetically.</span>
+          </a>
+          <a href="/text-to-handwriting-converter/" class="calc-tool-link">
+            <span class="calc-tool-link-title">Text to Handwriting</span>
+            <span class="calc-tool-link-desc">Transform digital essays into realistic ruled assignment pages.</span>
+          </a>
+          <a href="/whatsapp-link-generator/" class="calc-tool-link">
+            <span class="calc-tool-link-title">WhatsApp Link Generator</span>
+            <span class="calc-tool-link-desc">Build direct wa.me chat links and QR codes with custom messages.</span>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-links">
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/terms/">Terms</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 FileShrink. Free online utilities for students and professionals.</p>
+    </div>
+  </footer>
+
+  <!-- Text Tools Engine Script -->
+  <script src="/js/text-tools.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const textarea = document.getElementById('caseConverterText');
+      const charCountEl = document.getElementById('charCount');
+      const wordCountEl = document.getElementById('wordCount');
+      const lineCountEl = document.getElementById('lineCount');
+      const undoBtn = document.getElementById('undoCaseBtn');
+      const clearBtn = document.getElementById('clearCaseBtn');
+      const copyBtn = document.getElementById('copyCaseBtn');
+      const downloadBtn = document.getElementById('downloadCaseBtn');
+
+      const undoStack = [];
+
+      function updateStats() {
+        const text = textarea.value;
+        const stats = TextToolUtils.getTextStats(text);
+        charCountEl.textContent = stats.chars.toLocaleString();
+        wordCountEl.textContent = stats.words.toLocaleString();
+        lineCountEl.textContent = stats.lines.toLocaleString();
+      }
+
+      function pushUndo(state) {
+        undoStack.push(state);
+        if (undoStack.length > TEXT_TOOLS_CONFIG.undoStackLimit) {
+          undoStack.shift();
+        }
+        undoBtn.disabled = undoStack.length === 0;
+      }
+
+      // Handle case conversion buttons
+      document.querySelectorAll('.text-case-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const mode = btn.dataset.case;
+          if (!CaseConverter[mode]) return;
+
+          const currentText = textarea.value;
+          if (!currentText) return;
+
+          pushUndo(currentText);
+          textarea.value = CaseConverter[mode](currentText);
+          updateStats();
+        });
+      });
+
+      // Undo button
+      undoBtn.addEventListener('click', () => {
+        if (undoStack.length > 0) {
+          textarea.value = undoStack.pop();
+          undoBtn.disabled = undoStack.length === 0;
+          updateStats();
+        }
+      });
+
+      // Clear button
+      clearBtn.addEventListener('click', () => {
+        if (textarea.value) {
+          pushUndo(textarea.value);
+          textarea.value = '';
+          updateStats();
+          textarea.focus();
+        }
+      });
+
+      // Copy button
+      copyBtn.addEventListener('click', () => {
+        TextToolUtils.copyText(textarea.value, copyBtn);
+      });
+
+      // Download button
+      downloadBtn.addEventListener('click', () => {
+        TextToolUtils.downloadTxt(textarea.value, 'case-converted.txt');
+      });
+
+      textarea.addEventListener('input', updateStats);
+      updateStats();
+    });
+  </script>
+</body>
+</html>

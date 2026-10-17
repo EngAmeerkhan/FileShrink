@@ -1,0 +1,311 @@
+/* ==========================================================================
+   FileShrink - Shared Text Tools Stylesheet (css/text-tools.css)
+   Reused across /fancy-text-generator/, /case-converter/, /remove-duplicate-lines/
+   ========================================================================== */
+
+/* Main Text Tool Layout */
+.text-tool-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg, 1.5rem);
+  width: 100%;
+}
+
+/* Primary Textarea */
+.text-tool-textarea {
+  width: 100%;
+  min-height: 180px;
+  max-height: 480px;
+  padding: 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-main);
+  background-color: var(--bg-surface);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  resize: vertical;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.text-tool-textarea:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.text-tool-textarea::placeholder {
+  color: var(--text-light);
+  opacity: 0.8;
+}
+
+/* Mono variant for code/lines */
+.text-tool-textarea.is-mono {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.9375rem;
+  white-space: pre;
+  tab-size: 4;
+}
+
+/* Stats Counter Bar */
+.text-tool-stats-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.75rem 1rem;
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+.text-stat-item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.text-stat-val {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.text-stat-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  border-radius: var(--radius-full);
+}
+
+.text-stat-badge.is-success {
+  background-color: var(--success-bg);
+  color: var(--success);
+  border: 1px solid var(--success-border);
+}
+
+/* Case Conversion Buttons Grid */
+.text-case-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.625rem;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.text-case-btn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-main);
+  background-color: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: center;
+  min-height: 48px;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+.text-case-btn:hover {
+  border-color: var(--primary);
+  background-color: var(--primary-light);
+  color: var(--primary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.text-case-btn:active {
+  transform: translateY(0);
+}
+
+.text-case-btn .btn-example {
+  font-size: 0.75rem;
+  font-weight: normal;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Action Rows */
+.text-actions-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+}
+
+.text-actions-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+/* Fancy Text Styles Section */
+.fancy-styles-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  width: 100%;
+}
+
+.fancy-style-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 1.125rem;
+  background-color: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.fancy-style-card:hover {
+  border-color: var(--primary-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.fancy-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fancy-style-name {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.fancy-style-preview {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--text-main);
+  padding: 0.5rem 0.25rem;
+  word-break: break-word;
+  white-space: pre-wrap;
+  user-select: text;
+  min-height: 1.8rem;
+}
+
+.fancy-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  background-color: var(--primary);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  min-height: 36px;
+  min-width: 80px;
+}
+
+.fancy-copy-btn:hover {
+  background-color: var(--primary-hover);
+}
+
+.fancy-copy-btn.copied {
+  background-color: var(--success);
+}
+
+/* Duplicate Lines Options Form */
+.duplicate-options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+.duplicate-checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-main);
+  user-select: none;
+}
+
+.duplicate-checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+/* Callout Note */
+.text-tool-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  padding: 0.875rem 1rem;
+  background-color: var(--warning-bg);
+  border: 1px solid var(--warning-border);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-main);
+}
+
+.text-tool-note svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--warning);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .text-case-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .text-actions-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .text-actions-group {
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .text-actions-group .btn {
+    flex: 1 1 auto;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .fancy-style-preview {
+    font-size: 1.125rem;
+  }
+}

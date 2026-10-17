@@ -186,6 +186,9 @@
       if (lowerTitle.includes('wifi') || lowerTitle.includes('qr')) extraKeywords += ' wifi qr code generator qr code generator wifi password qr code connect router network scan ssid wireless';
       if (lowerTitle.includes('barcode')) extraKeywords += ' barcode generator barcode maker ean 13 barcode generator upc-a code 128 code 39 retail product label check digit';
       if (lowerTitle.includes('whatsapp')) extraKeywords += ' whatsapp link generator whatsapp chat link click to chat link wa.me direct chat message url contact';
+      if (lowerTitle.includes('fancy')) extraKeywords += ' fancy text generator stylish name generator stylish text generator aesthetic fonts unicode symbols cool letters nickname';
+      if (lowerTitle.includes('case')) extraKeywords += ' case converter uppercase to lowercase title case converter sentence case camelcase pascalcase snake_case capital letters';
+      if (lowerTitle.includes('duplicate')) extraKeywords += ' remove duplicate lines remove duplicate lines online delete duplicate lines clean list trim deduplicate sort unique';
 
 
 

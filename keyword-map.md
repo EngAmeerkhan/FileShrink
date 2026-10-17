@@ -72,5 +72,8 @@
 | `/wifi-qr-code-generator/` | **wifi qr code generator** (Secondaries: qr code generator, (*) wifi password qr code) | Wi-Fi QR Code Generator - Free Online \| FileShrink | Wi-Fi QR Code Generator | 49 | 154 | Yes | Yes | Yes | Yes |
 | `/barcode-generator/` | **barcode generator** (Secondaries: (*) barcode maker, (*) ean 13 barcode generator) | Barcode Generator - Free Online \| FileShrink | Barcode Generator | 44 | 155 | Yes | Yes | Yes | Yes |
 | `/whatsapp-link-generator/` | **whatsapp link generator** (Secondaries: (*) whatsapp chat link, (*) click to chat link) | WhatsApp Link Generator - Free Online \| FileShrink | WhatsApp Link Generator | 50 | 153 | Yes | Yes | Yes | Yes |
+| `/fancy-text-generator/` | **fancy text generator** (Secondaries: stylish name generator, (*) stylish text generator) | Fancy Text Generator - Free Online \| FileShrink | Fancy Text Generator | 48 | 147 | Yes | Yes | Yes | Yes |
+| `/case-converter/` | **case converter** (Secondaries: (*) uppercase to lowercase, (*) title case converter) | Case Converter - Free Online \| FileShrink | Case Converter | 41 | 147 | Yes | Yes | Yes | Yes |
+| `/remove-duplicate-lines/` | **remove duplicate lines** (Secondaries: (*) remove duplicate lines online, (*) delete duplicate lines) | Remove Duplicate Lines - Free Online \| FileShrink | Remove Duplicate Lines | 49 | 152 | Yes | Yes | Yes | Yes |
 
 

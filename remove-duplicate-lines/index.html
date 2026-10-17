@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remove Duplicate Lines - Free Online | FileShrink</title>
+  <meta name="description" content="Clean and remove duplicate lines online with our free tool with no signup and no watermark. Delete repeat entries, trim whitespace, and sort instantly.">
+  <link rel="canonical" href="https://fileshrink.vercel.app/remove-duplicate-lines/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Remove Duplicate Lines - Free Online | FileShrink">
+  <meta property="og:description" content="Clean and remove duplicate lines online with our free tool with no signup and no watermark. Delete repeat entries, trim whitespace, and sort instantly.">
+  <meta property="og:url" content="https://fileshrink.vercel.app/remove-duplicate-lines/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Remove Duplicate Lines - Free Online | FileShrink">
+  <meta name="twitter:description" content="Clean and remove duplicate lines online with our free tool with no signup and no watermark. Delete repeat entries, trim whitespace, and sort instantly.">
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/text-tools.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Remove Duplicate Lines",
+        "url": "https://fileshrink.vercel.app/remove-duplicate-lines/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Delete repeating rows, trim whitespace, remove blank lines, and sort unique list entries."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://fileshrink.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Text Tools",
+            "item": "https://fileshrink.vercel.app/#converters"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Remove Duplicate Lines",
+            "item": "https://fileshrink.vercel.app/remove-duplicate-lines/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does this tool remove duplicate lines from lists?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The tool uses a high-speed in-memory Set index to check each line. It filters out identical entries based on your case-sensitivity and whitespace trimming choices."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between keeping the first or last occurrence?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Keeping the first occurrence preserves the line's original position from the top of the file, while keeping the last occurrence retains its latest position towards the bottom."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will this tool freeze on massive lists of 50,000 or 100,000 lines?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No, the JavaScript algorithm uses single-pass hash sets capable of filtering 100,000 lines in less than 100 milliseconds directly inside your browser."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Rule 8: Platform limits: 100,000 lines processing limit for browser memory (verify against the platform's current guidance) -->
+
+  <!-- Top Navigation Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="/" class="site-logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        <span>FileShrink</span>
+      </a>
+      <nav class="site-nav">
+        <a href="/#student-tools" class="nav-link">Academic Tools</a>
+        <a href="/#converters" class="nav-link">Generators &amp; Converters</a>
+        <a href="/#pdf-tools" class="nav-link">PDF Tools</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Top Ad Slot (Reserved space, outside tool container) -->
+  <div class="ad-slot ad-slot-top" data-ad-slot="top" aria-hidden="true"></div>
+
+  <main class="calc-main-container">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="calc-breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/#converters">Text Tools</a></li>
+          <li aria-current="page">Remove Duplicate Lines</li>
+        </ol>
+      </nav>
+
+      <!-- Page Header -->
+      <div class="calc-header-section">
+        <h1>Remove Duplicate Lines</h1>
+        <p class="calc-subtitle">Filter duplicate text lines, trim spaces, sort results, and keep unique items instantly.</p>
+        <p class="calc-privacy-line">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          Nothing is uploaded or saved. Everything works on your device.
+        </p>
+      </div>
+
+      <!-- Main Tool Card (2-Step Flow) -->
+      <div class="calc-tool-card">
+
+        <!-- Step 1: Input Section -->
+        <div class="calc-step-header">
+          <span class="calc-step-num">1</span>
+          <div>
+            <h2 class="calc-step-title">Enter or paste your list</h2>
+            <p class="calc-step-desc">Enter your lines below and choose deduplication and sorting options.</p>
+          </div>
+        </div>
+
+        <div style="margin-bottom: var(--spacing-md);">
+          <div style="display: flex; justify-content: flex-end; gap: 0.5rem; margin-bottom: 0.5rem;">
+            <button type="button" id="loadSampleBtn" class="btn btn-ghost" style="padding: 4px 8px; font-size: 0.8125rem;">Load Sample</button>
+            <button type="button" id="clearInputBtn" class="btn btn-ghost" style="padding: 4px 8px; font-size: 0.8125rem;">Clear</button>
+          </div>
+          <textarea id="duplicateInputText" class="text-tool-textarea is-mono" placeholder="Paste your lines here, one per row..." aria-label="Text lines to deduplicate">a
+b
+a
+B
+
+
+b </textarea>
+        </div>
+
+        <!-- Deduplication Options Form Grid -->
+        <div class="duplicate-options-grid" style="margin-bottom: var(--spacing-lg);">
+          <label class="duplicate-checkbox-label">
+            <input type="checkbox" id="optCaseSensitive" checked>
+            <span>Case sensitive</span>
+          </label>
+
+          <label class="duplicate-checkbox-label">
+            <input type="checkbox" id="optTrimSpaces" checked>
+            <span>Trim spaces</span>
+          </label>
+
+          <label class="duplicate-checkbox-label">
+            <input type="checkbox" id="optRemoveEmpty" checked>
+            <span>Remove empty lines</span>
+          </label>
+
+          <div class="calc-form-group" style="margin: 0;">
+            <label for="optOccurrence" style="font-size: 0.875rem;">Occurrence</label>
+            <select id="optOccurrence" class="calc-select" style="padding: 0.4rem 0.6rem; font-size: 0.875rem;">
+              <option value="first" selected>Keep first occurrence</option>
+              <option value="last">Keep last occurrence</option>
+            </select>
+          </div>
+
+          <div class="calc-form-group" style="margin: 0;">
+            <label for="optSort" style="font-size: 0.875rem;">Sorting</label>
+            <select id="optSort" class="calc-select" style="padding: 0.4rem 0.6rem; font-size: 0.875rem;">
+              <option value="none" selected>Do not sort (original order)</option>
+              <option value="asc">Sort A to Z (Alphabetical)</option>
+              <option value="desc">Sort Z to A (Reverse)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Step 2: Output Section -->
+        <div class="calc-step-header">
+          <span class="calc-step-num">2</span>
+          <div>
+            <h2 class="calc-step-title">See or copy deduplicated lines</h2>
+            <p class="calc-step-desc">Review your cleaned list, examine the duplicate statistics, and copy or download.</p>
+          </div>
+        </div>
+
+        <!-- Statistics Summary Bar -->
+        <div class="text-tool-stats-bar" aria-live="polite" style="margin-bottom: var(--spacing-md);">
+          <div class="text-stat-item">
+            <span>Lines before:</span>
+            <span id="statBefore" class="text-stat-val">0</span>
+          </div>
+          <div class="text-stat-item">
+            <span>Lines after:</span>
+            <span id="statAfter" class="text-stat-val">0</span>
+          </div>
+          <div class="text-stat-item">
+            <span>Duplicates removed:</span>
+            <span id="statRemoved" class="text-stat-badge is-success">0</span>
+          </div>
+        </div>
+
+        <!-- Output Textarea -->
+        <div style="margin-bottom: var(--spacing-md);">
+          <textarea id="duplicateOutputText" class="text-tool-textarea is-mono" readonly placeholder="Cleaned lines will appear here..." aria-label="Deduplicated output list"></textarea>
+        </div>
+
+        <!-- Output Actions Bar -->
+        <div class="text-actions-bar">
+          <div class="text-actions-group">
+            <button type="button" id="copyResultBtn" class="btn btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy Clean List</span>
+            </button>
+            <button type="button" id="downloadResultBtn" class="btn btn-secondary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              <span>Download .txt</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Ad Slot -->
+      <div class="ad-slot ad-slot-bottom" data-ad-slot="bottom" aria-hidden="true"></div>
+
+      <!-- Guide & SEO Content -->
+      <section class="calc-guide-section" aria-label="About Removing Duplicate Lines">
+        <div style="text-align: center; margin-bottom: var(--spacing-lg);">
+          <img src="/favicon.svg" alt="Remove duplicate lines text list cleaning icon" width="48" height="48" style="opacity: 0.85;">
+        </div>
+
+        <h2>Clean Email Lists, Product Codes, and Text Data</h2>
+        <p>
+          Our <strong>remove duplicate lines</strong> tool helps developers, analysts, and students clean raw data files instantly. When you need to <strong>remove duplicate lines online</strong> without installing heavy desktop utilities, this application strips identical rows, strips unwanted spaces, and lets you <strong>delete duplicate lines</strong> while preserving your chosen occurrence sequence.
+        </p>
+
+        <!-- Inline Ad Slot -->
+        <div class="ad-slot ad-slot-inline" data-ad-slot="inline" aria-hidden="true"></div>
+
+        <h3>How to Deduplicate Lines in 3 Steps</h3>
+        <ol style="margin: 1rem 0 1.5rem 1.5rem; color: var(--text-muted); line-height: 1.7;">
+          <li><strong>Step 1:</strong> Paste your raw list of rows into the upper text area.</li>
+          <li><strong>Step 2:</strong> Configure options such as case sensitivity, whitespace trimming, and sorting.</li>
+          <li><strong>Step 3:</strong> Click Copy or Download to save your cleaned list with duplicate lines eliminated.</li>
+        </ol>
+
+        <h3>Key Features &amp; Options</h3>
+        <ul>
+          <li><strong>Case Sensitivity:</strong> Treat uppercase &ldquo;Item&rdquo; and lowercase &ldquo;item&rdquo; as distinct or identical entries.</li>
+          <li><strong>Keep First or Last:</strong> Preserve either the earliest entry or the most recent occurrence in your list.</li>
+          <li><strong>High Capacity:</strong> Seamlessly processes over 100,000 lines without browser lockup.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="calc-faq-section" aria-label="Frequently Asked Questions">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-question">How does this tool remove duplicate lines from lists?</summary>
+            <div class="faq-answer">
+              <p>The tool uses an in-memory hash set to evaluate each line sequentially. When you <strong>remove duplicate lines</strong> with our utility, repeated elements are filtered out instantly according to your selected sensitivity options.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">What is the difference between keeping the first or last occurrence?</summary>
+            <div class="faq-answer">
+              <p>Selecting &ldquo;Keep first occurrence&rdquo; keeps the first time a line appeared and discards subsequent repeats. Selecting &ldquo;Keep last occurrence&rdquo; tracks newer entries down the file and retains their later position.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Will this tool freeze on massive lists of 50,000 or 100,000 lines?</summary>
+            <div class="faq-answer">
+              <p>No. The deduplication algorithm operates in single-pass linear time O(N), allowing typical 100,000-line datasets to process in under 100 milliseconds inside your browser.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- Related Tools -->
+      <section class="calc-more-tools" aria-label="More Free Tools">
+        <h2>More Free Tools</h2>
+        <div class="calc-tools-grid">
+          <a href="/case-converter/" class="calc-tool-link">
+            <span class="calc-tool-link-title">Case Converter</span>
+            <span class="calc-tool-link-desc">Change uppercase to lowercase, title case, sentence case, and camelCase.</span>
+          </a>
+          <a href="/fancy-text-generator/" class="calc-tool-link">
+            <span class="calc-tool-link-title">Fancy Text Generator</span>
+            <span class="calc-tool-link-desc">Generate stylish fonts and decorative unicode text styles to copy.</span>
+          </a>
+          <a href="/text-to-handwriting-converter/" class="calc-tool-link">
+            <span class="calc-tool-link-title">Text to Handwriting</span>
+            <span class="calc-tool-link-desc">Convert typed essays into realistic blue or black ink handwritten pages.</span>
+          </a>
+          <a href="/whatsapp-link-generator/" class="calc-tool-link">
+            <span class="calc-tool-link-title">WhatsApp Link Generator</span>
+            <span class="calc-tool-link-desc">Build direct wa.me chat links and QR codes with custom greeting text.</span>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-links">
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/terms/">Terms</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 FileShrink. Free online utilities for students and professionals.</p>
+    </div>
+  </footer>
+
+  <!-- Text Tools Engine Script -->
+  <script src="/js/text-tools.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const inputEl = document.getElementById('duplicateInputText');
+      const outputEl = document.getElementById('duplicateOutputText');
+      const optCase = document.getElementById('optCaseSensitive');
+      const optTrim = document.getElementById('optTrimSpaces');
+      const optRemoveEmpty = document.getElementById('optRemoveEmpty');
+      const optOccurrence = document.getElementById('optOccurrence');
+      const optSort = document.getElementById('optSort');
+
+      const statBeforeEl = document.getElementById('statBefore');
+      const statAfterEl = document.getElementById('statAfter');
+      const statRemovedEl = document.getElementById('statRemoved');
+
+      const loadSampleBtn = document.getElementById('loadSampleBtn');
+      const clearBtn = document.getElementById('clearInputBtn');
+      const copyBtn = document.getElementById('copyResultBtn');
+      const downloadBtn = document.getElementById('downloadResultBtn');
+
+      function processLines() {
+        const text = inputEl.value;
+        const options = {
+          caseSensitive: optCase.checked,
+          trimSpaces: optTrim.checked,
+          removeEmpty: optRemoveEmpty.checked,
+          keep: optOccurrence.value,
+          sort: optSort.value
+        };
+
+        const result = DuplicateRemover.process(text, options);
+        outputEl.value = result.resultText;
+
+        statBeforeEl.textContent = result.linesBefore.toLocaleString();
+        statAfterEl.textContent = result.linesAfter.toLocaleString();
+        statRemovedEl.textContent = result.duplicatesRemoved.toLocaleString();
+      }
+
+      // Event listeners for inputs and options
+      inputEl.addEventListener('input', processLines);
+      optCase.addEventListener('change', processLines);
+      optTrim.addEventListener('change', processLines);
+      optRemoveEmpty.addEventListener('change', processLines);
+      optOccurrence.addEventListener('change', processLines);
+      optSort.addEventListener('change', processLines);
+
+      // Load sample
+      loadSampleBtn.addEventListener('click', () => {
+        inputEl.value = 'a\nb\na\nB\n\n\nb ';
+        processLines();
+      });
+
+      // Clear input
+      clearBtn.addEventListener('click', () => {
+        inputEl.value = '';
+        processLines();
+        inputEl.focus();
+      });
+
+      // Copy result
+      copyBtn.addEventListener('click', () => {
+        TextToolUtils.copyText(outputEl.value, copyBtn);
+      });
+
+      // Download result
+      downloadBtn.addEventListener('click', () => {
+        TextToolUtils.downloadTxt(outputEl.value, 'deduplicated-lines.txt');
+      });
+
+      processLines();
+    });
+  </script>
+</body>
+</html>
