@@ -63,4 +63,7 @@
 | `/crop-pdf/` | **crop pdf** (Secondaries: (*) crop pdf pages, (*) crop pdf online) | Crop PDF - Free Online \| FileShrink | Crop PDF | 34 | 154 | Yes | Yes | Yes | Yes |
 | `/add-signature-to-pdf/` | **add signature to pdf** (Secondaries: sign pdf online, (*) sign pdf on mobile) | Add Signature to PDF - Free Online \| FileShrink | Add Signature to PDF | 45 | 154 | Yes | Yes | Yes | Yes |
 | `/add-watermark-to-pdf/` | **add watermark to pdf** (Secondaries: (*) pdf watermark, (*) watermark pdf online) | Add Watermark to PDF - Free Online \| FileShrink | Add Watermark to PDF | 45 | 154 | Yes | Yes | Yes | Yes |
+| `/loan-calculator/` | **loan calculator** (Secondaries: emi calculator, (*) loan payment calculator, (*) monthly payment calculator) | Loan Calculator - Free Online \| FileShrink | Loan Calculator | 42 | 154 | Yes | Yes | Yes | Yes |
+| `/average-calculator/` | **average calculator** (Secondaries: (*) mean median mode calculator, (*) average of numbers) | Average Calculator - Free Online \| FileShrink | Average Calculator | 45 | 153 | Yes | Yes | Yes | Yes |
+| `/discount-calculator/` | **discount calculator** (Secondaries: (*) sale price calculator, (*) percentage discount calculator) | Discount Calculator - Free Online \| FileShrink | Discount Calculator | 47 | 154 | Yes | Yes | Yes | Yes |
 

@@ -53,6 +53,24 @@
       defaultCurrency: 'PKR',         // 'PKR', 'INR', 'USD', or 'none'
       amortizationMaxRows: 360,
       initialScheduleRows: 12
+    },
+
+    // Loan Calculator configuration
+    loan: {
+      minRate: 0,
+      maxRate: 100,
+      maxMonths: 600,
+      initialScheduleRows: 12
+    },
+
+    // Average Calculator configuration
+    average: {
+      maxNumbers: 10000
+    },
+
+    // Discount Calculator configuration
+    discount: {
+      maxDiscountPercent: 100
     }
   };
 
@@ -2150,7 +2168,908 @@ Plot Area:
   }
 
   /* ==========================================================================
-     10. GLOBAL EXPOSURE
+     10. LOAN CALCULATOR ENGINE
+     ========================================================================== */
+  function initLoanCalculator() {
+    const amountInput = document.getElementById('loanAmount');
+    const rateInput = document.getElementById('loanRate');
+    const termInput = document.getElementById('loanTerm');
+    const termUnitBtns = document.querySelectorAll('.loan-term-unit-btn');
+    const startDateInput = document.getElementById('loanStartDate');
+    const extraPaymentInput = document.getElementById('loanExtraPayment');
+
+    const monthlyPaymentEl = document.getElementById('loanMonthlyPayment');
+    const totalPayableEl = document.getElementById('loanTotalPayable');
+    const totalInterestEl = document.getElementById('loanTotalInterest');
+    const payoffDateEl = document.getElementById('loanPayoffDate');
+
+    const extraSectionEl = document.getElementById('loanExtraSection');
+    const monthsSavedEl = document.getElementById('loanMonthsSaved');
+    const interestSavedEl = document.getElementById('loanInterestSaved');
+    const extraSummaryEl = document.getElementById('loanExtraSummary');
+
+    const barPrincipalEl = document.getElementById('loanBarPrincipal');
+    const barInterestEl = document.getElementById('loanBarInterest');
+    const prinPercentEl = document.getElementById('loanPrinPercent');
+    const intPercentEl = document.getElementById('loanIntPercent');
+
+    const formulaEl = document.getElementById('loanFormulaText');
+    const messageEl = document.getElementById('loanMessage');
+
+    const scheduleTableBody = document.getElementById('loanScheduleTableBody');
+    const scheduleToggleBtn = document.getElementById('loanScheduleToggleBtn');
+    const copyScheduleBtn = document.getElementById('loanCopyScheduleBtn');
+    const downloadCsvBtn = document.getElementById('loanDownloadCsvBtn');
+    const printScheduleBtn = document.getElementById('loanPrintScheduleBtn');
+
+    const copyBtn = document.getElementById('copyLoanBtn');
+    const clearBtn = document.getElementById('clearLoanBtn');
+
+    if (!amountInput || !monthlyPaymentEl) return;
+
+    let termUnit = 'years'; // 'years' or 'months'
+    let currentSchedule = [];
+    let isScheduleExpanded = false;
+
+    // Term unit buttons toggle (Years vs Months)
+    termUnitBtns.forEach(btn => {
+      btn.addEventListener('click', function () {
+        termUnit = this.getAttribute('data-unit') || 'years';
+        termUnitBtns.forEach(b => {
+          const isActive = b === btn;
+          b.classList.toggle('active', isActive);
+          b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+        calculateLoan();
+      });
+    });
+
+    function calculateLoan() {
+      const rawAmount = amountInput.value.trim();
+      const rawRate = rateInput.value.trim();
+      const rawTerm = termInput.value.trim();
+      const rawExtra = extraPaymentInput ? extraPaymentInput.value.trim() : '';
+
+      if (rawAmount === '' && rawTerm === '') {
+        resetOutputs('Enter your loan amount, interest rate, and term to see your monthly payment and repayment plan.');
+        return;
+      }
+
+      const P = parseSafeNumber(rawAmount);
+      const rateVal = parseSafeNumber(rawRate);
+      const termVal = parseSafeNumber(rawTerm);
+      const extraVal = rawExtra === '' ? 0 : parseSafeNumber(rawExtra);
+
+      // Validation
+      if (P === null || P <= 0) {
+        resetOutputs('Please enter a loan amount greater than zero.');
+        return;
+      }
+
+      if (rateVal === null || rateVal < CALC_CONFIG.loan.minRate || rateVal > CALC_CONFIG.loan.maxRate) {
+        resetOutputs(`Annual interest rate must be between ${CALC_CONFIG.loan.minRate}% and ${CALC_CONFIG.loan.maxRate}%.`);
+        return;
+      }
+
+      if (termVal === null || termVal <= 0) {
+        resetOutputs('Please enter a loan term greater than zero.');
+        return;
+      }
+
+      if (extraVal === null || extraVal < 0) {
+        resetOutputs('Extra monthly payment cannot be negative.');
+        return;
+      }
+
+      // Calculate total months
+      const rawMonths = termUnit === 'years' ? termVal * 12 : termVal;
+      // Must result in a whole number of months
+      if (Math.abs(rawMonths - Math.round(rawMonths)) > 1e-6) {
+        resetOutputs('Loan term must result in a whole number of months.');
+        return;
+      }
+
+      const n = Math.round(rawMonths);
+      if (n < 1 || n > CALC_CONFIG.loan.maxMonths) {
+        resetOutputs(`Loan term must be between 1 and ${CALC_CONFIG.loan.maxMonths} months (up to 50 years).`);
+        return;
+      }
+
+      // Formula calculations
+      // r = annual rate / 12 / 100
+      const r = rateVal > 0 ? (rateVal / 12) / 100 : 0;
+
+      let baseMonthlyPayment = 0;
+      let baseTotalPayable = 0;
+      let baseTotalInterest = 0;
+
+      if (r === 0) {
+        baseMonthlyPayment = P / n;
+        baseTotalPayable = P;
+        baseTotalInterest = 0;
+      } else {
+        const factor = Math.pow(1 + r, n);
+        const exactPmt = (P * r * factor) / (factor - 1);
+        baseMonthlyPayment = Math.round(exactPmt * 100) / 100;
+        baseTotalPayable = Math.round(exactPmt * n * 100) / 100;
+        baseTotalInterest = Math.max(0, Math.round((baseTotalPayable - P) * 100) / 100);
+      }
+
+      // Simulate amortization schedule with extra monthly payment
+      // The last payment absorbs rounding so the final balance is exactly 0.
+      const targetPayment = baseMonthlyPayment + extraVal;
+      let balance = P;
+      const rows = [];
+      let totalInterestSum = 0;
+      let totalInstallmentsSum = 0;
+      let monthIndex = 0;
+
+      while (balance > 0 && monthIndex < CALC_CONFIG.loan.maxMonths) {
+        monthIndex++;
+        const interestPart = r > 0 ? Math.round(balance * r * 100) / 100 : 0;
+        let principalPart = 0;
+        let pmtAmount = 0;
+
+        if (balance + interestPart <= targetPayment || (extraVal === 0 && monthIndex === n)) {
+          // Final payment absorbs any rounding
+          principalPart = balance;
+          pmtAmount = Math.round((principalPart + interestPart) * 100) / 100;
+          balance = 0;
+        } else {
+          principalPart = Math.round((targetPayment - interestPart) * 100) / 100;
+          if (principalPart >= balance) {
+            principalPart = balance;
+            pmtAmount = Math.round((principalPart + interestPart) * 100) / 100;
+            balance = 0;
+          } else {
+            pmtAmount = targetPayment;
+            balance = Math.max(0, Math.round((balance - principalPart) * 100) / 100);
+          }
+        }
+
+        totalInterestSum += interestPart;
+        totalInstallmentsSum += pmtAmount;
+
+        rows.push({
+          month: monthIndex,
+          payment: pmtAmount,
+          principal: principalPart,
+          interest: interestPart,
+          balance: balance
+        });
+
+        if (balance === 0) break;
+      }
+
+      currentSchedule = rows;
+
+      const actualMonths = monthIndex;
+      let actualTotalPayable = Math.round(totalInstallmentsSum * 100) / 100;
+      let actualTotalInterest = Math.round(totalInterestSum * 100) / 100;
+
+      if (extraVal === 0) {
+        // Match exact formula rounding for standard term
+        actualTotalPayable = baseTotalPayable;
+        actualTotalInterest = baseTotalInterest;
+      }
+
+      // Display main results
+      monthlyPaymentEl.textContent = formatPropertyValue(baseMonthlyPayment, 2, false, true);
+      totalPayableEl.textContent = formatPropertyValue(actualTotalPayable, 2, false, true);
+      totalInterestEl.textContent = formatPropertyValue(actualTotalInterest, 2, false, true);
+
+      // Payoff Date calculation (if start date is provided)
+      if (payoffDateEl) {
+        if (startDateInput && startDateInput.value) {
+          const parts = startDateInput.value.split('-');
+          if (parts.length >= 2) {
+            const startYear = parseInt(parts[0], 10);
+            const startMonth = parseInt(parts[1], 10) - 1; // 0-indexed
+            const payoff = new Date(startYear, startMonth + actualMonths, 1);
+            const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            payoffDateEl.textContent = `${monthNames[payoff.getMonth()]} ${payoff.getFullYear()}`;
+          } else {
+            payoffDateEl.textContent = '—';
+          }
+        } else {
+          payoffDateEl.textContent = '—';
+        }
+      }
+
+      // Extra payment savings
+      if (extraSectionEl) {
+        if (extraVal > 0) {
+          extraSectionEl.style.display = 'block';
+          const monthsSaved = Math.max(0, n - actualMonths);
+          const interestSaved = Math.max(0, Math.round((baseTotalInterest - actualTotalInterest) * 100) / 100);
+          if (monthsSavedEl) monthsSavedEl.textContent = `${monthsSaved} ${monthsSaved === 1 ? 'month' : 'months'}`;
+          if (interestSavedEl) interestSavedEl.textContent = formatPropertyValue(interestSaved, 2, false, true);
+          if (extraSummaryEl) {
+            extraSummaryEl.textContent = `With an extra payment of ${formatPropertyValue(extraVal, 2, true, true)}/month, you pay off ${monthsSaved} months early and save ${formatPropertyValue(interestSaved, 2, false, true)} in total interest.`;
+          }
+        } else {
+          extraSectionEl.style.display = 'none';
+          if (monthsSavedEl) monthsSavedEl.textContent = '0 months';
+          if (interestSavedEl) interestSavedEl.textContent = formatPropertyValue(0, 2, false, true);
+        }
+      }
+
+      // Simple CSS bar showing Principal vs Interest
+      const prinPct = actualTotalPayable > 0 ? (P / actualTotalPayable) * 100 : 100;
+      const intPct = actualTotalPayable > 0 ? (actualTotalInterest / actualTotalPayable) * 100 : 0;
+      const roundedPrinPct = Math.round(prinPct * 10) / 10;
+      const roundedIntPct = Math.round(intPct * 10) / 10;
+
+      if (barPrincipalEl) barPrincipalEl.style.width = `${prinPct}%`;
+      if (barInterestEl) barInterestEl.style.width = `${intPct}%`;
+      if (prinPercentEl) prinPercentEl.textContent = `${roundedPrinPct}%`;
+      if (intPercentEl) intPercentEl.textContent = `${roundedIntPct}%`;
+
+      if (messageEl) messageEl.textContent = '';
+
+      if (formulaEl) {
+        if (rateVal === 0) {
+          formulaEl.textContent = 'Formula: Payment = P ÷ n. Real banks may calculate differently.';
+        } else {
+          formulaEl.textContent = 'Formula: r = annual rate / 12 / 100; payment = P × r × (1+r)ⁿ / ((1+r)ⁿ − 1). Real banks may calculate differently.';
+        }
+      }
+
+      renderScheduleTable();
+    }
+
+    function renderScheduleTable() {
+      if (!scheduleTableBody) return;
+      scheduleTableBody.innerHTML = '';
+
+      if (currentSchedule.length === 0) {
+        if (scheduleToggleBtn) scheduleToggleBtn.style.display = 'none';
+        return;
+      }
+
+      const initialLimit = CALC_CONFIG.loan.initialScheduleRows;
+      const rowsToShow = isScheduleExpanded ? currentSchedule : currentSchedule.slice(0, initialLimit);
+
+      const htmlParts = [];
+      const len = rowsToShow.length;
+      for (let i = 0; i < len; i++) {
+        const row = rowsToShow[i];
+        htmlParts.push(`
+          <tr>
+            <td>${row.month}</td>
+            <td>${formatPropertyValue(row.payment, 2, false, true)}</td>
+            <td>${formatPropertyValue(row.principal, 2, false, true)}</td>
+            <td>${formatPropertyValue(row.interest, 2, false, true)}</td>
+            <td>${formatPropertyValue(row.balance, 2, false, true)}</td>
+          </tr>
+        `);
+      }
+
+      scheduleTableBody.innerHTML = htmlParts.join('');
+
+      if (scheduleToggleBtn) {
+        if (currentSchedule.length > initialLimit) {
+          scheduleToggleBtn.style.display = 'inline-block';
+          scheduleToggleBtn.textContent = isScheduleExpanded
+            ? 'Show First 12 Months'
+            : `Show All (${currentSchedule.length} Months)`;
+        } else {
+          scheduleToggleBtn.style.display = 'none';
+        }
+      }
+    }
+
+    function resetOutputs(msg) {
+      if (monthlyPaymentEl) monthlyPaymentEl.textContent = '—';
+      if (totalPayableEl) totalPayableEl.textContent = '—';
+      if (totalInterestEl) totalInterestEl.textContent = '—';
+      if (payoffDateEl) payoffDateEl.textContent = '—';
+      if (extraSectionEl) extraSectionEl.style.display = 'none';
+      if (barPrincipalEl) barPrincipalEl.style.width = '100%';
+      if (barInterestEl) barInterestEl.style.width = '0%';
+      if (prinPercentEl) prinPercentEl.textContent = '100%';
+      if (intPercentEl) intPercentEl.textContent = '0%';
+      if (scheduleTableBody) scheduleTableBody.innerHTML = '';
+      if (scheduleToggleBtn) scheduleToggleBtn.style.display = 'none';
+      if (messageEl) messageEl.textContent = msg;
+      currentSchedule = [];
+    }
+
+    // Toggle Schedule
+    if (scheduleToggleBtn) {
+      scheduleToggleBtn.addEventListener('click', () => {
+        isScheduleExpanded = !isScheduleExpanded;
+        renderScheduleTable();
+      });
+    }
+
+    // Copy Schedule Table
+    if (copyScheduleBtn) {
+      copyScheduleBtn.addEventListener('click', () => {
+        if (currentSchedule.length === 0) {
+          showToast('No schedule to copy.');
+          return;
+        }
+        let tsv = 'Month\tPayment\tPrincipal\tInterest\tBalance\n';
+        currentSchedule.forEach(r => {
+          tsv += `${r.month}\t${r.payment}\t${r.principal}\t${r.interest}\t${r.balance}\n`;
+        });
+        copyResultToClipboard(tsv, copyScheduleBtn);
+      });
+    }
+
+    // Download CSV
+    if (downloadCsvBtn) {
+      downloadCsvBtn.addEventListener('click', () => {
+        if (currentSchedule.length === 0) {
+          showToast('No schedule to download.');
+          return;
+        }
+        let csv = 'Month,Payment,Principal,Interest,Balance\r\n';
+        currentSchedule.forEach(r => {
+          csv += `${r.month},${r.payment},${r.principal},${r.interest},${r.balance}\r\n`;
+        });
+        const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'loan-amortization-schedule.csv';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        showToast('Amortization schedule downloaded.');
+      });
+    }
+
+    // Print
+    if (printScheduleBtn) {
+      printScheduleBtn.addEventListener('click', () => {
+        if (currentSchedule.length === 0) {
+          showToast('Calculate a loan first to print schedule.');
+          return;
+        }
+        // Expand table for complete printout
+        if (!isScheduleExpanded) {
+          isScheduleExpanded = true;
+          renderScheduleTable();
+        }
+        window.print();
+      });
+    }
+
+    // Copy Summary Result
+    if (copyBtn) {
+      copyBtn.addEventListener('click', () => {
+        if (!monthlyPaymentEl || monthlyPaymentEl.textContent === '—') {
+          showToast('Please calculate a loan payment first.');
+          return;
+        }
+        let summary = `Loan Payment Summary:
+Monthly Payment: ${monthlyPaymentEl.textContent}
+Total Payable: ${totalPayableEl ? totalPayableEl.textContent : ''}
+Total Interest: ${totalInterestEl ? totalInterestEl.textContent : ''}`;
+        if (payoffDateEl && payoffDateEl.textContent !== '—') {
+          summary += `\nPayoff Date: ${payoffDateEl.textContent}`;
+        }
+        if (monthsSavedEl && monthsSavedEl.textContent !== '0 months') {
+          summary += `\nMonths Saved: ${monthsSavedEl.textContent}`;
+          summary += `\nInterest Saved: ${interestSavedEl ? interestSavedEl.textContent : ''}`;
+        }
+        copyResultToClipboard(summary, copyBtn);
+      });
+    }
+
+    // Clear Button
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        amountInput.value = '';
+        rateInput.value = '';
+        termInput.value = '';
+        if (startDateInput) startDateInput.value = '';
+        if (extraPaymentInput) extraPaymentInput.value = '';
+        calculateLoan();
+        showToast('Loan inputs cleared.');
+      });
+    }
+
+    // Real-time input listeners
+    [amountInput, rateInput, termInput, startDateInput, extraPaymentInput].forEach(el => {
+      if (el) {
+        el.addEventListener('input', calculateLoan);
+        el.addEventListener('change', calculateLoan);
+      }
+    });
+
+    // Display Settings bar sync
+    bindPropertySettingsBar(calculateLoan);
+    calculateLoan();
+  }
+
+
+  /* ==========================================================================
+     11. AVERAGE CALCULATOR ENGINE
+     ========================================================================== */
+  function initAverageCalculator() {
+    const inputEl = document.getElementById('avgInput');
+    const countEl = document.getElementById('avgCount');
+    const sumEl = document.getElementById('avgSum');
+    const meanEl = document.getElementById('avgMean');
+    const medianEl = document.getElementById('avgMedian');
+    const modeEl = document.getElementById('avgMode');
+    const minEl = document.getElementById('avgMin');
+    const maxEl = document.getElementById('avgMax');
+    const rangeEl = document.getElementById('avgRange');
+
+    const ignoredBoxEl = document.getElementById('avgIgnoredBox');
+    const ignoredTextEl = document.getElementById('avgIgnoredText');
+    const messageEl = document.getElementById('avgMessage');
+
+    const copyBtn = document.getElementById('copyAvgBtn');
+    const clearBtn = document.getElementById('clearAvgBtn');
+
+    if (!inputEl || !countEl) return;
+
+    function calculateAverage() {
+      const rawText = inputEl.value;
+
+      if (!rawText.trim()) {
+        resetOutputs('Enter numbers separated by spaces, commas, or new lines to calculate statistics.');
+        return;
+      }
+
+      // Split by commas, spaces, and newlines
+      const tokens = rawText.split(/[\s,\n\r]+/).filter(t => t.trim() !== '');
+
+      if (tokens.length === 0) {
+        resetOutputs('Enter numbers separated by spaces, commas, or new lines to calculate statistics.');
+        return;
+      }
+
+      const numbers = [];
+      const ignored = [];
+
+      for (let i = 0; i < tokens.length; i++) {
+        const token = tokens[i].trim();
+        if (token === '') continue;
+
+        // Number parsing (treat commas as separator only)
+        const val = Number(token);
+        if (!Number.isNaN(val) && Number.isFinite(val)) {
+          if (numbers.length < CALC_CONFIG.average.maxNumbers) {
+            numbers.push(val);
+          }
+        } else {
+          ignored.push(token);
+        }
+      }
+
+      // Ignored elements notice
+      if (ignoredBoxEl && ignoredTextEl) {
+        if (ignored.length > 0) {
+          ignoredBoxEl.classList.add('show');
+          const displayIgnored = ignored.length > 20
+            ? ignored.slice(0, 20).join(', ') + ` ...and ${ignored.length - 20} more`
+            : ignored.join(', ');
+          ignoredTextEl.textContent = `Ignored: ${displayIgnored}`;
+        } else {
+          ignoredBoxEl.classList.remove('show');
+          ignoredTextEl.textContent = '';
+        }
+      }
+
+      if (numbers.length === 0) {
+        resetOutputs('No valid numeric entries found. Please enter valid numbers.');
+        return;
+      }
+
+      const count = numbers.length;
+      let sum = 0;
+      for (let i = 0; i < count; i++) {
+        sum += numbers[i];
+      }
+      const mean = sum / count;
+
+      // Sorted numbers for median, min, max, range
+      const sorted = [...numbers].sort((a, b) => a - b);
+      const min = sorted[0];
+      const max = sorted[count - 1];
+      const range = max - min;
+
+      // Median
+      let median = 0;
+      if (count % 2 === 1) {
+        median = sorted[Math.floor(count / 2)];
+      } else {
+        median = (sorted[count / 2 - 1] + sorted[count / 2]) / 2;
+      }
+
+      // Mode
+      const freqMap = new Map();
+      for (let i = 0; i < count; i++) {
+        const n = numbers[i];
+        freqMap.set(n, (freqMap.get(n) || 0) + 1);
+      }
+
+      let maxFreq = 0;
+      for (const f of freqMap.values()) {
+        if (f > maxFreq) maxFreq = f;
+      }
+
+      let modeStr = 'No mode';
+      if (maxFreq > 1) {
+        const modes = [];
+        for (const [val, f] of freqMap.entries()) {
+          if (f === maxFreq) modes.push(val);
+        }
+        modes.sort((a, b) => a - b);
+        modeStr = modes.map(m => formatDisplayNumber(m, 4, true)).join(', ');
+      }
+
+      // Display formatted outputs
+      countEl.textContent = formatDisplayNumber(count, 0, true);
+      sumEl.textContent = formatDisplayNumber(sum, 4, true);
+      meanEl.textContent = formatDisplayNumber(mean, 4, true);
+      medianEl.textContent = formatDisplayNumber(median, 4, true);
+      modeEl.textContent = modeStr;
+      minEl.textContent = formatDisplayNumber(min, 4, true);
+      maxEl.textContent = formatDisplayNumber(max, 4, true);
+      rangeEl.textContent = formatDisplayNumber(range, 4, true);
+
+      if (messageEl) {
+        if (tokens.length > CALC_CONFIG.average.maxNumbers) {
+          messageEl.textContent = `Dataset limit reached: processed the first ${CALC_CONFIG.average.maxNumbers} numbers.`;
+        } else {
+          messageEl.textContent = '';
+        }
+      }
+    }
+
+    function resetOutputs(msg) {
+      if (countEl) countEl.textContent = '—';
+      if (sumEl) sumEl.textContent = '—';
+      if (meanEl) meanEl.textContent = '—';
+      if (medianEl) medianEl.textContent = '—';
+      if (modeEl) modeEl.textContent = '—';
+      if (minEl) minEl.textContent = '—';
+      if (maxEl) maxEl.textContent = '—';
+      if (rangeEl) rangeEl.textContent = '—';
+      if (messageEl) messageEl.textContent = msg;
+      if (ignoredBoxEl) ignoredBoxEl.classList.remove('show');
+    }
+
+    // Real-time calculation on input
+    inputEl.addEventListener('input', calculateAverage);
+
+    // Copy Result Button
+    if (copyBtn) {
+      copyBtn.addEventListener('click', () => {
+        if (!countEl || countEl.textContent === '—') {
+          showToast('Please enter numbers first.');
+          return;
+        }
+        const text = `Average & Statistical Summary:
+Count: ${countEl.textContent}
+Sum: ${sumEl.textContent}
+Mean (Average): ${meanEl.textContent}
+Median: ${medianEl.textContent}
+Mode: ${modeEl.textContent}
+Minimum: ${minEl.textContent}
+Maximum: ${maxEl.textContent}
+Range: ${rangeEl.textContent}`;
+        copyResultToClipboard(text, copyBtn);
+      });
+    }
+
+    // Clear Button
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        inputEl.value = '';
+        calculateAverage();
+        showToast('Numbers cleared.');
+      });
+    }
+
+    calculateAverage();
+  }
+
+
+  /* ==========================================================================
+     12. DISCOUNT CALCULATOR ENGINE
+     ========================================================================== */
+  function initDiscountCalculator() {
+    const tabBtns = document.querySelectorAll('.disc-tab-btn');
+    const tabPanels = document.querySelectorAll('.disc-tab-panel');
+
+    // Tab 1: Find Sale Price
+    const origPriceInput = document.getElementById('discOriginalPrice');
+    const discountPctInput = document.getElementById('discDiscountPercent');
+
+    // Tab 2: Find Discount %
+    const pctOrigInput = document.getElementById('discPctOriginalPrice');
+    const pctSaleInput = document.getElementById('discPctSalePrice');
+
+    // Tab 3: Find Original Price
+    const origSaleInput = document.getElementById('discOrigSalePrice');
+    const origPctInput = document.getElementById('discOrigDiscountPercent');
+
+    // Tab 4: Extra Discount
+    const extraOrigInput = document.getElementById('discExtraOriginalPrice');
+    const extra1Input = document.getElementById('discExtra1');
+    const extra2Input = document.getElementById('discExtra2');
+
+    // Optional Tax
+    const taxInput = document.getElementById('discTaxPercent');
+
+    // Outputs
+    const savingsEl = document.getElementById('discSavings');
+    const finalPriceEl = document.getElementById('discFinalPrice');
+    const totalPercentEl = document.getElementById('discTotalPercent');
+    const taxRowEl = document.getElementById('discTaxRow');
+    const taxAmountEl = document.getElementById('discTaxAmount');
+
+    const formulaEl = document.getElementById('discFormulaText');
+    const messageEl = document.getElementById('discMessage');
+
+    const copyBtn = document.getElementById('copyDiscBtn');
+    const clearBtn = document.getElementById('clearDiscBtn');
+
+    if (!tabBtns.length || !finalPriceEl) return;
+
+    let activeTab = 'salePrice'; // 'salePrice', 'discountPercent', 'originalPrice', 'extraDiscount'
+
+    // Tab Switching
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', function () {
+        activeTab = this.getAttribute('data-tab') || 'salePrice';
+        tabBtns.forEach(b => {
+          const isActive = b === btn;
+          b.classList.toggle('active', isActive);
+          b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+        tabPanels.forEach(panel => {
+          const isTarget = panel.getAttribute('data-panel') === activeTab;
+          panel.style.display = isTarget ? 'block' : 'none';
+        });
+        calculateDiscount();
+      });
+    });
+
+    function calculateDiscount() {
+      const rawTax = taxInput ? taxInput.value.trim() : '';
+      const taxVal = rawTax === '' ? 0 : parseSafeNumber(rawTax);
+
+      if (taxVal !== null && taxVal < 0) {
+        resetOutputs('Tax percentage cannot be negative.');
+        return;
+      }
+      if (taxVal !== null && taxVal > 100) {
+        resetOutputs('Tax percentage cannot exceed 100%.');
+        return;
+      }
+
+      let original = 0;
+      let discountedPrice = 0;
+      let savings = 0;
+      let totalDiscountPct = 0;
+
+      if (activeTab === 'salePrice') {
+        const rawP = origPriceInput.value.trim();
+        const rawD = discountPctInput.value.trim();
+        if (rawP === '' && rawD === '') {
+          resetOutputs('Enter original price and discount percentage to calculate the sale price.');
+          return;
+        }
+        const P = parseSafeNumber(rawP);
+        const D = rawD === '' ? 0 : parseSafeNumber(rawD);
+
+        if (P === null || P < 0) {
+          resetOutputs('Original price cannot be negative.');
+          return;
+        }
+        if (D === null || D < 0) {
+          resetOutputs('Discount percentage cannot be negative.');
+          return;
+        }
+        if (D > 100) {
+          resetOutputs('Discount percentage cannot exceed 100%.');
+          return;
+        }
+
+        original = P;
+        savings = (P * D) / 100;
+        discountedPrice = Math.max(0, P - savings);
+        totalDiscountPct = D;
+
+        if (formulaEl) {
+          formulaEl.textContent = `Formula: Sale Price = ${formatPropertyValue(P, 2, true, false)} − (${formatPropertyValue(P, 2, true, false)} × ${D}%).`;
+        }
+
+      } else if (activeTab === 'discountPercent') {
+        const rawP = pctOrigInput.value.trim();
+        const rawS = pctSaleInput.value.trim();
+        if (rawP === '' && rawS === '') {
+          resetOutputs('Enter original price and sale price to find the discount percentage.');
+          return;
+        }
+        const P = parseSafeNumber(rawP);
+        const S = parseSafeNumber(rawS);
+
+        if (P === null || P <= 0) {
+          resetOutputs('Please enter an original price greater than zero.');
+          return;
+        }
+        if (S === null || S < 0) {
+          resetOutputs('Sale price cannot be negative.');
+          return;
+        }
+        if (S > P) {
+          resetOutputs('Sale price cannot be greater than the original price.');
+          return;
+        }
+
+        original = P;
+        savings = P - S;
+        discountedPrice = S;
+        totalDiscountPct = (savings / P) * 100;
+
+        if (formulaEl) {
+          formulaEl.textContent = `Formula: Discount % = (${formatPropertyValue(P, 2, true, false)} − ${formatPropertyValue(S, 2, true, false)}) ÷ ${formatPropertyValue(P, 2, true, false)} × 100.`;
+        }
+
+      } else if (activeTab === 'originalPrice') {
+        const rawS = origSaleInput.value.trim();
+        const rawD = origPctInput.value.trim();
+        if (rawS === '' && rawD === '') {
+          resetOutputs('Enter sale price and discount percentage to find the original price.');
+          return;
+        }
+        const S = parseSafeNumber(rawS);
+        const D = parseSafeNumber(rawD);
+
+        if (S === null || S < 0) {
+          resetOutputs('Sale price cannot be negative.');
+          return;
+        }
+        if (D === null || D < 0) {
+          resetOutputs('Discount percentage cannot be negative.');
+          return;
+        }
+        if (D >= 100) {
+          resetOutputs('Discount percentage must be less than 100% to calculate the original price.');
+          return;
+        }
+
+        original = S / (1 - D / 100);
+        discountedPrice = S;
+        savings = original - S;
+        totalDiscountPct = D;
+
+        if (formulaEl) {
+          formulaEl.textContent = `Formula: Original Price = ${formatPropertyValue(S, 2, true, false)} ÷ (1 − ${D}%).`;
+        }
+
+      } else if (activeTab === 'extraDiscount') {
+        const rawP = extraOrigInput.value.trim();
+        const rawD1 = extra1Input.value.trim();
+        const rawD2 = extra2Input.value.trim();
+        if (rawP === '' && rawD1 === '') {
+          resetOutputs('Enter original price and both discount percentages.');
+          return;
+        }
+        const P = parseSafeNumber(rawP);
+        const D1 = rawD1 === '' ? 0 : parseSafeNumber(rawD1);
+        const D2 = rawD2 === '' ? 0 : parseSafeNumber(rawD2);
+
+        if (P === null || P < 0) {
+          resetOutputs('Original price cannot be negative.');
+          return;
+        }
+        if (D1 === null || D1 < 0 || D2 === null || D2 < 0) {
+          resetOutputs('Discount percentages cannot be negative.');
+          return;
+        }
+        if (D1 > 100 || D2 > 100) {
+          resetOutputs('Discount percentages cannot exceed 100%.');
+          return;
+        }
+
+        // Sequential discounts: P * (1 - d1) * (1 - d2)
+        const step1 = P * (1 - D1 / 100);
+        discountedPrice = step1 * (1 - D2 / 100);
+        savings = P - discountedPrice;
+        totalDiscountPct = (1 - (1 - D1 / 100) * (1 - D2 / 100)) * 100;
+        original = P;
+
+        if (formulaEl) {
+          formulaEl.textContent = `Formula: Extra discounts apply sequentially: ${formatPropertyValue(P, 2, true, false)} × (1 − ${D1}%) × (1 − ${D2}%). Total off = ${formatDisplayNumber(totalDiscountPct, 2, true)}%.`;
+        }
+      }
+
+      // Tax calculation applied after discount
+      let taxAmount = 0;
+      if (taxVal && taxVal > 0) {
+        taxAmount = (discountedPrice * taxVal) / 100;
+      }
+      const finalPrice = discountedPrice + taxAmount;
+
+      // Update UI outputs
+      savingsEl.textContent = formatPropertyValue(savings, 2, false, true);
+      finalPriceEl.textContent = formatPropertyValue(finalPrice, 2, false, true);
+      totalPercentEl.textContent = `${formatDisplayNumber(totalDiscountPct, 2, true)}%`;
+
+      if (taxRowEl && taxAmountEl) {
+        if (taxVal && taxVal > 0) {
+          taxRowEl.style.display = 'flex';
+          taxAmountEl.textContent = `+ ${formatPropertyValue(taxAmount, 2, false, true)} (${taxVal}%)`;
+        } else {
+          taxRowEl.style.display = 'none';
+        }
+      }
+
+      if (messageEl) messageEl.textContent = '';
+    }
+
+    function resetOutputs(msg) {
+      if (savingsEl) savingsEl.textContent = '—';
+      if (finalPriceEl) finalPriceEl.textContent = '—';
+      if (totalPercentEl) totalPercentEl.textContent = '—';
+      if (taxRowEl) taxRowEl.style.display = 'none';
+      if (messageEl) messageEl.textContent = msg;
+    }
+
+    // Input listeners
+    const allInputs = [
+      origPriceInput, discountPctInput,
+      pctOrigInput, pctSaleInput,
+      origSaleInput, origPctInput,
+      extraOrigInput, extra1Input, extra2Input,
+      taxInput
+    ];
+
+    allInputs.forEach(input => {
+      if (input) {
+        input.addEventListener('input', calculateDiscount);
+        input.addEventListener('change', calculateDiscount);
+      }
+    });
+
+    // Copy Result
+    if (copyBtn) {
+      copyBtn.addEventListener('click', () => {
+        if (!finalPriceEl || finalPriceEl.textContent === '—') {
+          showToast('Please calculate a discount first.');
+          return;
+        }
+        let text = `Discount Calculation Summary:
+You Save: ${savingsEl.textContent}
+Final Price: ${finalPriceEl.textContent}
+Total Discount: ${totalPercentEl.textContent}`;
+        if (taxRowEl && taxRowEl.style.display !== 'none') {
+          text += `\nTax Amount: ${taxAmountEl.textContent}`;
+        }
+        copyResultToClipboard(text, copyBtn);
+      });
+    }
+
+    // Clear Button
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        allInputs.forEach(input => {
+          if (input) input.value = '';
+        });
+        calculateDiscount();
+        showToast('Discount inputs cleared.');
+      });
+    }
+
+    // Bind settings bar & trigger calculation
+    bindPropertySettingsBar(calculateDiscount);
+    calculateDiscount();
+  }
+
+  /* ==========================================================================
+     13. GLOBAL EXPOSURE
      ========================================================================== */
   window.CALC_CONFIG = CALC_CONFIG;
   window.PROPERTY_CONFIG = CALC_CONFIG.property;
@@ -2160,10 +3079,14 @@ Plot Area:
   window.initPercentageCalculator = initPercentageCalculator;
   window.initAttendanceCalculator = initAttendanceCalculator;
 
-  // Property Calculators
+  // Property & Finance Calculators
   window.initHouseConstructionCalculator = initHouseConstructionCalculator;
   window.initInstallmentCalculator = initInstallmentCalculator;
   window.initPlotPriceCalculator = initPlotPriceCalculator;
+  window.initLoanCalculator = initLoanCalculator;
+  window.initAverageCalculator = initAverageCalculator;
+  window.initDiscountCalculator = initDiscountCalculator;
 
 })();
+
 

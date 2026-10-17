@@ -177,6 +177,9 @@
       if (lowerTitle.includes('crop')) extraKeywords += ' crop pdf pages crop pdf online trim margins cut page bounds white margins';
       if (lowerTitle.includes('signature')) extraKeywords += ' add signature to pdf sign pdf online sign pdf on mobile draw type upload signature';
       if (lowerTitle.includes('watermark')) extraKeywords += ' add watermark to pdf pdf watermark watermark pdf online stamp confidential draft logo opacity';
+      if (lowerTitle.includes('loan')) extraKeywords += ' emi calculator loan payment calculator monthly payment calculator interest amortization payoff mortgage bank debt schedule';
+      if (lowerTitle.includes('average')) extraKeywords += ' mean median mode calculator average of numbers statistics dataset range sum math central tendency';
+      if (lowerTitle.includes('discount')) extraKeywords += ' sale price calculator percentage discount calculator markdown savings shopping retail bargain tax';
 
 
 

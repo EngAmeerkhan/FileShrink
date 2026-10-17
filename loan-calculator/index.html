@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loan Calculator - Free Online | FileShrink</title>
+  <meta name="description" content="Estimate your monthly loan payments, interest charges, and full amortization schedule with our free loan calculator. Fast, private, with no signup needed.">
+  <link rel="canonical" href="https://fileshrink.vercel.app/loan-calculator/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Loan Calculator - Free Online | FileShrink">
+  <meta property="og:description" content="Estimate your monthly loan payments, interest charges, and full amortization schedule with our free loan calculator. Fast, private, with no signup needed.">
+  <meta property="og:url" content="https://fileshrink.vercel.app/loan-calculator/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Loan Calculator - Free Online | FileShrink">
+  <meta name="twitter:description" content="Estimate your monthly loan payments, interest charges, and full amortization schedule with our free loan calculator. Fast, private, with no signup needed.">
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/calculators.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Loan Calculator",
+        "url": "https://fileshrink.vercel.app/loan-calculator/",
+        "applicationCategory": "FinancialApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Calculate monthly loan payments, total payable amounts, interest charges, payoff dates, and comprehensive amortization schedules online."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://fileshrink.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Calculators",
+            "item": "https://fileshrink.vercel.app/#financial-tools"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Loan Calculator",
+            "item": "https://fileshrink.vercel.app/loan-calculator/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does this loan calculator differ from a standard emi calculator?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "This loan calculator calculates equal periodic repayments using the standard amortization formula just like an emi calculator, while additionally computing early payoff savings from extra monthly prepayments."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use this as a monthly payment calculator for auto and personal loans?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. This tool operates as a versatile monthly payment calculator suitable for personal loans, auto loans, mortgages, and consumer financing with terms up to 600 months."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does adding an extra monthly payment reduce my total interest and loan term?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Every extra monthly payment directly diminishes your outstanding principal balance, reducing future compound interest and shortening your total repayment duration."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="/" class="site-logo" aria-label="FileShrink Home">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        <span>FileShrink</span>
+      </a>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primaryNav">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <!-- Navigation Menu with Dropdowns -->
+      <nav class="site-nav" id="primaryNav">
+        <ul class="nav-list">
+          <li class="nav-item-dropdown">
+            <a href="/#image-tools" class="nav-link dropdown-toggle">Image Tools <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <ul class="dropdown-menu">
+              <li><a href="/compress-image/" class="dropdown-item">Compress Image</a></li>
+              <li><a href="/resize-image/" class="dropdown-item">Resize Image</a></li>
+              <li><a href="/crop-image/" class="dropdown-item">Crop Image</a></li>
+              <li><a href="/rotate-image/" class="dropdown-item">Rotate Image</a></li>
+              <li><a href="/flip-image/" class="dropdown-item">Flip Image</a></li>
+              <li><a href="/image-to-text/" class="dropdown-item">Image to Text</a></li>
+              <li><a href="/text-to-handwriting-converter/" class="dropdown-item">Text to Handwriting</a></li>
+            </ul>
+          </li>
+          <li class="nav-item-dropdown">
+            <a href="/#pdf-tools" class="nav-link dropdown-toggle">PDF Tools <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <ul class="dropdown-menu">
+              <li><a href="/compress-pdf/" class="dropdown-item">Compress PDF</a></li>
+              <li><a href="/merge-pdf/" class="dropdown-item">Merge PDF</a></li>
+              <li><a href="/split-pdf/" class="dropdown-item">Split PDF</a></li>
+              <li><a href="/crop-pdf/" class="dropdown-item">Crop PDF</a></li>
+              <li><a href="/add-signature-to-pdf/" class="dropdown-item">Sign PDF</a></li>
+              <li><a href="/add-watermark-to-pdf/" class="dropdown-item">Add Watermark</a></li>
+              <li><a href="/pdf-to-text/" class="dropdown-item">PDF to Text</a></li>
+              <li><a href="/rotate-pdf/" class="dropdown-item">Rotate PDF</a></li>
+              <li><a href="/reorder-pdf-pages/" class="dropdown-item">Reorder PDF</a></li>
+            </ul>
+          </li>
+          <li class="nav-item-dropdown">
+            <a href="/#converters" class="nav-link dropdown-toggle">Converters <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <ul class="dropdown-menu">
+              <li><a href="/jpeg-to-png/" class="dropdown-item">JPEG to PNG</a></li>
+              <li><a href="/png-to-jpg-converter/" class="dropdown-item">PNG to JPG</a></li>
+              <li><a href="/heic-to-jpg/" class="dropdown-item">HEIC to JPG</a></li>
+              <li><a href="/webp-to-jpg/" class="dropdown-item">WebP to JPG</a></li>
+              <li><a href="/webp-to-png/" class="dropdown-item">WebP to PNG</a></li>
+              <li><a href="/pdf-to-jpg-converter/" class="dropdown-item">PDF to JPG</a></li>
+              <li><a href="/pdf-to-png/" class="dropdown-item">PDF to PNG</a></li>
+              <li><a href="/images-to-pdf/" class="dropdown-item">Images to PDF</a></li>
+            </ul>
+          </li>
+          <li class="nav-item-dropdown">
+            <a href="/#student-tools" class="nav-link dropdown-toggle">Student Tools <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <ul class="dropdown-menu">
+              <li><a href="/pomodoro-timer/" class="dropdown-item">Pomodoro Timer</a></li>
+              <li><a href="/assignment-cover-page/" class="dropdown-item">Assignment Cover Page</a></li>
+              <li><a href="/cover-letter-generator/" class="dropdown-item">Cover Letter Generator</a></li>
+              <li><a href="/gpa-calculator/" class="dropdown-item">GPA Calculator</a></li>
+              <li><a href="/cgpa-calculator/" class="dropdown-item">CGPA Calculator</a></li>
+              <li><a href="/cgpa-to-percentage/" class="dropdown-item">CGPA to Percentage</a></li>
+              <li><a href="/percentage-calculator/" class="dropdown-item">Percentage Calculator</a></li>
+              <li><a href="/attendance-calculator/" class="dropdown-item">Attendance Calculator</a></li>
+              <li><a href="/average-calculator/" class="dropdown-item">Average Calculator</a></li>
+            </ul>
+          </li>
+          <li class="nav-item-dropdown">
+            <a href="/#property-tools" class="nav-link dropdown-toggle">Property & Finance <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+            <ul class="dropdown-menu">
+              <li><a href="/loan-calculator/" class="dropdown-item active">Loan Calculator</a></li>
+              <li><a href="/installment-calculator/" class="dropdown-item">Installment Calculator</a></li>
+              <li><a href="/discount-calculator/" class="dropdown-item">Discount Calculator</a></li>
+              <li><a href="/house-construction-cost-calculator/" class="dropdown-item">House Construction Cost</a></li>
+              <li><a href="/plot-price-calculator/" class="dropdown-item">Plot Price Calculator</a></li>
+              <li><a href="/rent-receipt-generator/" class="dropdown-item">Rent Receipt Generator</a></li>
+              <li><a href="/payment-receipt-format/" class="dropdown-item">Payment Receipt Format</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/#property-tools">Financial Calculators</a></li>
+          <li aria-current="page">Loan Calculator</li>
+        </ol>
+      </nav>
+
+      <!-- Page Intro Header -->
+      <header class="page-intro">
+        <h1>Loan Calculator</h1>
+        <p class="page-subtitle">Calculate monthly loan payments, interest costs, and amortization payoff schedules effortlessly.</p>
+      </header>
+
+      <!-- Privacy Callout -->
+      <div class="calc-privacy-note">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+        <span>Nothing is uploaded or saved. Everything works on your device.</span>
+      </div>
+
+      <!-- Ad Slot 1: Above Calculator -->
+      <div class="ad-slot" aria-hidden="true">
+        <div class="ad-slot-placeholder">Advertisement</div>
+      </div>
+
+      <!-- 2-Step Flow Indicator -->
+      <div class="calc-steps" aria-hidden="true">
+        <div class="calc-step-item active">
+          <span class="calc-step-num">1</span>
+          <span>Enter loan details</span>
+        </div>
+        <div class="calc-step-divider"></div>
+        <div class="calc-step-item active">
+          <span class="calc-step-num">2</span>
+          <span>See or copy payment plan</span>
+        </div>
+      </div>
+
+      <!-- Settings Bar (Shared Preferences) -->
+      <div class="calc-settings-bar" aria-label="Calculator Settings">
+        <div class="calc-settings-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          <span>Display Settings</span>
+        </div>
+        <div class="calc-settings-group">
+          <!-- Number Style -->
+          <div class="calc-setting-item">
+            <span class="calc-setting-label">Style:</span>
+            <div class="calc-toggle-btn-group" role="group" aria-label="Number formatting style">
+              <button type="button" class="calc-toggle-btn setting-num-style-btn active" data-style="standard" aria-pressed="true">1,000,000</button>
+              <button type="button" class="calc-toggle-btn setting-num-style-btn" data-style="lakh" aria-pressed="false">10,00,000</button>
+            </div>
+          </div>
+          <!-- Currency Label -->
+          <div class="calc-setting-item">
+            <label for="settingCurrencySelect" class="calc-setting-label">Currency:</label>
+            <select id="settingCurrencySelect" class="calc-setting-select" aria-label="Currency label display">
+              <option value="PKR">PKR</option>
+              <option value="INR">INR</option>
+              <option value="USD">USD</option>
+              <option value="none">None</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Calculator Card -->
+      <section class="calc-card" aria-label="Loan Calculator Form">
+        <!-- Input Fields Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+
+          <!-- Loan Amount -->
+          <div class="calc-form-group">
+            <label for="loanAmount" class="calc-label">Loan Amount</label>
+            <input type="text" id="loanAmount" inputmode="decimal" class="calc-input" placeholder="e.g. 100,000" value="100000">
+          </div>
+
+          <!-- Annual Interest Rate % -->
+          <div class="calc-form-group">
+            <label for="loanRate" class="calc-label">Annual Interest Rate (%)</label>
+            <input type="text" id="loanRate" inputmode="decimal" class="calc-input" placeholder="e.g. 12" value="12">
+          </div>
+
+          <!-- Term with Unit Toggle -->
+          <div class="calc-form-group">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <label for="loanTerm" class="calc-label" style="margin-bottom: 0;">Loan Term</label>
+              <div class="calc-toggle-btn-group" role="group" aria-label="Loan term unit">
+                <button type="button" class="calc-toggle-btn loan-term-unit-btn" data-unit="years" aria-pressed="false">Years</button>
+                <button type="button" class="calc-toggle-btn loan-term-unit-btn active" data-unit="months" aria-pressed="true">Months</button>
+              </div>
+            </div>
+            <input type="text" id="loanTerm" inputmode="decimal" class="calc-input" placeholder="e.g. 12" value="12">
+          </div>
+
+          <!-- Optional Start Date -->
+          <div class="calc-form-group">
+            <label for="loanStartDate" class="calc-label">Start Date (Optional)</label>
+            <input type="month" id="loanStartDate" class="calc-input" aria-label="Loan starting month and year">
+          </div>
+
+          <!-- Optional Extra Monthly Payment -->
+          <div class="calc-form-group">
+            <label for="loanExtraPayment" class="calc-label">Extra Monthly Payment (Optional)</label>
+            <input type="text" id="loanExtraPayment" inputmode="decimal" class="calc-input" placeholder="e.g. 1,000">
+          </div>
+
+        </div>
+
+        <!-- Validation / Status Message -->
+        <div id="loanMessage" class="calc-hint" style="margin-top: 10px; color: #dc2626; font-weight: 500;" role="status"></div>
+
+        <!-- Primary Results Summary -->
+        <div class="calc-result-box" style="margin-top: 1.25rem;">
+          <div class="calc-result-title">Monthly Payment</div>
+          <div id="loanMonthlyPayment" class="calc-result-value">—</div>
+
+          <div class="prop-stats-grid" style="margin-top: 1rem;">
+            <div class="prop-stat-item">
+              <span class="prop-stat-label">Total Payable</span>
+              <span id="loanTotalPayable" class="prop-stat-val">—</span>
+              <span class="prop-stat-sub">Principal + interest</span>
+            </div>
+            <div class="prop-stat-item">
+              <span class="prop-stat-label">Total Interest</span>
+              <span id="loanTotalInterest" class="prop-stat-val">—</span>
+              <span class="prop-stat-sub">Total borrowing cost</span>
+            </div>
+            <div class="prop-stat-item">
+              <span class="prop-stat-label">Payoff Date</span>
+              <span id="loanPayoffDate" class="prop-stat-val">—</span>
+              <span class="prop-stat-sub">Based on start date</span>
+            </div>
+          </div>
+
+          <!-- Extra Payment Savings Callout -->
+          <div id="loanExtraSection" style="display: none; margin-top: 1rem; padding: 12px 14px; background-color: rgba(5, 150, 105, 0.08); border: 1px solid rgba(5, 150, 105, 0.25); border-radius: var(--radius-md);">
+            <div style="font-weight: 700; color: #047857; font-size: 0.875rem; margin-bottom: 4px;">Prepayment Savings</div>
+            <div id="loanExtraSummary" style="font-size: 0.875rem; color: var(--text-main); margin-bottom: 8px;"></div>
+            <div style="display: flex; gap: 16px; font-size: 0.8125rem;">
+              <div>Time Saved: <strong id="loanMonthsSaved">0 months</strong></div>
+              <div>Interest Saved: <strong id="loanInterestSaved">—</strong></div>
+            </div>
+          </div>
+
+          <!-- Principal vs Interest CSS Bar -->
+          <div class="loan-breakdown-card">
+            <div class="loan-breakdown-title">
+              <span>Principal vs Interest Breakdown</span>
+              <span style="font-size: 0.75rem; font-weight: 600; text-transform: none;">Pure CSS Bar</span>
+            </div>
+            <div class="loan-breakdown-bar" role="progressbar" aria-label="Principal versus interest proportion">
+              <div id="loanBarPrincipal" class="loan-bar-seg loan-bar-principal" style="width: 93.8%;"></div>
+              <div id="loanBarInterest" class="loan-bar-seg loan-bar-interest" style="width: 6.2%;"></div>
+            </div>
+            <div class="loan-breakdown-legend">
+              <div class="loan-legend-item">
+                <span class="loan-legend-dot loan-dot-principal"></span>
+                <span>Principal: <strong id="loanPrinPercent">93.8%</strong></span>
+              </div>
+              <div class="loan-legend-item">
+                <span class="loan-legend-dot loan-dot-interest"></span>
+                <span>Interest: <strong id="loanIntPercent">6.2%</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formula Sentence -->
+          <div id="loanFormulaText" class="calc-formula-display" style="margin-top: 1rem;">
+            Formula: r = annual rate / 12 / 100; payment = P × r × (1+r)ⁿ / ((1+r)ⁿ − 1). Real banks may calculate differently.
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="calc-actions-row" style="margin-top: 1.25rem;">
+          <button type="button" id="copyLoanBtn" class="btn btn-secondary">Copy Summary</button>
+          <button type="button" id="clearLoanBtn" class="btn btn-secondary">Clear Inputs</button>
+        </div>
+      </section>
+
+      <!-- Amortization Schedule Table Section -->
+      <section class="schedule-section" aria-label="Amortization Schedule Table">
+        <div class="schedule-header">
+          <h2 class="schedule-title">Amortization Schedule</h2>
+          <div class="schedule-actions">
+            <button type="button" id="loanCopyScheduleBtn" class="btn-schedule-action">Copy Table</button>
+            <button type="button" id="loanDownloadCsvBtn" class="btn-schedule-action">Download CSV</button>
+            <button type="button" id="loanPrintScheduleBtn" class="btn-schedule-action">Print</button>
+          </div>
+        </div>
+
+        <div class="schedule-table-wrap">
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th scope="col">Month</th>
+                <th scope="col">Payment</th>
+                <th scope="col">Principal</th>
+                <th scope="col">Interest</th>
+                <th scope="col">Balance</th>
+              </tr>
+            </thead>
+            <tbody id="loanScheduleTableBody">
+              <!-- Dynamically populated rows -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="schedule-pagination">
+          <button type="button" id="loanScheduleToggleBtn" class="btn-schedule-toggle" style="display: none;">
+            Show All Months
+          </button>
+        </div>
+      </section>
+
+      <!-- Installment Calculator Cross-link Note -->
+      <section style="margin-top: 1.5rem; padding: 1.25rem; background-color: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+        <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem;">Need Flexible Down Payments or Custom Milestones?</h3>
+        <p style="font-size: 0.875rem; color: var(--text-muted); margin: 0; line-height: 1.5;">
+          For commercial property installments, vehicle leasing, or quarterly balloon payments, use our dedicated <a href="/installment-calculator/" style="color: var(--primary); font-weight: 600; text-decoration: underline;">installment calculator</a> to structure custom schedules with zero hassle.
+        </p>
+      </section>
+
+      <!-- Ad Slot 2: Above How-To & Content -->
+      <div class="ad-slot" aria-hidden="true">
+        <div class="ad-slot-placeholder">Advertisement</div>
+      </div>
+
+      <!-- Informative Content Section (120 - 200 words) -->
+      <article class="how-to-section">
+        <h2>How to Calculate Loan Repayments in 3 Steps</h2>
+        <div class="how-to-grid">
+          <div class="how-to-step">
+            <div class="step-badge">1</div>
+            <h3>Enter Loan Principal &amp; Rate</h3>
+            <p>Input your borrowing amount and nominal annual interest rate (from 0% up to 100%).</p>
+          </div>
+          <div class="how-to-step">
+            <div class="step-badge">2</div>
+            <h3>Select Duration &amp; Prepayments</h3>
+            <p>Specify repayment duration in months or years, with optional extra monthly payments.</p>
+          </div>
+          <div class="how-to-step">
+            <div class="step-badge">3</div>
+            <h3>Review Breakdown &amp; Export</h3>
+            <p>Review the comprehensive loan payment calculator summary, compare principal against interest, and export your amortization schedule.</p>
+          </div>
+        </div>
+
+        <p style="margin-top: 1.25rem; font-size: 0.9375rem; color: var(--text-muted); line-height: 1.6;">
+          Use this loan calculator to determine your exact periodic installments, total borrowing costs, and debt payoff dates directly on your device. Whether evaluating home mortgages, personal financing, or auto loans, our transparent engine eliminates guesswork while protecting your privacy.
+        </p>
+      </article>
+
+      <!-- Tool Illustration Alt Element -->
+      <div style="text-align: center; margin: 1.5rem 0;" aria-hidden="true">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary);" role="img" aria-label="Loan calculator amortization breakdown"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+      </div>
+
+      <!-- FAQ Section -->
+      <section class="faq-section" aria-label="Frequently Asked Questions">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-question">How does this loan calculator differ from a standard emi calculator?</summary>
+            <div class="faq-answer">
+              <p>This loan calculator calculates equal periodic repayments using the standard amortization formula just like an emi calculator, while additionally computing early payoff savings from extra monthly prepayments.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Can I use this as a monthly payment calculator for auto and personal loans?</summary>
+            <div class="faq-answer">
+              <p>Yes. This tool operates as a versatile monthly payment calculator suitable for personal loans, auto loans, mortgages, and consumer financing with terms up to 600 months.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">How does adding an extra monthly payment reduce my total interest and loan term?</summary>
+            <div class="faq-answer">
+              <p>Every extra monthly payment directly diminishes your outstanding principal balance, reducing future compound interest and shortening your total repayment duration.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- More Tools Section -->
+      <section class="calc-related-section" aria-label="Related Calculators and Tools">
+        <h2>More Financial &amp; Planning Tools</h2>
+        <div class="calc-related-grid">
+          <a href="/installment-calculator/" class="calc-related-card">
+            <div class="calc-related-title">Installment Calculator</div>
+            <div class="calc-related-desc">Calculate installment plans, down payments, and amortization schedules.</div>
+          </a>
+          <a href="/discount-calculator/" class="calc-related-card">
+            <div class="calc-related-title">Discount Calculator</div>
+            <div class="calc-related-desc">Find sale prices, percentage discounts, and sales tax savings instantly.</div>
+          </a>
+          <a href="/average-calculator/" class="calc-related-card">
+            <div class="calc-related-title">Average Calculator</div>
+            <div class="calc-related-desc">Compute mean, median, mode, and range across large sets of numbers.</div>
+          </a>
+          <a href="/plot-price-calculator/" class="calc-related-card">
+            <div class="calc-related-title">Plot Price Calculator</div>
+            <div class="calc-related-desc">Calculate land prices per marla, kanal, and square yard accurately.</div>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-col">
+        <a href="/" class="site-logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <span>FileShrink</span>
+        </a>
+        <p class="footer-desc">Free, fast, and secure client-side browser tools. No server uploads, no logins, and zero tracking.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-heading">Popular Calculators</div>
+        <ul class="footer-links">
+          <li><a href="/loan-calculator/">Loan Calculator</a></li>
+          <li><a href="/installment-calculator/">Installment Calculator</a></li>
+          <li><a href="/discount-calculator/">Discount Calculator</a></li>
+          <li><a href="/average-calculator/">Average Calculator</a></li>
+          <li><a href="/percentage-calculator/">Percentage Calculator</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-heading">Legal &amp; Privacy</div>
+        <ul class="footer-links">
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 FileShrink. All rights reserved. Client-side processing only.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shared Calculators Script -->
+  <script src="/js/calculators.js"></script>
+  <script src="/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof window.initLoanCalculator === 'function') {
+        window.initLoanCalculator();
+      }
+    });
+  </script>
+</body>
+</html>
