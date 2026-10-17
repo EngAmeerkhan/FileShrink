@@ -83,8 +83,8 @@
         const parent = this.closest('.nav-item-dropdown');
         if (!parent) return;
 
-        // If screen width is <= 768px, handle accordion toggle
-        if (window.innerWidth <= 768) {
+        // If screen width is <= 860px, handle accordion toggle
+        if (window.innerWidth <= 860 || window.matchMedia('(max-width: 860px)').matches) {
           e.preventDefault();
           const isOpen = parent.classList.contains('is-open');
           document.querySelectorAll('.nav-item-dropdown.is-open').forEach(item => {
