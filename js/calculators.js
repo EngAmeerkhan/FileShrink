@@ -71,6 +71,44 @@
     // Discount Calculator configuration
     discount: {
       maxDiscountPercent: 100
+    },
+
+    // Weighted Grade Defaults
+    weightedGrade: {
+      initialRows: 5,
+      defaultScale: {
+        'A': 90,
+        'B': 80,
+        'C': 70,
+        'D': 60
+      }
+    },
+
+    // Final Grade Defaults
+    finalGrade: {
+      defaultTargets: [90, 80, 70, 60],
+      minWeight: 0.01,
+      maxWeight: 100
+    },
+
+    // Hijri Calendar Defaults
+    hijri: {
+      monthNames: [
+        'Muharram',
+        'Safar',
+        'Rabi al-Awwal',
+        'Rabi al-Thani',
+        'Jumada al-Awwal',
+        'Jumada al-Thani',
+        'Rajab',
+        'Shaban',
+        'Ramadan',
+        'Shawwal',
+        'Dhu al-Qadah',
+        'Dhu al-Hijjah'
+      ],
+      minHijriYear: 1356, // verify against platform guidance (~1937 CE)
+      maxHijriYear: 1500  // verify against platform guidance (~2076 CE)
     }
   };
 
@@ -3069,7 +3107,847 @@ Total Discount: ${totalPercentEl.textContent}`;
   }
 
   /* ==========================================================================
-     13. GLOBAL EXPOSURE
+     13. WEIGHTED GRADE CALCULATOR ENGINE
+     ========================================================================== */
+  function initWeightedGradeCalculator() {
+    const tableBody = document.getElementById('weightedRowsBody');
+    const addRowBtn = document.getElementById('addWeightedRowBtn');
+    const typeBtns = document.querySelectorAll('.grade-type-btn');
+    const totalWeightBadge = document.getElementById('weightedTotalBadge');
+    const gradeResultEl = document.getElementById('weightedGradeResult');
+    const letterResultEl = document.getElementById('weightedLetterResult');
+    const pointsBreakdownEl = document.getElementById('weightedPointsBreakdown');
+    const normalizedBreakdownEl = document.getElementById('weightedNormalizedBreakdown');
+    const messageEl = document.getElementById('weightedMessage');
+    const formulaEl = document.getElementById('weightedFormulaText');
+    const scaleInputs = document.querySelectorAll('.scale-cutoff-input');
+    const resetScaleBtn = document.getElementById('resetWeightedScaleBtn');
+
+    const copyBtn = document.getElementById('copyWeightedBtn');
+    const clearBtn = document.getElementById('clearWeightedBtn');
+
+    if (!tableBody || !gradeResultEl) return;
+
+    let gradeType = 'percent'; // 'percent' or 'points'
+    let rowCounter = 0;
+
+    // Editable Grade Scale (default A: 90, B: 80, C: 70, D: 60)
+    let currentScale = Object.assign({}, CALC_CONFIG.weightedGrade.defaultScale);
+
+    function syncScaleInputs() {
+      scaleInputs.forEach(input => {
+        const grade = input.getAttribute('data-grade');
+        if (currentScale[grade] !== undefined) {
+          input.value = currentScale[grade];
+        }
+      });
+    }
+
+    scaleInputs.forEach(input => {
+      input.addEventListener('input', function () {
+        const grade = this.getAttribute('data-grade');
+        const val = parseSafeNumber(this.value);
+        if (val !== null && val >= 0) {
+          currentScale[grade] = val;
+          calculateWeighted();
+        }
+      });
+    });
+
+    if (resetScaleBtn) {
+      resetScaleBtn.addEventListener('click', () => {
+        currentScale = Object.assign({}, CALC_CONFIG.weightedGrade.defaultScale);
+        syncScaleInputs();
+        calculateWeighted();
+        showToast('Grade scale reset to default.');
+      });
+    }
+
+    // Toggle Grade Type (Percent vs Points)
+    typeBtns.forEach(btn => {
+      btn.addEventListener('click', function () {
+        gradeType = this.getAttribute('data-type') || 'percent';
+        typeBtns.forEach(b => {
+          const isActive = b === btn;
+          b.classList.toggle('active', isActive);
+          b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+        updateTableHeadersAndRows();
+        calculateWeighted();
+      });
+    });
+
+    function updateTableHeadersAndRows() {
+      const thGrade = document.getElementById('thGradeHeader');
+      if (thGrade) {
+        thGrade.textContent = gradeType === 'points' ? 'Points Earned / Possible' : 'Grade (%)';
+      }
+      const rows = tableBody.querySelectorAll('tr.calc-row-item');
+      rows.forEach(tr => {
+        const gradeCell = tr.querySelector('.cell-grade-input');
+        if (!gradeCell) return;
+        const currentGradeVal = tr.querySelector('.row-grade-val')?.value || '';
+        const currentEarned = tr.querySelector('.row-earned-val')?.value || '';
+        const currentPossible = tr.querySelector('.row-possible-val')?.value || '';
+
+        if (gradeType === 'points') {
+          gradeCell.innerHTML = `
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <input type="text" inputmode="decimal" class="calc-input row-earned-val" placeholder="Earned" value="${currentEarned || currentGradeVal}" style="min-width: 60px;">
+              <span>/</span>
+              <input type="text" inputmode="decimal" class="calc-input row-possible-val" placeholder="Possible" value="${currentPossible || '100'}" style="min-width: 60px;">
+            </div>
+          `;
+        } else {
+          gradeCell.innerHTML = `
+            <input type="text" inputmode="decimal" class="calc-input row-grade-val" placeholder="e.g. 90" value="${currentGradeVal || currentEarned}">
+          `;
+        }
+        attachRowListeners(tr);
+      });
+    }
+
+    function addRow(name = '', gradeOrEarned = '', weight = '', possible = '100') {
+      rowCounter++;
+      const tr = document.createElement('tr');
+      tr.className = 'calc-row-item';
+
+      let gradeHtml = '';
+      if (gradeType === 'points') {
+        gradeHtml = `
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <input type="text" inputmode="decimal" class="calc-input row-earned-val" placeholder="Earned" value="${gradeOrEarned}" style="min-width: 60px;">
+            <span>/</span>
+            <input type="text" inputmode="decimal" class="calc-input row-possible-val" placeholder="Possible" value="${possible}" style="min-width: 60px;">
+          </div>
+        `;
+      } else {
+        gradeHtml = `
+          <input type="text" inputmode="decimal" class="calc-input row-grade-val" placeholder="e.g. 90" value="${gradeOrEarned}">
+        `;
+      }
+
+      tr.innerHTML = `
+        <td>
+          <input type="text" class="calc-input row-name-val" placeholder="Assignment ${rowCounter}" value="${name}">
+        </td>
+        <td class="cell-grade-input">
+          ${gradeHtml}
+        </td>
+        <td>
+          <input type="text" inputmode="decimal" class="calc-input row-weight-val" placeholder="e.g. 20" value="${weight}">
+        </td>
+        <td class="row-points-contributed" style="text-align: right; font-weight: 600; color: var(--text-main);">
+          —
+        </td>
+        <td style="text-align: center; width: 44px;">
+          <button type="button" class="btn-remove-row remove-row-btn" aria-label="Remove Row">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </td>
+      `;
+
+      tableBody.appendChild(tr);
+      attachRowListeners(tr);
+
+      tr.querySelector('.remove-row-btn').addEventListener('click', function () {
+        const rows = tableBody.querySelectorAll('tr.calc-row-item');
+        if (rows.length > 1) {
+          tr.remove();
+          calculateWeighted();
+        } else {
+          showToast('At least one row is required.');
+        }
+      });
+
+      calculateWeighted();
+    }
+
+    function attachRowListeners(tr) {
+      tr.querySelectorAll('input').forEach(input => {
+        input.removeEventListener('input', calculateWeighted);
+        input.addEventListener('input', calculateWeighted);
+      });
+    }
+
+    function calculateWeighted() {
+      const rows = tableBody.querySelectorAll('tr.calc-row-item');
+      let totalWeight = 0;
+      let totalPoints = 0;
+      let hasPositiveWeight = false;
+
+      rows.forEach(tr => {
+        let gradePct = null;
+        if (gradeType === 'points') {
+          const earned = parseSafeNumber(tr.querySelector('.row-earned-val')?.value);
+          const possible = parseSafeNumber(tr.querySelector('.row-possible-val')?.value);
+          if (earned !== null && possible !== null && possible > 0) {
+            gradePct = (earned / possible) * 100;
+          }
+        } else {
+          gradePct = parseSafeNumber(tr.querySelector('.row-grade-val')?.value);
+        }
+
+        const weight = parseSafeNumber(tr.querySelector('.row-weight-val')?.value) || 0;
+        const ptsCell = tr.querySelector('.row-points-contributed');
+
+        if (weight > 0) hasPositiveWeight = true;
+
+        if (gradePct !== null && weight > 0) {
+          const points = (gradePct * weight) / 100;
+          totalPoints += points;
+          totalWeight += weight;
+          if (ptsCell) ptsCell.textContent = formatDisplayNumber(points, 2, true);
+        } else if (weight > 0) {
+          totalWeight += weight;
+          if (ptsCell) ptsCell.textContent = '—';
+        } else {
+          if (ptsCell) ptsCell.textContent = '—';
+        }
+      });
+
+      // Update Total Weight Badge
+      if (totalWeightBadge) {
+        totalWeightBadge.textContent = `Total Weight: ${formatDisplayNumber(totalWeight, 2, true)}%`;
+        if (Math.abs(totalWeight - 100) < 0.001) {
+          totalWeightBadge.classList.add('weight-ok');
+          totalWeightBadge.classList.remove('weight-warn');
+        } else {
+          totalWeightBadge.classList.add('weight-warn');
+          totalWeightBadge.classList.remove('weight-ok');
+        }
+      }
+
+      // Validation
+      if (!hasPositiveWeight || totalWeight <= 0) {
+        gradeResultEl.textContent = '—';
+        if (letterResultEl) letterResultEl.textContent = '—';
+        if (pointsBreakdownEl) pointsBreakdownEl.textContent = 'Points: —';
+        if (normalizedBreakdownEl) normalizedBreakdownEl.textContent = 'Normalized: —';
+        if (messageEl) messageEl.textContent = 'Total weight cannot be 0%. Please enter at least one positive weight.';
+        return;
+      }
+
+      if (messageEl) messageEl.textContent = '';
+
+      const normalized = (totalPoints / totalWeight) * 100;
+      const roundedNorm = Math.round(normalized * 100) / 100;
+      const roundedPts = Math.round(totalPoints * 100) / 100;
+
+      gradeResultEl.textContent = `${formatDisplayNumber(roundedNorm, 2, true)}%`;
+
+      // Determine letter grade from editable scale
+      let letter = 'F';
+      if (roundedNorm >= (currentScale.A ?? 90)) letter = 'A';
+      else if (roundedNorm >= (currentScale.B ?? 80)) letter = 'B';
+      else if (roundedNorm >= (currentScale.C ?? 70)) letter = 'C';
+      else if (roundedNorm >= (currentScale.D ?? 60)) letter = 'D';
+
+      if (letterResultEl) letterResultEl.textContent = letter;
+
+      // Show points out of weight entered AND normalized to 100%
+      if (Math.abs(totalWeight - 100) < 0.001) {
+        if (pointsBreakdownEl) pointsBreakdownEl.textContent = `Points: ${formatDisplayNumber(roundedPts, 2, true)} of 100`;
+        if (normalizedBreakdownEl) normalizedBreakdownEl.textContent = `Weights add up to 100%`;
+      } else {
+        if (pointsBreakdownEl) {
+          pointsBreakdownEl.textContent = `${formatDisplayNumber(roundedPts, 2, true)} points of ${formatDisplayNumber(totalWeight, 2, true)}`;
+        }
+        if (normalizedBreakdownEl) {
+          normalizedBreakdownEl.textContent = `Normalized to 100%: ${formatDisplayNumber(roundedNorm, 2, true)}%`;
+        }
+      }
+
+      if (formulaEl) {
+        formulaEl.textContent = `Formula: Weighted Grade = Total Points (${formatDisplayNumber(roundedPts, 2, true)}) ÷ Total Weight (${formatDisplayNumber(totalWeight, 2, true)}%) × 100.`;
+      }
+    }
+
+    if (addRowBtn) {
+      addRowBtn.addEventListener('click', () => {
+        addRow();
+      });
+    }
+
+    // Copy Summary
+    if (copyBtn) {
+      copyBtn.addEventListener('click', () => {
+        if (!gradeResultEl || gradeResultEl.textContent === '—') {
+          showToast('Please enter grades and weights first.');
+          return;
+        }
+        let summary = `Weighted Grade Summary:
+Final Weighted Grade: ${gradeResultEl.textContent}
+Letter Grade: ${letterResultEl ? letterResultEl.textContent : ''}
+${pointsBreakdownEl ? pointsBreakdownEl.textContent : ''}
+${normalizedBreakdownEl ? normalizedBreakdownEl.textContent : ''}`;
+        copyResultToClipboard(summary, copyBtn);
+      });
+    }
+
+    // Clear Button
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        tableBody.innerHTML = '';
+        rowCounter = 0;
+        initDefaultRows();
+        showToast('Rows cleared.');
+      });
+    }
+
+    function initDefaultRows() {
+      // Start with 5 rows (pre-fill first 3 for test friendliness)
+      addRow('Homework', '90', '30');
+      addRow('Midterm', '80', '20');
+      addRow('Final Exam', '70', '50');
+      addRow('Project', '', '');
+      addRow('Participation', '', '');
+    }
+
+    syncScaleInputs();
+    initDefaultRows();
+  }
+
+
+  /* ==========================================================================
+     14. FINAL GRADE CALCULATOR ENGINE
+     ========================================================================== */
+  function initFinalGradeCalculator() {
+    const currentInput = document.getElementById('finalCurrentGrade');
+    const wantedInput = document.getElementById('finalWantedGrade');
+    const weightInput = document.getElementById('finalExamWeight');
+
+    const neededScoreEl = document.getElementById('finalNeededScore');
+    const neededStatusBadge = document.getElementById('finalStatusBadge');
+    const messageEl = document.getElementById('finalMessage');
+    const formulaEl = document.getElementById('finalFormulaText');
+
+    const targetsTableBody = document.getElementById('finalTargetsTableBody');
+    const addTargetBtn = document.getElementById('addTargetGradeBtn');
+
+    const whatIfSlider = document.getElementById('whatIfSlider');
+    const whatIfVal = document.getElementById('whatIfVal');
+    const whatIfResult = document.getElementById('whatIfResult');
+
+    const copyBtn = document.getElementById('copyFinalBtn');
+    const clearBtn = document.getElementById('clearFinalBtn');
+
+    if (!currentInput || !neededScoreEl) return;
+
+    let targetGrades = [...CALC_CONFIG.finalGrade.defaultTargets];
+
+    function calculateFinalExamScore(current, wanted, weight) {
+      if (weight <= 0 || weight > 100) {
+        return { error: 'Weight must be greater than 0% and up to 100%.' };
+      }
+      const needed = (wanted - current * (1 - weight / 100)) / (weight / 100);
+      const rounded = Math.round(needed * 100) / 100;
+      let status = 'achievable';
+      let message = '';
+
+      if (rounded <= 0) {
+        status = 'safe';
+        message = 'You already have enough, even a 0% keeps your target';
+      } else if (rounded > 100) {
+        status = 'extra_credit';
+        message = 'You need more than 100%, which is only possible with extra credit';
+      }
+      return { needed: rounded, status, message };
+    }
+
+    function calculateFinalGrade() {
+      const rawCurrent = currentInput.value.trim();
+      const rawWanted = wantedInput.value.trim();
+      const rawWeight = weightInput.value.trim();
+
+      if (rawCurrent === '' && rawWanted === '') {
+        resetOutputs('Enter your current class grade, wanted grade, and final exam weight.');
+        return;
+      }
+
+      const current = parseSafeNumber(rawCurrent);
+      const wanted = parseSafeNumber(rawWanted);
+      const weight = parseSafeNumber(rawWeight);
+
+      if (current === null || current < 0) {
+        resetOutputs('Current grade cannot be negative.');
+        return;
+      }
+      if (wanted === null || wanted < 0) {
+        resetOutputs('Wanted grade cannot be negative.');
+        return;
+      }
+      if (weight === null || weight <= 0 || weight > 100) {
+        resetOutputs('Weight must be greater than 0% and up to 100%.');
+        return;
+      }
+
+      const result = calculateFinalExamScore(current, wanted, weight);
+
+      if (result.error) {
+        resetOutputs(result.error);
+        return;
+      }
+
+      neededScoreEl.textContent = `${formatDisplayNumber(result.needed, 2, true)}%`;
+
+      if (messageEl) {
+        messageEl.textContent = result.message || '';
+      }
+
+      if (neededStatusBadge) {
+        if (result.status === 'safe') {
+          neededStatusBadge.textContent = 'Target Secured';
+          neededStatusBadge.className = 'weight-total-badge weight-ok';
+        } else if (result.status === 'extra_credit') {
+          neededStatusBadge.textContent = 'Extra Credit Needed';
+          neededStatusBadge.className = 'weight-total-badge weight-warn';
+        } else {
+          neededStatusBadge.textContent = 'Achievable';
+          neededStatusBadge.className = 'weight-total-badge weight-ok';
+        }
+      }
+
+      if (formulaEl) {
+        formulaEl.textContent = `Formula: Needed Score = (${wanted}% − ${current}% × (1 − ${weight / 100})) ÷ ${weight / 100} = ${formatDisplayNumber(result.needed, 2, true)}%.`;
+      }
+
+      renderTargetsTable(current, weight);
+      updateWhatIf(current, weight);
+    }
+
+    function renderTargetsTable(current, weight) {
+      if (!targetsTableBody) return;
+      targetsTableBody.innerHTML = '';
+
+      targetGrades.forEach((target, index) => {
+        const res = calculateFinalExamScore(current, target, weight);
+        let note = 'Achievable';
+        if (res.status === 'safe') note = 'Already secured (0% needed)';
+        else if (res.status === 'extra_credit') note = 'Requires extra credit';
+
+        let letter = 'F';
+        if (target >= 90) letter = 'A';
+        else if (target >= 80) letter = 'B';
+        else if (target >= 70) letter = 'C';
+        else if (target >= 60) letter = 'D';
+
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>
+            <div style="display:flex; align-items:center; gap:6px;">
+              <input type="number" class="target-grade-edit calc-input" data-index="${index}" min="0" max="100" step="1" value="${target}" style="width:68px; padding:4px 6px; font-weight:600; text-align:center;" aria-label="Target Grade %">
+              <span>% (${letter})</span>
+            </div>
+          </td>
+          <td><strong>${formatDisplayNumber(res.needed, 2, true)}%</strong></td>
+          <td style="font-size: 0.8125rem; color: var(--text-muted);">${note}</td>
+          <td style="text-align: right;">
+            <button type="button" class="btn-remove-row remove-target-btn" data-index="${index}" aria-label="Remove target grade ${target}%" title="Remove target">&times;</button>
+          </td>
+        `;
+        targetsTableBody.appendChild(tr);
+      });
+
+      // Bind edit listeners
+      targetsTableBody.querySelectorAll('.target-grade-edit').forEach(input => {
+        input.addEventListener('change', (e) => {
+          const idx = parseInt(e.target.dataset.index, 10);
+          const val = parseSafeNumber(e.target.value);
+          if (val !== null && val >= 0 && val <= 100) {
+            targetGrades[idx] = val;
+            calculateFinalGrade();
+          } else {
+            e.target.value = targetGrades[idx];
+          }
+        });
+      });
+
+      // Bind remove buttons
+      targetsTableBody.querySelectorAll('.remove-target-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const idx = parseInt(e.target.dataset.index, 10);
+          if (targetGrades.length > 1) {
+            targetGrades.splice(idx, 1);
+            calculateFinalGrade();
+          } else {
+            showToast('You must keep at least one target grade.');
+          }
+        });
+      });
+    }
+
+    if (addTargetBtn) {
+      addTargetBtn.addEventListener('click', () => {
+        const lastVal = targetGrades.length > 0 ? targetGrades[targetGrades.length - 1] : 60;
+        const newVal = Math.max(0, lastVal - 10);
+        targetGrades.push(newVal);
+        calculateFinalGrade();
+      });
+    }
+
+    function updateWhatIf(current, weight) {
+      if (!whatIfSlider || !whatIfVal || !whatIfResult) return;
+      const finalScore = parseFloat(whatIfSlider.value);
+      whatIfVal.textContent = `${finalScore}%`;
+
+      const overall = current * (1 - weight / 100) + finalScore * (weight / 100);
+      const roundedOverall = Math.round(overall * 100) / 100;
+      whatIfResult.textContent = `If you score ${finalScore}% on the final exam, your overall grade will be ${formatDisplayNumber(roundedOverall, 2, true)}%.`;
+    }
+
+    if (whatIfSlider) {
+      whatIfSlider.addEventListener('input', () => {
+        const rawCurrent = currentInput.value.trim();
+        const rawWeight = weightInput.value.trim();
+        const current = parseSafeNumber(rawCurrent) || 0;
+        const weight = parseSafeNumber(rawWeight) || 0;
+        updateWhatIf(current, weight);
+      });
+    }
+
+    function resetOutputs(msg) {
+      if (neededScoreEl) neededScoreEl.textContent = '—';
+      if (neededStatusBadge) neededStatusBadge.textContent = '';
+      if (messageEl) messageEl.textContent = msg;
+      if (targetsTableBody) targetsTableBody.innerHTML = '';
+      if (whatIfResult) whatIfResult.textContent = '';
+    }
+
+    [currentInput, wantedInput, weightInput].forEach(input => {
+      input.addEventListener('input', calculateFinalGrade);
+      input.addEventListener('change', calculateFinalGrade);
+    });
+
+    if (copyBtn) {
+      copyBtn.addEventListener('click', () => {
+        if (!neededScoreEl || neededScoreEl.textContent === '—') {
+          showToast('Please calculate a final grade requirement first.');
+          return;
+        }
+        let text = `Final Grade Requirement Summary:
+Current Grade: ${currentInput.value}%
+Wanted Grade: ${wantedInput.value}%
+Final Exam Weight: ${weightInput.value}%
+Needed Exam Score: ${neededScoreEl.textContent}`;
+        if (messageEl && messageEl.textContent) {
+          text += `\nNote: ${messageEl.textContent}`;
+        }
+        copyResultToClipboard(text, copyBtn);
+      });
+    }
+
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        currentInput.value = '';
+        wantedInput.value = '';
+        weightInput.value = '';
+        calculateFinalGrade();
+        showToast('Fields cleared.');
+      });
+    }
+
+    calculateFinalGrade();
+  }
+
+
+  /* ==========================================================================
+     15. HIJRI DATE CONVERTER ENGINE
+     ========================================================================== */
+  function initHijriDateConverter() {
+    const tabBtns = document.querySelectorAll('.hijri-tab-btn');
+    const tabPanels = document.querySelectorAll('.hijri-tab-panel');
+
+    // Tab 1: Gregorian to Hijri
+    const gregInput = document.getElementById('gregorianDateInput');
+
+    // Tab 2: Hijri to Gregorian
+    const hijriDayInput = document.getElementById('hijriDayInput');
+    const hijriMonthSelect = document.getElementById('hijriMonthSelect');
+    const hijriYearInput = document.getElementById('hijriYearInput');
+
+    // Local Moon Sighting Adjustment
+    const adjSelect = document.getElementById('hijriAdjustmentSelect');
+
+    // Outputs
+    const mainTitleEl = document.getElementById('hijriDateTitle');
+    const weekdayBadgeEl = document.getElementById('hijriWeekdayBadge');
+    const secondaryDateEl = document.getElementById('hijriSecondaryDate');
+    const messageEl = document.getElementById('hijriMessage');
+
+    const copyBtn = document.getElementById('copyHijriBtn');
+    const todayBtn = document.getElementById('setTodayDateBtn');
+
+    if (!mainTitleEl) return;
+
+    let activeTab = 'gregToHijri'; // 'gregToHijri', 'hijriToGreg'
+
+    // Supported calendar check
+    let isSupported = false;
+    let hijriFormatter = null;
+
+    try {
+      hijriFormatter = new Intl.DateTimeFormat('en-u-ca-islamic-umalqura-nu-latn', {
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+        weekday: 'long'
+      });
+      isSupported = true;
+    } catch (e) {
+      isSupported = false;
+    }
+
+    if (!isSupported || !hijriFormatter) {
+      if (messageEl) {
+        messageEl.textContent = 'The Islamic Umm al-Qura calendar is not supported by your browser.';
+      }
+      return;
+    }
+
+    // Populate Hijri Month Options
+    if (hijriMonthSelect && hijriMonthSelect.options.length <= 1) {
+      hijriMonthSelect.innerHTML = '';
+      CALC_CONFIG.hijri.monthNames.forEach((name, idx) => {
+        const opt = document.createElement('option');
+        opt.value = idx + 1;
+        opt.textContent = `${idx + 1} - ${name}`;
+        hijriMonthSelect.appendChild(opt);
+      });
+    }
+
+    function gregorianToHijriParts(date, adjustment = 0) {
+      const d = new Date(date);
+      if (adjustment !== 0) {
+        d.setUTCDate(d.getUTCDate() + adjustment);
+      }
+      const parts = hijriFormatter.formatToParts(d);
+      let year, month, day, weekday;
+      for (let i = 0; i < parts.length; i++) {
+        const p = parts[i];
+        if (p.type === 'year') year = parseInt(p.value, 10);
+        if (p.type === 'month') month = parseInt(p.value, 10);
+        if (p.type === 'day') day = parseInt(p.value, 10);
+        if (p.type === 'weekday') weekday = p.value;
+      }
+      return { year, month, day, weekday, adjustedDate: d };
+    }
+
+    function hijriToGregorianDate(hYear, hMonth, hDay, adjustment = 0) {
+      // Validate bounds
+      if (hYear < CALC_CONFIG.hijri.minHijriYear || hYear > CALC_CONFIG.hijri.maxHijriYear) {
+        return { error: `Supported Hijri year range is ${CALC_CONFIG.hijri.minHijriYear} AH to ${CALC_CONFIG.hijri.maxHijriYear} AH.` };
+      }
+
+      // Check day 31
+      if (hDay > 30) {
+        return { error: 'Invalid Hijri day: Day 31 does not exist in the Hijri calendar. Months have either 29 or 30 days.' };
+      }
+      if (hDay < 1) {
+        return { error: 'Hijri day must be at least 1.' };
+      }
+
+      // Approximate Gregorian year
+      const approxGYear = Math.round(hYear * 0.970229 + 621.56);
+      let cur = new Date(Date.UTC(approxGYear, 0, 1));
+
+      // Iteratively approach target
+      for (let iter = 0; iter < 10; iter++) {
+        const h = gregorianToHijriParts(cur, 0);
+        const dayDiff = Math.round((hYear - h.year) * 354.36 + (hMonth - h.month) * 29.53 + (hDay - h.day));
+        if (dayDiff === 0) break;
+        cur.setUTCDate(cur.getUTCDate() + dayDiff);
+      }
+
+      // Exact fine scan within +- 6 days
+      let match = null;
+      let monthLength = 29;
+
+      for (let offset = -6; offset <= 6; offset++) {
+        const testDate = new Date(cur);
+        testDate.setUTCDate(testDate.getUTCDate() + offset);
+        const h = gregorianToHijriParts(testDate, 0);
+        if (h.year === hYear && h.month === hMonth) {
+          if (h.day === 30) monthLength = 30;
+          if (h.day === hDay) {
+            match = testDate;
+          }
+        }
+      }
+
+      if (hDay === 30 && monthLength === 29) {
+        const mName = CALC_CONFIG.hijri.monthNames[hMonth - 1] || 'this month';
+        return { error: `Invalid Hijri day: ${mName} in ${hYear} AH has only 29 days.` };
+      }
+
+      if (!match) {
+        return { error: 'Could not find a matching Gregorian date for this Hijri entry.' };
+      }
+
+      if (adjustment !== 0) {
+        match.setUTCDate(match.getUTCDate() - adjustment);
+      }
+
+      return { date: match };
+    }
+
+    // Tab Switching
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', function () {
+        const tab = this.getAttribute('data-tab');
+        if (tab === 'today') {
+          setTodayDate();
+          activeTab = 'gregToHijri';
+        } else {
+          activeTab = tab || 'gregToHijri';
+        }
+        tabBtns.forEach(b => {
+          const isActive = b === btn;
+          b.classList.toggle('active', isActive);
+          b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+        tabPanels.forEach(panel => {
+          const panelTarget = tab === 'today' ? 'gregToHijri' : activeTab;
+          const isTarget = panel.getAttribute('data-panel') === panelTarget;
+          panel.style.display = isTarget ? 'block' : 'none';
+        });
+        convertDate();
+      });
+    });
+
+    function convertDate() {
+      const adjustment = parseInt(adjSelect ? adjSelect.value : '0', 10) || 0;
+
+      if (activeTab === 'gregToHijri') {
+        const rawDate = gregInput.value;
+        if (!rawDate) {
+          resetOutputs('Please choose a Gregorian date.');
+          return;
+        }
+
+        const parts = rawDate.split('-').map(Number);
+        if (parts.length !== 3) {
+          resetOutputs('Invalid date format.');
+          return;
+        }
+
+        const gDate = new Date(Date.UTC(parts[0], parts[1] - 1, parts[2]));
+        const h = gregorianToHijriParts(gDate, adjustment);
+
+        if (h.year < CALC_CONFIG.hijri.minHijriYear || h.year > CALC_CONFIG.hijri.maxHijriYear) {
+          resetOutputs(`Date is outside the supported Umm al-Qura range (${CALC_CONFIG.hijri.minHijriYear} AH to ${CALC_CONFIG.hijri.maxHijriYear} AH).`);
+          return;
+        }
+
+        const monthName = CALC_CONFIG.hijri.monthNames[h.month - 1] || `Month ${h.month}`;
+        mainTitleEl.textContent = `${h.day} ${monthName} ${h.year} AH`;
+        if (weekdayBadgeEl) weekdayBadgeEl.textContent = h.weekday;
+
+        const gDayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const gMonthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        secondaryDateEl.textContent = `Gregorian: ${gDayNames[gDate.getUTCDay()]}, ${gDate.getUTCDate()} ${gMonthNames[gDate.getUTCMonth()]} ${gDate.getUTCFullYear()} CE`;
+
+        if (messageEl) messageEl.textContent = '';
+
+      } else {
+        const rawDay = parseInt(hijriDayInput.value, 10);
+        const rawMonth = parseInt(hijriMonthSelect.value, 10);
+        const rawYear = parseInt(hijriYearInput.value, 10);
+
+        if (Number.isNaN(rawDay) || Number.isNaN(rawMonth) || Number.isNaN(rawYear)) {
+          resetOutputs('Please enter a valid Hijri day, month, and year.');
+          return;
+        }
+
+        const res = hijriToGregorianDate(rawYear, rawMonth, rawDay, adjustment);
+
+        if (res.error) {
+          resetOutputs(res.error);
+          return;
+        }
+
+        const gDate = res.date;
+        const gDayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const gMonthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        const weekdayStr = gDayNames[gDate.getUTCDay()];
+
+        const mName = CALC_CONFIG.hijri.monthNames[rawMonth - 1] || `Month ${rawMonth}`;
+        mainTitleEl.textContent = `${weekdayStr}, ${gDate.getUTCDate()} ${gMonthNames[gDate.getUTCMonth()]} ${gDate.getUTCFullYear()} CE`;
+        if (weekdayBadgeEl) weekdayBadgeEl.textContent = weekdayStr;
+        secondaryDateEl.textContent = `Islamic: ${rawDay} ${mName} ${rawYear} AH`;
+
+        if (messageEl) messageEl.textContent = '';
+      }
+    }
+
+    function resetOutputs(msg) {
+      if (mainTitleEl) mainTitleEl.textContent = '—';
+      if (weekdayBadgeEl) weekdayBadgeEl.textContent = '—';
+      if (secondaryDateEl) secondaryDateEl.textContent = '—';
+      if (messageEl) messageEl.textContent = msg;
+    }
+
+    // Listeners
+    if (gregInput) {
+      gregInput.addEventListener('input', convertDate);
+      gregInput.addEventListener('change', convertDate);
+    }
+
+    [hijriDayInput, hijriMonthSelect, hijriYearInput].forEach(el => {
+      if (el) {
+        el.addEventListener('input', convertDate);
+        el.addEventListener('change', convertDate);
+      }
+    });
+
+    if (adjSelect) {
+      adjSelect.addEventListener('change', convertDate);
+    }
+
+    // Set Today Helper
+    function setTodayDate() {
+      const now = new Date();
+      const yyyy = now.getUTCFullYear();
+      const mm = String(now.getUTCMonth() + 1).padStart(2, '0');
+      const dd = String(now.getUTCDate()).padStart(2, '0');
+      if (gregInput) gregInput.value = `${yyyy}-${mm}-${dd}`;
+
+      // Today in Hijri
+      const h = gregorianToHijriParts(new Date(Date.UTC(yyyy, now.getUTCMonth(), now.getUTCDate())), 0);
+      if (hijriDayInput) hijriDayInput.value = h.day;
+      if (hijriMonthSelect) hijriMonthSelect.value = h.month;
+      if (hijriYearInput) hijriYearInput.value = h.year;
+
+      convertDate();
+    }
+
+    if (todayBtn) {
+      todayBtn.addEventListener('click', () => {
+        setTodayDate();
+        showToast('Set to today\'s date.');
+      });
+    }
+
+    // Copy Result
+    if (copyBtn) {
+      copyBtn.addEventListener('click', () => {
+        if (!mainTitleEl || mainTitleEl.textContent === '—') {
+          showToast('Please convert a date first.');
+          return;
+        }
+        const text = `Date Conversion:
+Primary Date: ${mainTitleEl.textContent}
+Weekday: ${weekdayBadgeEl ? weekdayBadgeEl.textContent : ''}
+${secondaryDateEl ? secondaryDateEl.textContent : ''}`;
+        copyResultToClipboard(text, copyBtn);
+      });
+    }
+
+    setTodayDate();
+  }
+
+  /* ==========================================================================
+     16. GLOBAL EXPOSURE
      ========================================================================== */
   window.CALC_CONFIG = CALC_CONFIG;
   window.PROPERTY_CONFIG = CALC_CONFIG.property;
@@ -3087,6 +3965,12 @@ Total Discount: ${totalPercentEl.textContent}`;
   window.initAverageCalculator = initAverageCalculator;
   window.initDiscountCalculator = initDiscountCalculator;
 
+  // Academic & Calendar Calculators
+  window.initWeightedGradeCalculator = initWeightedGradeCalculator;
+  window.initFinalGradeCalculator = initFinalGradeCalculator;
+  window.initHijriDateConverter = initHijriDateConverter;
+
 })();
+
 
 

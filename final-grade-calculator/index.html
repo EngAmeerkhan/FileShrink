@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Final Grade Calculator - Free Online | FileShrink</title>
+  <meta name="description" content="Calculate your required exam score with our free final grade calculator. See target grade tables and what-if test scenarios with no signup or download.">
+  <link rel="canonical" href="https://fileshrink.vercel.app/final-grade-calculator/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Final Grade Calculator - Free Online | FileShrink">
+  <meta property="og:description" content="Calculate your required exam score with our free final grade calculator. See target grade tables and what-if test scenarios with no signup or download.">
+  <meta property="og:url" content="https://fileshrink.vercel.app/final-grade-calculator/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Final Grade Calculator - Free Online | FileShrink">
+  <meta name="twitter:description" content="Calculate your required exam score with our free final grade calculator. See target grade tables and what-if test scenarios with no signup or download.">
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/calculators.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Final Grade Calculator",
+        "url": "https://fileshrink.vercel.app/final-grade-calculator/",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Calculate what score you need on your final exam to earn your target semester grade."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://fileshrink.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Calculators",
+            "item": "https://fileshrink.vercel.app/#student-tools"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Final Grade Calculator",
+            "item": "https://fileshrink.vercel.app/final-grade-calculator/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does the final grade calculator determine what score I need on my exam?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The tool uses the standard syllabus formula: Needed Score = (Target Grade - Current Grade × (1 - Exam Weight)) ÷ Exam Weight. This isolates exactly how many points your final examination must contribute."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is a dedicated final exam grade calculator better than doing mental math?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Using a dedicated final exam grade calculator prevents costly rounding mistakes and instantly reveals whether your target is already secured or if it requires extra credit."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can this tool answer what do i need on my final if my target is already locked in?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, if your coursework points already guarantee your desired grade, the tool clearly informs you that even a 0% keeps your target secure."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Rule 8: Mathematical & platform limits: input grade range 0-100% (slider 0-100%), weight 0.01-100%, IEEE-754 double precision -->
+
+  <!-- Top Navigation Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="/" class="site-logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        <span>FileShrink</span>
+      </a>
+      <nav class="site-nav">
+        <a href="/#student-tools" class="nav-link">Academic Tools</a>
+        <a href="/#finance-tools" class="nav-link">Finance Tools</a>
+        <a href="/#pdf-tools" class="nav-link">PDF Tools</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Top Ad Slot (Reserved space, outside tool container) -->
+  <div class="ad-slot ad-slot-top" data-ad-slot="top" aria-hidden="true"></div>
+
+  <main class="calc-main-container">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="calc-breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/#student-tools">Calculators</a></li>
+          <li aria-current="page">Final Grade Calculator</li>
+        </ol>
+      </nav>
+
+      <!-- Page Header -->
+      <div class="calc-header-section">
+        <h1>Final Grade Calculator</h1>
+        <p class="calc-subtitle">Find out what score you need on your final exam to achieve your target grade.</p>
+        <p class="calc-privacy-line">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          Nothing is uploaded or saved. Everything works on your device.
+        </p>
+      </div>
+
+      <!-- Main Calculator Card (2-Step Flow) -->
+      <div class="calc-tool-card">
+
+        <!-- Step 1: Input Section -->
+        <div class="calc-step-header">
+          <span class="calc-step-num">1</span>
+          <div>
+            <h2 class="calc-step-title">Enter your grades and final weight</h2>
+            <p class="calc-step-desc">Input your current standing, your target overall grade, and the final exam percentage weight.</p>
+          </div>
+        </div>
+
+        <div class="calc-form-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-bottom: var(--spacing-lg);">
+          <div class="calc-form-group">
+            <label for="finalCurrentGrade">Current Grade (%)</label>
+            <input type="number" id="finalCurrentGrade" class="calc-input" placeholder="e.g. 85" min="0" max="150" step="0.1" value="85" aria-describedby="finalCurrentHint">
+            <span id="finalCurrentHint" class="form-hint">Your grade percentage heading into the exam</span>
+          </div>
+
+          <div class="calc-form-group">
+            <label for="finalWantedGrade">Wanted Overall Grade (%)</label>
+            <input type="number" id="finalWantedGrade" class="calc-input" placeholder="e.g. 90" min="0" max="150" step="0.1" value="90" aria-describedby="finalWantedHint">
+            <span id="finalWantedHint" class="form-hint">The overall grade you desire (e.g. 90 for an A)</span>
+          </div>
+
+          <div class="calc-form-group">
+            <label for="finalExamWeight">Final Exam Weight (%)</label>
+            <input type="number" id="finalExamWeight" class="calc-input" placeholder="e.g. 30" min="0.1" max="100" step="0.1" value="30" aria-describedby="finalWeightHint">
+            <span id="finalWeightHint" class="form-hint">Percentage of course grade from final exam</span>
+          </div>
+        </div>
+
+        <!-- Step 2: Output Section -->
+        <div class="calc-step-header" style="margin-top: var(--spacing-xl);">
+          <span class="calc-step-num">2</span>
+          <div>
+            <h2 class="calc-step-title">View your required final exam score</h2>
+            <p class="calc-step-desc">Your needed score updates live with status alerts, alternative targets, and what-if simulation.</p>
+          </div>
+        </div>
+
+        <!-- Primary Result Display Card -->
+        <div class="calc-result-card" aria-live="polite">
+          <div class="calc-result-badge-wrap">
+            <span id="finalStatusBadge" class="weight-total-badge weight-warn">Extra Credit Needed</span>
+          </div>
+          <div class="calc-result-label">Needed Final Exam Score</div>
+          <div class="calc-result-hero" id="finalNeededScore">101.67%</div>
+
+          <p id="finalMessage" class="calc-result-subtext" style="color: var(--primary); font-weight: 500;">You need more than 100%, which is only possible with extra credit</p>
+
+          <p class="calc-formula-caption" id="finalFormulaText">
+            Formula: Needed Score = (90% − 85% × (1 − 0.3)) ÷ 0.3 = 101.67%.
+          </p>
+
+          <div class="calc-actions-row">
+            <button type="button" class="btn btn-secondary" id="copyFinalBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              Copy Result
+            </button>
+            <button type="button" class="btn btn-ghost" id="clearFinalBtn">
+              Clear All
+            </button>
+          </div>
+        </div>
+
+        <!-- Interactive What-If Section -->
+        <div class="what-if-box" style="margin-top: var(--spacing-xl);">
+          <div class="what-if-header">
+            <span class="what-if-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+              What-If Final Exam Simulator
+            </span>
+            <span class="what-if-val-badge" id="whatIfVal">85%</span>
+          </div>
+          <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: var(--spacing-sm);">
+            Drag the slider to test what your overall course grade will be if you score a specific mark on the final exam.
+          </p>
+          <input type="range" class="what-if-slider" id="whatIfSlider" min="0" max="100" step="1" value="85" aria-label="What-if exam score">
+          <p class="what-if-result-text" id="whatIfResult">
+            If you score 85% on the final exam, your overall grade will be 85.00%.
+          </p>
+        </div>
+
+        <!-- Target Grades Table -->
+        <div style="margin-top: var(--spacing-xl);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-sm); flex-wrap: wrap; gap: 8px;">
+            <h3 style="font-size: 1.0625rem; font-weight: 600; margin: 0;">Scores Needed for Alternative Targets</h3>
+            <button type="button" class="btn btn-secondary btn-sm" id="addTargetGradeBtn" style="padding: 6px 12px; font-size: 0.8125rem;">
+              + Add Target Grade
+            </button>
+          </div>
+          <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: var(--spacing-md);">
+            Edit target percentages below or remove rows to customize this matrix to your school's grading scale.
+          </p>
+
+          <div class="table-responsive">
+            <table class="calc-table" aria-label="Target Grades and Needed Scores Table">
+              <thead>
+                <tr>
+                  <th scope="col" style="width: 32%;">Target Grade</th>
+                  <th scope="col" style="width: 30%;">Exam Score Needed</th>
+                  <th scope="col" style="width: 26%;">Status Note</th>
+                  <th scope="col" style="width: 12%; text-align: right;">Action</th>
+                </tr>
+              </thead>
+              <tbody id="finalTargetsTableBody">
+                <!-- Dynamically populated by calculators.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Ad Slot -->
+      <div class="ad-slot ad-slot-bottom" data-ad-slot="bottom" aria-hidden="true"></div>
+
+      <!-- Content Section for SEO & Educational Context -->
+      <section class="calc-guide-section" aria-label="Guide to Final Exam Grade Calculations">
+        <div style="text-align: center; margin-bottom: var(--spacing-lg);">
+          <img src="/favicon.svg" alt="Final grade calculator exam score requirement dashboard" width="48" height="48" style="opacity: 0.85;">
+        </div>
+
+        <h2>How the Final Exam Grade Calculator Works</h2>
+        <p>
+          Our <strong>final grade calculator</strong> calculates the exact score you need on your final exam to achieve your desired course grade. Whether you need a final push for an A or simply want to know what score keeps you in passing territory, this tool computes the required mark instantly.
+        </p>
+
+        <h3>The Mathematical Formula</h3>
+        <p>
+          Final exam calculations isolate your required test performance by weighting your current coursework against your remaining final examination:
+        </p>
+        <div class="calc-formula-block">
+          <code>Needed Exam Score = [Target Grade − Current Grade × (1 − Exam Weight)] ÷ Exam Weight</code>
+        </div>
+        <p>
+          Where:
+        </p>
+        <ul>
+          <li><strong>Current Grade:</strong> Your cumulative percentage across homework, quizzes, and midterms.</li>
+          <li><strong>Exam Weight:</strong> The syllabus decimal percentage allocated to the final (e.g., 30% becomes 0.30).</li>
+          <li><strong>Target Grade:</strong> The cutoff percentage you wish to achieve in the course.</li>
+        </ul>
+
+        <h3>Interpreting Your Results</h3>
+        <ul>
+          <li><strong>Score Between 0% and 100%:</strong> Your target is completely achievable within regular grading bounds.</li>
+          <li><strong>Score of 0% or Negative:</strong> You already have enough points accumulated. Even a 0% keeps your target secure!</li>
+          <li><strong>Score Above 100%:</strong> Your desired grade cannot be reached through the exam alone unless your professor offers bonus extra credit questions.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="calc-faq-section" aria-label="Frequently Asked Questions">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-question">How does the final grade calculator determine what score I need on my exam?</summary>
+            <div class="faq-answer">
+              <p>The tool uses the standard syllabus formula: <code>Needed Score = (Target Grade - Current Grade × (1 - Exam Weight)) ÷ Exam Weight</code>. This isolates exactly how many points your final examination must contribute.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Why is a dedicated final exam grade calculator better than doing mental math?</summary>
+            <div class="faq-answer">
+              <p>Using a dedicated <strong>final exam grade calculator</strong> prevents costly rounding mistakes and instantly reveals whether your target is already secured or if it requires extra credit.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Can this tool answer what do i need on my final if my target is already locked in?</summary>
+            <div class="faq-answer">
+              <p>Yes, if your coursework points already guarantee your desired grade, the tool clearly informs you: &ldquo;You already have enough, even a 0% keeps your target&rdquo;.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- Related Tools Grid -->
+      <section class="calc-related-section" aria-label="Related Calculators and Tools">
+        <h2>More Free Student &amp; Academic Tools</h2>
+        <div class="calc-related-grid">
+          <a href="/weighted-grade-calculator/" class="calc-related-card">
+            <div class="calc-related-title">Weighted Grade Calculator</div>
+            <div class="calc-related-desc">Calculate course grades with weighted assignment categories and point scales.</div>
+          </a>
+          <a href="/gpa-calculator/" class="calc-related-card">
+            <div class="calc-related-title">GPA Calculator</div>
+            <div class="calc-related-desc">Calculate semester grade point averages with custom credit hour weights.</div>
+          </a>
+          <a href="/cgpa-calculator/" class="calc-related-card">
+            <div class="calc-related-title">CGPA Calculator</div>
+            <div class="calc-related-desc">Calculate cumulative GPA across multiple academic semesters.</div>
+          </a>
+          <a href="/percentage-calculator/" class="calc-related-card">
+            <div class="calc-related-title">Percentage Calculator</div>
+            <div class="calc-related-desc">Calculate percentage increases, test mark fractions, and ratios.</div>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-col">
+        <a href="/" class="site-logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <span>FileShrink</span>
+        </a>
+        <p class="footer-desc">Free, fast, and secure client-side browser tools. No server uploads, no logins, and zero tracking.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-heading">Academic Calculators</div>
+        <ul class="footer-links">
+          <li><a href="/final-grade-calculator/">Final Grade Calculator</a></li>
+          <li><a href="/weighted-grade-calculator/">Weighted Grade Calculator</a></li>
+          <li><a href="/gpa-calculator/">GPA Calculator</a></li>
+          <li><a href="/cgpa-calculator/">CGPA Calculator</a></li>
+          <li><a href="/attendance-calculator/">Attendance Calculator</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-heading">Legal &amp; Privacy</div>
+        <ul class="footer-links">
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 FileShrink. All rights reserved. Client-side processing only.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shared Calculators Script -->
+  <script src="/js/calculators.js"></script>
+  <script src="/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof window.initFinalGradeCalculator === 'function') {
+        window.initFinalGradeCalculator();
+      }
+    });
+  </script>
+</body>
+</html>

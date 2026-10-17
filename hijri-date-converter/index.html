@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hijri Date Converter - Free Online | FileShrink</title>
+  <meta name="description" content="Convert between Gregorian and Islamic calendar dates with our free Hijri date converter. Features moon adjustments and instant results with no signup.">
+  <link rel="canonical" href="https://fileshrink.vercel.app/hijri-date-converter/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Hijri Date Converter - Free Online | FileShrink">
+  <meta property="og:description" content="Convert between Gregorian and Islamic calendar dates with our free Hijri date converter. Features moon adjustments and instant results with no signup.">
+  <meta property="og:url" content="https://fileshrink.vercel.app/hijri-date-converter/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hijri Date Converter - Free Online | FileShrink">
+  <meta name="twitter:description" content="Convert between Gregorian and Islamic calendar dates with our free Hijri date converter. Features moon adjustments and instant results with no signup.">
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/calculators.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Hijri Date Converter",
+        "url": "https://fileshrink.vercel.app/hijri-date-converter/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Convert between Gregorian and Islamic Hijri dates using the Umm al-Qura calendar system."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://fileshrink.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Converters",
+            "item": "https://fileshrink.vercel.app/#text-tools"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Hijri Date Converter",
+            "item": "https://fileshrink.vercel.app/hijri-date-converter/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does this hijri date converter calculate Islamic calendar dates?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The calculator utilizes the standardized Umm al-Qura calendar via the browser Intl.DateTimeFormat API to convert accurately between solar Gregorian dates and lunar Hijri dates."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why might an islamic date converter differ by one day from local announcements?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Islamic calendar months depend on the physical sighting of the crescent moon. Because atmospheric conditions and geographical latitudes vary, regional moon sightings may differ by plus or minus one day from astronomical calculations."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I convert an english to hijri date for upcoming Islamic holidays?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, you can easily convert any English to Hijri date across the supported range (1356 AH to 1500 AH) to anticipate Ramadan, Eid al-Fitr, Eid al-Adha, or the Islamic New Year."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Rule 8: Mathematical & platform limits: supported Hijri range 1356 AH to 1500 AH (Umm al-Qura Intl.DateTimeFormat spec), lunar month lengths 29-30 days -->
+
+  <!-- Top Navigation Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="/" class="site-logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        <span>FileShrink</span>
+      </a>
+      <nav class="site-nav">
+        <a href="/#student-tools" class="nav-link">Academic Tools</a>
+        <a href="/#finance-tools" class="nav-link">Finance Tools</a>
+        <a href="/#pdf-tools" class="nav-link">PDF Tools</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Top Ad Slot (Reserved space, outside tool container) -->
+  <div class="ad-slot ad-slot-top" data-ad-slot="top" aria-hidden="true"></div>
+
+  <main class="calc-main-container">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="calc-breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/#text-tools">Converters</a></li>
+          <li aria-current="page">Hijri Date Converter</li>
+        </ol>
+      </nav>
+
+      <!-- Page Header -->
+      <div class="calc-header-section">
+        <h1>Hijri Date Converter</h1>
+        <p class="calc-subtitle">Accurately convert between Gregorian and Islamic Hijri dates with moon sighting adjustments.</p>
+        <p class="calc-privacy-line">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          Nothing is uploaded or saved. Everything works on your device.
+        </p>
+      </div>
+
+      <!-- Main Calculator Card (2-Step Flow) -->
+      <div class="calc-tool-card">
+
+        <!-- Step 1: Input Section -->
+        <div class="calc-step-header">
+          <span class="calc-step-num">1</span>
+          <div>
+            <h2 class="calc-step-title">Select date and adjustment</h2>
+            <p class="calc-step-desc">Choose conversion direction and optionally apply your regional moon sighting offset.</p>
+          </div>
+        </div>
+
+        <!-- Mode Tabs: Gregorian to Hijri, Hijri to Gregorian, Today -->
+        <div class="calc-tabs-bar" role="tablist" aria-label="Date Conversion Tabs">
+          <button type="button" class="calc-tab-btn hijri-tab-btn active" role="tab" aria-selected="true" data-tab="gregToHijri">
+            English to Hijri
+          </button>
+          <button type="button" class="calc-tab-btn hijri-tab-btn" role="tab" aria-selected="false" data-tab="hijriToGreg">
+            Hijri to English
+          </button>
+          <button type="button" class="calc-tab-btn hijri-tab-btn" role="tab" aria-selected="false" data-tab="today" id="setTodayDateBtn">
+            Today
+          </button>
+        </div>
+
+        <!-- Tab Panel 1: Gregorian to Hijri -->
+        <div class="hijri-tab-panel" data-panel="gregToHijri" style="display: block;">
+          <div class="calc-form-group" style="max-width: 420px; margin-bottom: var(--spacing-md);">
+            <label for="gregorianDateInput">Gregorian (English) Date</label>
+            <input type="date" id="gregorianDateInput" class="calc-input" aria-describedby="gregDateHint">
+            <span id="gregDateHint" class="form-hint">Standard solar date format (YYYY-MM-DD)</span>
+          </div>
+        </div>
+
+        <!-- Tab Panel 2: Hijri to Gregorian -->
+        <div class="hijri-tab-panel" data-panel="hijriToGreg" style="display: none;">
+          <div class="calc-form-grid" style="grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); margin-bottom: var(--spacing-md);">
+            <div class="calc-form-group">
+              <label for="hijriDayInput">Hijri Day (1-30)</label>
+              <input type="number" id="hijriDayInput" class="calc-input" min="1" max="30" step="1" placeholder="Day">
+            </div>
+
+            <div class="calc-form-group" style="grid-column: span 2;">
+              <label for="hijriMonthSelect">Hijri Month</label>
+              <select id="hijriMonthSelect" class="calc-select" aria-label="Hijri Month">
+                <!-- Dynamically populated with all 12 Islamic month names -->
+              </select>
+            </div>
+
+            <div class="calc-form-group">
+              <label for="hijriYearInput">Hijri Year (AH)</label>
+              <input type="number" id="hijriYearInput" class="calc-input" min="1356" max="1500" step="1" placeholder="Year">
+            </div>
+          </div>
+        </div>
+
+        <!-- Moon Sighting Adjustment Control -->
+        <div class="hijri-adjustment-bar">
+          <label for="hijriAdjustmentSelect" class="hijri-adjustment-label">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+            Local Moon Sighting Adjustment:
+          </label>
+          <select id="hijriAdjustmentSelect" class="calc-select" style="max-width: 220px;" aria-label="Moon sighting adjustment offset">
+            <option value="-2">-2 Days (Moon sighted later)</option>
+            <option value="-1">-1 Day</option>
+            <option value="0" selected>0 Days (Standard Umm al-Qura)</option>
+            <option value="1">+1 Day</option>
+            <option value="2">+2 Days (Moon sighted earlier)</option>
+          </select>
+        </div>
+
+        <!-- Step 2: Output Section -->
+        <div class="calc-step-header" style="margin-top: var(--spacing-xl);">
+          <span class="calc-step-num">2</span>
+          <div>
+            <h2 class="calc-step-title">View converted Hijri or Gregorian date</h2>
+            <p class="calc-step-desc">Calculated date with weekday, parallel calendar reference, and religious note.</p>
+          </div>
+        </div>
+
+        <!-- Converted Date Display Card -->
+        <div class="hijri-display-card" aria-live="polite">
+          <span class="hijri-weekday-badge" id="hijriWeekdayBadge">—</span>
+          <div class="hijri-date-title" id="hijriDateTitle">—</div>
+          <div class="hijri-secondary-date" id="hijriSecondaryDate">—</div>
+
+          <p id="hijriMessage" class="calc-result-subtext" style="color: var(--primary); font-weight: 500;"></p>
+
+          <p class="hijri-honest-note">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            Dates are calculated. Local moon sighting can differ by a day. For religious dates, follow your local announcement.
+          </p>
+
+          <div class="calc-actions-row" style="margin-top: var(--spacing-md);">
+            <button type="button" class="btn btn-secondary" id="copyHijriBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              Copy Date
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Ad Slot -->
+      <div class="ad-slot ad-slot-bottom" data-ad-slot="bottom" aria-hidden="true"></div>
+
+      <!-- Content Section for SEO & Educational Context -->
+      <section class="calc-guide-section" aria-label="Guide to Islamic and Gregorian Calendar Conversion">
+        <div style="text-align: center; margin-bottom: var(--spacing-lg);">
+          <img src="/favicon.svg" alt="Hijri date converter lunar and solar calendar tool" width="48" height="48" style="opacity: 0.85;">
+        </div>
+
+        <h2>How the Hijri Date Converter Operates</h2>
+        <p>
+          Our <strong>hijri date converter</strong> converts dates seamlessly between the Gregorian calendar and the Islamic Umm al-Qura Hijri calendar. The Islamic calendar is a strictly lunar calendar composed of 12 months in a year of 354 or 355 days, starting from the year 622 CE when Prophet Muhammad (PBUH) migrated from Mecca to Medina (the Hijrah).
+        </p>
+
+        <h3>The 12 Islamic Months</h3>
+        <p>
+          Each lunar month in the Hijri calendar spans either 29 or 30 days based on the lunar cycle:
+        </p>
+        <ol style="margin-left: var(--spacing-lg); color: var(--text-muted); line-height: 1.8;">
+          <li><strong>Muharram</strong> (Sacred Month)</li>
+          <li><strong>Safar</strong></li>
+          <li><strong>Rabi al-Awwal</strong></li>
+          <li><strong>Rabi al-Thani</strong></li>
+          <li><strong>Jumada al-Awwal</strong></li>
+          <li><strong>Jumada al-Thani</strong></li>
+          <li><strong>Rajab</strong> (Sacred Month)</li>
+          <li><strong>Shaban</strong></li>
+          <li><strong>Ramadan</strong> (Month of Fasting)</li>
+          <li><strong>Shawwal</strong> (Eid al-Fitr)</li>
+          <li><strong>Dhu al-Qadah</strong> (Sacred Month)</li>
+          <li><strong>Dhu al-Hijjah</strong> (Month of Hajj &amp; Eid al-Adha)</li>
+        </ol>
+
+        <h3>Local Moon Sighting Adjustment</h3>
+        <p>
+          While the Saudi Umm al-Qura calendar provides a definitive astronomical reference, actual lunar months depend on the physical sighting of the crescent moon (hilal). Depending on weather conditions, cloud cover, and regional latitude, religious authorities in countries like Pakistan, India, the United Kingdom, or Morocco may declare the start of a month one or two days earlier or later. You can use our adjustment selector to calibrate dates to your local mosque or regional announcement.
+        </p>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="calc-faq-section" aria-label="Frequently Asked Questions">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-question">How does this hijri date converter calculate Islamic calendar dates?</summary>
+            <div class="faq-answer">
+              <p>The tool uses the standardized Umm al-Qura lunar calendar via the native browser <code>Intl.DateTimeFormat</code> API. It precisely converts between solar Gregorian dates and lunar Hijri dates without requiring server requests.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Why might an islamic date converter differ by one day from local announcements?</summary>
+            <div class="faq-answer">
+              <p>An <strong>islamic date converter</strong> uses astronomical calculations. However, traditional Islamic practice relies on naked-eye or telescope crescent sighting. Local crescent visibility can differ by &plusmn;1 or &plusmn;2 days between different parts of the world.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Can I convert an english to hijri date for upcoming Islamic holidays?</summary>
+            <div class="faq-answer">
+              <p>Yes, you can easily convert any <strong>english to hijri date</strong> across the supported 1356 AH to 1500 AH range to determine upcoming dates for Ramadan, Eid al-Fitr, and Eid al-Adha.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- Related Tools Grid -->
+      <section class="calc-related-section" aria-label="Related Calculators and Tools">
+        <h2>More Free Utility &amp; Academic Tools</h2>
+        <div class="calc-related-grid">
+          <a href="/weighted-grade-calculator/" class="calc-related-card">
+            <div class="calc-related-title">Weighted Grade Calculator</div>
+            <div class="calc-related-desc">Calculate course grades with weighted assignment categories and point scales.</div>
+          </a>
+          <a href="/final-grade-calculator/" class="calc-related-card">
+            <div class="calc-related-title">Final Grade Calculator</div>
+            <div class="calc-related-desc">Calculate what exam score you need to reach your target semester grade.</div>
+          </a>
+          <a href="/average-calculator/" class="calc-related-card">
+            <div class="calc-related-title">Average Calculator</div>
+            <div class="calc-related-desc">Calculate mean, median, mode, and range for any set of numbers.</div>
+          </a>
+          <a href="/percentage-calculator/" class="calc-related-card">
+            <div class="calc-related-title">Percentage Calculator</div>
+            <div class="calc-related-desc">Calculate percentage increases, mark fractions, and ratios.</div>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-col">
+        <a href="/" class="site-logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <span>FileShrink</span>
+        </a>
+        <p class="footer-desc">Free, fast, and secure client-side browser tools. No server uploads, no logins, and zero tracking.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-heading">Converters &amp; Utilities</div>
+        <ul class="footer-links">
+          <li><a href="/hijri-date-converter/">Hijri Date Converter</a></li>
+          <li><a href="/weighted-grade-calculator/">Weighted Grade Calculator</a></li>
+          <li><a href="/final-grade-calculator/">Final Grade Calculator</a></li>
+          <li><a href="/average-calculator/">Average Calculator</a></li>
+          <li><a href="/discount-calculator/">Discount Calculator</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-heading">Legal &amp; Privacy</div>
+        <ul class="footer-links">
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 FileShrink. All rights reserved. Client-side processing only.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shared Calculators Script -->
+  <script src="/js/calculators.js"></script>
+  <script src="/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof window.initHijriDateConverter === 'function') {
+        window.initHijriDateConverter();
+      }
+    });
+  </script>
+</body>
+</html>

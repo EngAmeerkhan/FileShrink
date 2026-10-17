@@ -180,6 +180,9 @@
       if (lowerTitle.includes('loan')) extraKeywords += ' emi calculator loan payment calculator monthly payment calculator interest amortization payoff mortgage bank debt schedule';
       if (lowerTitle.includes('average')) extraKeywords += ' mean median mode calculator average of numbers statistics dataset range sum math central tendency';
       if (lowerTitle.includes('discount')) extraKeywords += ' sale price calculator percentage discount calculator markdown savings shopping retail bargain tax';
+      if (lowerTitle.includes('weighted')) extraKeywords += ' weighted grade calculator weighted average calculator grade weight calculator syllabus percent points category assignment';
+      if (lowerTitle.includes('final')) extraKeywords += ' final grade calculator final exam grade calculator what do i need on my final passing score required exam target test semester';
+      if (lowerTitle.includes('hijri')) extraKeywords += ' hijri date converter islamic date converter english to hijri date umm al qura calendar ramadan eid lunar moon sighting';
 
 
 

@@ -66,4 +66,7 @@
 | `/loan-calculator/` | **loan calculator** (Secondaries: emi calculator, (*) loan payment calculator, (*) monthly payment calculator) | Loan Calculator - Free Online \| FileShrink | Loan Calculator | 42 | 154 | Yes | Yes | Yes | Yes |
 | `/average-calculator/` | **average calculator** (Secondaries: (*) mean median mode calculator, (*) average of numbers) | Average Calculator - Free Online \| FileShrink | Average Calculator | 45 | 153 | Yes | Yes | Yes | Yes |
 | `/discount-calculator/` | **discount calculator** (Secondaries: (*) sale price calculator, (*) percentage discount calculator) | Discount Calculator - Free Online \| FileShrink | Discount Calculator | 47 | 154 | Yes | Yes | Yes | Yes |
+| `/weighted-grade-calculator/` | **weighted grade calculator** (Secondaries: (*) weighted average calculator, (*) grade weight calculator) | Weighted Grade Calculator - Free Online \| FileShrink | Weighted Grade Calculator | 53 | 155 | Yes | Yes | Yes | Yes |
+| `/final-grade-calculator/` | **final grade calculator** (Secondaries: (*) final exam grade calculator, (*) what do i need on my final) | Final Grade Calculator - Free Online \| FileShrink | Final Grade Calculator | 49 | 151 | Yes | Yes | Yes | Yes |
+| `/hijri-date-converter/` | **hijri date converter** (Secondaries: islamic date converter, english to hijri date) | Hijri Date Converter - Free Online \| FileShrink | Hijri Date Converter | 47 | 151 | Yes | Yes | Yes | Yes |
 
