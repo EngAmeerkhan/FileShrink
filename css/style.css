@@ -225,37 +225,51 @@ a:hover, a:focus-visible {
 }
 
 /* Breadcrumbs */
-.breadcrumbs {
+.breadcrumbs,
+.calc-breadcrumbs {
   margin: 0.75rem 0 1rem 0;
   font-size: 0.875rem;
   color: var(--text-light);
 }
 
-.breadcrumbs ol {
+.breadcrumbs ol,
+.calc-breadcrumbs ol {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   list-style: none;
+  padding: 0;
+  margin: 0;
   gap: 6px;
 }
 
-.breadcrumbs li {
+.breadcrumbs li,
+.calc-breadcrumbs li {
   display: inline-flex;
   align-items: center;
   gap: 6px;
 }
 
-.breadcrumbs li + li::before {
+.breadcrumbs li + li::before,
+.calc-breadcrumbs li + li::before {
   content: "/";
   color: var(--text-light);
   font-size: 0.75rem;
 }
 
-.breadcrumbs a {
+.breadcrumbs a,
+.calc-breadcrumbs a {
   color: var(--text-muted);
+  text-decoration: none;
 }
 
-.breadcrumbs [aria-current="page"] {
+.breadcrumbs a:hover,
+.calc-breadcrumbs a:hover {
+  color: var(--primary);
+}
+
+.breadcrumbs [aria-current="page"],
+.calc-breadcrumbs [aria-current="page"] {
   color: var(--text-main);
   font-weight: 500;
 }
@@ -446,6 +460,35 @@ a:hover, a:focus-visible {
 
 .btn-block {
   width: 100%;
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  box-shadow: none;
+}
+
+.btn-ghost:hover, .btn-ghost:focus-visible {
+  background-color: var(--bg-subtle);
+  border-color: var(--text-muted);
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.btn-ghost:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.btn-sm {
+  min-height: 32px;
+  min-width: auto;
+  padding: 4px 10px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
 }
 
 /* Processing State */

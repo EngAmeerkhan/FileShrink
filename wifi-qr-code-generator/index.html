@@ -119,11 +119,11 @@
   <!-- Top Ad Slot (Reserved space, outside tool container) -->
   <div class="ad-slot ad-slot-top" data-ad-slot="top" aria-hidden="true"></div>
 
-  <main class="calc-main-container">
+  <main class="main-content">
     <div class="container">
 
       <!-- Breadcrumbs -->
-      <nav class="calc-breadcrumbs" aria-label="Breadcrumb">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
         <ol>
           <li><a href="/">Home</a></li>
           <li><a href="/#generator-tools">Generators</a></li>
@@ -131,18 +131,36 @@
         </ol>
       </nav>
 
-      <!-- Page Header -->
-      <div class="calc-header-section">
+      <!-- Page Intro Header -->
+      <header class="page-intro">
         <h1>Wi-Fi QR Code Generator</h1>
-        <p class="calc-subtitle">Create instant scan-to-connect Wi-Fi QR codes with custom styling and secure local processing.</p>
-        <p class="calc-privacy-line">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-          Nothing is uploaded or saved. Everything works on your device.
-        </p>
+        <p class="page-subtitle">Create instant scan-to-connect Wi-Fi QR codes with custom styling and secure local processing.</p>
+      </header>
+
+      <!-- Privacy Callout -->
+      <div class="calc-privacy-note">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+        <span>Nothing is uploaded or saved. Everything works on your device.</span>
+      </div>
+
+      <!-- 2-Step Flow Indicator -->
+      <div class="calc-steps" aria-hidden="true">
+        <div class="calc-step-item active">
+          <span class="calc-step-num">1</span>
+          <span>Enter network details</span>
+        </div>
+        <div class="calc-step-divider"></div>
+        <div class="calc-step-item active">
+          <span class="calc-step-num">2</span>
+          <span>Preview &amp; download</span>
+        </div>
       </div>
 
       <!-- Main Tool Card (2-Step Flow) -->
-      <div class="calc-tool-card">
+      <section class="calc-card" aria-label="Wi-Fi QR Code Generator Tool">
 
         <!-- Step 1: Input Section -->
         <div class="calc-step-header">
@@ -153,36 +171,36 @@
           </div>
         </div>
 
-        <div class="calc-form-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-bottom: var(--spacing-md);">
+        <div class="generator-form-grid">
           <div class="calc-form-group">
-            <label for="wifiSsidInput">Network Name (SSID) *</label>
+            <label for="wifiSsidInput" class="calc-label">Network Name (SSID) *</label>
             <input type="text" id="wifiSsidInput" class="calc-input" placeholder="e.g. Home_Network" value="My;WiFi" required aria-describedby="wifiSsidHint">
-            <span id="wifiSsidHint" class="form-hint">The exact name broadcast by your router</span>
+            <span id="wifiSsidHint" class="calc-hint">The exact name broadcast by your router</span>
           </div>
 
           <div class="calc-form-group">
-            <label for="wifiSecuritySelect">Security Type</label>
+            <label for="wifiSecuritySelect" class="calc-label">Security Type</label>
             <select id="wifiSecuritySelect" class="calc-select" aria-label="Wi-Fi Security Type">
               <option value="WPA" selected>WPA / WPA2 / WPA3 (Default)</option>
               <option value="WEP">WEP</option>
               <option value="none">None (Open Network)</option>
             </select>
-            <span class="form-hint">Most modern routers use WPA/WPA2/WPA3</span>
+            <span class="calc-hint">Most modern routers use WPA/WPA2/WPA3</span>
           </div>
 
           <div class="calc-form-group">
-            <label for="wifiPasswordInput">Password</label>
+            <label for="wifiPasswordInput" class="calc-label">Password</label>
             <div style="position: relative; display: flex; align-items: center;">
               <input type="password" id="wifiPasswordInput" class="calc-input" placeholder="Enter network password" value="pa:ss" style="padding-right: 42px;">
               <button type="button" id="toggleWifiPasswordBtn" aria-label="Show password" style="position: absolute; right: 8px; background: none; border: none; cursor: pointer; color: var(--text-muted); padding: 4px; display: flex; align-items: center;">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
               </button>
             </div>
-            <span class="form-hint">Your password is encrypted into the QR code only</span>
+            <span class="calc-hint">Your password is encrypted into the QR code only</span>
           </div>
         </div>
 
-        <div style="margin-bottom: var(--spacing-lg);">
+        <div style="margin-bottom: 1.5rem;">
           <label style="display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.9375rem; color: var(--text-main); font-weight: 500;">
             <input type="checkbox" id="wifiHiddenCheckbox" style="width: 18px; height: 18px; accent-color: var(--primary);">
             <span>Hidden network (SSID is not publicly broadcast)</span>
@@ -190,18 +208,18 @@
         </div>
 
         <!-- Customization Options Accordion / Box -->
-        <details class="what-if-box" style="margin-bottom: var(--spacing-lg);">
-          <summary style="cursor: pointer; font-weight: 600; font-size: 0.9375rem; display: flex; align-items: center; justify-content: space-between;">
-            <span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:6px;"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-              QR Styling &amp; Design Options
+        <details class="generator-options-box">
+          <summary>
+            <span style="display: inline-flex; align-items: center; gap: 8px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+              <span>QR Styling &amp; Design Options</span>
             </span>
             <span style="font-size: 0.8125rem; color: var(--text-muted); font-weight: normal;">(Size, Colors, Margin)</span>
           </summary>
 
-          <div class="generator-options-grid" style="margin-top: 1rem;">
+          <div class="generator-options-grid">
             <div class="calc-form-group">
-              <label for="wifiQrSizeSelect">Image Resolution</label>
+              <label for="wifiQrSizeSelect" class="calc-label">Image Resolution</label>
               <select id="wifiQrSizeSelect" class="calc-select" aria-label="QR Code Resolution">
                 <option value="256">256 x 256 px (Compact)</option>
                 <option value="320" selected>320 x 320 px (Standard)</option>
@@ -211,7 +229,7 @@
             </div>
 
             <div class="calc-form-group">
-              <label for="wifiQrEccSelect">Error Correction</label>
+              <label for="wifiQrEccSelect" class="calc-label">Error Correction</label>
               <select id="wifiQrEccSelect" class="calc-select" aria-label="Error Correction Level">
                 <option value="L">L - Low (7% recovery)</option>
                 <option value="M" selected>M - Medium (15% recovery)</option>
@@ -221,7 +239,7 @@
             </div>
 
             <div class="calc-form-group">
-              <label for="wifiQrMarginSelect">Quiet Zone (Margin)</label>
+              <label for="wifiQrMarginSelect" class="calc-label">Quiet Zone (Margin)</label>
               <select id="wifiQrMarginSelect" class="calc-select" aria-label="Quiet Zone Margin">
                 <option value="1">1 Module (Minimal)</option>
                 <option value="2">2 Modules (Compact)</option>
@@ -230,7 +248,7 @@
             </div>
 
             <div class="calc-form-group">
-              <label for="wifiQrFgColor">Foreground Color</label>
+              <label for="wifiQrFgColor" class="calc-label">Foreground Color</label>
               <div class="generator-color-wrap">
                 <input type="color" id="wifiQrFgColor" class="generator-color-input" value="#000000" aria-label="QR foreground color">
                 <span style="font-size: 0.875rem; color: var(--text-muted);">Dark squares</span>
@@ -238,7 +256,7 @@
             </div>
 
             <div class="calc-form-group">
-              <label for="wifiQrBgColor">Background Color</label>
+              <label for="wifiQrBgColor" class="calc-label">Background Color</label>
               <div class="generator-color-wrap">
                 <input type="color" id="wifiQrBgColor" class="generator-color-input" value="#ffffff" aria-label="QR background color">
                 <span style="font-size: 0.875rem; color: var(--text-muted);">Background</span>
@@ -248,7 +266,7 @@
         </details>
 
         <!-- Step 2: Output Section -->
-        <div class="calc-step-header" style="margin-top: var(--spacing-xl);">
+        <div class="calc-step-header" style="margin-top: 2rem;">
           <span class="calc-step-num">2</span>
           <div>
             <h2 class="calc-step-title">Scan, customize, or download your QR code</h2>
@@ -267,32 +285,32 @@
           <div id="wifiMessage" class="calc-result-subtext" style="color: var(--primary); font-weight: 500;"></div>
 
           <!-- Raw Wi-Fi Payload Transparency -->
-          <div style="width: 100%; max-width: 480px; margin-top: 1rem; text-align: left;">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div style="width: 100%; max-width: 500px; margin-top: 0.75rem; text-align: left;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
               <span style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Encoded Wi-Fi Payload:</span>
-              <button type="button" class="btn btn-ghost" id="copyWifiPayloadBtn" style="padding: 2px 6px; font-size: 0.75rem;">Copy Payload</button>
+              <button type="button" class="btn btn-ghost btn-sm" id="copyWifiPayloadBtn">Copy Payload</button>
             </div>
             <div class="generator-code-display" id="wifiPayloadText">WIFI:T:WPA;S:My\;WiFi;P:pa\:ss;;</div>
           </div>
 
           <!-- Download & Print Action Buttons -->
-          <div class="calc-actions-row" style="margin-top: 1.25rem;">
+          <div class="generator-actions-row">
             <button type="button" class="btn btn-primary" id="downloadWifiPngBtn">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-              Download PNG
+              <span>Download PNG</span>
             </button>
             <button type="button" class="btn btn-secondary" id="downloadWifiSvgBtn">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
-              Download SVG
+              <span>Download SVG</span>
             </button>
             <button type="button" class="btn btn-ghost" id="printWifiCardBtn">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
-              Print Card
+              <span>Print Card</span>
             </button>
           </div>
         </div>
 
-      </div>
+      </section>
 
       <!-- Bottom Ad Slot -->
       <div class="ad-slot ad-slot-bottom" data-ad-slot="bottom" aria-hidden="true"></div>
