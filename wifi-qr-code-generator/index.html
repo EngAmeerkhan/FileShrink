@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wi-Fi QR Code Generator - Free Online | FileShrink</title>
+  <meta name="description" content="Generate printable Wi-Fi QR codes with our free wifi qr code generator. Fast connect, no watermark, and no signup needed. Completely private on your device.">
+  <link rel="canonical" href="https://fileshrink.vercel.app/wifi-qr-code-generator/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Wi-Fi QR Code Generator - Free Online | FileShrink">
+  <meta property="og:description" content="Generate printable Wi-Fi QR codes with our free wifi qr code generator. Fast connect, no watermark, and no signup needed. Completely private on your device.">
+  <meta property="og:url" content="https://fileshrink.vercel.app/wifi-qr-code-generator/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Wi-Fi QR Code Generator - Free Online | FileShrink">
+  <meta name="twitter:description" content="Generate printable Wi-Fi QR codes with our free wifi qr code generator. Fast connect, no watermark, and no signup needed. Completely private on your device.">
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/calculators.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Wi-Fi QR Code Generator",
+        "url": "https://fileshrink.vercel.app/wifi-qr-code-generator/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Generate custom printable Wi-Fi network login QR codes for instant smartphone connection."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://fileshrink.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Generators",
+            "item": "https://fileshrink.vercel.app/#converters"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Wi-Fi QR Code Generator",
+            "item": "https://fileshrink.vercel.app/wifi-qr-code-generator/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does this wifi qr code generator connect smartphones to Wi-Fi?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The tool encodes your network details into the standard WIFI URI scheme. When scanned by an iPhone or Android camera, the operating system reads the SSID and password directly to join the network without manual typing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this qr code generator safe to use with private home passwords?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, absolutely. All QR code rendering occurs entirely within your browser's local JavaScript sandbox. Your network name and password never touch our servers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will a printed wifi password qr code work for hidden networks?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, simply check the 'Hidden network' box before downloading or printing. This includes the H:true parameter in the payload so modern mobile operating systems can locate the non-broadcasting SSID."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Rule 8: Platform limits: IEEE 802.11 SSID max 32 octets, WPA2/WPA3 passphrase 8-63 ASCII characters (verify against the platform's current guidance) -->
+
+  <!-- Top Navigation Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="/" class="site-logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        <span>FileShrink</span>
+      </a>
+      <nav class="site-nav">
+        <a href="/#student-tools" class="nav-link">Academic Tools</a>
+        <a href="/#converters" class="nav-link">Generators &amp; Converters</a>
+        <a href="/#pdf-tools" class="nav-link">PDF Tools</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Top Ad Slot (Reserved space, outside tool container) -->
+  <div class="ad-slot ad-slot-top" data-ad-slot="top" aria-hidden="true"></div>
+
+  <main class="calc-main-container">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="calc-breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/#converters">Generators</a></li>
+          <li aria-current="page">Wi-Fi QR Code Generator</li>
+        </ol>
+      </nav>
+
+      <!-- Page Header -->
+      <div class="calc-header-section">
+        <h1>Wi-Fi QR Code Generator</h1>
+        <p class="calc-subtitle">Create instant scan-to-connect Wi-Fi QR codes with custom styling and secure local processing.</p>
+        <p class="calc-privacy-line">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          Nothing is uploaded or saved. Everything works on your device.
+        </p>
+      </div>
+
+      <!-- Main Tool Card (2-Step Flow) -->
+      <div class="calc-tool-card">
+
+        <!-- Step 1: Input Section -->
+        <div class="calc-step-header">
+          <span class="calc-step-num">1</span>
+          <div>
+            <h2 class="calc-step-title">Enter Wi-Fi network details</h2>
+            <p class="calc-step-desc">Enter your network name, security type, and password. Your Wi-Fi password never leaves your device.</p>
+          </div>
+        </div>
+
+        <div class="calc-form-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-bottom: var(--spacing-md);">
+          <div class="calc-form-group">
+            <label for="wifiSsidInput">Network Name (SSID) *</label>
+            <input type="text" id="wifiSsidInput" class="calc-input" placeholder="e.g. Home_Network" value="My;WiFi" required aria-describedby="wifiSsidHint">
+            <span id="wifiSsidHint" class="form-hint">The exact name broadcast by your router</span>
+          </div>
+
+          <div class="calc-form-group">
+            <label for="wifiSecuritySelect">Security Type</label>
+            <select id="wifiSecuritySelect" class="calc-select" aria-label="Wi-Fi Security Type">
+              <option value="WPA" selected>WPA / WPA2 / WPA3 (Default)</option>
+              <option value="WEP">WEP</option>
+              <option value="none">None (Open Network)</option>
+            </select>
+            <span class="form-hint">Most modern routers use WPA/WPA2/WPA3</span>
+          </div>
+
+          <div class="calc-form-group">
+            <label for="wifiPasswordInput">Password</label>
+            <div style="position: relative; display: flex; align-items: center;">
+              <input type="password" id="wifiPasswordInput" class="calc-input" placeholder="Enter network password" value="pa:ss" style="padding-right: 42px;">
+              <button type="button" id="toggleWifiPasswordBtn" aria-label="Show password" style="position: absolute; right: 8px; background: none; border: none; cursor: pointer; color: var(--text-muted); padding: 4px; display: flex; align-items: center;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              </button>
+            </div>
+            <span class="form-hint">Your password is encrypted into the QR code only</span>
+          </div>
+        </div>
+
+        <div style="margin-bottom: var(--spacing-lg);">
+          <label style="display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.9375rem; color: var(--text-main); font-weight: 500;">
+            <input type="checkbox" id="wifiHiddenCheckbox" style="width: 18px; height: 18px; accent-color: var(--primary);">
+            <span>Hidden network (SSID is not publicly broadcast)</span>
+          </label>
+        </div>
+
+        <!-- Customization Options Accordion / Box -->
+        <details class="what-if-box" style="margin-bottom: var(--spacing-lg);">
+          <summary style="cursor: pointer; font-weight: 600; font-size: 0.9375rem; display: flex; align-items: center; justify-content: space-between;">
+            <span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:6px;"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+              QR Styling &amp; Design Options
+            </span>
+            <span style="font-size: 0.8125rem; color: var(--text-muted); font-weight: normal;">(Size, Colors, Margin)</span>
+          </summary>
+
+          <div class="generator-options-grid" style="margin-top: 1rem;">
+            <div class="calc-form-group">
+              <label for="wifiQrSizeSelect">Image Resolution</label>
+              <select id="wifiQrSizeSelect" class="calc-select" aria-label="QR Code Resolution">
+                <option value="256">256 x 256 px (Compact)</option>
+                <option value="320" selected>320 x 320 px (Standard)</option>
+                <option value="480">480 x 480 px (High Res)</option>
+                <option value="640">640 x 640 px (Print Ready)</option>
+              </select>
+            </div>
+
+            <div class="calc-form-group">
+              <label for="wifiQrEccSelect">Error Correction</label>
+              <select id="wifiQrEccSelect" class="calc-select" aria-label="Error Correction Level">
+                <option value="L">L - Low (7% recovery)</option>
+                <option value="M" selected>M - Medium (15% recovery)</option>
+                <option value="Q">Q - Quartile (25% recovery)</option>
+                <option value="H">H - High (30% recovery)</option>
+              </select>
+            </div>
+
+            <div class="calc-form-group">
+              <label for="wifiQrMarginSelect">Quiet Zone (Margin)</label>
+              <select id="wifiQrMarginSelect" class="calc-select" aria-label="Quiet Zone Margin">
+                <option value="1">1 Module (Minimal)</option>
+                <option value="2">2 Modules (Compact)</option>
+                <option value="4" selected>4 Modules (Standard)</option>
+              </select>
+            </div>
+
+            <div class="calc-form-group">
+              <label for="wifiQrFgColor">Foreground Color</label>
+              <div class="generator-color-wrap">
+                <input type="color" id="wifiQrFgColor" class="generator-color-input" value="#000000" aria-label="QR foreground color">
+                <span style="font-size: 0.875rem; color: var(--text-muted);">Dark squares</span>
+              </div>
+            </div>
+
+            <div class="calc-form-group">
+              <label for="wifiQrBgColor">Background Color</label>
+              <div class="generator-color-wrap">
+                <input type="color" id="wifiQrBgColor" class="generator-color-input" value="#ffffff" aria-label="QR background color">
+                <span style="font-size: 0.875rem; color: var(--text-muted);">Background</span>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Step 2: Output Section -->
+        <div class="calc-step-header" style="margin-top: var(--spacing-xl);">
+          <span class="calc-step-num">2</span>
+          <div>
+            <h2 class="calc-step-title">Scan, customize, or download your QR code</h2>
+            <p class="calc-step-desc">Test the code on your screen or export high-resolution vector and raster files.</p>
+          </div>
+        </div>
+
+        <!-- Rendered QR Preview Card -->
+        <div class="generator-preview-card" aria-live="polite">
+          <div class="generator-qr-wrap">
+            <canvas id="wifiQrCanvas" width="320" height="320" style="display:block;"></canvas>
+            <div id="wifiQrSvgWrap" style="display:none;" aria-hidden="true"></div>
+          </div>
+
+          <div id="wifiContrastWarn" class="generator-contrast-warn"></div>
+          <div id="wifiMessage" class="calc-result-subtext" style="color: var(--primary); font-weight: 500;"></div>
+
+          <!-- Raw Wi-Fi Payload Transparency -->
+          <div style="width: 100%; max-width: 480px; margin-top: 1rem; text-align: left;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Encoded Wi-Fi Payload:</span>
+              <button type="button" class="btn btn-ghost" id="copyWifiPayloadBtn" style="padding: 2px 6px; font-size: 0.75rem;">Copy Payload</button>
+            </div>
+            <div class="generator-code-display" id="wifiPayloadText">WIFI:T:WPA;S:My\;WiFi;P:pa\:ss;;</div>
+          </div>
+
+          <!-- Download & Print Action Buttons -->
+          <div class="calc-actions-row" style="margin-top: 1.25rem;">
+            <button type="button" class="btn btn-primary" id="downloadWifiPngBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Download PNG
+            </button>
+            <button type="button" class="btn btn-secondary" id="downloadWifiSvgBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
+              Download SVG
+            </button>
+            <button type="button" class="btn btn-ghost" id="printWifiCardBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+              Print Card
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Ad Slot -->
+      <div class="ad-slot ad-slot-bottom" data-ad-slot="bottom" aria-hidden="true"></div>
+
+      <!-- Content Section for SEO & Educational Context -->
+      <section class="calc-guide-section" aria-label="Guide to Wi-Fi QR Codes">
+        <div style="text-align: center; margin-bottom: var(--spacing-lg);">
+          <img src="/favicon.svg" alt="Wifi qr code generator scan to connect preview card" width="48" height="48" style="opacity: 0.85;">
+        </div>
+
+        <h2>How the Wi-Fi QR Code Generator Connects Devices</h2>
+        <p>
+          Our <strong>wifi qr code generator</strong> creates printable, scannable QR codes that let guests and family connect to your home or office network instantly. Instead of dictating complicated alphanumeric strings or worrying about case sensitivity, anyone with an iOS or Android device can point their camera at the code to connect in seconds.
+        </p>
+
+        <h3>Understanding the Standard Wi-Fi Protocol</h3>
+        <p>
+          This tool structures network credentials into the standardized <code>WIFI:</code> URI format recognized worldwide by smartphones. Special characters such as semicolons, colons, commas, and quotation marks are automatically escaped with backslashes to ensure zero connection failures.
+        </p>
+
+        <h3>Why Generate a Wi-Fi Password QR Code?</h3>
+        <ul>
+          <li><strong>Zero Typing Errors:</strong> Eliminate repeated attempts when entering long passphrases with special symbols.</li>
+          <li><strong>Total Privacy:</strong> Your Wi-Fi password never leaves your device. All rendering is completed locally via JavaScript.</li>
+          <li><strong>Guest Convenience:</strong> Print a handsome card to frame on your living room wall, kitchen counter, or conference room desk.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="calc-faq-section" aria-label="Frequently Asked Questions">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-question">How does this wifi qr code generator connect smartphones to Wi-Fi?</summary>
+            <div class="faq-answer">
+              <p>The tool encodes your network details into the standard WIFI URI scheme. When scanned by an iPhone or Android camera, the operating system reads the SSID and password directly to join the network without manual typing.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Is this qr code generator safe to use with private home passwords?</summary>
+            <div class="faq-answer">
+              <p>Yes, absolutely. All processing in this <strong>qr code generator</strong> occurs inside your browser. No Wi-Fi credentials or personal data are ever sent over the internet or saved on our servers.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Will a printed wifi password qr code work for hidden networks?</summary>
+            <div class="faq-answer">
+              <p>Yes. If your router does not broadcast its SSID, enable the &ldquo;Hidden network&rdquo; option before generating. A printed <strong>wifi password qr code</strong> with hidden flag enabled instructs the phone to search actively for the hidden network beacon.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- Related Tools Grid -->
+      <section class="calc-related-section" aria-label="Related Tools">
+        <h2>More Free Digital &amp; Productivity Tools</h2>
+        <div class="calc-related-grid">
+          <a href="/barcode-generator/" class="calc-related-card">
+            <div class="calc-related-title">Barcode Generator</div>
+            <div class="calc-related-desc">Create Code 128, EAN-13, and UPC-A barcodes with automated check digits.</div>
+          </a>
+          <a href="/whatsapp-link-generator/" class="calc-related-card">
+            <div class="calc-related-title">WhatsApp Link Generator</div>
+            <div class="calc-related-desc">Create direct click-to-chat links and QR codes with custom messages.</div>
+          </a>
+          <a href="/image-to-text/" class="calc-related-card">
+            <div class="calc-related-title">Image to Text</div>
+            <div class="calc-related-desc">Extract text, labels, and numbers from images directly in your browser.</div>
+          </a>
+          <a href="/signature-resizer/" class="calc-related-card">
+            <div class="calc-related-title">Signature Resizer</div>
+            <div class="calc-related-desc">Crop and resize digital signatures to official passport and portal dimensions.</div>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-col">
+        <a href="/" class="site-logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <span>FileShrink</span>
+        </a>
+        <p class="footer-desc">Free, fast, and secure client-side browser tools. No server uploads, no logins, and zero tracking.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-heading">Generators &amp; Utilities</div>
+        <ul class="footer-links">
+          <li><a href="/wifi-qr-code-generator/">Wi-Fi QR Code Generator</a></li>
+          <li><a href="/barcode-generator/">Barcode Generator</a></li>
+          <li><a href="/whatsapp-link-generator/">WhatsApp Link Generator</a></li>
+          <li><a href="/text-to-handwriting-converter/">Text to Handwriting</a></li>
+          <li><a href="/pomodoro-timer/">Pomodoro Timer</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-heading">Legal &amp; Privacy</div>
+        <ul class="footer-links">
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 FileShrink. All rights reserved. Client-side processing only.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Pinned cdnjs Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.5.2/qrcode.min.js"></script>
+  <!-- Generator Tool Engine -->
+  <script src="/js/generator-tools.js"></script>
+  <script src="/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof window.initWifiQrCodeGenerator === 'function') {
+        window.initWifiQrCodeGenerator();
+      }
+    });
+  </script>
+</body>
+</html>

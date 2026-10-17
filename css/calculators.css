@@ -2072,6 +2072,138 @@
   box-sizing: border-box;
 }
 
+/* ==========================================================================
+   17. GENERATOR TOOLS STYLING (QR, BARCODE, WHATSAPP)
+   ========================================================================== */
+.generator-preview-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.generator-qr-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1rem;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.generator-qr-wrap canvas,
+.generator-qr-wrap svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.generator-barcode-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 16px 8px;
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.generator-barcode-wrap svg {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+
+.generator-contrast-warn {
+  display: none;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  color: #92400e;
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.generator-code-display {
+  width: 100%;
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.875rem;
+  color: var(--text-main);
+  word-break: break-all;
+  text-align: left;
+  margin-top: 8px;
+  box-sizing: border-box;
+}
+
+.generator-color-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.generator-color-input {
+  width: 44px;
+  height: 38px;
+  padding: 2px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  background: var(--bg-surface);
+}
+
+.generator-options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .printable-area,
+  .printable-area * {
+    visibility: visible;
+  }
+  .printable-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+  }
+}
+
+
 
 
 

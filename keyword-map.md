@@ -69,4 +69,8 @@
 | `/weighted-grade-calculator/` | **weighted grade calculator** (Secondaries: (*) weighted average calculator, (*) grade weight calculator) | Weighted Grade Calculator - Free Online \| FileShrink | Weighted Grade Calculator | 53 | 155 | Yes | Yes | Yes | Yes |
 | `/final-grade-calculator/` | **final grade calculator** (Secondaries: (*) final exam grade calculator, (*) what do i need on my final) | Final Grade Calculator - Free Online \| FileShrink | Final Grade Calculator | 49 | 151 | Yes | Yes | Yes | Yes |
 | `/hijri-date-converter/` | **hijri date converter** (Secondaries: islamic date converter, english to hijri date) | Hijri Date Converter - Free Online \| FileShrink | Hijri Date Converter | 47 | 151 | Yes | Yes | Yes | Yes |
+| `/wifi-qr-code-generator/` | **wifi qr code generator** (Secondaries: qr code generator, (*) wifi password qr code) | Wi-Fi QR Code Generator - Free Online \| FileShrink | Wi-Fi QR Code Generator | 49 | 154 | Yes | Yes | Yes | Yes |
+| `/barcode-generator/` | **barcode generator** (Secondaries: (*) barcode maker, (*) ean 13 barcode generator) | Barcode Generator - Free Online \| FileShrink | Barcode Generator | 44 | 155 | Yes | Yes | Yes | Yes |
+| `/whatsapp-link-generator/` | **whatsapp link generator** (Secondaries: (*) whatsapp chat link, (*) click to chat link) | WhatsApp Link Generator - Free Online \| FileShrink | WhatsApp Link Generator | 50 | 153 | Yes | Yes | Yes | Yes |
+
 

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barcode Generator - Free Online | FileShrink</title>
+  <meta name="description" content="Create custom Code 128, EAN-13, and UPC-A barcodes with our free barcode generator. Fast check digit calculations and instant SVG download with no signup.">
+  <link rel="canonical" href="https://fileshrink.vercel.app/barcode-generator/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Barcode Generator - Free Online | FileShrink">
+  <meta property="og:description" content="Create custom Code 128, EAN-13, and UPC-A barcodes with our free barcode generator. Fast check digit calculations and instant SVG download with no signup.">
+  <meta property="og:url" content="https://fileshrink.vercel.app/barcode-generator/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Barcode Generator - Free Online | FileShrink">
+  <meta name="twitter:description" content="Create custom Code 128, EAN-13, and UPC-A barcodes with our free barcode generator. Fast check digit calculations and instant SVG download with no signup.">
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/calculators.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Barcode Generator",
+        "url": "https://fileshrink.vercel.app/barcode-generator/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Generate Code 128, EAN-13, UPC-A, and Code 39 barcodes with live check digit calculation and vector SVG export."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://fileshrink.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Generators",
+            "item": "https://fileshrink.vercel.app/#converters"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Barcode Generator",
+            "item": "https://fileshrink.vercel.app/barcode-generator/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Which barcode symbologies can this barcode generator create?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The tool supports Code 128 (general alphanumeric text), EAN-13 (global retail products), UPC-A (North American retail goods), and Code 39 (industrial, automotive, and logistics numbering)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does an ean 13 barcode generator calculate the mandatory 13th check digit?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An ean 13 barcode generator multiplies odd-positioned digits by 1 and even-positioned digits by 3, sums the results, and calculates the modulo 10 difference to create an authentic GS1-compliant check digit."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use this barcode maker for commercial product packaging labels?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, this barcode maker outputs clean vector SVG and high-resolution PNG images suitable for professional label printing, box packaging, and point-of-sale inventory tracking."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Rule 8: Platform limits: GS1 General Specifications EAN-13 (13 digits), UPC-A (12 digits), Code 39 (43 characters set), Code 128 (ASCII 32-126) (verify against the platform's current guidance) -->
+
+  <!-- Top Navigation Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="/" class="site-logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        <span>FileShrink</span>
+      </a>
+      <nav class="site-nav">
+        <a href="/#student-tools" class="nav-link">Academic Tools</a>
+        <a href="/#converters" class="nav-link">Generators &amp; Converters</a>
+        <a href="/#pdf-tools" class="nav-link">PDF Tools</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Top Ad Slot (Reserved space, outside tool container) -->
+  <div class="ad-slot ad-slot-top" data-ad-slot="top" aria-hidden="true"></div>
+
+  <main class="calc-main-container">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="calc-breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/#converters">Generators</a></li>
+          <li aria-current="page">Barcode Generator</li>
+        </ol>
+      </nav>
+
+      <!-- Page Header -->
+      <div class="calc-header-section">
+        <h1>Barcode Generator</h1>
+        <p class="calc-subtitle">Generate Code 128, EAN-13, UPC-A, and Code 39 barcodes with automatic check digit calculation.</p>
+        <p class="calc-privacy-line">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          Nothing is uploaded or saved. Everything works on your device.
+        </p>
+      </div>
+
+      <!-- Main Tool Card (2-Step Flow) -->
+      <div class="calc-tool-card">
+
+        <!-- Step 1: Input Section -->
+        <div class="calc-step-header">
+          <span class="calc-step-num">1</span>
+          <div>
+            <h2 class="calc-step-title">Enter barcode value and choose type</h2>
+            <p class="calc-step-desc">Select barcode format and input your code. Check digits are verified or generated automatically.</p>
+          </div>
+        </div>
+
+        <div class="calc-form-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-bottom: var(--spacing-md);">
+          <div class="calc-form-group">
+            <label for="barcodeTypeSelect">Barcode Type</label>
+            <select id="barcodeTypeSelect" class="calc-select" aria-label="Barcode symbology type">
+              <option value="CODE128" selected>Code 128 (Standard Alphanumeric)</option>
+              <option value="EAN13">EAN-13 (International Retail - 12 or 13 digits)</option>
+              <option value="UPC">UPC-A (North American Retail - 11 or 12 digits)</option>
+              <option value="CODE39">Code 39 (Logistics &amp; Industrial)</option>
+            </select>
+            <span class="form-hint" id="barcodeTypeHint">Default choice for shipping and asset tracking</span>
+          </div>
+
+          <div class="calc-form-group" style="grid-column: span 2;">
+            <label for="barcodeValueInput">Barcode Data / Value *</label>
+            <input type="text" id="barcodeValueInput" class="calc-input" placeholder="e.g. 590123412345 or ITEM-2026" value="590123412345" required aria-describedby="barcodeValueHint">
+            <span id="barcodeValueHint" class="form-hint">EAN-13 accepts 12 digits (check digit added) or 13 digits verified</span>
+          </div>
+        </div>
+
+        <!-- Customization Options Accordion / Box -->
+        <details class="what-if-box" style="margin-bottom: var(--spacing-lg);">
+          <summary style="cursor: pointer; font-weight: 600; font-size: 0.9375rem; display: flex; align-items: center; justify-content: space-between;">
+            <span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:6px;"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
+              Barcode Dimensions &amp; Styling Options
+            </span>
+            <span style="font-size: 0.8125rem; color: var(--text-muted); font-weight: normal;">(Bar width, Height, Colors)</span>
+          </summary>
+
+          <div class="generator-options-grid" style="margin-top: 1rem;">
+            <div class="calc-form-group">
+              <label for="barcodeWidthInput">Bar Width</label>
+              <select id="barcodeWidthInput" class="calc-select" aria-label="Bar width in pixels">
+                <option value="1">1 px (Compact)</option>
+                <option value="2" selected>2 px (Standard)</option>
+                <option value="3">3 px (Large)</option>
+                <option value="4">4 px (Extra Large)</option>
+              </select>
+            </div>
+
+            <div class="calc-form-group">
+              <label for="barcodeHeightInput">Bar Height (px)</label>
+              <input type="number" id="barcodeHeightInput" class="calc-input" min="30" max="250" step="5" value="100" aria-label="Bar height in pixels">
+            </div>
+
+            <div class="calc-form-group">
+              <label for="barcodeMarginInput">Quiet Zone Margin (px)</label>
+              <input type="number" id="barcodeMarginInput" class="calc-input" min="0" max="50" step="2" value="10" aria-label="Barcode margin in pixels">
+            </div>
+
+            <div class="calc-form-group">
+              <label for="barcodeColorInput">Bar Color</label>
+              <div class="generator-color-wrap">
+                <input type="color" id="barcodeColorInput" class="generator-color-input" value="#000000" aria-label="Barcode bar color">
+                <span style="font-size: 0.875rem; color: var(--text-muted);">Bars</span>
+              </div>
+            </div>
+
+            <div class="calc-form-group">
+              <label for="barcodeBgInput">Background Color</label>
+              <div class="generator-color-wrap">
+                <input type="color" id="barcodeBgInput" class="generator-color-input" value="#ffffff" aria-label="Barcode background color">
+                <span style="font-size: 0.875rem; color: var(--text-muted);">Background</span>
+              </div>
+            </div>
+
+            <div class="calc-form-group" style="display: flex; align-items: flex-end; padding-bottom: 8px;">
+              <label style="display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.9375rem; color: var(--text-main); font-weight: 500;">
+                <input type="checkbox" id="barcodeShowTextCheckbox" checked style="width: 18px; height: 18px; accent-color: var(--primary);">
+                <span>Show text label below barcode</span>
+              </label>
+            </div>
+          </div>
+        </details>
+
+        <!-- Step 2: Output Section -->
+        <div class="calc-step-header" style="margin-top: var(--spacing-xl);">
+          <span class="calc-step-num">2</span>
+          <div>
+            <h2 class="calc-step-title">Preview, customize, and export barcode</h2>
+            <p class="calc-step-desc">Review your verified barcode, full digit string, and download vector SVG or raster PNG.</p>
+          </div>
+        </div>
+
+        <!-- Rendered Barcode Preview Card -->
+        <div class="generator-preview-card" aria-live="polite">
+          <div class="generator-barcode-wrap">
+            <svg id="barcodeSvg" style="display:inline-block;"></svg>
+            <canvas id="barcodeCanvas" style="display:none;" aria-hidden="true"></canvas>
+          </div>
+
+          <div id="barcodeMessage" class="calc-result-subtext" style="color: var(--primary); font-weight: 500;"></div>
+
+          <!-- Full Barcode Value Display -->
+          <div style="width: 100%; max-width: 480px; margin-top: 0.75rem; text-align: left;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Full Barcode String (with check digit):</span>
+              <button type="button" class="btn btn-ghost" id="copyBarcodeValueBtn" style="padding: 2px 6px; font-size: 0.75rem;">Copy Value</button>
+            </div>
+            <div class="generator-code-display" id="barcodeFullValue">—</div>
+          </div>
+
+          <!-- Download & Print Action Buttons -->
+          <div class="calc-actions-row" style="margin-top: 1.25rem;">
+            <button type="button" class="btn btn-primary" id="downloadBarcodePngBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Download PNG
+            </button>
+            <button type="button" class="btn btn-secondary" id="downloadBarcodeSvgBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
+              Download SVG
+            </button>
+            <button type="button" class="btn btn-ghost" id="printBarcodeBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+              Print Label
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Ad Slot -->
+      <div class="ad-slot ad-slot-bottom" data-ad-slot="bottom" aria-hidden="true"></div>
+
+      <!-- Content Section for SEO & Educational Context -->
+      <section class="calc-guide-section" aria-label="Guide to Barcode Symbologies">
+        <div style="text-align: center; margin-bottom: var(--spacing-lg);">
+          <img src="/favicon.svg" alt="Barcode generator product label preview" width="48" height="48" style="opacity: 0.85;">
+        </div>
+
+        <h2>How the Barcode Generator Creates Industry Standards</h2>
+        <p>
+          Our <strong>barcode generator</strong> creates retail and inventory barcodes with instant check digit verification directly in your browser. Whether you are assigning barcodes to store inventory, labeling warehouse boxes, or creating packaging mockups, this tool ensures scanning precision across handheld laser and camera scanners.
+        </p>
+
+        <h3>Supported Symbologies &amp; Formats</h3>
+        <ul>
+          <li><strong>Code 128:</strong> High-density linear barcode capable of encoding all 128 ASCII characters. Widely used for shipping labels, logistics, and inventory management.</li>
+          <li><strong>EAN-13 (European Article Number):</strong> The 13-digit global standard for retail point-of-sale products outside the US and Canada. Includes an automatic modulo 10 checksum.</li>
+          <li><strong>UPC-A (Universal Product Code):</strong> The 12-digit standard for retail merchandise in North America. Features 11 data digits and 1 check digit.</li>
+          <li><strong>Code 39:</strong> An established barcode format used extensively in defense, automotive parts, and healthcare tracking systems.</li>
+        </ul>
+
+        <h3>Automated Check Digit Verification</h3>
+        <p>
+          When using our <strong>ean 13 barcode generator</strong> mode, entering 12 digits triggers our engine to calculate the missing 13th digit automatically. If you provide all 13 digits, the checksum is mathematically validated to prevent misprints on physical packaging.
+        </p>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="calc-faq-section" aria-label="Frequently Asked Questions">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-question">Which barcode symbologies can this barcode generator create?</summary>
+            <div class="faq-answer">
+              <p>The tool supports Code 128 (general alphanumeric text), EAN-13 (global retail products), UPC-A (North American retail goods), and Code 39 (industrial, automotive, and logistics numbering).</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">How does an ean 13 barcode generator calculate the mandatory 13th check digit?</summary>
+            <div class="faq-answer">
+              <p>An <strong>ean 13 barcode generator</strong> multiplies odd-positioned digits by 1 and even-positioned digits by 3, sums the results, and calculates the modulo 10 difference to create an authentic GS1-compliant check digit.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Can I use this barcode maker for commercial product packaging labels?</summary>
+            <div class="faq-answer">
+              <p>Yes, this <strong>barcode maker</strong> outputs clean vector SVG and high-resolution PNG images suitable for professional label printing, box packaging, and point-of-sale inventory tracking.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- Related Tools Grid -->
+      <section class="calc-related-section" aria-label="Related Tools">
+        <h2>More Free Digital &amp; Productivity Tools</h2>
+        <div class="calc-related-grid">
+          <a href="/wifi-qr-code-generator/" class="calc-related-card">
+            <div class="calc-related-title">Wi-Fi QR Code Generator</div>
+            <div class="calc-related-desc">Create printable scan-to-connect QR codes for home and office Wi-Fi networks.</div>
+          </a>
+          <a href="/whatsapp-link-generator/" class="calc-related-card">
+            <div class="calc-related-title">WhatsApp Link Generator</div>
+            <div class="calc-related-desc">Create direct click-to-chat links and QR codes with custom messages.</div>
+          </a>
+          <a href="/image-to-text/" class="calc-related-card">
+            <div class="calc-related-title">Image to Text</div>
+            <div class="calc-related-desc">Extract text, labels, and numbers from images directly in your browser.</div>
+          </a>
+          <a href="/signature-resizer/" class="calc-related-card">
+            <div class="calc-related-title">Signature Resizer</div>
+            <div class="calc-related-desc">Crop and resize digital signatures to official passport and portal dimensions.</div>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-col">
+        <a href="/" class="site-logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <span>FileShrink</span>
+        </a>
+        <p class="footer-desc">Free, fast, and secure client-side browser tools. No server uploads, no logins, and zero tracking.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-heading">Generators &amp; Utilities</div>
+        <ul class="footer-links">
+          <li><a href="/barcode-generator/">Barcode Generator</a></li>
+          <li><a href="/wifi-qr-code-generator/">Wi-Fi QR Code Generator</a></li>
+          <li><a href="/whatsapp-link-generator/">WhatsApp Link Generator</a></li>
+          <li><a href="/text-to-handwriting-converter/">Text to Handwriting</a></li>
+          <li><a href="/pomodoro-timer/">Pomodoro Timer</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-heading">Legal &amp; Privacy</div>
+        <ul class="footer-links">
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 FileShrink. All rights reserved. Client-side processing only.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Pinned cdnjs Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.12.3/JsBarcode.all.min.js"></script>
+  <!-- Generator Tool Engine -->
+  <script src="/js/generator-tools.js"></script>
+  <script src="/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof window.initBarcodeGenerator === 'function') {
+        window.initBarcodeGenerator();
+      }
+    });
+  </script>
+</body>
+</html>

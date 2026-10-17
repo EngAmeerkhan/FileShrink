@@ -183,6 +183,9 @@
       if (lowerTitle.includes('weighted')) extraKeywords += ' weighted grade calculator weighted average calculator grade weight calculator syllabus percent points category assignment';
       if (lowerTitle.includes('final')) extraKeywords += ' final grade calculator final exam grade calculator what do i need on my final passing score required exam target test semester';
       if (lowerTitle.includes('hijri')) extraKeywords += ' hijri date converter islamic date converter english to hijri date umm al qura calendar ramadan eid lunar moon sighting';
+      if (lowerTitle.includes('wifi') || lowerTitle.includes('qr')) extraKeywords += ' wifi qr code generator qr code generator wifi password qr code connect router network scan ssid wireless';
+      if (lowerTitle.includes('barcode')) extraKeywords += ' barcode generator barcode maker ean 13 barcode generator upc-a code 128 code 39 retail product label check digit';
+      if (lowerTitle.includes('whatsapp')) extraKeywords += ' whatsapp link generator whatsapp chat link click to chat link wa.me direct chat message url contact';
 
 
 
