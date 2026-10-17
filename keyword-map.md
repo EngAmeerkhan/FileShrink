@@ -75,5 +75,7 @@
 | `/fancy-text-generator/` | **fancy text generator** (Secondaries: stylish name generator, (*) stylish text generator) | Fancy Text Generator - Free Online \| FileShrink | Fancy Text Generator | 48 | 147 | Yes | Yes | Yes | Yes |
 | `/case-converter/` | **case converter** (Secondaries: (*) uppercase to lowercase, (*) title case converter) | Case Converter - Free Online \| FileShrink | Case Converter | 41 | 147 | Yes | Yes | Yes | Yes |
 | `/remove-duplicate-lines/` | **remove duplicate lines** (Secondaries: (*) remove duplicate lines online, (*) delete duplicate lines) | Remove Duplicate Lines - Free Online \| FileShrink | Remove Duplicate Lines | 49 | 152 | Yes | Yes | Yes | Yes |
+| `/quotation-maker/` | **quotation maker** (Secondaries: (*) quotation format, (*) price quotation template) | Quotation Maker - Free Online \| FileShrink | Quotation Maker | 44 | 153 | Yes | Yes | Yes | Yes |
+| `/invoice-generator/` | **invoice generator** (Secondaries: (*) free invoice generator, (*) invoice maker) | Invoice Generator - Free Online \| FileShrink | Invoice Generator | 44 | 151 | Yes | Yes | Yes | Yes |
 
 

@@ -189,6 +189,8 @@
       if (lowerTitle.includes('fancy')) extraKeywords += ' fancy text generator stylish name generator stylish text generator aesthetic fonts unicode symbols cool letters nickname';
       if (lowerTitle.includes('case')) extraKeywords += ' case converter uppercase to lowercase title case converter sentence case camelcase pascalcase snake_case capital letters';
       if (lowerTitle.includes('duplicate')) extraKeywords += ' remove duplicate lines remove duplicate lines online delete duplicate lines clean list trim deduplicate sort unique';
+      if (lowerTitle.includes('quotation')) extraKeywords += ' quotation maker quotation format price quotation template estimate quote pricing proposal billing';
+      if (lowerTitle.includes('invoice')) extraKeywords += ' invoice generator free invoice generator invoice maker billing receipt payment bill client tax gst vat balance';
 
 
 

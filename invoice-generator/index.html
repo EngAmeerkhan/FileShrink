@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice Generator - Free Online | FileShrink</title>
+  <meta name="description" content="Create professional business bills with our free invoice generator with no signup and no watermark. Add tax, discounts, and export clean PDF instantly.">
+  <link rel="canonical" href="https://fileshrink.vercel.app/invoice-generator/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Invoice Generator - Free Online | FileShrink">
+  <meta property="og:description" content="Create professional business bills with our free invoice generator with no signup and no watermark. Add tax, discounts, and export clean PDF instantly.">
+  <meta property="og:url" content="https://fileshrink.vercel.app/invoice-generator/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Invoice Generator - Free Online | FileShrink">
+  <meta name="twitter:description" content="Create professional business bills with our free invoice generator with no signup and no watermark. Add tax, discounts, and export clean PDF instantly.">
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/business-doc.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Invoice Generator",
+        "url": "https://fileshrink.vercel.app/invoice-generator/",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Create professional itemized invoices with live tax calculations, payment status, and instant PDF download."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://fileshrink.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Business Tools",
+            "item": "https://fileshrink.vercel.app/#converters"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Invoice Generator",
+            "item": "https://fileshrink.vercel.app/invoice-generator/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does this invoice generator track partial payments and balance due?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Entering an amount in the Amount Paid field automatically recalculates the remaining Balance Due and updates the payment status mark on the invoice."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How are due dates calculated for net 15 or net 30 invoices?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The tool computes due dates using exact calendar days, automatically adjusting across month ends and leap years from the invoice issue date."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I download my invoice as an image or print directly?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, in addition to vector PDF export, you can download a high-resolution JPG image or print directly using your browser's print dialog."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Rule 8: Platform limits: ISO 216 A4 210x297mm dimensions, jsPDF WinAnsi character encoding limits (verify against the platform's current guidance) -->
+
+  <!-- Top Navigation Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="/" class="site-logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        <span>FileShrink</span>
+      </a>
+      <nav class="site-nav">
+        <a href="/#student-tools" class="nav-link">Academic Tools</a>
+        <a href="/#converters" class="nav-link">Generators &amp; Converters</a>
+        <a href="/#pdf-tools" class="nav-link">PDF Tools</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Top Ad Slot (Reserved space, outside tool container) -->
+  <div class="ad-slot ad-slot-top" data-ad-slot="top" aria-hidden="true"></div>
+
+  <main class="calc-main-container">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="calc-breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/#converters">Business Tools</a></li>
+          <li aria-current="page">Invoice Generator</li>
+        </ol>
+      </nav>
+
+      <!-- Page Header -->
+      <div class="calc-header-section">
+        <h1>Invoice Generator</h1>
+        <p class="calc-subtitle">Create professional itemized invoices with live tax calculations, payment status, and PDF export.</p>
+        <p class="calc-privacy-line">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          Your details never leave your phone or computer.
+        </p>
+      </div>
+
+      <!-- Legal Compliance Disclaimer Note -->
+      <div class="text-tool-note" style="margin-bottom: var(--spacing-lg);">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        <div>
+          This tool does not check tax or legal invoice rules for any country. Please check your local requirements.
+        </div>
+      </div>
+
+      <!-- Main Tool Wrapper (3-Step Flow) -->
+      <div class="business-doc-container">
+
+        <!-- ========================================== -->
+        <!-- STEP 1: Fill in the details                -->
+        <!-- ========================================== -->
+        <div class="doc-section-card">
+          <div class="calc-step-header" style="margin-bottom: var(--spacing-lg);">
+            <span class="calc-step-num">1</span>
+            <div>
+              <h2 class="calc-step-title">Fill in the details</h2>
+              <p class="calc-step-desc">Enter your business information, client details, payment terms, and itemized billing lines.</p>
+            </div>
+          </div>
+
+          <!-- Business Information -->
+          <h3 class="doc-section-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            Your Business Information
+          </h3>
+
+          <div class="doc-logo-upload-box">
+            <img id="logoPreviewImg" class="doc-logo-preview" alt="Business Logo Preview">
+            <div>
+              <label for="logoFileInput" class="btn btn-secondary" style="font-size: 0.8125rem; padding: 0.4rem 0.85rem; cursor: pointer;">
+                <span>Upload Logo (Optional)</span>
+              </label>
+              <input type="file" id="logoFileInput" accept="image/png,image/jpeg,image/webp" style="display: none;">
+              <button type="button" id="removeLogoBtn" class="btn btn-ghost" style="display: none; font-size: 0.75rem; padding: 4px 6px;">Remove</button>
+              <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">Scaled locally on your device. PNG or JPG.</div>
+            </div>
+          </div>
+
+          <div class="doc-grid-2col">
+            <div class="calc-form-group">
+              <label for="bizName">Business / Company Name *</label>
+              <input type="text" id="bizName" class="calc-input" placeholder="e.g. Apex Global Solutions" value="Apex Global Solutions">
+            </div>
+            <div class="calc-form-group">
+              <label for="bizAddress">Business Address</label>
+              <input type="text" id="bizAddress" class="calc-input" placeholder="e.g. 102 Blue Area, Islamabad" value="102 Blue Area, Islamabad">
+            </div>
+          </div>
+
+          <div class="doc-grid-3col">
+            <div class="calc-form-group">
+              <label for="bizPhone">Phone</label>
+              <input type="text" id="bizPhone" class="calc-input" placeholder="+92 300 1234567" value="+92 300 1234567">
+            </div>
+            <div class="calc-form-group">
+              <label for="bizEmail">Email</label>
+              <input type="email" id="bizEmail" class="calc-input" placeholder="billing@apexsolutions.com" value="billing@apexsolutions.com">
+            </div>
+            <div class="calc-form-group">
+              <label for="bizTaxLabel">Registration / Tax Label</label>
+              <input type="text" id="bizTaxLabel" class="calc-input" placeholder="e.g. NTN, GSTIN, VAT Reg" value="NTN">
+            </div>
+          </div>
+
+          <div class="doc-grid-2col">
+            <div class="calc-form-group">
+              <label for="bizTaxValue">Tax / Registration Number</label>
+              <input type="text" id="bizTaxValue" class="calc-input" placeholder="e.g. 1234567-8" value="7890123-4">
+            </div>
+            <div class="calc-form-group" style="justify-content: flex-end; padding-top: 1.5rem;">
+              <label class="duplicate-checkbox-label">
+                <input type="checkbox" id="saveBusinessDetailsCheck">
+                <span>Save my business details on this device</span>
+              </label>
+              <button type="button" id="clearSavedBizBtn" class="btn btn-ghost" style="font-size: 0.75rem; padding: 2px 6px; margin-top: 4px; display: none;">Clear saved details</button>
+            </div>
+          </div>
+
+          <!-- Client Information -->
+          <h3 class="doc-section-title" style="margin-top: 1.5rem;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            Bill To (Client Information)
+          </h3>
+
+          <div class="doc-grid-3col">
+            <div class="calc-form-group">
+              <label for="clientName">Client / Company Name *</label>
+              <input type="text" id="clientName" class="calc-input" placeholder="e.g. Crescent Mills Ltd" value="Crescent Mills Ltd">
+            </div>
+            <div class="calc-form-group">
+              <label for="clientAddress">Client Address</label>
+              <input type="text" id="clientAddress" class="calc-input" placeholder="e.g. Industrial Area, Karachi" value="Industrial Area, Karachi">
+            </div>
+            <div class="calc-form-group">
+              <label for="clientContact">Client Contact (Phone/Email)</label>
+              <input type="text" id="clientContact" class="calc-input" placeholder="+92 21 34567890" value="+92 21 34567890">
+            </div>
+          </div>
+
+          <!-- Invoice Metadata -->
+          <h3 class="doc-section-title" style="margin-top: 1.5rem;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            Invoice Numbers &amp; Due Date
+          </h3>
+
+          <div class="doc-grid-4col">
+            <div class="calc-form-group">
+              <label for="docNumber">Invoice Number *</label>
+              <input type="text" id="docNumber" class="calc-input" placeholder="INV-1001" value="INV-1001">
+            </div>
+            <div class="calc-form-group">
+              <label for="docDate">Invoice Date</label>
+              <input type="date" id="docDate" class="calc-input">
+            </div>
+            <div class="calc-form-group">
+              <label for="dueDateSelect">Payment Terms</label>
+              <select id="dueDateSelect" class="calc-select">
+                <option value="receipt">Due on receipt</option>
+                <option value="7">Net 7 Days</option>
+                <option value="15" selected>Net 15 Days</option>
+                <option value="30">Net 30 Days</option>
+                <option value="custom">Custom Date</option>
+              </select>
+            </div>
+            <div class="calc-form-group">
+              <label for="dueDateDisplay">Due Date</label>
+              <input type="text" id="dueDateDisplay" class="calc-input" readonly style="background-color: var(--bg-subtle);">
+              <input type="date" id="customDueDateInput" class="calc-input" style="display: none; margin-top: 4px;">
+            </div>
+          </div>
+
+          <div class="doc-grid-4col">
+            <div class="calc-form-group">
+              <label for="currencySelect">Currency Label</label>
+              <select id="currencySelect" class="calc-select">
+                <option value="PKR" selected>PKR (Pakistani Rupee)</option>
+                <option value="INR">INR (Indian Rupee)</option>
+                <option value="USD">USD ($)</option>
+                <option value="AED">AED (UAE Dirham)</option>
+                <option value="GBP">GBP (£)</option>
+                <option value="EUR">EUR (€)</option>
+                <option value="none">None (Amounts only)</option>
+              </select>
+            </div>
+            <div class="calc-form-group">
+              <label for="numberStyleSelect">Number Style</label>
+              <select id="numberStyleSelect" class="calc-select">
+                <option value="standard" selected>Standard (1,000,000)</option>
+                <option value="lakh">Pakistani / Indian (10,00,000)</option>
+              </select>
+            </div>
+            <div class="calc-form-group">
+              <label for="paymentStatusMarkSelect">Status Mark</label>
+              <select id="paymentStatusMarkSelect" class="calc-select">
+                <option value="none">None</option>
+                <option value="PAID">PAID Stamp</option>
+                <option value="UNPAID">UNPAID Stamp</option>
+              </select>
+            </div>
+            <div class="calc-form-group" style="justify-content: flex-end; padding-top: 1.5rem;">
+              <label class="duplicate-checkbox-label">
+                <input type="checkbox" id="showWordsCheck" checked>
+                <span>Show amount in words</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Line Items Section -->
+          <h3 class="doc-section-title" style="margin-top: 1.5rem;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+            Line Items
+          </h3>
+
+          <div class="doc-items-table-wrap">
+            <table class="doc-items-table" id="itemsTable">
+              <thead>
+                <tr>
+                  <th style="width: 45%;">Description</th>
+                  <th style="width: 12%;">Qty</th>
+                  <th style="width: 15%;">Unit Price</th>
+                  <th style="width: 12%;">Disc %</th>
+                  <th style="width: 16%; text-align: right;">Total</th>
+                  <th style="width: 50px;"></th>
+                </tr>
+              </thead>
+              <tbody id="itemsTableBody">
+                <!-- Rows injected dynamically by JS -->
+              </tbody>
+            </table>
+          </div>
+
+          <button type="button" id="addItemBtn" class="btn btn-secondary" style="margin-bottom: 1.5rem;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            <span>Add Item</span>
+          </button>
+
+          <!-- Totals, Discounts, Tax, Shipping & Payments -->
+          <h3 class="doc-section-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+            Totals, Tax &amp; Payments
+          </h3>
+
+          <div class="doc-grid-4col">
+            <div class="calc-form-group">
+              <label for="overallDiscountInput">Overall Discount</label>
+              <div style="display: flex; gap: 4px;">
+                <input type="number" id="overallDiscountInput" class="calc-input" value="0" min="0" step="any">
+                <select id="discountTypeSelect" class="calc-select" style="width: 80px; padding: 0.4rem;">
+                  <option value="percent">%</option>
+                  <option value="amount">Fixed</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="calc-form-group">
+              <label for="taxRateInput">Tax Rate %</label>
+              <div style="display: flex; gap: 4px;">
+                <input type="text" id="taxLabelInput" class="calc-input" value="Tax" style="width: 80px;" placeholder="Tax/GST">
+                <input type="number" id="taxRateInput" class="calc-input" value="0" min="0" max="100" step="any" placeholder="0%">
+              </div>
+            </div>
+
+            <div class="calc-form-group">
+              <label for="shippingInput">Shipping / Other</label>
+              <input type="number" id="shippingInput" class="calc-input" value="0" min="0" step="any">
+            </div>
+
+            <div class="calc-form-group">
+              <label for="amountPaidInput">Amount Paid</label>
+              <input type="number" id="amountPaidInput" class="calc-input" value="0" min="0" step="any">
+            </div>
+          </div>
+
+          <div class="doc-grid-2col" style="margin-top: 0.75rem;">
+            <div class="calc-form-group">
+              <label>Calculated Invoice Total</label>
+              <div id="liveTotalDisplay" style="font-size: 1.25rem; font-weight: 800; color: var(--primary);">0.00</div>
+            </div>
+            <div class="calc-form-group">
+              <label>Remaining Balance Due</label>
+              <div id="liveBalanceDisplay" style="font-size: 1.25rem; font-weight: 800; color: var(--danger, #dc2626);">0.00</div>
+            </div>
+          </div>
+
+          <!-- Notes, Terms & Signatures -->
+          <div class="doc-grid-2col" style="margin-top: 1rem;">
+            <div class="calc-form-group">
+              <label for="notesInput">Notes</label>
+              <textarea id="notesInput" class="calc-input" style="height: 60px; resize: vertical;" placeholder="Thank you for your prompt business!">Thank you for your business. Payment is appreciated within agreed terms.</textarea>
+            </div>
+            <div class="calc-form-group">
+              <label for="termsInput">Payment Instructions</label>
+              <textarea id="termsInput" class="calc-input" style="height: 60px; resize: vertical;" placeholder="Bank Name, Account Title, IBAN / Account Number">Bank: Standard Chartered Bank | Title: Apex Global | IBAN: PK36SCBL0000001123456701</textarea>
+            </div>
+          </div>
+
+          <div class="doc-grid-2col">
+            <div class="calc-form-group">
+              <label>Authorized Signature (Optional)</label>
+              <input type="file" id="signatureFileInput" accept="image/png,image/jpeg" style="font-size: 0.8125rem;">
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ========================================== -->
+        <!-- STEP 2: Check the preview                  -->
+        <!-- ========================================== -->
+        <div class="doc-section-card" id="previewSection">
+          <div class="calc-step-header" style="margin-bottom: var(--spacing-lg);">
+            <span class="calc-step-num">2</span>
+            <div>
+              <h2 class="calc-step-title">Check the preview</h2>
+              <p class="calc-step-desc">Select your template style and accent color. Preview updates live as you type.</p>
+            </div>
+          </div>
+
+          <!-- Template & Accent Picker Bar -->
+          <div class="doc-controls-bar">
+            <div class="doc-template-pills" role="radiogroup" aria-label="Template Designs">
+              <button type="button" class="doc-template-pill active" data-template="classic">Classic</button>
+              <button type="button" class="doc-template-pill" data-template="modern">Modern</button>
+              <button type="button" class="doc-template-pill" data-template="minimal">Minimal</button>
+            </div>
+
+            <div class="doc-accent-picker-wrap">
+              <span>Accent Color:</span>
+              <input type="color" id="accentColorInput" class="doc-accent-input" value="#2563eb" aria-label="Template accent color">
+            </div>
+          </div>
+
+          <!-- Non-Latin Notice Badge -->
+          <div id="fallbackNotice" class="doc-fallback-notice">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            <span>Note: This document contains non-Latin text (e.g. Urdu/Arabic). The exported PDF will be rendered as a high-resolution image with selectable text rendered as an image.</span>
+          </div>
+
+          <!-- Live Sheet View -->
+          <div class="doc-preview-wrapper" id="documentPrintArea">
+            <div id="documentPreviewSheet" class="doc-preview-sheet template-classic">
+              <!-- Rendered by JS live preview -->
+            </div>
+          </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- STEP 3: Download                           -->
+        <!-- ========================================== -->
+        <div class="doc-section-card">
+          <div class="calc-step-header" style="margin-bottom: var(--spacing-lg);">
+            <span class="calc-step-num">3</span>
+            <div>
+              <h2 class="calc-step-title">Download your invoice</h2>
+              <p class="calc-step-desc">Export an A4 PDF, download as a JPG image, or send directly to your printer.</p>
+            </div>
+          </div>
+
+          <div class="calc-actions-row">
+            <button type="button" id="downloadPdfBtn" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              <span>Download PDF</span>
+            </button>
+            <button type="button" id="downloadJpgBtn" class="btn btn-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+              <span>Download JPG</span>
+            </button>
+            <button type="button" id="printDocBtn" class="btn btn-ghost">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+              <span>Print Invoice</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Ad Slot -->
+      <div class="ad-slot ad-slot-bottom" data-ad-slot="bottom" aria-hidden="true"></div>
+
+      <!-- Guide & SEO Content -->
+      <section class="calc-guide-section" aria-label="About the Invoice Generator">
+        <div style="text-align: center; margin-bottom: var(--spacing-lg);">
+          <img src="/favicon.svg" alt="Invoice generator billing document tool icon" width="48" height="48" style="opacity: 0.85;">
+        </div>
+
+        <h2>Generate Clean Invoices with our Free Invoice Generator</h2>
+        <p>
+          Our <strong>invoice generator</strong> is designed for independent professionals, agencies, and small businesses requiring fast, accurate billing. If you need a trustworthy <strong>free invoice generator</strong> or an easy-to-use <strong>invoice maker</strong> with custom tax labels, payment tracking, and zero watermarks, this private client-side utility builds complete documents right on your device.
+        </p>
+
+        <!-- Inline Ad Slot -->
+        <div class="ad-slot ad-slot-inline" data-ad-slot="inline" aria-hidden="true"></div>
+
+        <h3>How to Create and Export an Invoice</h3>
+        <ol style="margin: 1rem 0 1.5rem 1.5rem; color: var(--text-muted); line-height: 1.7;">
+          <li><strong>Step 1:</strong> Input your company details, client address, invoice number, and payment terms.</li>
+          <li><strong>Step 2:</strong> Enter billed items, unit rates, quantities, and applicable line discounts.</li>
+          <li><strong>Step 3:</strong> Review the live preview sheet, check the balance due, and download your A4 PDF.</li>
+        </ol>
+
+        <h3>Key Features for Small Businesses</h3>
+        <ul>
+          <li><strong>Accurate Balances:</strong> Subtracts partial payments from the total to clearly show the remaining balance due.</li>
+          <li><strong>Net Payment Terms:</strong> Computes Net 7, 15, or 30 day deadlines across calendar months.</li>
+          <li><strong>Payment Status Stamps:</strong> Add optional bold PAID or UNPAID marks to clarify receipt status.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="calc-faq-section" aria-label="Frequently Asked Questions">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-question">How does this invoice generator track partial payments and balance due?</summary>
+            <div class="faq-answer">
+              <p>Entering a figure into the Amount Paid input automatically recalculates the remaining Balance Due on the <strong>invoice generator</strong> and updates the summary table on the invoice sheet.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">How are due dates calculated for net 15 or net 30 invoices?</summary>
+            <div class="faq-answer">
+              <p>The system adds the selected number of days to the invoice creation date, correctly factoring in differing month lengths and leap years so payment deadlines are always accurate.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Can I download my invoice as an image or print directly?</summary>
+            <div class="faq-answer">
+              <p>Yes. Besides vector PDF export, you can download a full-resolution JPG image or print directly using the clean print styling that hides all tool controls.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- Related Tools -->
+      <section class="calc-more-tools" aria-label="More Free Tools">
+        <h2>More Free Tools</h2>
+        <div class="calc-tools-grid">
+          <a href="/quotation-maker/" class="calc-tool-link">
+            <span class="calc-tool-link-title">Quotation Maker</span>
+            <span class="calc-tool-link-desc">Create formal price estimates with quotation validity dates and client approval lines.</span>
+          </a>
+          <a href="/payment-receipt-format/" class="calc-tool-link">
+            <span class="calc-tool-link-title">Payment Receipt</span>
+            <span class="calc-tool-link-desc">Generate official cash and bank payment receipts with signature support.</span>
+          </a>
+          <a href="/rent-receipt-generator/" class="calc-tool-link">
+            <span class="calc-tool-link-title">Rent Receipt Generator</span>
+            <span class="calc-tool-link-desc">Draft house rent slips with landlord signatures and annual tax claims.</span>
+          </a>
+          <a href="/whatsapp-link-generator/" class="calc-tool-link">
+            <span class="calc-tool-link-title">WhatsApp Link Generator</span>
+            <span class="calc-tool-link-desc">Build direct wa.me chat links and QR codes with custom greeting text.</span>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-links">
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/terms/">Terms</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 FileShrink. Free online utilities for students and professionals.</p>
+    </div>
+  </footer>
+
+  <!-- External Libraries: jsPDF from cdnjs (pinned version) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- Shared Business Document Script -->
+  <script src="/js/business-doc.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const engine = new BusinessDocEngine('invoice');
+
+      // Set today's date
+      const today = new Date().toISOString().split('T')[0];
+      const docDateEl = document.getElementById('docDate');
+      docDateEl.value = today;
+
+      // DOM Elements
+      const itemsTableBody = document.getElementById('itemsTableBody');
+      const addItemBtn = document.getElementById('addItemBtn');
+      const dueDateSelect = document.getElementById('dueDateSelect');
+      const dueDateDisplay = document.getElementById('dueDateDisplay');
+      const customDueDateInput = document.getElementById('customDueDateInput');
+      const previewSheet = document.getElementById('documentPreviewSheet');
+      const liveTotalDisplay = document.getElementById('liveTotalDisplay');
+      const liveBalanceDisplay = document.getElementById('liveBalanceDisplay');
+      const fallbackNotice = document.getElementById('fallbackNotice');
+
+      const saveBizCheck = document.getElementById('saveBusinessDetailsCheck');
+      const clearBizBtn = document.getElementById('clearSavedBizBtn');
+      const logoInput = document.getElementById('logoFileInput');
+      const logoPreview = document.getElementById('logoPreviewImg');
+      const removeLogoBtn = document.getElementById('removeLogoBtn');
+      const sigInput = document.getElementById('signatureFileInput');
+
+      // Load saved business details if present
+      const savedProfile = engine.loadBusinessProfile();
+      if (savedProfile) {
+        saveBizCheck.checked = true;
+        engine.isStorageEnabled = true;
+        clearBizBtn.style.display = 'inline-block';
+        if (savedProfile.name) document.getElementById('bizName').value = savedProfile.name;
+        if (savedProfile.address) document.getElementById('bizAddress').value = savedProfile.address;
+        if (savedProfile.phone) document.getElementById('bizPhone').value = savedProfile.phone;
+        if (savedProfile.email) document.getElementById('bizEmail').value = savedProfile.email;
+        if (savedProfile.taxLabel) document.getElementById('bizTaxLabel').value = savedProfile.taxLabel;
+        if (savedProfile.taxValue) document.getElementById('bizTaxValue').value = savedProfile.taxValue;
+        if (savedProfile.logo) {
+          engine.logoData = savedProfile.logo;
+          logoPreview.src = savedProfile.logo;
+          logoPreview.style.display = 'block';
+          removeLogoBtn.style.display = 'inline-block';
+        }
+      }
+
+      saveBizCheck.addEventListener('change', () => {
+        engine.isStorageEnabled = saveBizCheck.checked;
+        if (engine.isStorageEnabled) {
+          engine.saveBusinessProfile(getFormData());
+          clearBizBtn.style.display = 'inline-block';
+        } else {
+          engine.clearBusinessProfile();
+          clearBizBtn.style.display = 'none';
+        }
+      });
+
+      clearBizBtn.addEventListener('click', () => {
+        engine.clearBusinessProfile();
+        saveBizCheck.checked = false;
+        engine.isStorageEnabled = false;
+        clearBizBtn.style.display = 'none';
+      });
+
+      // Handle Logo Upload
+      logoInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (evt) => {
+          const img = new Image();
+          img.onload = () => {
+            const canvas = document.createElement('canvas');
+            const maxW = 240;
+            const maxH = 140;
+            let w = img.width;
+            let h = img.height;
+            if (w > maxW || h > maxH) {
+              const ratio = Math.min(maxW / w, maxH / h);
+              w *= ratio;
+              h *= ratio;
+            }
+            canvas.width = w;
+            canvas.height = h;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, w, h);
+            engine.logoData = canvas.toDataURL('image/png');
+            logoPreview.src = engine.logoData;
+            logoPreview.style.display = 'block';
+            removeLogoBtn.style.display = 'inline-block';
+            if (engine.isStorageEnabled) engine.saveBusinessProfile(getFormData());
+            updateLivePreview();
+          };
+          img.src = evt.target.result;
+        };
+        reader.readAsDataURL(file);
+      });
+
+      removeLogoBtn.addEventListener('click', () => {
+        engine.logoData = '';
+        logoPreview.src = '';
+        logoPreview.style.display = 'none';
+        removeLogoBtn.style.display = 'none';
+        logoInput.value = '';
+        if (engine.isStorageEnabled) engine.saveBusinessProfile(getFormData());
+        updateLivePreview();
+      });
+
+      // Handle Signature Upload
+      sigInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (evt) => {
+          engine.signatureData = evt.target.result;
+          updateLivePreview();
+        };
+        reader.readAsDataURL(file);
+      });
+
+      function updateDueDate() {
+        const dateVal = docDateEl.value || today;
+        const term = dueDateSelect.value;
+        if (term === 'receipt') {
+          dueDateDisplay.value = 'Due on Receipt';
+          customDueDateInput.style.display = 'none';
+        } else if (term === 'custom') {
+          customDueDateInput.style.display = 'block';
+          if (!customDueDateInput.value) customDueDateInput.value = dateVal;
+          dueDateDisplay.value = formatDateReadable(customDueDateInput.value);
+        } else {
+          customDueDateInput.style.display = 'none';
+          dueDateDisplay.value = addDaysToDate(dateVal, term);
+        }
+      }
+
+      dueDateSelect.addEventListener('change', () => {
+        updateDueDate();
+        updateLivePreview();
+      });
+
+      customDueDateInput.addEventListener('input', () => {
+        updateDueDate();
+        updateLivePreview();
+      });
+
+      function getFormData() {
+        return {
+          businessName: document.getElementById('bizName').value,
+          businessAddress: document.getElementById('bizAddress').value,
+          businessPhone: document.getElementById('bizPhone').value,
+          businessEmail: document.getElementById('bizEmail').value,
+          taxIdLabel: document.getElementById('bizTaxLabel').value,
+          taxIdValue: document.getElementById('bizTaxValue').value,
+          clientName: document.getElementById('clientName').value,
+          clientAddress: document.getElementById('clientAddress').value,
+          clientContact: document.getElementById('clientContact').value,
+          docNumber: document.getElementById('docNumber').value,
+          docDate: docDateEl.value,
+          dueDate: dueDateDisplay.value,
+          currency: document.getElementById('currencySelect').value,
+          numberStyle: document.getElementById('numberStyleSelect').value,
+          statusMark: document.getElementById('paymentStatusMarkSelect').value,
+          showWords: document.getElementById('showWordsCheck').checked,
+          overallDiscount: Number(document.getElementById('overallDiscountInput').value) || 0,
+          discountType: document.getElementById('discountTypeSelect').value,
+          taxLabel: document.getElementById('taxLabelInput').value,
+          taxRate: Number(document.getElementById('taxRateInput').value) || 0,
+          shipping: Number(document.getElementById('shippingInput').value) || 0,
+          amountPaid: Number(document.getElementById('amountPaidInput').value) || 0,
+          notes: document.getElementById('notesInput').value,
+          terms: document.getElementById('termsInput').value
+        };
+      }
+
+      function renderItemsTable() {
+        itemsTableBody.innerHTML = '';
+        engine.items.forEach((item, index) => {
+          const row = document.createElement('tr');
+
+          row.innerHTML = `
+            <td>
+              <input type="text" class="item-desc-input" value="${item.description}" placeholder="Description of service or goods">
+            </td>
+            <td>
+              <input type="number" class="item-qty-input" value="${item.qty}" min="1" step="any" style="text-align: right;">
+            </td>
+            <td>
+              <input type="number" class="item-price-input" value="${item.unitPrice}" min="0" step="any" style="text-align: right;">
+            </td>
+            <td>
+              <input type="number" class="item-disc-input" value="${item.discountPercent}" min="0" max="100" step="any" style="text-align: right;">
+            </td>
+            <td style="text-align: right; font-weight: 600;">
+              <span class="item-row-total">0.00</span>
+            </td>
+            <td>
+              <div class="doc-item-actions">
+                <button type="button" class="btn-icon-tiny btn-move-up" title="Move Up" ${index === 0 ? 'disabled' : ''}>▲</button>
+                <button type="button" class="btn-icon-tiny btn-move-down" title="Move Down" ${index === engine.items.length - 1 ? 'disabled' : ''}>▼</button>
+                <button type="button" class="btn-icon-tiny is-danger btn-remove-item" title="Remove Item" ${engine.items.length === 1 ? 'disabled' : ''}>✕</button>
+              </div>
+            </td>
+          `;
+
+          // Event listeners for row inputs
+          const descInput = row.querySelector('.item-desc-input');
+          const qtyInput = row.querySelector('.item-qty-input');
+          const priceInput = row.querySelector('.item-price-input');
+          const discInput = row.querySelector('.item-disc-input');
+
+          const updateItem = () => {
+            item.description = descInput.value;
+            item.qty = Number(qtyInput.value) || 0;
+            item.unitPrice = Number(priceInput.value) || 0;
+            item.discountPercent = Number(discInput.value) || 0;
+            updateLivePreview();
+          };
+
+          descInput.addEventListener('input', updateItem);
+          qtyInput.addEventListener('input', updateItem);
+          priceInput.addEventListener('input', updateItem);
+          discInput.addEventListener('input', updateItem);
+
+          row.querySelector('.btn-move-up').addEventListener('click', () => {
+            engine.moveItem(index, -1);
+            renderItemsTable();
+            updateLivePreview();
+          });
+
+          row.querySelector('.btn-move-down').addEventListener('click', () => {
+            engine.moveItem(index, 1);
+            renderItemsTable();
+            updateLivePreview();
+          });
+
+          row.querySelector('.btn-remove-item').addEventListener('click', () => {
+            engine.removeItem(index);
+            renderItemsTable();
+            updateLivePreview();
+          });
+
+          itemsTableBody.appendChild(row);
+        });
+      }
+
+      addItemBtn.addEventListener('click', () => {
+        engine.addItem({ description: 'Additional Item', qty: 1, unitPrice: 0, discountPercent: 0 });
+        renderItemsTable();
+        updateLivePreview();
+      });
+
+      function updateLivePreview() {
+        updateDueDate();
+        const formData = getFormData();
+        const totals = engine.calculateTotals({
+          overallDiscount: formData.overallDiscount,
+          discountType: formData.discountType,
+          taxRate: formData.taxRate,
+          shipping: formData.shipping,
+          amountPaid: formData.amountPaid
+        });
+
+        // Update row totals in table
+        const rowTotalEls = document.querySelectorAll('.item-row-total');
+        totals.items.forEach((item, idx) => {
+          if (rowTotalEls[idx]) {
+            rowTotalEls[idx].textContent = formatCurrencyNumber(item.lineTotal, formData.numberStyle, 'none');
+          }
+        });
+
+        // Update live total and balance in step 1
+        liveTotalDisplay.textContent = formatCurrencyNumber(totals.total, formData.numberStyle, formData.currency);
+        liveBalanceDisplay.textContent = formatCurrencyNumber(totals.balanceDue, formData.numberStyle, formData.currency);
+
+        // Check non-latin characters
+        const isNonLatin = engine.hasNonLatin(formData);
+        fallbackNotice.style.display = isNonLatin ? 'flex' : 'none';
+
+        // Render HTML Sheet Preview
+        document.documentElement.style.setProperty('--doc-accent', engine.accentColor);
+        previewSheet.className = `doc-preview-sheet template-${engine.currentTemplate}`;
+
+        let rowsHtml = '';
+        totals.items.forEach(it => {
+          rowsHtml += `
+            <tr>
+              <td><strong>${it.description || 'Item'}</strong></td>
+              <td style="text-align: right;">${it.qty}</td>
+              <td style="text-align: right;">${formatCurrencyNumber(it.unitPrice, formData.numberStyle, 'none')}</td>
+              <td style="text-align: right;">${it.discountPercent ? it.discountPercent + '%' : '-'}</td>
+              <td style="text-align: right; font-weight: 600;">${formatCurrencyNumber(it.lineTotal, formData.numberStyle, 'none')}</td>
+            </tr>
+          `;
+        });
+
+        const amountInWordsHtml = formData.showWords ? `
+          <div style="margin-top: 1rem; font-style: italic; font-size: 0.8125rem; color: #64748b;">
+            Amount in Words: ${convertNumberToWords(totals.total, formData.numberStyle, formData.currency)}
+          </div>
+        ` : '';
+
+        const logoHtml = engine.logoData ? `<img src="${engine.logoData}" style="max-height: 50px; max-width: 140px; object-fit: contain;" alt="Company Logo">` : '';
+
+        // Status mark badge
+        let statusBadgeHtml = '';
+        if (formData.statusMark === 'PAID') {
+          statusBadgeHtml = `<div style="position: absolute; right: 40px; top: 120px; font-size: 2.5rem; font-weight: 900; color: #16a34a; border: 4px solid #16a34a; padding: 4px 16px; border-radius: 8px; transform: rotate(-12deg); opacity: 0.65; letter-spacing: 0.1em; pointer-events: none;">PAID</div>`;
+        } else if (formData.statusMark === 'UNPAID') {
+          statusBadgeHtml = `<div style="position: absolute; right: 40px; top: 120px; font-size: 2.5rem; font-weight: 900; color: #dc2626; border: 4px solid #dc2626; padding: 4px 16px; border-radius: 8px; transform: rotate(-12deg); opacity: 0.65; letter-spacing: 0.1em; pointer-events: none;">UNPAID</div>`;
+        }
+
+        previewSheet.innerHTML = `
+          ${statusBadgeHtml}
+          <div class="preview-header-row">
+            <div>
+              <div class="preview-title">INVOICE</div>
+              <div style="font-size: 0.875rem; color: #64748b; margin-top: 4px;" class="preview-header-meta">
+                Invoice #: <strong>${formData.docNumber || 'INV-1001'}</strong> | Date: ${formatDateReadable(formData.docDate)}
+              </div>
+              <div style="font-size: 0.875rem; color: #64748b; margin-top: 2px;" class="preview-header-meta">
+                Due Date: <strong>${formData.dueDate}</strong>
+              </div>
+            </div>
+            <div>
+              ${logoHtml}
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; gap: 1.5rem; margin-bottom: 1.5rem; font-size: 0.875rem;">
+            <div style="width: 48%;">
+              <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #64748b; margin-bottom: 4px;">Billed By:</div>
+              <div style="font-weight: 700; color: #0f172a;">${formData.businessName || ''}</div>
+              <div style="color: #475569;">${formData.businessAddress || ''}</div>
+              <div style="color: #475569;">${[formData.businessPhone, formData.businessEmail].filter(Boolean).join(' | ')}</div>
+              ${formData.taxIdValue ? `<div style="color: #475569;">${formData.taxIdLabel || 'Tax ID'}: ${formData.taxIdValue}</div>` : ''}
+            </div>
+
+            <div style="width: 48%;">
+              <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #64748b; margin-bottom: 4px;">Billed To:</div>
+              <div style="font-weight: 700; color: #0f172a;">${formData.clientName || ''}</div>
+              <div style="color: #475569;">${formData.clientAddress || ''}</div>
+              <div style="color: #475569;">${formData.clientContact || ''}</div>
+            </div>
+          </div>
+
+          <table class="preview-table">
+            <thead>
+              <tr>
+                <th style="width: 45%;">Description</th>
+                <th style="width: 12%; text-align: right;">Qty</th>
+                <th style="width: 15%; text-align: right;">Unit Price</th>
+                <th style="width: 12%; text-align: right;">Disc %</th>
+                <th style="width: 16%; text-align: right;">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rowsHtml}
+            </tbody>
+          </table>
+
+          <div class="preview-totals-block">
+            <table class="preview-totals-table">
+              <tr>
+                <td>Subtotal:</td>
+                <td style="text-align: right; font-weight: 600;">${formatCurrencyNumber(totals.subtotal, formData.numberStyle, formData.currency)}</td>
+              </tr>
+              ${totals.discountAmount > 0 ? `
+              <tr>
+                <td>Overall Discount:</td>
+                <td style="text-align: right; color: #dc2626;">-${formatCurrencyNumber(totals.discountAmount, formData.numberStyle, formData.currency)}</td>
+              </tr>
+              ` : ''}
+              ${(totals.taxAmount > 0 || formData.taxRate > 0) ? `
+              <tr>
+                <td>${formData.taxLabel || 'Tax'} (${formData.taxRate}%):</td>
+                <td style="text-align: right;">${formatCurrencyNumber(totals.taxAmount, formData.numberStyle, formData.currency)}</td>
+              </tr>
+              ` : ''}
+              ${totals.shippingAmount > 0 ? `
+              <tr>
+                <td>Shipping / Other:</td>
+                <td style="text-align: right;">${formatCurrencyNumber(totals.shippingAmount, formData.numberStyle, formData.currency)}</td>
+              </tr>
+              ` : ''}
+              <tr class="total-row">
+                <td>Total:</td>
+                <td style="text-align: right;">${formatCurrencyNumber(totals.total, formData.numberStyle, formData.currency)}</td>
+              </tr>
+              ${formData.amountPaid > 0 ? `
+              <tr>
+                <td>Amount Paid:</td>
+                <td style="text-align: right; color: #16a34a;">${formatCurrencyNumber(formData.amountPaid, formData.numberStyle, formData.currency)}</td>
+              </tr>
+              <tr style="font-weight: 700; color: #0f172a;">
+                <td>Balance Due:</td>
+                <td style="text-align: right;">${formatCurrencyNumber(totals.balanceDue, formData.numberStyle, formData.currency)}</td>
+              </tr>
+              ` : ''}
+            </table>
+          </div>
+
+          ${amountInWordsHtml}
+
+          <div style="display: flex; justify-content: space-between; gap: 1.5rem; margin-top: 2rem; font-size: 0.8125rem;">
+            <div style="width: 55%; color: #475569;">
+              ${formData.notes ? `<div style="margin-bottom: 6px;"><strong>Notes:</strong> ${formData.notes}</div>` : ''}
+              ${formData.terms ? `<div><strong>Payment Terms:</strong> ${formData.terms}</div>` : ''}
+            </div>
+
+            <div style="width: 40%; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end;">
+              ${engine.signatureData ? `<img src="${engine.signatureData}" style="max-height: 40px; margin-bottom: 4px;" alt="Authorized Signature">` : ''}
+              <div style="width: 140px; border-top: 1px solid #94a3b8; text-align: center; padding-top: 4px; font-weight: 600; font-size: 0.75rem; color: #64748b;">
+                Authorized Signature
+              </div>
+            </div>
+          </div>
+        `;
+
+        if (engine.isStorageEnabled) {
+          engine.saveBusinessProfile(formData);
+        }
+      }
+
+      // Template switching
+      document.querySelectorAll('.doc-template-pill').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.doc-template-pill').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          engine.currentTemplate = btn.dataset.template;
+          updateLivePreview();
+        });
+      });
+
+      // Accent color picker
+      const accentInput = document.getElementById('accentColorInput');
+      accentInput.addEventListener('input', (e) => {
+        engine.accentColor = e.target.value;
+        updateLivePreview();
+      });
+
+      // Form input live updates
+      const formWatchIds = [
+        'bizName', 'bizAddress', 'bizPhone', 'bizEmail', 'bizTaxLabel', 'bizTaxValue',
+        'clientName', 'clientAddress', 'clientContact', 'docNumber', 'docDate',
+        'currencySelect', 'numberStyleSelect', 'paymentStatusMarkSelect', 'showWordsCheck',
+        'overallDiscountInput', 'discountTypeSelect', 'taxLabelInput', 'taxRateInput',
+        'shippingInput', 'amountPaidInput', 'notesInput', 'termsInput'
+      ];
+
+      formWatchIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.addEventListener('input', updateLivePreview);
+          el.addEventListener('change', updateLivePreview);
+        }
+      });
+
+      // Actions in Step 3
+      document.getElementById('downloadPdfBtn').addEventListener('click', () => {
+        const formData = getFormData();
+        const totals = engine.calculateTotals({
+          overallDiscount: formData.overallDiscount,
+          discountType: formData.discountType,
+          taxRate: formData.taxRate,
+          shipping: formData.shipping,
+          amountPaid: formData.amountPaid
+        });
+        const num = formData.docNumber || '1001';
+        engine.exportPdf(formData, totals, `invoice-${num}.pdf`);
+      });
+
+      document.getElementById('downloadJpgBtn').addEventListener('click', () => {
+        const formData = getFormData();
+        const num = formData.docNumber || '1001';
+        engine.exportJpg(`invoice-${num}.jpg`);
+      });
+
+      document.getElementById('printDocBtn').addEventListener('click', () => {
+        engine.printDocument();
+      });
+
+      // Initial render
+      renderItemsTable();
+      updateLivePreview();
+    });
+  </script>
+</body>
+</html>
