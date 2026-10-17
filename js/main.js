@@ -174,6 +174,10 @@
       if (lowerTitle.includes('text') && lowerTitle.includes('pdf')) extraKeywords += ' extract text from pdf ocr copy words txt document converter';
       if (lowerTitle.includes('rotate')) extraKeywords += ' rotate pdf pages turn flip orientation landscape portrait upside down';
       if (lowerTitle.includes('reorder')) extraKeywords += ' rearrange pdf pages organize pdf pages sort duplicate delete move sheets';
+      if (lowerTitle.includes('crop')) extraKeywords += ' crop pdf pages crop pdf online trim margins cut page bounds white margins';
+      if (lowerTitle.includes('signature')) extraKeywords += ' add signature to pdf sign pdf online sign pdf on mobile draw type upload signature';
+      if (lowerTitle.includes('watermark')) extraKeywords += ' add watermark to pdf pdf watermark watermark pdf online stamp confidential draft logo opacity';
+
 
 
       return {

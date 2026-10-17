@@ -60,4 +60,7 @@
 | `/pdf-to-text/` | **pdf to text** (Secondary: extract text from pdf) | PDF to Text - Free Online \| FileShrink | PDF to Text | 38 | 154 | Yes | Yes | Yes | Yes |
 | `/rotate-pdf/` | **rotate pdf** (Secondary: rotate pdf pages) | Rotate PDF - Free Online \| FileShrink | Rotate PDF | 36 | 150 | Yes | Yes | Yes | Yes |
 | `/reorder-pdf-pages/` | **reorder pdf pages** (Secondaries: rearrange pdf pages, (*) organize pdf pages) | Reorder PDF Pages - Free Online \| FileShrink | Reorder PDF Pages | 43 | 149 | Yes | Yes | Yes | Yes |
+| `/crop-pdf/` | **crop pdf** (Secondaries: (*) crop pdf pages, (*) crop pdf online) | Crop PDF - Free Online \| FileShrink | Crop PDF | 34 | 154 | Yes | Yes | Yes | Yes |
+| `/add-signature-to-pdf/` | **add signature to pdf** (Secondaries: sign pdf online, (*) sign pdf on mobile) | Add Signature to PDF - Free Online \| FileShrink | Add Signature to PDF | 45 | 154 | Yes | Yes | Yes | Yes |
+| `/add-watermark-to-pdf/` | **add watermark to pdf** (Secondaries: (*) pdf watermark, (*) watermark pdf online) | Add Watermark to PDF - Free Online \| FileShrink | Add Watermark to PDF | 45 | 154 | Yes | Yes | Yes | Yes |
 
