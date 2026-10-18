@@ -312,6 +312,18 @@
         </ul>
       </section>
 
+      <!-- Helpful Guide & Practical Tips -->
+      <section class="info-section" aria-labelledby="guideHeading">
+        <h3 id="guideHeading">Practical Guide to Letter Casing Styles for Writers and Developers</h3>
+        <div class="guide-text">
+          <p>Writers, editors, and programmers frequently spend unnecessary time re-typing text to match required capitalization conventions. Whether you accidentally typed a paragraph with Caps Lock turned on, need to format blog headlines in proper Title Case, or must transform database fields into developer casing, a dedicated case converter saves hours of tedious manual editing.</p>
+          <p>Capitalization styles serve distinct purposes. 'Title Case' formats headlines according to established editorial standards (keeping minor articles and prepositions like 'the', 'in', and 'of' lowercase unless they begin the title). 'Sentence case' capitalizes the first word after every period, question mark, or exclamation point. Programmers rely on camelCase, PascalCase, snake_case, and CONSTANT_CASE to maintain consistent coding standards.</p>
+          <p>Our Case Converter updates your text in real time with live character, word, sentence, and line counts. Everything runs locally in your browser memory, keeping your draft essays, articles, and code completely confidential.</p>
+        </div>
+      </section>
+
+
+
 
       <!-- FAQ Section -->
 
@@ -319,23 +331,33 @@
         <h2 id="faqHeading">FAQ</h2>
         <div class="faq-list">
           <details class="faq-item">
-            <summary class="faq-question">How does this case converter handle words with apostrophes?</summary>
+            <summary class="faq-question">Which words stay lowercase when using Title Case mode?</summary>
             <div class="faq-answer">
-              <p>The <strong>case converter</strong> treats contractions as unified words. When using Capitalize Each Word, terms like &ldquo;don't&rdquo; or &ldquo;we've&rdquo; become &ldquo;Don't&rdquo; and &ldquo;We've&rdquo; rather than capitalizing letters after the apostrophe.</p>
+              <p>Standard editorial rules keep short prepositions, conjunctions, and articles lowercase (including a, an, and, as, at, but, by, for, in, of, on, or, the, to, and with) unless they appear as the first or last word of a headline.</p>
             </div>
           </details>
-
           <details class="faq-item">
-            <summary class="faq-question">Which words stay lowercase in title case mode?</summary>
+            <summary class="faq-question">How does Sentence case know where a sentence ends?</summary>
             <div class="faq-answer">
-              <p>Short grammatical articles, prepositions, and conjunctions (including a, an, and, as, at, but, by, for, in, of, on, or, the, to, and with) remain lowercase unless they appear at the beginning or end of a title.</p>
+              <p>The algorithm identifies terminal punctuation marks (periods, question marks, and exclamation marks) followed by whitespace, automatically capitalizing the subsequent letter while keeping the rest lowercase.</p>
             </div>
           </details>
-
           <details class="faq-item">
-            <summary class="faq-question">Can I process large files of 1 MB or more without browser lag?</summary>
+            <summary class="faq-question">What is the difference between camelCase, PascalCase, and snake_case?</summary>
             <div class="faq-answer">
-              <p>Yes. All operations run client-side using native JavaScript string matching. Even files containing several hundred thousand characters convert in under 100 milliseconds.</p>
+              <p>camelCase starts with a lowercase letter and capitalizes subsequent words (`userProfileName`). PascalCase capitalizes all words (`UserProfileName`). snake_case separates words with underscores (`user_profile_name`).</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Can I convert thousands of words or entire essays at once?</summary>
+            <div class="faq-answer">
+              <p>Yes. The converter handles large text blocks of tens of thousands of words instantly with zero lag or browser freeze.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Is my text stored or tracked on any database?</summary>
+            <div class="faq-answer">
+              <p>No. All text transformations are performed locally inside your browser's JavaScript engine. Your writing is never uploaded or saved.</p>
             </div>
           </details>
         </div>

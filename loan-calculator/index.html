@@ -461,21 +461,33 @@
         <h2 id="faqHeading">FAQ</h2>
         <div class="faq-list">
           <details class="faq-item">
-            <summary class="faq-question">How does this loan calculator differ from a standard emi calculator?</summary>
+            <summary class="faq-question">How is monthly loan EMI calculated?</summary>
             <div class="faq-answer">
-              <p>This loan calculator calculates equal periodic repayments using the standard amortization formula just like an emi calculator, while additionally computing early payoff savings from extra monthly prepayments.</p>
+              <p>The mathematical formula is: `EMI = [P × r × (1 + r)^n] ÷ [(1 + r)^n − 1]`, where P is principal, r is the monthly interest rate, and n is the total number of monthly payments.</p>
             </div>
           </details>
           <details class="faq-item">
-            <summary class="faq-question">Can I use this as a monthly payment calculator for auto and personal loans?</summary>
+            <summary class="faq-question">Why does early loan prepayment save so much money in interest?</summary>
             <div class="faq-answer">
-              <p>Yes. This tool operates as a versatile monthly payment calculator suitable for personal loans, auto loans, mortgages, and consumer financing with terms up to 600 months.</p>
+              <p>Any extra money paid directly reduces your principal balance. Because subsequent monthly interest is computed on the smaller principal, your future interest charges shrink permanently.</p>
             </div>
           </details>
           <details class="faq-item">
-            <summary class="faq-question">How does adding an extra monthly payment reduce my total interest and loan term?</summary>
+            <summary class="faq-question">What is the difference between a fixed-rate loan and a variable-rate loan?</summary>
             <div class="faq-answer">
-              <p>Every extra monthly payment directly diminishes your outstanding principal balance, reducing future compound interest and shortening your total repayment duration.</p>
+              <p>A fixed-rate loan guarantees the same interest rate and monthly payment throughout the loan term. A variable (floating) rate adjusts periodically based on benchmark bank rates.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Can I use this calculator for both commercial and personal loans?</summary>
+            <div class="faq-answer">
+              <p>Yes. It accurately models home mortgages, auto loans, student loans, and commercial business equipment financing.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Is my private financial information stored or tracked?</summary>
+            <div class="faq-answer">
+              <p>No. All loan amortization calculations run in your web browser memory. No financial details are ever logged or transmitted.</p>
             </div>
           </details>
         </div>
@@ -499,6 +511,18 @@
           </li>
         </ul>
       </section>
+
+      <!-- Helpful Guide & Practical Tips -->
+      <section class="info-section" aria-labelledby="guideHeading">
+        <h3 id="guideHeading">Mastering Loan Amortization: Principal, Interest, and Prepayment</h3>
+        <div class="guide-text">
+          <p>Taking out a personal loan, business line of credit, or home mortgage is a major financial milestone. A complete understanding of your loan amortization schedule reveals how your monthly payment is split between paying off the bank's interest and reducing your actual loan principal.</p>
+          <p>In the early years of any long-term loan (especially 15 to 30-year mortgages), the vast majority of your monthly installment goes toward paying accumulated interest, with only a tiny fraction reducing the principal balance. As the principal gradually shrinks over time, the interest portion declines and principal payoff accelerates.</p>
+          <p>Our Loan Calculator generates a comprehensive amortization schedule. You can analyze monthly payments, total interest paid, and see how making modest lump-sum prepayments can shave years off your debt and save thousands of dollars.</p>
+        </div>
+      </section>
+
+
 
 
       <!-- More Tools Section -->

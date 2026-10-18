@@ -332,6 +332,18 @@
         </ul>
       </section>
 
+      <!-- Helpful Guide & Practical Tips -->
+      <section class="info-section" aria-labelledby="guideHeading">
+        <h3 id="guideHeading">Understanding University Attendance Rules and the Bunk Margin</h3>
+        <div class="guide-text">
+          <p>Most colleges and universities enforce strict minimum attendance thresholds—typically 75% or 80%—under regulations established by academic senates and higher education commissions. Falling below this cutoff can result in serious penalties, such as grade deductions, loss of exam eligibility, or being formally debarred from semester examinations.</p>
+          <p>Managing your attendance requires tracking two key metrics: how many classes you can afford to skip ('safe bunks') while keeping your percentage above 75%, or conversely, how many consecutive upcoming classes you must attend without missing a single lecture to recover from an attendance shortage.</p>
+          <p>Our Attendance Calculator computes these numbers dynamically. Enter your total lectures held and classes attended to see your current standing, safety margin, and step-by-step attendance roadmap immediately.</p>
+        </div>
+      </section>
+
+
+
 
 
       <!-- Frequently Asked Questions -->
@@ -339,16 +351,34 @@
         <h2 id="faqHeading">FAQ</h2>
         <div class="faq-list">
           <div class="faq-item">
-            <h3 class="faq-question">How many consecutive lectures do I need to attend after taking sick leave?</h3>
-            <p class="faq-answer">The tool uses the target recovery formula: Consecutive Classes Needed = ⌈(Required % × Held - Attended) ÷ (1 - Required %)⌉. It calculates the exact number of back-to-back classes you must attend without absence.</p>
+            <h3 class="faq-question">What does the 'safe bunks' number mean in this calculator?</h3>
+            <div class="faq-answer">
+              <p>Safe bunks indicates the exact number of future lectures you can afford to skip while keeping your overall attendance percentage safely at or above your required threshold (such as 75%).</p>
+            </div>
           </div>
           <div class="faq-item">
-            <h3 class="faq-question">Can attendance be calculated if my course includes laboratory sessions?</h3>
-            <p class="faq-answer">Yes. If labs carry equal attendance weight, sum lab sessions into classes held and attended. If labs are calculated separately by your department, run the calculator once for lectures and once for lab hours.</p>
+            <h3 class="faq-question">How many consecutive classes must I attend to recover from low attendance?</h3>
+            <div class="faq-answer">
+              <p>If your attendance is below 75%, our calculator tells you the exact number of upcoming classes you must attend in a row without missing a single lecture to bring your average back into good standing.</p>
+            </div>
           </div>
           <div class="faq-item">
-            <h3 class="faq-question">What happens if I miss a class after reaching the minimum attendance percentage?</h3>
-            <p class="faq-answer">Enter the total planned classes for your course into the optional box. The calculator will determine exactly how many more classes you can safely miss while keeping your attendance above your institution threshold.</p>
+            <h3 class="faq-question">What happens if my college requires an 80% or 85% attendance rule?</h3>
+            <div class="faq-answer">
+              <p>You can easily adjust the target threshold slider or input box to 80%, 85%, or any custom percentage mandated by your university department.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">Can I factor in approved medical leave or extracurricular duty leaves?</h3>
+            <div class="faq-answer">
+              <p>Yes. Add approved medical or sports duty leaves to your 'Classes Attended' count if your college administration officially credits them toward your attendance record.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">Is my personal attendance data saved or tracked online?</h3>
+            <div class="faq-answer">
+              <p>No. The calculation runs 100% locally in your web browser memory. No student data or university details are ever saved or transmitted.</p>
+            </div>
           </div>
         </div>
       </section>

@@ -401,6 +401,18 @@
         </ul>
       </section>
 
+      <!-- Helpful Guide & Practical Tips -->
+      <section class="info-section" aria-labelledby="guideHeading">
+        <h3 id="guideHeading">How to Blur Sensitive Information in Photos for Privacy</h3>
+        <div class="guide-text">
+          <p>Before sharing photos on public social media, discussion forums, or classified listings, it is critical to protect your privacy. Photos often accidentally capture sensitive information—such as car license plates, street house numbers, children's faces, credit card numbers, computer screens, or personal courier shipping labels.</p>
+          <p>Sharing photos with unblurred private details puts you at risk of identity theft, doxxing, and burglary. Blurring or pixelating sensitive areas ensures that you can safely share your car photo, home renovation progress, or workspace setup without exposing confidential details.</p>
+          <p>Our interactive Blur tool allows you to draw precision blur boxes over any area of your photo. You can adjust the blur intensity with live previews. Everything operates locally on your device, ensuring that confidential data never touches external cloud servers.</p>
+        </div>
+      </section>
+
+
+
 
       <!-- Ad Slot: Bottom -->
       <div class="ad-slot" aria-hidden="true">
@@ -412,21 +424,33 @@
         <h2 id="faqHeading">FAQ</h2>
         <div class="faq-accordion">
           <details class="faq-item">
-            <summary class="faq-question">How do I blur image online without uploading my photo to a server?</summary>
+            <summary class="faq-question">Can someone unblur or reverse the blurred areas in my photo?</summary>
             <div class="faq-answer">
-              <p>You can blur image online right in your browser to conceal confidential text, car number plates, or personal faces. All pixel math runs in client-side JavaScript, ensuring your files never leave your device.</p>
+              <p>No. Our tool applies a permanent Gaussian blur algorithm that averages and redistributes pixel values. The original pixel data beneath the blur is completely destroyed and cannot be reversed.</p>
             </div>
           </details>
           <details class="faq-item">
-            <summary class="faq-question">How can I blur face in photo or license plates?</summary>
+            <summary class="faq-question">How strong should the blur intensity be to hide printed text?</summary>
             <div class="faq-answer">
-              <p>Select the "Blur an area" option, then click and drag rectangles or circles directly across sensitive faces or ID numbers. Only the selected areas will be blurred, leaving the rest of your photo unchanged.</p>
+              <p>A medium-to-high blur intensity is recommended for numbers and text to ensure that even automated OCR algorithms cannot recognize characters.</p>
             </div>
           </details>
           <details class="faq-item">
-            <summary class="faq-question">Does blurring the whole image remove metadata and background details?</summary>
+            <summary class="faq-question">Can I blur multiple separate areas on a single photo?</summary>
             <div class="faq-answer">
-              <p>Yes. When downloading the output, original camera EXIF tags (such as GPS location) are stripped automatically, providing full privacy protection.</p>
+              <p>Yes. You can add as many blur boxes as needed to cover faces, license plates, and private badges simultaneously.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Will blurring reduce the visual quality of the unblurred areas?</summary>
+            <div class="faq-answer">
+              <p>No. Only the specific rectangular zones you select are blurred; the rest of your photo retains 100% of its original resolution and sharpness.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Are my sensitive photos uploaded to any remote server?</summary>
+            <div class="faq-answer">
+              <p>Never. FileShrink runs entirely inside your web browser. Your confidential photos and documents never leave your computer or phone.</p>
             </div>
           </details>
         </div>

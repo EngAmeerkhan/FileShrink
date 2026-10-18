@@ -735,6 +735,22 @@ a:hover, a:focus-visible {
   color: var(--text-main);
 }
 
+/* Helpful Guide Section */
+.guide-text {
+  margin-top: 0.75rem;
+}
+
+.guide-text p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-bottom: 0.85rem;
+}
+
+.guide-text p:last-child {
+  margin-bottom: 0;
+}
+
 /* FAQ Accordion / List */
 .faq-list {
   display: flex;

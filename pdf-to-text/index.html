@@ -338,6 +338,18 @@
         </ul>
       </section>
 
+      <!-- Helpful Guide & Practical Tips -->
+      <section class="info-section" aria-labelledby="guideHeading">
+        <h3 id="guideHeading">Extracting Plain Text from PDF Documents</h3>
+        <div class="guide-text">
+          <p>PDFs are designed for consistent visual presentation, but getting raw text out of them for editing, research, or data entry can be frustrating. Copying text manually often introduces weird line breaks, missing spaces, and garbled symbols.</p>
+          <p>Our PDF to Text tool extracts clean, unformatted plain text directly from native PDF text layers. You can quickly copy essay paragraphs into Microsoft Word, import tabular data into spreadsheets, or feed research papers into text analysis and AI tools.</p>
+          <p>Because extraction runs locally in your browser, you can extract text from sensitive business proposals, client records, and legal briefs with complete peace of mind, knowing your confidential text is never logged or stored on any server.</p>
+        </div>
+      </section>
+
+
+
 
       <!-- Ad Slot: Bottom -->
       <div class="ad-slot" aria-hidden="true">
@@ -349,21 +361,33 @@
         <h2 id="faqHeading">FAQ</h2>
         <div class="faq-accordion">
           <details class="faq-item">
-            <summary class="faq-question">How does the pdf to text extraction work?</summary>
+            <summary class="faq-question">Can this tool extract text from scanned paper PDFs?</summary>
             <div class="faq-answer">
-              <p>Our free online pdf to text converter extracts plain text from digital PDF documents instantly on your device. It analyzes text positioning coordinates, groups words into sentences, and delivers clean readable text without server uploads.</p>
+              <p>This tool extracts digital text streams from native PDFs. If your PDF is a flat image scan from a physical printer, you will need an OCR (optical character recognition) tool to recognize text from pixels.</p>
             </div>
           </details>
           <details class="faq-item">
-            <summary class="faq-question">Can I extract text from scanned paper PDF documents?</summary>
+            <summary class="faq-question">Why does extracted text sometimes have unusual line breaks?</summary>
             <div class="faq-answer">
-              <p>This tool works on PDFs with real text embedded in vector layers. If your PDF is made of photographic scans from a scanner or phone camera, you will need an OCR utility to transcribe the pictures into words.</p>
+              <p>PDFs position words using exact geometric coordinates on a page rather than continuous paragraphs. Our tool intelligently reconstructs sentences to provide clean, readable text.</p>
             </div>
           </details>
           <details class="faq-item">
-            <summary class="faq-question">Why do some tables or columns have extra spacing?</summary>
+            <summary class="faq-question">Can I copy all extracted text with a single click?</summary>
             <div class="faq-answer">
-              <p>PDF documents store text by placing individual words at fixed coordinate points. Our engine reconstructs natural line flow and spacing, but multi-column newspaper layouts and complex balance sheets may require slight editing.</p>
+              <p>Yes. Click the 'Copy Text' button to immediately copy the entire extracted document to your clipboard, or download it as a clean .txt file.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Does this tool work on multi-column research papers?</summary>
+            <div class="faq-answer">
+              <p>Yes. The extraction algorithm parses text streams sequentially to maintain readable reading order across multi-column layouts.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Is there a limit on document length?</summary>
+            <div class="faq-answer">
+              <p>You can extract text from documents spanning dozens or hundreds of pages without restrictions or fees.</p>
             </div>
           </details>
         </div>

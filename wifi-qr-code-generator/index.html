@@ -363,6 +363,18 @@
         </ul>
       </section>
 
+      <!-- Helpful Guide & Practical Tips -->
+      <section class="info-section" aria-labelledby="guideHeading">
+        <h3 id="guideHeading">Creating Instant Scan-to-Connect Wi-Fi QR Codes for Guests and Customers</h3>
+        <div class="guide-text">
+          <p>Dictating complex alphanumeric Wi-Fi passwords to family members, dinner guests, hotel visitors, or coffee shop customers is frustrating. Guests inevitably confuse capital 'O' with zero '0', lowercase 'l' with uppercase 'I', and struggle with special symbols.</p>
+          <p>A Wi-Fi QR code eliminates password typing completely. When a guest points their iPhone or Android camera at the QR code, a native prompt instantly appears saying 'Join [Your Network Name] Network?'. With one tap, their device securely authenticates and connects in seconds.</p>
+          <p>Our generator structures network credentials into the standardized `WIFI:` protocol, properly escaping special characters. You can customize colors, add your network name, and print attractive guest connection cards to frame on your living room table, office lobby, or cafe counter. Everything is generated 100% locally with zero password tracking.</p>
+        </div>
+      </section>
+
+
+
 
       <!-- FAQ Section -->
 
@@ -370,23 +382,33 @@
         <h2 id="faqHeading">FAQ</h2>
         <div class="faq-list">
           <details class="faq-item">
-            <summary class="faq-question">How does this wifi qr code generator connect smartphones to Wi-Fi?</summary>
+            <summary class="faq-question">How do guests connect to Wi-Fi by scanning this QR code?</summary>
             <div class="faq-answer">
-              <p>The tool encodes your network details into the standard WIFI URI scheme. When scanned by an iPhone or Android camera, the operating system reads the SSID and password directly to join the network without manual typing.</p>
+              <p>On modern iPhones and Android smartphones, guests simply open their native camera app and point it at the QR code. A banner notification appears; tapping it connects them to your Wi-Fi instantly.</p>
             </div>
           </details>
-
           <details class="faq-item">
-            <summary class="faq-question">Is this qr code generator safe to use with private home passwords?</summary>
+            <summary class="faq-question">Is my private Wi-Fi password transmitted to any server?</summary>
             <div class="faq-answer">
-              <p>Yes, absolutely. All processing in this <strong>qr code generator</strong> occurs inside your browser. No Wi-Fi credentials or personal data are ever sent over the internet or saved on our servers.</p>
+              <p>Never. The QR code is rendered entirely inside your web browser using client-side JavaScript. Your Wi-Fi network name and password never leave your device.</p>
             </div>
           </details>
-
           <details class="faq-item">
-            <summary class="faq-question">Will a printed wifi password qr code work for hidden networks?</summary>
+            <summary class="faq-question">Does this QR code work on both Apple iOS and Android phones?</summary>
             <div class="faq-answer">
-              <p>Yes. If your router does not broadcast its SSID, enable the &ldquo;Hidden network&rdquo; option before generating. A printed <strong>wifi password qr code</strong> with hidden flag enabled instructs the phone to search actively for the hidden network beacon.</p>
+              <p>Yes. The `WIFI:` protocol is supported natively by iOS (version 11 and later) and Android (version 10 and later) without needing any third-party scanner apps.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Can I generate a QR code for hidden Wi-Fi networks?</summary>
+            <div class="faq-answer">
+              <p>Yes. Check the 'Hidden Network' toggle if your router does not broadcast its SSID, and the QR code will embed the appropriate hidden flag.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Do Wi-Fi QR codes ever expire or require renewing?</summary>
+            <div class="faq-answer">
+              <p>No. The QR code contains static configuration data. As long as your router's network name and password remain unchanged, the QR code will work permanently.</p>
             </div>
           </details>
         </div>

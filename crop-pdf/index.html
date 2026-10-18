@@ -402,6 +402,18 @@
         </ul>
       </section>
 
+      <!-- Helpful Guide & Practical Tips -->
+      <section class="info-section" aria-labelledby="guideHeading">
+        <h3 id="guideHeading">How to Crop PDF Margins and Trim Extra White Space</h3>
+        <div class="guide-text">
+          <p>Scanned PDF documents, digital eBooks, and academic papers often contain excessive white margins, dark scanner edges, or printer crop marks. When reading these files on tablets, e-readers, or smartphone screens, large margins waste valuable screen space and force readers to constantly zoom in and out.</p>
+          <p>Cropping a PDF trims away unwanted outer borders, centering the active text area so documents read comfortably on mobile devices. It is also invaluable for trimming shipping labels, receipts, and invoices down to exact printable label sizes.</p>
+          <p>Our visual PDF Crop tool allows you to drag bounding crop boxes around individual pages or apply a uniform crop margin across all pages simultaneously. The cropping happens instantly in your browser, maintaining full vector text sharpness and layout fidelity.</p>
+        </div>
+      </section>
+
+
+
 
       <!-- Ad Slot: Bottom -->
       <div class="ad-slot" aria-hidden="true">
@@ -413,21 +425,33 @@
         <h2 id="faqHeading">FAQ</h2>
         <div class="faq-list">
           <div class="faq-item">
-            <h3 class="faq-question">How do I crop pdf pages without losing text sharpness?</h3>
+            <h3 class="faq-question">Can I crop all pages in my PDF at the same time?</h3>
             <div class="faq-answer">
-              <p>By default, FileShrink updates the PDF MediaBox and CropBox coordinates directly. All fonts, vector text, and graphics remain native and sharp with zero rasterization.</p>
+              <p>Yes. You can define a crop boundary on the first page and choose to apply the same crop dimensions to every page in the document.</p>
             </div>
           </div>
           <div class="faq-item">
-            <h3 class="faq-question">What does "Cropped-out content is hidden, not deleted" mean?</h3>
+            <h3 class="faq-question">Does cropping a PDF reduce its visual resolution or sharpness?</h3>
             <div class="faq-answer">
-              <p>Standard PDF cropping hides content outside the crop border during viewing and printing. If you need sensitive data permanently purged, enable "Remove the cropped area permanently" to rasterize the page.</p>
+              <p>No. Cropping simply adjusts the visible PDF bounding box (CropBox and MediaBox), preserving original text sharpness, vector lines, and embedded images.</p>
             </div>
           </div>
           <div class="faq-item">
-            <h3 class="faq-question">Can I apply different margins to different page sizes?</h3>
+            <h3 class="faq-question">Can I crop shipping labels and barcode slips?</h3>
             <div class="faq-answer">
-              <p>Yes. The specified margin values (e.g. 50 pt on all sides) are subtracted from each page's individual dimensions, so mixed page sizes in the same file are trimmed evenly.</p>
+              <p>Yes. This tool is ideal for cropping 4x6 inch shipping labels from full-page A4 or Letter sheets so they print cleanly on thermal label printers.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">Will cropping delete text permanently or can it be adjusted?</h3>
+            <div class="faq-answer">
+              <p>The exported PDF sets the new visible viewing boundaries. Keep a copy of your original document if you ever need to restore the full uncropped borders.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">Are my uploaded PDF files kept private?</h3>
+            <div class="faq-answer">
+              <p>Yes. All rendering and cropping occurs locally on your device. Your PDF pages are never uploaded to any remote server.</p>
             </div>
           </div>
         </div>

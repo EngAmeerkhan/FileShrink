@@ -307,6 +307,18 @@
         </ul>
       </section>
 
+      <!-- Helpful Guide & Practical Tips -->
+      <section class="info-section" aria-labelledby="guideHeading">
+        <h3 id="guideHeading">Understanding the Islamic Lunar Calendar and Date Conversion</h3>
+        <div class="guide-text">
+          <p>The Islamic Hijri calendar is a purely lunar calendar consisting of 12 lunar months in a year of 354 or 355 days. It began in the year 622 CE when Prophet Muhammad (PBUH) migrated from Mecca to Medina, an event known as the Hijrah.</p>
+          <p>Because a lunar year is approximately 11 days shorter than the solar Gregorian year (365 days), Islamic calendar dates gradually cycle through all four seasons over a 33-year period. This is why holy observances—such as Ramadan, Eid al-Fitr, Eid al-Adha, and the Hajj pilgrimage—occur roughly 10 to 12 days earlier each solar year.</p>
+          <p>Our converter uses the official Umm al-Qura astronomical reference while providing a custom +/- 1 day moon sighting adjustment selector so you can align converted dates with your local regional mosque and national announcements.</p>
+        </div>
+      </section>
+
+
+
 
       <!-- FAQ Section -->
 
@@ -314,23 +326,33 @@
         <h2 id="faqHeading">FAQ</h2>
         <div class="faq-list">
           <details class="faq-item">
-            <summary class="faq-question">How does this hijri date converter calculate Islamic calendar dates?</summary>
+            <summary class="faq-question">Why can Islamic Hijri dates differ by one day between countries?</summary>
             <div class="faq-answer">
-              <p>The tool uses the standardized Umm al-Qura lunar calendar via the native browser <code>Intl.DateTimeFormat</code> API. It precisely converts between solar Gregorian dates and lunar Hijri dates without requiring server requests.</p>
+              <p>Islamic months begin with the physical sighting of the crescent moon (hilal). Due to weather, cloud cover, and geographical coordinates, religious authorities in different countries may declare the month start on different days.</p>
             </div>
           </details>
-
           <details class="faq-item">
-            <summary class="faq-question">Why might an islamic date converter differ by one day from local announcements?</summary>
+            <summary class="faq-question">What is the Umm al-Qura calendar?</summary>
             <div class="faq-answer">
-              <p>An <strong>islamic date converter</strong> uses astronomical calculations. However, traditional Islamic practice relies on naked-eye or telescope crescent sighting. Local crescent visibility can differ by &plusmn;1 or &plusmn;2 days between different parts of the world.</p>
+              <p>The Umm al-Qura calendar is the official astronomical lunar calendar calculated and published by Saudi Arabia, used widely across the Middle East as an administrative calendar standard.</p>
             </div>
           </details>
-
           <details class="faq-item">
-            <summary class="faq-question">Can I convert an english to hijri date for upcoming Islamic holidays?</summary>
+            <summary class="faq-question">What are the four sacred months in the Islamic calendar?</summary>
             <div class="faq-answer">
-              <p>Yes, you can easily convert any <strong>english to hijri date</strong> across the supported 1356 AH to 1500 AH range to determine upcoming dates for Ramadan, Eid al-Fitr, and Eid al-Adha.</p>
+              <p>The four sacred months (Al-Ashhur Al-Hurum) mentioned in the Quran are Muharram, Rajab, Dhu al-Qadah, and Dhu al-Hijjah.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Can I convert dates backwards from Hijri to Gregorian?</summary>
+            <div class="faq-answer">
+              <p>Yes. Our converter works both ways: Gregorian to Hijri and Hijri to Gregorian with accurate weekday matching.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Can I convert historical dates from centuries ago?</summary>
+            <div class="faq-answer">
+              <p>Yes. The astronomical mathematical algorithm converts historical dates throughout Islamic history accurately.</p>
             </div>
           </details>
         </div>

@@ -299,6 +299,18 @@ b </textarea>
         </ul>
       </section>
 
+      <!-- Helpful Guide & Practical Tips -->
+      <section class="info-section" aria-labelledby="guideHeading">
+        <h3 id="guideHeading">Cleaning and Deduplicating Large Text Lists and Data Files</h3>
+        <div class="guide-text">
+          <p>Repetitive duplicate lines in large datasets waste disk space, slow down database indexing, and create embarrassing errors in email marketing campaigns. Whether you are cleaning email subscriber lists, compiling keyword research spreadsheets, scrubbing server logs, or cleaning code dictionaries, deduplication is a fundamental data cleaning step.</p>
+          <p>Removing duplicates manually in text editors is tedious and prone to human error. Our tool cleans thousands of lines in milliseconds. It provides powerful controls: case-sensitive vs case-insensitive matching, trimming leading and trailing whitespace, removing empty blank lines, and preserving original line order or sorting alphabetically.</p>
+          <p>Because text datasets often contain confidential customer email addresses or proprietary research keywords, our Deduplicator runs 100% locally in your web browser. Your text never leaves your device.</p>
+        </div>
+      </section>
+
+
+
 
       <!-- FAQ Section -->
 
@@ -306,23 +318,33 @@ b </textarea>
         <h2 id="faqHeading">FAQ</h2>
         <div class="faq-list">
           <details class="faq-item">
-            <summary class="faq-question">How does this tool remove duplicate lines from lists?</summary>
+            <summary class="faq-question">How does the tool identify duplicate lines in my text?</summary>
             <div class="faq-answer">
-              <p>The tool uses an in-memory hash set to evaluate each line sequentially. When you <strong>remove duplicate lines</strong> with our utility, repeated elements are filtered out instantly according to your selected sensitivity options.</p>
+              <p>The algorithm parses your text line by line, comparing character strings. You can choose whether letter casing (e.g. 'Apple' vs 'apple') is treated as identical or unique.</p>
             </div>
           </details>
-
           <details class="faq-item">
-            <summary class="faq-question">What is the difference between keeping the first or last occurrence?</summary>
+            <summary class="faq-question">Can I deduplicate my list while preserving the original line order?</summary>
             <div class="faq-answer">
-              <p>Selecting &ldquo;Keep first occurrence&rdquo; keeps the first time a line appeared and discards subsequent repeats. Selecting &ldquo;Keep last occurrence&rdquo; tracks newer entries down the file and retains their later position.</p>
+              <p>Yes. The tool keeps the first occurrence of each unique line in its original position while stripping all subsequent duplicates.</p>
             </div>
           </details>
-
           <details class="faq-item">
-            <summary class="faq-question">Will this tool freeze on massive lists of 50,000 or 100,000 lines?</summary>
+            <summary class="faq-question">Does the tool remove invisible spaces and empty blank lines?</summary>
             <div class="faq-answer">
-              <p>No. The deduplication algorithm operates in single-pass linear time O(N), allowing typical 100,000-line datasets to process in under 100 milliseconds inside your browser.</p>
+              <p>Yes. You can toggle options to trim accidental whitespace around words and automatically eliminate empty blank lines.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">How large of a text file or list can I paste into this tool?</summary>
+            <div class="faq-answer">
+              <p>Our optimized browser algorithm processes lists containing tens of thousands of lines smoothly in a fraction of a second.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Is my customer data or email list uploaded to any server?</summary>
+            <div class="faq-answer">
+              <p>No. The deduplication runs entirely inside your browser memory using local JavaScript. Your data remains 100% private.</p>
             </div>
           </details>
         </div>

@@ -347,6 +347,18 @@
         </ul>
       </section>
 
+      <!-- Helpful Guide & Practical Tips -->
+      <section class="info-section" aria-labelledby="guideHeading">
+        <h3 id="guideHeading">How to Compress PDF Files Under 100 KB for Online Submissions</h3>
+        <div class="guide-text">
+          <p>A 100 KB limit for PDF files is one of the toughest requirements encountered on government job applications, scholarship forms, and legal tender portals. When a multi-page document or scanned salary slip is uploaded directly from a flatbed scanner, it often measures between 2 MB and 8 MB because scanners save raw uncompressed image streams.</p>
+          <p>To shrink a PDF under 100 KB while keeping numbers, text, and signatures legible, the compression engine must optimize document streams, downsample embedded images, and eliminate unneeded fonts and metadata. Greyscale or monochrome scans compress much more efficiently than full-color scans, making them ideal for meeting this tight limit.</p>
+          <p>FileShrink handles this entire optimization pipeline directly in your web browser. It renders each page onto an internal virtual canvas, fine-tunes resolution and compression ratios, and packages a compliant, lightweight PDF without sending your confidential data to third-party servers.</p>
+        </div>
+      </section>
+
+
+
 
 
       <!-- Ad Slot 3: Inside Text Section (Reserved, Zero CLS) -->
@@ -360,16 +372,34 @@
         <h2 id="faqHeading">FAQ</h2>
         <div class="faq-list">
           <div class="faq-item">
-            <h3 class="faq-question">How do I compress pdf to 100kb for government job or exam forms?</h3>
-            <p class="faq-answer">Upload your PDF file above, and FileShrink will automatically re-encode the pages to get your document under 100 KB in seconds.</p>
+            <h3 class="faq-question">How does the tool shrink a PDF under 100 KB without making text unreadable?</h3>
+            <div class="faq-answer">
+              <p>It uses intelligent raster optimization, downsampling high-DPI image layers while maintaining crisp character edges and high contrast on essential text lines and numbers.</p>
+            </div>
           </div>
           <div class="faq-item">
-            <h3 class="faq-question">Why is 100 KB required on many admission portals?</h3>
-            <p class="faq-answer">Educational and recruitment servers set 100 KB limits to ensure rapid file uploads on slow mobile data connections.</p>
+            <h3 class="faq-question">Can multi-page PDF documents be compressed under 100 KB?</h3>
+            <div class="faq-answer">
+              <p>Yes, but documents with 1 to 3 pages achieve the highest legibility. For longer documents, converting color pages to grayscale before compression produces the sharpest results.</p>
+            </div>
           </div>
           <div class="faq-item">
-            <h3 class="faq-question">Are my sensitive PDF documents uploaded to any server?</h3>
-            <p class="faq-answer">No, never. All PDF rendering and compression happens locally inside your browser, ensuring complete privacy.</p>
+            <h3 class="faq-question">Why do job and scholarship portals enforce strict 100 KB limits?</h3>
+            <div class="faq-answer">
+              <p>Large recruitment portals receive hundreds of thousands of candidate filings. Keeping individual PDF attachments under 100 KB ensures fast server indexing and prevents server crashes during peak deadlines.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">Does this PDF compression tool remove password protection?</h3>
+            <div class="faq-answer">
+              <p>If your PDF is password-protected, you must unlock it before compression so the browser engine can render and optimize the internal page streams.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">Are my sensitive tax returns or pay slips safe from data leaks?</h3>
+            <div class="faq-answer">
+              <p>Yes. All processing is 100% client-side. Your document never leaves your computer or smartphone, guaranteeing complete privacy for confidential records.</p>
+            </div>
           </div>
         </div>
       </section>

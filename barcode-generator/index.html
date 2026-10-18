@@ -344,6 +344,18 @@
         </ul>
       </section>
 
+      <!-- Helpful Guide & Practical Tips -->
+      <section class="info-section" aria-labelledby="guideHeading">
+        <h3 id="guideHeading">Understanding Barcode Symbologies, Check Digits, and Label Printing</h3>
+        <div class="guide-text">
+          <p>Barcodes are the lifeblood of modern commerce, supply chains, and inventory management. Different industries rely on specific barcode symbologies: retail consumer products outside North America use 13-digit EAN-13 barcodes, North American retail uses 12-digit UPC-A, while logistics, shipping labels, and internal inventory tracking widely use high-density Code 128 or Code 39.</p>
+          <p>A critical element of standard retail barcodes is the check digit—the final number calculated from a mathematical formula based on preceding digits. If a check digit is wrong, barcode scanners at supermarket cash registers or warehouse scanners will fail to read the label. Our generator calculates and verifies check digits automatically.</p>
+          <p>For professional printing on product boxes, stickers, or packaging, vector SVG or high-resolution PNG formats are essential. Vector SVG files can be scaled to any size without pixelation, ensuring sharp black bars and clean white quiet zones that scan instantly on optical and laser scanners.</p>
+        </div>
+      </section>
+
+
+
 
       <!-- FAQ Section -->
 
@@ -351,23 +363,33 @@
         <h2 id="faqHeading">FAQ</h2>
         <div class="faq-list">
           <details class="faq-item">
-            <summary class="faq-question">Which barcode symbologies can this barcode generator create?</summary>
+            <summary class="faq-question">Which barcode format should I choose for my retail products?</summary>
             <div class="faq-answer">
-              <p>The tool supports Code 128 (general alphanumeric text), EAN-13 (global retail products), UPC-A (North American retail goods), and Code 39 (industrial, automotive, and logistics numbering).</p>
+              <p>If you are selling products internationally, use EAN-13 (13 digits). If you are selling primarily in the United States or Canada, use UPC-A (12 digits). For internal warehouse shelves and shipping crates, Code 128 is the most versatile.</p>
             </div>
           </details>
-
           <details class="faq-item">
-            <summary class="faq-question">How does an ean 13 barcode generator calculate the mandatory 13th check digit?</summary>
+            <summary class="faq-question">What is a 'quiet zone' and why is it mandatory for barcode scanning?</summary>
             <div class="faq-answer">
-              <p>An <strong>ean 13 barcode generator</strong> multiplies odd-positioned digits by 1 and even-positioned digits by 3, sums the results, and calculates the modulo 10 difference to create an authentic GS1-compliant check digit.</p>
+              <p>The quiet zone is the blank white margin on both the left and right sides of the barcode. Without this clear white space, optical scanners cannot detect where the barcode begins and ends.</p>
             </div>
           </details>
-
           <details class="faq-item">
-            <summary class="faq-question">Can I use this barcode maker for commercial product packaging labels?</summary>
+            <summary class="faq-question">Can I scan these generated barcodes with any smartphone camera?</summary>
             <div class="faq-answer">
-              <p>Yes, this <strong>barcode maker</strong> outputs clean vector SVG and high-resolution PNG images suitable for professional label printing, box packaging, and point-of-sale inventory tracking.</p>
+              <p>Yes. Modern iPhone and Android camera apps, handheld warehouse scanners, and point-of-sale laser registers read these standard symbologies effortlessly.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Which download format is best for commercial packaging printing?</summary>
+            <div class="faq-answer">
+              <p>Download the vector SVG format for commercial printing. SVG maintains infinite resolution and sharp lines at any print scale without pixelation.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Are these barcodes free for commercial use?</summary>
+            <div class="faq-answer">
+              <p>Yes. FileShrink generates standard barcodes with zero royalties or commercial restrictions. If you need registered GS1 company prefixes for global retail, obtain them through your regional GS1 office.</p>
             </div>
           </details>
         </div>
