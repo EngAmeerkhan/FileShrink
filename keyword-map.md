@@ -3,7 +3,7 @@
 | Page URL | Primary Keyword | Page Title | H1 | Title Len | Desc Len | In Slug | In Title | In H1 | In Desc |
 |---|---|---|---|---|---|---|---|---|---|
 | `/about/` | **about fileshrink** | About Us - Free File Compression | FileShrink | About FileShrink | 45 | 141 | Yes | No | Yes | Yes |
-| `/add-page-numbers-to-pdf/` | **add page numbers to pdf** | Add Page Numbers to PDF - Free Online | FileShrink | Add Page Numbers to PDF | 50 | 156 | Yes | Yes | Yes | Yes |
+| `/add-page-numbers-to-pdf/` | **add page numbers to pdf** | Add Page Numbers to PDF - Free Online | FileShrink | Add Page Numbers to PDF | 50 | 155 | Yes | Yes | Yes | Yes |
 | `/assignment-cover-page/` | **assignment cover page** | Assignment Cover Page - Free Online | FileShrink | Assignment Cover Page | 48 | 143 | Yes | Yes | Yes | Yes |
 | `/attendance-calculator/` | **attendance calculator** | Attendance Calculator - Free Online | FileShrink | Attendance Calculator | 48 | 152 | Yes | Yes | Yes | Yes |
 | `/cgpa-calculator/` | **cgpa calculator** | CGPA Calculator - Free Online | FileShrink | CGPA Calculator | 42 | 148 | Yes | Yes | Yes | Yes |
@@ -50,7 +50,7 @@
 | `/webp-to-jpg/` | **webp to jpg** | WebP to JPG - Free Online | FileShrink | WebP to JPG | 38 | 149 | Yes | Yes | Yes | Yes |
 | `/webp-to-png/` | **webp to png** | WebP to PNG - Free Online | FileShrink | WebP to PNG | 38 | 141 | Yes | Yes | Yes | Yes |
 | `/text-to-handwriting-converter/` | **text to handwriting converter** (Secondaries: convert text to handwriting, text to handwriting, handwriting generator, assignment handwriting generator) | Text to Handwriting Converter - Free Online \| FileShrink | Text to Handwriting Converter | 57 | 154 | Yes | Yes | Yes | Yes |
-| `/youtube-thumbnail-size/` | **youtube thumbnail size** (Secondary: youtube thumbnail maker) | YouTube Thumbnail Size - Free Online \| FileShrink | YouTube Thumbnail Size | 49 | 140 | Yes | Yes | Yes | Yes |
+| `/youtube-thumbnail-size/` | **youtube thumbnail size** (Secondary: youtube thumbnail maker) | YouTube Thumbnail Size - Free Online \| FileShrink | YouTube Thumbnail Size | 49 | 145 | Yes | Yes | Yes | Yes |
 | `/instagram-profile-picture-size/` | **instagram profile picture size** (Secondary: instagram post size) | Instagram Profile Picture Size - Free \| FileShrink | Instagram Profile Picture Size | 49 | 142 | Yes | Yes | Yes | Yes |
 | `/whatsapp-dp-size/` | **whatsapp dp size** (Secondaries: whatsapp status size, whatsapp dp maker) | WhatsApp DP Size - Free Online \| FileShrink | WhatsApp DP Size | 42 | 141 | Yes | Yes | Yes | Yes |
 | `/make-photo-square/` | **make photo square** (Secondaries: (*) make picture square, (*) square crop image) | Make Photo Square - Free Online \| FileShrink | Make Photo Square | 43 | 140 | Yes | Yes | Yes | Yes |
@@ -62,14 +62,14 @@
 | `/reorder-pdf-pages/` | **reorder pdf pages** (Secondaries: rearrange pdf pages, (*) organize pdf pages) | Reorder PDF Pages - Free Online \| FileShrink | Reorder PDF Pages | 43 | 149 | Yes | Yes | Yes | Yes |
 | `/crop-pdf/` | **crop pdf** (Secondaries: (*) crop pdf pages, (*) crop pdf online) | Crop PDF - Free Online \| FileShrink | Crop PDF | 34 | 154 | Yes | Yes | Yes | Yes |
 | `/add-signature-to-pdf/` | **add signature to pdf** (Secondaries: sign pdf online, (*) sign pdf on mobile) | Add Signature to PDF - Free Online \| FileShrink | Add Signature to PDF | 45 | 154 | Yes | Yes | Yes | Yes |
-| `/add-watermark-to-pdf/` | **add watermark to pdf** (Secondaries: (*) pdf watermark, (*) watermark pdf online) | Add Watermark to PDF - Free Online \| FileShrink | Add Watermark to PDF | 45 | 154 | Yes | Yes | Yes | Yes |
+| `/add-watermark-to-pdf/` | **add watermark to pdf** (Secondaries: (*) pdf watermark, (*) watermark pdf online) | Add Watermark to PDF - Free Online \| FileShrink | Add Watermark to PDF | 47 | 148 | Yes | Yes | Yes | Yes |
 | `/loan-calculator/` | **loan calculator** (Secondaries: emi calculator, (*) loan payment calculator, (*) monthly payment calculator) | Loan Calculator - Free Online \| FileShrink | Loan Calculator | 42 | 154 | Yes | Yes | Yes | Yes |
-| `/average-calculator/` | **average calculator** (Secondaries: (*) mean median mode calculator, (*) average of numbers) | Average Calculator - Free Online \| FileShrink | Average Calculator | 45 | 153 | Yes | Yes | Yes | Yes |
+| `/average-calculator/` | **average calculator** (Secondaries: (*) mean median mode calculator, (*) average of numbers) | Average Calculator - Free Online \| FileShrink | Average Calculator | 45 | 150 | Yes | Yes | Yes | Yes |
 | `/discount-calculator/` | **discount calculator** (Secondaries: (*) sale price calculator, (*) percentage discount calculator) | Discount Calculator - Free Online \| FileShrink | Discount Calculator | 47 | 154 | Yes | Yes | Yes | Yes |
-| `/weighted-grade-calculator/` | **weighted grade calculator** (Secondaries: (*) weighted average calculator, (*) grade weight calculator) | Weighted Grade Calculator - Free Online \| FileShrink | Weighted Grade Calculator | 53 | 155 | Yes | Yes | Yes | Yes |
+| `/weighted-grade-calculator/` | **weighted grade calculator** (Secondaries: (*) weighted average calculator, (*) grade weight calculator) | Weighted Grade Calculator - Free Online \| FileShrink | Weighted Grade Calculator | 52 | 150 | Yes | Yes | Yes | Yes |
 | `/final-grade-calculator/` | **final grade calculator** (Secondaries: (*) final exam grade calculator, (*) what do i need on my final) | Final Grade Calculator - Free Online \| FileShrink | Final Grade Calculator | 49 | 151 | Yes | Yes | Yes | Yes |
 | `/hijri-date-converter/` | **hijri date converter** (Secondaries: islamic date converter, english to hijri date) | Hijri Date Converter - Free Online \| FileShrink | Hijri Date Converter | 47 | 151 | Yes | Yes | Yes | Yes |
-| `/wifi-qr-code-generator/` | **wifi qr code generator** (Secondaries: qr code generator, (*) wifi password qr code) | Wi-Fi QR Code Generator - Free Online \| FileShrink | Wi-Fi QR Code Generator | 49 | 154 | Yes | Yes | Yes | Yes |
+| `/wifi-qr-code-generator/` | **wifi qr code generator** (Secondaries: qr code generator, (*) wifi password qr code) | Wi-Fi QR Code Generator - Free Online \| FileShrink | Wi-Fi QR Code Generator | 50 | 149 | Yes | Yes | Yes | Yes |
 | `/barcode-generator/` | **barcode generator** (Secondaries: (*) barcode maker, (*) ean 13 barcode generator) | Barcode Generator - Free Online \| FileShrink | Barcode Generator | 44 | 155 | Yes | Yes | Yes | Yes |
 | `/whatsapp-link-generator/` | **whatsapp link generator** (Secondaries: (*) whatsapp chat link, (*) click to chat link) | WhatsApp Link Generator - Free Online \| FileShrink | WhatsApp Link Generator | 50 | 153 | Yes | Yes | Yes | Yes |
 | `/fancy-text-generator/` | **fancy text generator** (Secondaries: stylish name generator, (*) stylish text generator) | Fancy Text Generator - Free Online \| FileShrink | Fancy Text Generator | 48 | 147 | Yes | Yes | Yes | Yes |
