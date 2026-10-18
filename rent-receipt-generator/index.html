@@ -25,70 +25,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Rent Receipt Generator",
-        "url": "https://fileshrink.vercel.app/rent-receipt-generator/",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "All",
-        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Rent Receipt Generator",
-            "item": "https://fileshrink.vercel.app/rent-receipt-generator/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What details should be included in a house rent receipt?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "A complete house rent receipt format should state the tenant name, landlord name, rented property address, rent amount received, payment date, payment method, and rental period."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does a rent receipt format require a physical signature or revenue stamp?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "While many landlords and tenants prefer signing receipts for personal record keeping, requirements can vary depending on individual rental agreements and mutual understanding between parties."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How can tenants and landlords keep accurate rental payment records?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Using an online rent receipt generator allows you to create numbered monthly receipts for your records, helping both parties track payment history clearly throughout the lease duration."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/rent-receipt-generator/#webapp",
+      "name": "Rent Receipt Generator",
+      "url": "https://fileshrink.vercel.app/rent-receipt-generator/",
+      "description": "Create instant receipts with our free rent receipt generator. Professional house rent receipt format, live preview, no signup, no watermark. Download PDF.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/rent-receipt-generator/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Property Tools",
+          "item": "https://fileshrink.vercel.app/#property-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Rent Receipt Generator",
+          "item": "https://fileshrink.vercel.app/rent-receipt-generator/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/rent-receipt-generator/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is a rent receipt mandatory for claiming HRA tax exemption?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Employers and tax authorities require signed rent receipts as legal proof of rental payments before granting HRA income tax deductions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When is a landlord's PAN number legally required on rent receipts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In most jurisdictions (including India), if total annual rent paid exceeds Rs. 100,000 (roughly Rs. 8,333 per month), providing the landlord's PAN is mandatory by law."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need an affixed revenue stamp on rent receipts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If rent is paid in cash and exceeds statutory limits (e.g. Rs. 5,000 per receipt in India), affixing a revenue stamp with the landlord's signature across it is legally required. Electronic bank transfers often waive this requirement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I generate receipts for all 12 months of the financial year at once?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Enter your tenancy details once, and the tool will generate a full set of 12 monthly receipts formatted for easy printing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my rental and landlord information stored on any database?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. All receipt generation happens locally in your browser memory. Your rental details and landlord PAN remain completely private."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

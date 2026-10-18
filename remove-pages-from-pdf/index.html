@@ -26,79 +26,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://fileshrink.vercel.app/remove-pages-from-pdf/#app",
-        "name": "Remove Pages from PDF Tool",
-        "url": "https://fileshrink.vercel.app/remove-pages-from-pdf/",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Free online browser tool to remove pages from PDF and delete unwanted pages."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://fileshrink.vercel.app/remove-pages-from-pdf/#breadcrumbs",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "PDF Tools",
-            "item": "https://fileshrink.vercel.app/#pdf-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Remove Pages from PDF",
-            "item": "https://fileshrink.vercel.app/remove-pages-from-pdf/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://fileshrink.vercel.app/remove-pages-from-pdf/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How easily can I delete pages from PDF files?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Simply upload your document, tap the page thumbnails you wish to delete, and click Save PDF to download the cleaned file."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does removing pages affect original hyperlinks or vector text?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No, because we use direct vector PDF streams, all remaining text, bookmarks, and font structures stay completely intact."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I remove multiple non-consecutive pages at once?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, you can select any combination of pages across the entire document to remove them in one simple operation."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/remove-pages-from-pdf/#webapp",
+      "name": "Remove Pages from PDF",
+      "url": "https://fileshrink.vercel.app/remove-pages-from-pdf/",
+      "description": "Remove pages from PDF online for free. Delete pages from PDF documents instantly with no signup and no watermark. Text remains crisp and selectable.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/remove-pages-from-pdf/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "PDF Tools",
+          "item": "https://fileshrink.vercel.app/#pdf-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Remove Pages from PDF",
+          "item": "https://fileshrink.vercel.app/remove-pages-from-pdf/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/remove-pages-from-pdf/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I delete multiple pages at the same time?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can select and remove multiple individual pages or enter page ranges to delete several pages in one click."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does removing pages alter the formatting of the remaining pages?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The remaining pages retain their exact layout, text sharpness, bookmarks, and visual properties without any changes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I recover a page if I delete it by mistake?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Before downloading your final PDF, you can easily undo any deletion in the preview area. Keep your original file safe as a backup."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will deleting pages reduce my PDF file size?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Eliminating pages strips out their embedded images, text streams, and fonts, making the resulting document significantly smaller."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my personal documents processed privately?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. All page deletions happen inside your device's browser memory. Your files never touch external cloud servers."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

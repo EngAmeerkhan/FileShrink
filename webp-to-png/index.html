@@ -26,79 +26,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://fileshrink.vercel.app/webp-to-png/#app",
-        "name": "WebP to PNG Converter",
-        "url": "https://fileshrink.vercel.app/webp-to-png/",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Free online browser tool to convert WebP to PNG without uploading files."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://fileshrink.vercel.app/webp-to-png/#breadcrumbs",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Converters",
-            "item": "https://fileshrink.vercel.app/#converters"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "WebP to PNG",
-            "item": "https://fileshrink.vercel.app/webp-to-png/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://fileshrink.vercel.app/webp-to-png/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Does this webp to png tool preserve transparent backgrounds?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, PNG output retains full alpha transparency from your original WebP images with pristine clarity."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is PNG quality lossless when converting from WebP?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, our canvas rasterization accurately extracts every pixel without applying lossy compression artifacts."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I convert multiple WebP graphics at once?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, select multiple WebP files simultaneously and download all converted PNGs in one click as a ZIP file."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/webp-to-png/#webapp",
+      "name": "WebP to PNG",
+      "url": "https://fileshrink.vercel.app/webp-to-png/",
+      "description": "Convert WebP to PNG online for free. Transform WebP images into lossless PNG format with transparency preserved, no signup, and no watermark.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/webp-to-png/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Converters",
+          "item": "https://fileshrink.vercel.app/#converters"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "WebP to PNG",
+          "item": "https://fileshrink.vercel.app/webp-to-png/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/webp-to-png/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Will transparent areas in my WebP image stay transparent in PNG?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! The converter fully preserves the alpha channel, ensuring that transparent cutouts, logos, and stickers remain perfectly transparent in the exported PNG."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is PNG preferred over JPG when converting transparent WebP graphics?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "JPG does not support transparency at all; it turns transparent areas into solid white or black boxes. PNG fully supports transparent and semi-transparent pixels."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use the converted PNG in Adobe Photoshop and Canva?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. PNG is the industry standard for graphic design assets, opening seamlessly in all design, video, and office software."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does converting WebP to PNG lower image resolution or sharpness?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The conversion is lossless, meaning every single pixel from the original WebP graphic is preserved exactly in the PNG output."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this tool free to use on mobile devices?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. FileShrink works smoothly on iPhones, Android phones, iPads, and desktop computers with no installations or fees."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

@@ -26,79 +26,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://fileshrink.vercel.app/pdf-to-png/#app",
-        "name": "PDF to PNG Converter",
-        "url": "https://fileshrink.vercel.app/pdf-to-png/",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Free online browser tool to convert PDF pages into lossless PNG images without uploading files."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://fileshrink.vercel.app/pdf-to-png/#breadcrumbs",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "PDF Tools",
-            "item": "https://fileshrink.vercel.app/#pdf-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "PDF to PNG",
-            "item": "https://fileshrink.vercel.app/pdf-to-png/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://fileshrink.vercel.app/pdf-to-png/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Why choose PDF to PNG over JPG for document conversion?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "PNG uses lossless rendering, which keeps charts, mathematical symbols, and typography sharp without compression noise."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I convert and extract every page of a multi-page PDF?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, all pages are rendered into PNG cards so you can download individual pages or export all pages as a ZIP file."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is my uploaded PDF document kept private?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, everything runs directly in your local browser sandbox, meaning your PDF is never sent to any external server."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/pdf-to-png/#webapp",
+      "name": "PDF to PNG",
+      "url": "https://fileshrink.vercel.app/pdf-to-png/",
+      "description": "Convert PDF to PNG online for free. Transform PDF pages into lossless, high quality PNG images with no signup and no watermark. Fast browser converter.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/pdf-to-png/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "PDF Tools",
+          "item": "https://fileshrink.vercel.app/#pdf-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "PDF to PNG",
+          "item": "https://fileshrink.vercel.app/pdf-to-png/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/pdf-to-png/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why should I choose PNG instead of JPG when converting a PDF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PNG provides lossless visual quality. It avoids JPEG compression artifacts, making it the best choice for text-heavy documents, charts, technical blueprints, and vector illustrations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the tool handle multi-page PDF documents?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The tool renders every page as a separate PNG image. You can preview all pages and download them individually or as a single ZIP archive."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will diagrams and charts remain sharp when zoomed in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The high-resolution rendering ensures lines, axis labels, and data points remain crisp and legible even under close inspection."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I embed the converted PNG images directly into websites?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. PNG is universally supported by all modern web browsers, content management systems (like WordPress), and presentation tools."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my uploaded PDF documents private?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, 100%. All rendering happens locally on your device. No document data is ever sent across the network or stored on our servers."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

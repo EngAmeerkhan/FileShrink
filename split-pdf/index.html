@@ -26,79 +26,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://fileshrink.vercel.app/split-pdf/#app",
-        "name": "Split PDF Tool",
-        "url": "https://fileshrink.vercel.app/split-pdf/",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Free online tool to split PDF pages by custom ranges or separate all pages."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://fileshrink.vercel.app/split-pdf/#breadcrumbs",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "PDF Tools",
-            "item": "https://fileshrink.vercel.app/#pdf-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Split PDF",
-            "item": "https://fileshrink.vercel.app/split-pdf/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://fileshrink.vercel.app/split-pdf/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Does the split pdf tool keep text and fonts selectable?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, our vector PDF engine preserves all native fonts and vector content so text remains 100% searchable and selectable."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I split custom page intervals like 1-3, 5, 8-10?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, you can click thumbnails directly or type any combination of page numbers and ranges into the range box."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do I split every page into its own separate PDF?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Select 'Every page as a separate PDF' and click Split PDF to download all individual page files packed in a ZIP archive."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/split-pdf/#webapp",
+      "name": "Split PDF",
+      "url": "https://fileshrink.vercel.app/split-pdf/",
+      "description": "Split PDF files online for free. Separate PDF pages by custom page range or extract every page with no signup, no watermark, and selectable text.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/split-pdf/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "PDF Tools",
+          "item": "https://fileshrink.vercel.app/#pdf-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Split PDF",
+          "item": "https://fileshrink.vercel.app/split-pdf/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/split-pdf/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I split a large PDF into individual single-page files?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can choose to burst the document so every single page becomes its own separate, downloadable PDF file."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I split a PDF into specific custom page ranges?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Simply enter the ranges you want (like '1-5, 6-12, 13-20'), and the tool will generate separate PDF files for each specified section."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will splitting a PDF reduce its visual quality or searchability?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The splitting engine extracts the exact digital streams from the original document, preserving searchable text and original graphic quality."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I download all split files together in a ZIP archive?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. When generating multiple split files, you can download them as a convenient ZIP archive with one click."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there any file size limit for splitting PDFs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can split large documents of dozens or hundreds of pages directly on your device without paying fees or creating an account."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

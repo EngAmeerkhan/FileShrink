@@ -27,79 +27,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://fileshrink.vercel.app/instagram-profile-picture-size/#app",
-        "name": "Instagram Profile Picture Size",
-        "url": "https://fileshrink.vercel.app/instagram-profile-picture-size/",
-        "applicationCategory": "DesignApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Free online tool to format photos to Instagram profile picture size with circular preview."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://fileshrink.vercel.app/instagram-profile-picture-size/#breadcrumbs",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Image Tools",
-            "item": "https://fileshrink.vercel.app/#image-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Instagram Profile Picture Size",
-            "item": "https://fileshrink.vercel.app/instagram-profile-picture-size/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://fileshrink.vercel.app/instagram-profile-picture-size/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What is the best instagram profile picture size in pixels?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The recommended instagram profile picture size is 320 x 320 pixels for mobile displays, and 640 x 640 or 1080 x 1080 pixels for crisp high-resolution avatars on all devices."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How does the circular preview overlay help position my avatar?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Because Instagram cuts profile pictures into circles, our live circular frame lets you center your face exactly before saving so no details are cut off."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Which Instagram post sizes are supported?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "You can quickly switch between Square 1:1 (1080 x 1080), Portrait 4:5 (1080 x 1350), and Landscape 1.91:1 (1080 x 566) presets."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/instagram-profile-picture-size/#webapp",
+      "name": "Instagram Profile Picture Size",
+      "url": "https://fileshrink.vercel.app/instagram-profile-picture-size/",
+      "description": "Crop photos to perfect instagram profile picture size for free. Preview circle avatar and instagram post size with no signup and no watermark.",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/instagram-profile-picture-size/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Image Tools",
+          "item": "https://fileshrink.vercel.app/#image-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Instagram Profile Picture Size",
+          "item": "https://fileshrink.vercel.app/instagram-profile-picture-size/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/instagram-profile-picture-size/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the best resolution to upload for an Instagram profile picture?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Upload a square 1:1 image measuring at least 320 by 320 pixels. Uploading a 1000 by 1000 pixel image ensures maximum clarity on high-resolution smartphone screens."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I prevent my Instagram profile picture from getting cropped awkwardly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use our circular preview overlay. Ensure that your face or logo elements are positioned inside the inner circular guideline with ample breathing room from the outer edges."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does my Instagram profile picture look blurry after uploading?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Blurriness occurs when Instagram heavily compresses an oversized file or upscales an image that was too small. Starting with a sharp, correctly dimensioned 1:1 photo avoids distortion."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use a business logo as my profile picture?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Make sure your logo is centered and has sufficient padding around the typography so the circular mask does not cut off the first or last letters."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this tool need access to my Instagram account?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. FileShrink is a standalone photo formatting tool. It never asks for passwords, API tokens, or personal account access."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

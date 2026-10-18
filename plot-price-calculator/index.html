@@ -25,70 +25,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Plot Price Calculator",
-        "url": "https://fileshrink.vercel.app/plot-price-calculator/",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "All",
-        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Plot Price Calculator",
-            "item": "https://fileshrink.vercel.app/plot-price-calculator/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How does this plot price calculator handle differing land measurement units?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The calculator harmonizes measurements by converting your selected area and rate basis into square feet, accurately accounting for regional marla standards before calculating final totals."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Why is it important to verify the local marla size when calculating plot prices?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "In Pakistan, standard revenue land measurement uses 272.25 square feet per marla, whereas schemes like LDA in Lahore often adopt 225 square feet, and Islamabad CDA societies use 250 square feet."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do development charges and discounts affect the total plot cost?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Development charges add external infrastructure costs to the base land value, while discount percentages subtract promotional deductions before presenting the final payable price."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/plot-price-calculator/#webapp",
+      "name": "Plot Price Calculator",
+      "url": "https://fileshrink.vercel.app/plot-price-calculator/",
+      "description": "Calculate land and property rates with our free plot price calculator. Convert units, add charges, no signup, no watermark. Fast and private tool.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/plot-price-calculator/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Property Tools",
+          "item": "https://fileshrink.vercel.app/#property-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Plot Price Calculator",
+          "item": "https://fileshrink.vercel.app/plot-price-calculator/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/plot-price-calculator/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the difference between a 225 sq ft Marla and a 272.25 sq ft Marla?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Modern urban housing developments use the 225 sq ft Marla for residential planning. Government land revenue departments and rural areas use the traditional 272.25 sq ft Marla. Always verify which standard your society uses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many Marlas are in one Kanal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In both modern and traditional land measurement systems, exactly 20 Marlas make up 1 Kanal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I convert Square Yards (Gaj) into Square Feet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "One Square Yard (Gaj) equals exactly 9 Square Feet (`1 sq yd = 3 ft × 3 ft = 9 sq ft`)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What additional costs should I budget when buying a plot?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Beyond the basic land price, always budget 5% to 8% for government stamp duty, capital value tax (CVT), registration fees, society transfer charges, and agent commissions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I calculate plot prices for fractional sizes (like 7.5 Marla)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can enter any decimal plot size to calculate the exact total price and per-unit breakdown."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

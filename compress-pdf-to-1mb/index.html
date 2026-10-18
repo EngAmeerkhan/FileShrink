@@ -26,79 +26,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://fileshrink.vercel.app/compress-pdf-to-1mb/#app",
-        "name": "Compress PDF to 1MB",
-        "url": "https://fileshrink.vercel.app/compress-pdf-to-1mb/",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Free online browser tool to compress pdf to 1mb without uploading files."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://fileshrink.vercel.app/compress-pdf-to-1mb/#breadcrumbs",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "PDF Tools",
-            "item": "https://fileshrink.vercel.app/#pdf-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Compress PDF to 1MB",
-            "item": "https://fileshrink.vercel.app/compress-pdf-to-1mb/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://fileshrink.vercel.app/compress-pdf-to-1mb/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Is it possible to reduce pdf size without losing quality?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, choosing a 1MB limit helps reduce pdf size without losing quality because bigger target sizes keep better quality on images and tables. Note that text in the output becomes an image to guarantee the exact file size."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How large of a PDF can I shrink down to 1 MB?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "You can shrink PDF files that are 5 MB, 10 MB, or even 30 MB down to under 1 MB directly on your phone or laptop."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Why do email servers prefer PDFs under 1 MB?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "PDFs under 1 MB send and download immediately without bouncing due to inbox attachment quota limits."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/compress-pdf-to-1mb/#webapp",
+      "name": "Compress PDF to 1MB",
+      "url": "https://fileshrink.vercel.app/compress-pdf-to-1mb/",
+      "description": "Compress pdf to 1mb online for free. Reduce PDF document size for email and university portals with no signup and no watermark. Fast and easy.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/compress-pdf-to-1mb/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "PDF Tools",
+          "item": "https://fileshrink.vercel.app/#pdf-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Compress PDF to 1MB",
+          "item": "https://fileshrink.vercel.app/compress-pdf-to-1mb/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/compress-pdf-to-1mb/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why is 1 MB the standard limit for email attachments and business portals?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Many enterprise email servers cap individual attachments or bounce messages when total email size exceeds corporate thresholds. Keeping documents under 1 MB ensures smooth delivery to all inboxes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I compress a PDF with dozens of presentation slides down to 1 MB?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Slide decks created in PowerPoint, Keynote, or Canva compress exceptionally well, shedding unnecessary image overhead while retaining crisp text and bullet points."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will embedded hyperlinks and table of contents bookmarks still work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The optimization preserves document structure, internal page links, and external hyperlinks intact."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I compress scanned books or multi-page brochures?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The tool handles multi-page scans smoothly, reducing background noise and image bloat to meet the 1 MB target."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my confidential business contracts safe when using this tool?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Completely safe. All compression happens locally inside your browser memory. Your documents are never uploaded to any cloud server or third-party storage."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

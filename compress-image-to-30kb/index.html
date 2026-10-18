@@ -26,79 +26,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://fileshrink.vercel.app/compress-image-to-30kb/#app",
-        "name": "Compress Image to 30KB",
-        "url": "https://fileshrink.vercel.app/compress-image-to-30kb/",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Free online browser tool to compress image to 30kb without uploading files."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://fileshrink.vercel.app/compress-image-to-30kb/#breadcrumbs",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Image Tools",
-            "item": "https://fileshrink.vercel.app/#image-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Compress Image to 30KB",
-            "item": "https://fileshrink.vercel.app/compress-image-to-30kb/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://fileshrink.vercel.app/compress-image-to-30kb/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How can I compress image to 30kb for strict application portals?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Select your photo above, and FileShrink will automatically reduce photo size in kb to under 30 KB while maintaining clear readability."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Will my document picture look readable at 30 KB?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, our smart algorithm optimizes dimensions and compression balance so text, signatures, and portrait faces remain legible."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Are my files uploaded to your servers during compression?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No, all file compression occurs locally in your browser so your personal files never leave your device."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/compress-image-to-30kb/#webapp",
+      "name": "Compress Image to 30KB",
+      "url": "https://fileshrink.vercel.app/compress-image-to-30kb/",
+      "description": "Compress image to 30kb online for free. Reduce photo size in kb for government portals and job forms with no signup and no watermark. Fast and secure.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/compress-image-to-30kb/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Image Tools",
+          "item": "https://fileshrink.vercel.app/#image-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Compress Image to 30KB",
+          "item": "https://fileshrink.vercel.app/compress-image-to-30kb/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/compress-image-to-30kb/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which application forms commonly require photos under 30 KB?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "State police recruitments, staff selection commissions, railway recruitment boards (RRB), and banking clerical exams frequently specify photo sizes between 20 KB and 30 KB."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does this tool shrink photos without losing important facial details?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The tool intelligently scales the pixel dimensions and fine-tunes JPEG quantization tables in small iterative steps, stopping as soon as the file fits under 30 KB with maximum sharpness."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I compress photos that have colored backgrounds?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, but plain white or light gray backgrounds compress much more efficiently. Solid backgrounds allow the compressor to preserve greater sharpness on your face and clothes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use this tool on my iPhone or Android mobile phone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. FileShrink works seamlessly in mobile browsers including Chrome, Safari, and Firefox with no need to install any external apps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to sign up or pay to use this tool?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The tool is completely free with no registration, no daily usage limits, and no watermarks on your downloaded photos."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

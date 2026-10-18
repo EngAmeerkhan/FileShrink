@@ -25,77 +25,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Quotation Maker",
-        "url": "https://fileshrink.vercel.app/quotation-maker/",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "All",
-        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Create professional price quotations and estimates with automatic discounts, tax, and instant A4 PDF export."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Business Tools",
-            "item": "https://fileshrink.vercel.app/#business-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Quotation Maker",
-            "item": "https://fileshrink.vercel.app/quotation-maker/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How does this quotation maker calculate discounts and taxes?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The quotation maker rounds line totals to 2 decimal places, subtracts any overall discount from the subtotal, calculates tax on the discounted subtotal, and adds shipping to ensure all displayed totals add up perfectly."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I save my company logo and details for future quotations?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, enable the \"Save my business details on this device\" checkbox to securely keep your company name, logo, contact info, and tax number in your browser's private local storage."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How does the validity period work on quotations?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Entering a validity duration (such as 30 days) automatically computes the exact expiration date across calendar months so clients know when estimated pricing expires."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/quotation-maker/#webapp",
+      "name": "Quotation Maker",
+      "url": "https://fileshrink.vercel.app/quotation-maker/",
+      "description": "Create professional price estimates with our free quotation maker with no signup and no watermark. Instant PDF, quotation format, and custom templates.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/quotation-maker/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Business Tools",
+          "item": "https://fileshrink.vercel.app/#business-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Quotation Maker",
+          "item": "https://fileshrink.vercel.app/quotation-maker/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/quotation-maker/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the difference between a price quotation and an invoice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A quotation is sent before a project begins to propose costs and project scope. An invoice is sent after work is completed (or at agreed milestones) to demand payment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is an expiration or validity date essential on every quotation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An expiration date (such as 'Valid for 30 days') protects your business from raw material price inflation, vendor rate hikes, or exchange rate fluctuations that occur after you submit your quote."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I customize line items, payment terms, and project milestones?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can add detailed item descriptions, hourly or fixed rates, advance deposit percentages, and custom terms of service."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I include my company branding and logo on the quote?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Upload your logo and company details to present a polished, corporate proposal that inspires client confidence."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my proprietary pricing data stored on your servers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. All quotation generation occurs locally in your browser memory. Your client lists and proprietary rates remain strictly confidential."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

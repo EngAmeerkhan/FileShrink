@@ -25,70 +25,90 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Assignment Cover Page Maker",
-        "url": "https://fileshrink.vercel.app/assignment-cover-page/",
-        "applicationCategory": "DesignApplication",
-        "operatingSystem": "All",
-        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Assignment Cover Page",
-            "item": "https://fileshrink.vercel.app/assignment-cover-page/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How do I merge this cover page in front of my existing assignment PDF?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Download your cover page as a PDF, then open our free Merge PDF Files tool. Place your cover page as the first file and your assignment body as the second file to combine them into one document."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does this cover page maker support non-English text like Urdu or Arabic?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Our high-resolution canvas engine automatically detects right-to-left scripts such as Urdu and Arabic, preserving proper character shaping and bidirectional alignment."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I print this cover page directly on standard A4 printer paper?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. The canvas renders at 300 DPI A4 print standard (2480 x 3508 pixels). You can click Print to send it straight to your desktop printer or download the crisp vector-fitted PDF."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/assignment-cover-page/#webapp",
+      "name": "Assignment Cover Page",
+      "url": "https://fileshrink.vercel.app/assignment-cover-page/",
+      "description": "Design a custom assignment cover page for school, college, or university work. Free instant PDF export, custom styles, no signup, no watermark.",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/assignment-cover-page/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Assignment Cover Page",
+          "item": "https://fileshrink.vercel.app/assignment-cover-page/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/assignment-cover-page/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which academic formatting standards does this cover page support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The layout adheres to standard university submission formats suitable for APA, MLA, Chicago, and general institutional coursework guidelines."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I download the cover page as a printable A4 PDF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The generator exports clean, vector-rendered A4 PDF documents with standardized margins ready for desktop printing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I include my university name, department, and course code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. All essential institutional fields are fully customizable so your cover page meets your professor's specific submission instructions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the cover page include a grading evaluation rubric box?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can optionally include an instructor grading box with sections for marks, feedback comments, and teacher signature."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this cover page generator free for students?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, 100% free with no student account registration, subscriptions, or watermarks."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

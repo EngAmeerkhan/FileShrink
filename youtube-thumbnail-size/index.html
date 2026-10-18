@@ -27,79 +27,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://fileshrink.vercel.app/youtube-thumbnail-size/#app",
-        "name": "YouTube Thumbnail Size",
-        "url": "https://fileshrink.vercel.app/youtube-thumbnail-size/",
-        "applicationCategory": "DesignApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Free online browser tool to resize and crop images to YouTube thumbnail size 1280x720."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://fileshrink.vercel.app/youtube-thumbnail-size/#breadcrumbs",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Image Tools",
-            "item": "https://fileshrink.vercel.app/#image-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "YouTube Thumbnail Size",
-            "item": "https://fileshrink.vercel.app/youtube-thumbnail-size/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://fileshrink.vercel.app/youtube-thumbnail-size/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What is the recommended youtube thumbnail size?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The ideal youtube thumbnail size is 1280 x 720 pixels with a 16:9 aspect ratio and a minimum width of 640 pixels."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I fit my entire picture without cropping?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, select 'Fit the whole image' to letterbox your graphic with an artistic blurred, white, or black background."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What image file formats does YouTube accept?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "YouTube accepts JPG, PNG, and WebP files under 2 MB for standard video thumbnail uploads."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/youtube-thumbnail-size/#webapp",
+      "name": "YouTube Thumbnail Size",
+      "url": "https://fileshrink.vercel.app/youtube-thumbnail-size/",
+      "description": "Resize any photo to the official youtube thumbnail size for free. Create 1280x720 16:9 video covers with no signup and no watermark online today.",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/youtube-thumbnail-size/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Image Tools",
+          "item": "https://fileshrink.vercel.app/#image-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "YouTube Thumbnail Size",
+          "item": "https://fileshrink.vercel.app/youtube-thumbnail-size/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/youtube-thumbnail-size/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are the exact dimensions and aspect ratio for YouTube thumbnails?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The official standard is 1280 by 720 pixels with a 16:9 aspect ratio, saved in JPG, PNG, or WEBP format."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the maximum file size allowed for YouTube thumbnails?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "YouTube enforces a strict 2 MB file size limit for custom video thumbnails. Images larger than 2 MB will be rejected by YouTube Studio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why shouldn't I place text in the bottom-right corner of my thumbnail?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "YouTube displays the video length timestamp badge over the bottom-right corner. Any text, logo, or facial detail placed there will be hidden beneath the badge."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I make my thumbnail text readable on mobile phones?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use heavy, bold sans-serif fonts with high contrast (such as bright yellow or white text with dark drop shadows or outlines) and limit overlay text to 3 to 5 key words."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I resize my existing artwork or photos to 1280x720 pixels here?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Upload any artwork or photo, and FileShrink will scale and format it to exact YouTube 1280x720 specifications ready for YouTube Studio upload."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

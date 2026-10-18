@@ -26,79 +26,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://fileshrink.vercel.app/compress-image-to-20kb/#app",
-        "name": "Compress Image to 20KB",
-        "url": "https://fileshrink.vercel.app/compress-image-to-20kb/",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Free online browser tool to compress image to 20kb without uploading files."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://fileshrink.vercel.app/compress-image-to-20kb/#breadcrumbs",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Image Tools",
-            "item": "https://fileshrink.vercel.app/#image-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Compress Image to 20KB",
-            "item": "https://fileshrink.vercel.app/compress-image-to-20kb/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://fileshrink.vercel.app/compress-image-to-20kb/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How can I compress image to 20kb for government job applications?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Simply upload your photo above, and FileShrink will quickly reduce photo size in kb to under 20 KB while preserving facial clarity."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Why do government and exam portals require images under 20 KB?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Many official portals set strict 20 KB limits to ensure fast uploads on low-speed mobile internet and save database storage."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Will my photo become blurry when compressed down to 20 KB?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Our tool balances dimensions and JPEG quality to ensure your photo remains sharp enough to pass portal checks."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/compress-image-to-20kb/#webapp",
+      "name": "Compress Image to 20KB",
+      "url": "https://fileshrink.vercel.app/compress-image-to-20kb/",
+      "description": "Compress image to 20kb online for free. Reduce photo size in kb for passport photos and exam forms with no signup, no watermark, and no uploads.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/compress-image-to-20kb/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Image Tools",
+          "item": "https://fileshrink.vercel.app/#image-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Compress Image to 20KB",
+          "item": "https://fileshrink.vercel.app/compress-image-to-20kb/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/compress-image-to-20kb/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why do government and exam portals require images under 20 KB?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Official portals set strict 20 KB limits to ensure that databases do not run out of storage when millions of candidates apply. It also ensures that admit cards and exam registers load quickly in rural test centers with low internet bandwidth."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will my photo become blurry when compressed down to 20 KB?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The photo will lose some fine pixel data, but facial features like eyes, nose, and mouth will remain clear enough to pass portal checks. To minimize blur, crop the photo tightly around your face before uploading."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I compress a handwritten signature photo to under 20 KB?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. This tool is ideal for signature photos. Make sure you sign on plain white paper with a dark blue or black pen under good lighting, crop out empty paper margins, and then compress."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What image formats can I upload for compression?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can upload JPG, JPEG, PNG, or WEBP images. The tool will compress and export a clean, standardized JPG file that meets all portal requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my uploaded photo kept private and secure?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, 100%. The compression runs entirely inside your web browser using HTML5 Canvas technology. Your photo is never sent to any remote server or cloud database."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

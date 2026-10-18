@@ -27,79 +27,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://fileshrink.vercel.app/whatsapp-dp-size/#app",
-        "name": "WhatsApp DP Size",
-        "url": "https://fileshrink.vercel.app/whatsapp-dp-size/",
-        "applicationCategory": "DesignApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Free online browser tool to resize photos to WhatsApp DP size and Status with no crop square fit."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://fileshrink.vercel.app/whatsapp-dp-size/#breadcrumbs",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Image Tools",
-            "item": "https://fileshrink.vercel.app/#image-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "WhatsApp DP Size",
-            "item": "https://fileshrink.vercel.app/whatsapp-dp-size/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://fileshrink.vercel.app/whatsapp-dp-size/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What is the recommended whatsapp dp size?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The standard whatsapp dp size is 640 x 640 pixels (1:1 square ratio) which looks crisp and sharp on both Android and iOS devices."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do I make full photos fit on WhatsApp DP without cropping?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Enable 'Fit full photo (no crop)' to frame the whole portrait into a 640x640 square with a smooth blurred or white background."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I also prepare photos for WhatsApp Status stories?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, select the Status preset to frame your images in vertical 9:16 format (1080 x 1920 pixels)."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/whatsapp-dp-size/#webapp",
+      "name": "WhatsApp DP Size",
+      "url": "https://fileshrink.vercel.app/whatsapp-dp-size/",
+      "description": "Crop or fit photos to the official whatsapp dp size for free. Use this whatsapp dp maker with square fit, no signup, and no watermark online.",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/whatsapp-dp-size/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Image Tools",
+          "item": "https://fileshrink.vercel.app/#image-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "WhatsApp DP Size",
+          "item": "https://fileshrink.vercel.app/whatsapp-dp-size/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/whatsapp-dp-size/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the recommended size for a WhatsApp profile picture?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The ideal resolution is a 1:1 square photo measuring 500 by 500 pixels (or higher, such as 1080 by 1080 pixels). This prevents blurriness on WhatsApp Web and high-res phones."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I set a full-length portrait as my WhatsApp DP without cropping?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Use our padding mode to place your full-length photo inside a 1:1 square frame with white or blurred background margins so none of your photo gets cut off."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does WhatsApp crop photos into a circle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "WhatsApp uses circular avatars across chat bubbles and contact cards to create a unified modern UI. The circular preview on our tool helps you ensure your face stays centered."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will my WhatsApp DP look clear on both mobile and desktop?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. By resizing your image to clean standard dimensions without over-compression, your profile photo will look sharp on phones, tablets, and desktop computers alike."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my photo private when using this tool?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. FileShrink operates 100% locally in your web browser. Your photo is never sent to WhatsApp, external servers, or cloud storage."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

@@ -26,79 +26,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://fileshrink.vercel.app/compress-pdf-to-2mb/#app",
-        "name": "Compress PDF to 2MB",
-        "url": "https://fileshrink.vercel.app/compress-pdf-to-2mb/",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Free online browser tool to compress pdf to 2mb without uploading files."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://fileshrink.vercel.app/compress-pdf-to-2mb/#breadcrumbs",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "PDF Tools",
-            "item": "https://fileshrink.vercel.app/#pdf-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Compress PDF to 2MB",
-            "item": "https://fileshrink.vercel.app/compress-pdf-to-2mb/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://fileshrink.vercel.app/compress-pdf-to-2mb/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Can I reduce pdf size without losing quality when aiming for 2MB?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "A 2MB target keeps much higher visual clarity than smaller sizes, though pages are rendered as images so text in the compressed result will not be selectable."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How many pages can I compress in one PDF document?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "You can compress multi-page PDFs of 10 to 50 pages directly in your browser with real-time page progress."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What if my original PDF is already under 2MB?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "FileShrink detects if your file already meets the 2MB size limit and lets you download it directly without unnecessary compression."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/compress-pdf-to-2mb/#webapp",
+      "name": "Compress PDF to 2MB",
+      "url": "https://fileshrink.vercel.app/compress-pdf-to-2mb/",
+      "description": "Compress pdf to 2mb online for free. Shrink large multi-page PDF documents for admissions and portals with no signup and no watermark. Fast and secure.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/compress-pdf-to-2mb/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "PDF Tools",
+          "item": "https://fileshrink.vercel.app/#pdf-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Compress PDF to 2MB",
+          "item": "https://fileshrink.vercel.app/compress-pdf-to-2mb/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/compress-pdf-to-2mb/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why do university thesis portals enforce a 2 MB limit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Academic repositories store millions of dissertations. Limiting files to 2 MB ensures rapid digital library search, smooth mobile reading, and efficient long-term server archiving."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will architectural drawings and scientific plots stay sharp under 2 MB?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Vector line art, mathematical plots, and CAD diagrams remain perfectly crisp because vector paths do not lose resolution during stream optimization."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I compress a 50 MB scanned PDF file down to 2 MB?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. High-resolution scanner files contain massive amounts of redundant pixel data that compress dramatically without visible degradation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does compressing a PDF to 2 MB alter page orientation or order?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Every page retains its original dimensions, portrait or landscape orientation, and sequential order."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there any fee or subscription required for large PDF files?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. FileShrink is completely free for all document sizes, with no subscriptions, trials, or hidden fees."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

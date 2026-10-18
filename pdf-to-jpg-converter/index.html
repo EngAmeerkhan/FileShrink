@@ -26,79 +26,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://fileshrink.vercel.app/pdf-to-jpg-converter/#app",
-        "name": "PDF to JPG Converter",
-        "url": "https://fileshrink.vercel.app/pdf-to-jpg-converter/",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Free online browser tool to convert PDF pages into high quality JPG images without uploading files."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://fileshrink.vercel.app/pdf-to-jpg-converter/#breadcrumbs",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "PDF Tools",
-            "item": "https://fileshrink.vercel.app/#pdf-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "PDF to JPG Converter",
-            "item": "https://fileshrink.vercel.app/pdf-to-jpg-converter/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://fileshrink.vercel.app/pdf-to-jpg-converter/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How does this pdf to jpg converter render each page?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Every page of your PDF is accurately rasterized into sharp JPG format directly in your browser using high-resolution canvas rendering."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I convert a long PDF to JPG and download all pages together?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, once rendered, you can download any single page or save all pages bundled in a single ZIP package."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I choose high quality for text-heavy documents?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, select High quality mode before converting to ensure tiny text and fine print remain completely crisp."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/pdf-to-jpg-converter/#webapp",
+      "name": "PDF to JPG Converter",
+      "url": "https://fileshrink.vercel.app/pdf-to-jpg-converter/",
+      "description": "Free online PDF to JPG converter. Convert multi-page PDF to JPG images with high quality, ZIP download, no signup, and no watermark. Fast and secure.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/pdf-to-jpg-converter/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "PDF Tools",
+          "item": "https://fileshrink.vercel.app/#pdf-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "PDF to JPG Converter",
+          "item": "https://fileshrink.vercel.app/pdf-to-jpg-converter/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/pdf-to-jpg-converter/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Will the converted JPG images maintain sharp text and numbers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Our converter renders PDF pages at high DPI resolution, ensuring that fine text, mathematical formulas, and small numbers remain completely readable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I convert just one specific page instead of the entire PDF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can select specific pages to download individually, or convert the entire document with one click."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I download all converted pages at once?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When converting multi-page documents, click 'Download All as ZIP' to receive an organized archive containing all your page images."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I convert password-protected PDF files?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You will need to enter the document password to unlock the file before conversion so the browser engine can render the pages."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there any watermark added to the converted JPG images?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Never. Your exported JPG images remain 100% clean, professional, and free of any watermarks or branding."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

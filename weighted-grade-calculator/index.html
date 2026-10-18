@@ -25,77 +25,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Weighted Grade Calculator",
-        "url": "https://fileshrink.vercel.app/weighted-grade-calculator/",
-        "applicationCategory": "EducationalApplication",
-        "operatingSystem": "All",
-        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Calculate overall weighted class scores, assignment points, and normalized grades online."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Calculators",
-            "item": "https://fileshrink.vercel.app/#student-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Weighted Grade Calculator",
-            "item": "https://fileshrink.vercel.app/weighted-grade-calculator/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How does this tool function as a weighted average calculator for academic courses?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "By multiplying each assignment score by its assigned syllabus weight and summing the points, this tool functions as an exact weighted average calculator for university and high school classes."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What happens if my category weights do not add up to 100 percent?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The calculator displays both your cumulative points earned out of the entered weight and normalizes the final score to an equivalent 100 percent scale."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I enter points earned out of total points possible instead of percentages?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Switch the grade toggle from percentage to 'Points Earned / Possible' to input raw homework or quiz points without having to pre-calculate percentages."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/weighted-grade-calculator/#webapp",
+      "name": "Weighted Grade Calculator",
+      "url": "https://fileshrink.vercel.app/weighted-grade-calculator/",
+      "description": "Calculate overall class scores and category weights with our free weighted grade calculator. Accurate, fast results with no signup or download needed.",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/weighted-grade-calculator/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Student Tools",
+          "item": "https://fileshrink.vercel.app/#student-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Weighted Grade Calculator",
+          "item": "https://fileshrink.vercel.app/weighted-grade-calculator/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/weighted-grade-calculator/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What happens if my syllabus category weights do not add up to 100%?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our calculator automatically normalizes your weights proportionally so you still get an accurate current grade even if some assignments have not yet been completed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I calculate my current grade before the final exam is taken?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Leave the final exam category blank or set its weight aside. The calculator computes your running course average based solely on the work completed to date."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I drop my lowest quiz or homework assignment score?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. If your instructor drops the lowest score, simply exclude that lowest mark when entering your category average."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this calculator support letter grades or percentages?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can enter percentage scores, fractional point ratios (e.g. 45 out of 50 points), or letter grades based on standard conversion scales."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my academic data kept private?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. All grading calculations run in your web browser memory. No grades or personal details are ever stored or shared."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

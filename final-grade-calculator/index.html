@@ -25,77 +25,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Final Grade Calculator",
-        "url": "https://fileshrink.vercel.app/final-grade-calculator/",
-        "applicationCategory": "EducationalApplication",
-        "operatingSystem": "All",
-        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Calculate what score you need on your final exam to earn your target semester grade."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Calculators",
-            "item": "https://fileshrink.vercel.app/#student-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Final Grade Calculator",
-            "item": "https://fileshrink.vercel.app/final-grade-calculator/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How does the final grade calculator determine what score I need on my exam?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The tool uses the standard syllabus formula: Needed Score = (Target Grade - Current Grade × (1 - Exam Weight)) ÷ Exam Weight. This isolates exactly how many points your final examination must contribute."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Why is a dedicated final exam grade calculator better than doing mental math?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Using a dedicated final exam grade calculator prevents costly rounding mistakes and instantly reveals whether your target is already secured or if it requires extra credit."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can this tool answer what do i need on my final if my target is already locked in?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, if your coursework points already guarantee your desired grade, the tool clearly informs you that even a 0% keeps your target secure."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/final-grade-calculator/#webapp",
+      "name": "Final Grade Calculator",
+      "url": "https://fileshrink.vercel.app/final-grade-calculator/",
+      "description": "Calculate your required exam score with our free final grade calculator. See target grade tables and what-if test scenarios with no signup or download.",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/final-grade-calculator/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Calculators",
+          "item": "https://fileshrink.vercel.app/#student-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Final Grade Calculator",
+          "item": "https://fileshrink.vercel.app/final-grade-calculator/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/final-grade-calculator/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What formula does this final grade calculator use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The formula is: `Needed Exam Score = [Target Grade − (Current Grade × (1 − Exam Weight))] ÷ Exam Weight`, where weights are expressed as decimals (e.g. 30% = 0.30)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does it mean if the calculator says I need a negative score?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A negative or 0% needed score means you have already accumulated enough course points! Even if you score 0% on the final exam, your overall grade will not fall below your target."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I do if the required score is greater than 100%?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If the required score exceeds 100%, your target grade cannot be achieved through the final exam alone unless your professor offers bonus extra credit questions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I find the weight percentage of my final exam?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Check your course syllabus or grading rubric provided at the beginning of the semester. It will list the percentage breakdown for homework, quizzes, midterms, and the final."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I test multiple 'what-if' scenarios?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Use our interactive what-if slider to see exactly what your overall course grade will be based on different hypothetical final exam scores."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

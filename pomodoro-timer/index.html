@@ -29,70 +29,90 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Pomodoro Timer",
-        "url": "https://fileshrink.vercel.app/pomodoro-timer/",
-        "applicationCategory": "ProductivityApplication",
-        "operatingSystem": "All",
-        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Pomodoro Timer",
-            "item": "https://fileshrink.vercel.app/pomodoro-timer/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Why is timestamp-based timing more accurate than counting seconds?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Browsers often throttle JavaScript timers in background tabs to save power. Our tool calculates remaining time by comparing the exact current system timestamp against the target end time, ensuring 100% precision."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How many Pomodoro sessions should I do before taking a long break?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The classic technique recommends four consecutive 25-minute focus intervals separated by short 5-minute pauses, followed by an extended 15 to 30-minute restorative break."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does the timer keep running if I switch tabs or lock my phone screen?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. The timer updates live in your browser tab title. You can also turn on the 'Keep screen on' toggle on supported devices so your display stays awake during your study session."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/pomodoro-timer/#webapp",
+      "name": "Pomodoro Timer",
+      "url": "https://fileshrink.vercel.app/pomodoro-timer/",
+      "description": "Focus better and manage study breaks with an accurate pomodoro timer. Free online timer with custom intervals, alerts, no signup, and zero downloads.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/pomodoro-timer/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Pomodoro Timer",
+          "item": "https://fileshrink.vercel.app/pomodoro-timer/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/pomodoro-timer/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why is 25 minutes considered the ideal sprint duration?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Twenty-five minutes is short enough that your brain does not resist starting a difficult task, yet long enough to sink into deep, uninterrupted concentration without mental exhaustion."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I do during the 5-minute break?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Step away from your screen! Stand up, stretch, drink water, look out a window, or do light breathing exercises. Avoid checking social media or email, as digital screens prevent mental recovery."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I do if I get interrupted during a 25-minute sprint?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If an urgent interruption occurs, pause or reset the timer. For minor distractions (like remembering an errand), jot it on a notepad and immediately return to your task until the timer rings."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I customize the sprint and break lengths?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. While 25/5 is the classic interval, you can customize work durations (such as 50 minutes of work and 10 minutes of break) to suit your personal working style."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the timer work if I switch browser tabs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The timer updates its countdown in the browser tab title and can sound an audio alert when your sprint or break ends."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 

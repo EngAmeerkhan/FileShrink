@@ -27,79 +27,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://fileshrink.vercel.app/add-white-border-to-photo/#app",
-        "name": "Add White Border to Photo",
-        "url": "https://fileshrink.vercel.app/add-white-border-to-photo/",
-        "applicationCategory": "DesignApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Free online browser tool to add white border to photo with square padding and custom frame options."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://fileshrink.vercel.app/add-white-border-to-photo/#breadcrumbs",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Image Tools",
-            "item": "https://fileshrink.vercel.app/#image-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Add White Border to Photo",
-            "item": "https://fileshrink.vercel.app/add-white-border-to-photo/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://fileshrink.vercel.app/add-white-border-to-photo/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How can I add white border to photo files online?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Upload your picture above, adjust the border slider from 0 to 300 px, and download your bordered photo instantly."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I add border to photo without changing the total image size?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, enable 'Keep the original total size'. This shrinks your photo slightly inside the frame so total pixel dimensions stay identical."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I choose colors other than white for my photo border?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, you can choose black, dark gray, or pick any custom hex color code using the color swatch selector."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/add-white-border-to-photo/#webapp",
+      "name": "Add White Border to Photo",
+      "url": "https://fileshrink.vercel.app/add-white-border-to-photo/",
+      "description": "Easily add white border to photo online for free. Create a stylish white frame for photo with no signup and no watermark on your device now.",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/add-white-border-to-photo/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Image Tools",
+          "item": "https://fileshrink.vercel.app/#image-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Add White Border to Photo",
+          "item": "https://fileshrink.vercel.app/add-white-border-to-photo/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/add-white-border-to-photo/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How wide should a white border be for Instagram posts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A border width between 5% and 10% of the image size provides a clean, modern aesthetic without shrinking your photo too much on mobile screens."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will adding a white border reduce my photo's resolution?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The tool adds border padding around your original pixels without downscaling, exporting a high-resolution file suitable for both screens and physical prints."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I choose different border colors like black or cream?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can select classic white, sleek black, or soft neutral tones to complement the mood and color palette of your photograph."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I print photos with borders on standard home printers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Bordered photos look fantastic when printed on 4x6 or 5x7 inch glossy photo paper, creating instant frame-ready physical prints."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the tool add any watermarks to my bordered photos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Never. FileShrink produces clean, unbranded images with zero watermarks or advertising stamps."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

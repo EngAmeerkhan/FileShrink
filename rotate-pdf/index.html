@@ -27,49 +27,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://fileshrink.vercel.app/rotate-pdf/#app",
-        "name": "Rotate PDF",
-        "url": "https://fileshrink.vercel.app/rotate-pdf/",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Free online browser tool to permanently rotate PDF pages individually or in bulk."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://fileshrink.vercel.app/rotate-pdf/#breadcrumbs",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "PDF Tools",
-            "item": "https://fileshrink.vercel.app/#pdf-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Rotate PDF",
-            "item": "https://fileshrink.vercel.app/rotate-pdf/"
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/rotate-pdf/#webapp",
+      "name": "Rotate PDF",
+      "url": "https://fileshrink.vercel.app/rotate-pdf/",
+      "description": "Rotate pdf files online for free. Permanently rotate upside-down pages with no signup and no watermark. Fast browser tool with live thumbnail previews.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/rotate-pdf/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "PDF Tools",
+          "item": "https://fileshrink.vercel.app/#pdf-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Rotate PDF",
+          "item": "https://fileshrink.vercel.app/rotate-pdf/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/rotate-pdf/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I rotate just one sideways page without rotating the whole document?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can rotate individual pages independently or choose to rotate all pages simultaneously with one click."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the rotation permanent when I download the new PDF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The tool updates the internal /Rotate dictionary for each page, ensuring the document opens in the correct orientation in every PDF viewer and printer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will rotating my PDF degrade font sharpness or image quality?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not at all. Rotating changes only the coordinate orientation matrix; it does not re-compress or degrade any text, lines, or images."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I rotate landscape pages into portrait orientation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can rotate clockwise or counter-clockwise by 90-degree increments until your landscape pages align to portrait, or vice versa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my personal documents secure while rotating?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, 100%. The rotation occurs entirely within your web browser. Your files are never uploaded across the internet."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

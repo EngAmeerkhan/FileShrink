@@ -26,79 +26,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://fileshrink.vercel.app/webp-to-jpg/#app",
-        "name": "WebP to JPG Converter",
-        "url": "https://fileshrink.vercel.app/webp-to-jpg/",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Free online browser tool to convert WebP to JPG without uploading files."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://fileshrink.vercel.app/webp-to-jpg/#breadcrumbs",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Converters",
-            "item": "https://fileshrink.vercel.app/#converters"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "WebP to JPG",
-            "item": "https://fileshrink.vercel.app/webp-to-jpg/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://fileshrink.vercel.app/webp-to-jpg/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Why do I need to convert webp to jpg?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Many legacy software programs, offline photo viewers, and government submission portals do not support modern WebP format."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I convert multiple WebP pictures together?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, drop all your WebP images at once to convert them simultaneously and download a single ZIP file."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Will converting WebP to JPG harm the visual clarity?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Our high-precision canvas engine exports at high quality (92% default) so colors and details stay crisp."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/webp-to-jpg/#webapp",
+      "name": "WebP to JPG",
+      "url": "https://fileshrink.vercel.app/webp-to-jpg/",
+      "description": "Convert WebP to JPG online for free in your browser. Fast batch image converter with quality slider, no signup, and no watermark. Secure and private.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/webp-to-jpg/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Converters",
+          "item": "https://fileshrink.vercel.app/#converters"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "WebP to JPG",
+          "item": "https://fileshrink.vercel.app/webp-to-jpg/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/webp-to-jpg/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why do images downloaded from the web often save as WebP instead of JPG?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Websites use WebP because it speeds up page loading times by reducing image file size by 25% to 35% compared to standard JPEGs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will converting WebP to JPG reduce visual image quality?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The converter decodes the WebP bitmap data directly and encodes it into a high-quality JPG, preserving sharp details and accurate color saturation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I open the converted JPG on older computers and office software?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. JPG is universally supported across every operating system, smartphone, photo editing program, and office suite manufactured over the last 30 years."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I convert multiple WebP images in one session?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can convert as many WebP images as you need without daily usage limits or paywalls."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my images uploaded to any remote server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The conversion is performed 100% on the client side using your browser's internal engine. Your files remain private on your computer."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

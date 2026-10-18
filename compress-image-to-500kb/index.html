@@ -26,79 +26,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://fileshrink.vercel.app/compress-image-to-500kb/#app",
-        "name": "Compress Image to 500KB",
-        "url": "https://fileshrink.vercel.app/compress-image-to-500kb/",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Free online browser tool to compress image to 500kb without uploading files."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://fileshrink.vercel.app/compress-image-to-500kb/#breadcrumbs",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Image Tools",
-            "item": "https://fileshrink.vercel.app/#image-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Compress Image to 500KB",
-            "item": "https://fileshrink.vercel.app/compress-image-to-500kb/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://fileshrink.vercel.app/compress-image-to-500kb/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "When should I compress image to 500kb instead of smaller sizes?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The 500 KB target is perfect for large certificates, high-resolution ID scans, and resume profile photos where you need crystal-clear clarity."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I reduce photo size in kb from 10MB down to 500KB?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, our client-side compressor smoothly downscales high-megapixel camera photos directly on your phone or computer."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Will the resulting 500 KB image contain any watermarks?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Never. FileShrink produces clean, unbranded JPG images with zero watermarks."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/compress-image-to-500kb/#webapp",
+      "name": "Compress Image to 500KB",
+      "url": "https://fileshrink.vercel.app/compress-image-to-500kb/",
+      "description": "Compress image to 500kb online for free. Reduce photo size in kb for high resolution photos and forms with no signup and no watermark. Fast and secure.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/compress-image-to-500kb/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Image Tools",
+          "item": "https://fileshrink.vercel.app/#image-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Compress Image to 500KB",
+          "item": "https://fileshrink.vercel.app/compress-image-to-500kb/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/compress-image-to-500kb/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why is 500 KB the ideal size for web publishing and email attachments?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "At 500 KB, an image loads almost instantaneously on modern mobile connections while providing enough pixel resolution for crisp full-screen display on laptops and tablets."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I compress DSLR camera RAW or large JPEG files to 500 KB?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can upload large JPEG, PNG, or WEBP exports from professional cameras, and FileShrink will quickly scale and compress them under 500 KB."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will compressing an image strip out my private location data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. In-browser canvas processing naturally discards EXIF metadata, including your GPS coordinates and device serial numbers, protecting your personal privacy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I re-compress an image if I need it even smaller?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can use our other dedicated tools (like 100 KB or 50 KB) if your portal has an even tighter requirement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there any subscription fee for compressing large photos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. FileShrink is 100% free with no hidden fees, subscriptions, or watermarks."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

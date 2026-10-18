@@ -26,79 +26,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://fileshrink.vercel.app/compress-pdf-to-500kb/#app",
-        "name": "Compress PDF to 500KB",
-        "url": "https://fileshrink.vercel.app/compress-pdf-to-500kb/",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Free online browser tool to compress pdf to 500kb without uploading files."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://fileshrink.vercel.app/compress-pdf-to-500kb/#breadcrumbs",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "PDF Tools",
-            "item": "https://fileshrink.vercel.app/#pdf-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Compress PDF to 500KB",
-            "item": "https://fileshrink.vercel.app/compress-pdf-to-500kb/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://fileshrink.vercel.app/compress-pdf-to-500kb/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How can I reduce pdf size without losing quality?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Selecting a 500 KB target lets you reduce pdf size without losing quality on diagrams and scanned pages because bigger target sizes keep better quality. Keep in mind that text in the resulting PDF becomes an image to guarantee the exact file size."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Why is 500 KB the ideal size for PDF resumes and portfolios?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "A 500 KB PDF maintains crisp readability for complex fonts and graphics while staying small enough for email attachments and HR job portals."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Are my confidential contracts or banking PDFs safe?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, completely safe. Processing takes place on your device canvas only, with zero server uploads."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/compress-pdf-to-500kb/#webapp",
+      "name": "Compress PDF to 500KB",
+      "url": "https://fileshrink.vercel.app/compress-pdf-to-500kb/",
+      "description": "Compress pdf to 500kb online for free. Reduce PDF document size for official forms, contracts, and email with no signup and no watermark. Fast.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/compress-pdf-to-500kb/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "PDF Tools",
+          "item": "https://fileshrink.vercel.app/#pdf-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Compress PDF to 500KB",
+          "item": "https://fileshrink.vercel.app/compress-pdf-to-500kb/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/compress-pdf-to-500kb/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which portals and platforms mandate a 500 KB PDF limit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Corporate job applicant tracking systems (ATS), legal document filing systems, government grant portals, and tender e-procurement sites standardly mandate files under 500 KB."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will vector text and fonts remain sharp when zooming in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The compression focuses on optimizing heavy embedded raster images and stream bloat, leaving native vector text lines and layout geometry razor sharp."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I compress a 20-page document under 500 KB?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Text-based documents can easily span dozens of pages under 500 KB. If your document contains heavy full-page color scans, the engine automatically balances resolution to fit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How fast is the in-browser PDF compression?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most documents are processed in 1 to 3 seconds directly on your device, saving you time compared to cloud converters that require uploading and downloading large files."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does FileShrink add any watermarks to my compressed PDF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Never. Your output PDF remains 100% clean, professional, and free of any watermarks or advertising stamps."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

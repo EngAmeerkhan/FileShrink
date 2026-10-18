@@ -25,77 +25,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Remove Duplicate Lines",
-        "url": "https://fileshrink.vercel.app/remove-duplicate-lines/",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "All",
-        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Delete repeating rows, trim whitespace, remove blank lines, and sort unique list entries."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Text Tools",
-            "item": "https://fileshrink.vercel.app/#text-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Remove Duplicate Lines",
-            "item": "https://fileshrink.vercel.app/remove-duplicate-lines/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How does this tool remove duplicate lines from lists?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The tool uses a high-speed in-memory Set index to check each line. It filters out identical entries based on your case-sensitivity and whitespace trimming choices."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the difference between keeping the first or last occurrence?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Keeping the first occurrence preserves the line's original position from the top of the file, while keeping the last occurrence retains its latest position towards the bottom."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Will this tool freeze on massive lists of 50,000 or 100,000 lines?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No, the JavaScript algorithm uses single-pass hash sets capable of filtering 100,000 lines in less than 100 milliseconds directly inside your browser."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/remove-duplicate-lines/#webapp",
+      "name": "Remove Duplicate Lines",
+      "url": "https://fileshrink.vercel.app/remove-duplicate-lines/",
+      "description": "Clean and remove duplicate lines online with our free tool with no signup and no watermark. Delete repeat entries, trim whitespace, and sort instantly.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/remove-duplicate-lines/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Text Tools",
+          "item": "https://fileshrink.vercel.app/#text-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Remove Duplicate Lines",
+          "item": "https://fileshrink.vercel.app/remove-duplicate-lines/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/remove-duplicate-lines/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does the tool identify duplicate lines in my text?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The algorithm parses your text line by line, comparing character strings. You can choose whether letter casing (e.g. 'Apple' vs 'apple') is treated as identical or unique."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I deduplicate my list while preserving the original line order?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The tool keeps the first occurrence of each unique line in its original position while stripping all subsequent duplicates."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the tool remove invisible spaces and empty blank lines?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can toggle options to trim accidental whitespace around words and automatically eliminate empty blank lines."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How large of a text file or list can I paste into this tool?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our optimized browser algorithm processes lists containing tens of thousands of lines smoothly in a fraction of a second."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my customer data or email list uploaded to any server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The deduplication runs entirely inside your browser memory using local JavaScript. Your data remains 100% private."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

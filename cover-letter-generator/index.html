@@ -25,70 +25,90 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Cover Letter Generator",
-        "url": "https://fileshrink.vercel.app/cover-letter-generator/",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "All",
-        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Cover Letter Generator",
-            "item": "https://fileshrink.vercel.app/cover-letter-generator/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Why should I use an online cover letter generator instead of writing from scratch?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "A cover letter generator organizes your contact information, recipient details, and body paragraphs into a standard format. It saves you time formatting so you can focus on tailoring your skills."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How long should a cover letter be?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Keep your cover letter between 250 and 400 words, fitting cleanly on a single page. Employers review many applications and appreciate concise letters that focus directly on relevant skills."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Should I submit my cover letter as a PDF or text file?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "A PDF document is recommended because it locks your formatting, margins, and typography on every computer or phone. Only use plain text if an online application form specifically asks for it."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/cover-letter-generator/#webapp",
+      "name": "Cover Letter Generator",
+      "url": "https://fileshrink.vercel.app/cover-letter-generator/",
+      "description": "Create a clean application letter with our free cover letter generator. Fast browser export, customizable templates, no signup, and no watermark.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/cover-letter-generator/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Cover Letter Generator",
+          "item": "https://fileshrink.vercel.app/cover-letter-generator/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/cover-letter-generator/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why is a tailored cover letter important when applying for jobs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tailored cover letters demonstrate genuine interest and explain how your specific skills solve the hiring manager's immediate business needs, setting you apart from candidates who submit generic resumes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long should an ideal professional cover letter be?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A strong cover letter should be concise—typically between 250 and 350 words, fitting neatly onto a single page without crowding margins."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I download my generated cover letter as a clean PDF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can export a beautifully formatted PDF document with matching header typography, ready for direct email or portal upload."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use this tool to apply for remote work opportunities?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The generator includes prompts that highlight remote communication, self-management, and asynchronous collaboration strengths."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my personal career and contact information kept confidential?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The cover letter is compiled 100% inside your web browser. None of your personal details, resumes, or letters are stored on any server."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

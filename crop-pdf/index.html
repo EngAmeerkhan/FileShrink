@@ -27,49 +27,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://fileshrink.vercel.app/crop-pdf/#app",
-        "name": "Crop PDF",
-        "url": "https://fileshrink.vercel.app/crop-pdf/",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Free online browser tool to crop PDF pages, trim white margins, and adjust document borders."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://fileshrink.vercel.app/crop-pdf/#breadcrumbs",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "PDF Tools",
-            "item": "https://fileshrink.vercel.app/#pdf-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Crop PDF",
-            "item": "https://fileshrink.vercel.app/crop-pdf/"
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/crop-pdf/#webapp",
+      "name": "Crop PDF",
+      "url": "https://fileshrink.vercel.app/crop-pdf/",
+      "description": "Crop pdf files and trim margins online for free. Adjust page borders visually with no signup and no watermark. Fast client-side tool with instant preview.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/crop-pdf/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "PDF Tools",
+          "item": "https://fileshrink.vercel.app/#pdf-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Crop PDF",
+          "item": "https://fileshrink.vercel.app/crop-pdf/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/crop-pdf/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I crop all pages in my PDF at the same time?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can define a crop boundary on the first page and choose to apply the same crop dimensions to every page in the document."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does cropping a PDF reduce its visual resolution or sharpness?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Cropping simply adjusts the visible PDF bounding box (CropBox and MediaBox), preserving original text sharpness, vector lines, and embedded images."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I crop shipping labels and barcode slips?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. This tool is ideal for cropping 4x6 inch shipping labels from full-page A4 or Letter sheets so they print cleanly on thermal label printers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will cropping delete text permanently or can it be adjusted?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The exported PDF sets the new visible viewing boundaries. Keep a copy of your original document if you ever need to restore the full uncropped borders."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my uploaded PDF files kept private?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. All rendering and cropping occurs locally on your device. Your PDF pages are never uploaded to any remote server."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

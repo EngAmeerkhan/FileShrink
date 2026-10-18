@@ -25,77 +25,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Barcode Generator",
-        "url": "https://fileshrink.vercel.app/barcode-generator/",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "All",
-        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Generate Code 128, EAN-13, UPC-A, and Code 39 barcodes with live check digit calculation and vector SVG export."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Generators",
-            "item": "https://fileshrink.vercel.app/#generator-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Barcode Generator",
-            "item": "https://fileshrink.vercel.app/barcode-generator/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Which barcode symbologies can this barcode generator create?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The tool supports Code 128 (general alphanumeric text), EAN-13 (global retail products), UPC-A (North American retail goods), and Code 39 (industrial, automotive, and logistics numbering)."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How does an ean 13 barcode generator calculate the mandatory 13th check digit?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "An ean 13 barcode generator multiplies odd-positioned digits by 1 and even-positioned digits by 3, sums the results, and calculates the modulo 10 difference to create an authentic GS1-compliant check digit."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I use this barcode maker for commercial product packaging labels?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, this barcode maker outputs clean vector SVG and high-resolution PNG images suitable for professional label printing, box packaging, and point-of-sale inventory tracking."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/barcode-generator/#webapp",
+      "name": "Barcode Generator",
+      "url": "https://fileshrink.vercel.app/barcode-generator/",
+      "description": "Create custom Code 128, EAN-13, and UPC-A barcodes with our free barcode generator. Fast check digit calculations and instant SVG download with no signup.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/barcode-generator/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Generators",
+          "item": "https://fileshrink.vercel.app/#generator-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Barcode Generator",
+          "item": "https://fileshrink.vercel.app/barcode-generator/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/barcode-generator/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which barcode format should I choose for my retail products?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If you are selling products internationally, use EAN-13 (13 digits). If you are selling primarily in the United States or Canada, use UPC-A (12 digits). For internal warehouse shelves and shipping crates, Code 128 is the most versatile."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a 'quiet zone' and why is it mandatory for barcode scanning?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The quiet zone is the blank white margin on both the left and right sides of the barcode. Without this clear white space, optical scanners cannot detect where the barcode begins and ends."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I scan these generated barcodes with any smartphone camera?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Modern iPhone and Android camera apps, handheld warehouse scanners, and point-of-sale laser registers read these standard symbologies effortlessly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which download format is best for commercial packaging printing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Download the vector SVG format for commercial printing. SVG maintains infinite resolution and sharp lines at any print scale without pixelation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are these barcodes free for commercial use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. FileShrink generates standard barcodes with zero royalties or commercial restrictions. If you need registered GS1 company prefixes for global retail, obtain them through your regional GS1 office."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

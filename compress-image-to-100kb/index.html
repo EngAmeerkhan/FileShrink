@@ -26,79 +26,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://fileshrink.vercel.app/compress-image-to-100kb/#app",
-        "name": "Compress Image to 100KB",
-        "url": "https://fileshrink.vercel.app/compress-image-to-100kb/",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Free online browser tool to compress image to 100kb without uploading files."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://fileshrink.vercel.app/compress-image-to-100kb/#breadcrumbs",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Image Tools",
-            "item": "https://fileshrink.vercel.app/#image-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Compress Image to 100KB",
-            "item": "https://fileshrink.vercel.app/compress-image-to-100kb/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://fileshrink.vercel.app/compress-image-to-100kb/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How do I compress image to 100kb for university admission forms?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Drop your photo or scanned document here to reduce photo size in kb to under 100 KB without losing important text details."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I compress certificates and ID card photos to 100 KB?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, 100 KB offers a great balance between small file size and clear readability for ID cards and certificates."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does FileShrink add any watermark to my 100 KB image?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No, FileShrink never adds watermarks, and you do not need to create an account or provide an email."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/compress-image-to-100kb/#webapp",
+      "name": "Compress Image to 100KB",
+      "url": "https://fileshrink.vercel.app/compress-image-to-100kb/",
+      "description": "Compress image to 100kb online for free. Reduce photo size in kb for university admissions and email attachments with no signup and no watermark.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/compress-image-to-100kb/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Image Tools",
+          "item": "https://fileshrink.vercel.app/#image-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Compress Image to 100KB",
+          "item": "https://fileshrink.vercel.app/compress-image-to-100kb/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/compress-image-to-100kb/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Will small text and numbers on my certificate remain legible under 100 KB?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Our compression algorithm preserves edge contrast so that printed text, roll numbers, and official signatures stay sharp and easily readable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What types of documents usually require a 100 KB upload limit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Job applications, passport renewal websites, scholarship portals, and bank KYC verifications commonly request scanned certificates and ID proofs under 100 KB."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I upload a smartphone photo of a document instead of a flatbed scanner file?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Make sure to take the photo in bright, even lighting directly from above, crop out the background around the paper, and then upload it here."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this tool support multiple image formats?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can upload JPG, PNG, WEBP, or JPEG files. The exported image will be a clean, standard JPG file accepted by all upload portals."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there any limit on how many certificates I can compress?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. You can compress as many documents as you need, completely free of charge and without any account creation."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

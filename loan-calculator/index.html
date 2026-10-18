@@ -25,77 +25,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Loan Calculator",
-        "url": "https://fileshrink.vercel.app/loan-calculator/",
-        "applicationCategory": "FinancialApplication",
-        "operatingSystem": "All",
-        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Calculate monthly loan payments, total payable amounts, interest charges, payoff dates, and comprehensive amortization schedules online."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Calculators",
-            "item": "https://fileshrink.vercel.app/#financial-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Loan Calculator",
-            "item": "https://fileshrink.vercel.app/loan-calculator/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How does this loan calculator differ from a standard emi calculator?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "This loan calculator calculates equal periodic repayments using the standard amortization formula just like an emi calculator, while additionally computing early payoff savings from extra monthly prepayments."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I use this as a monthly payment calculator for auto and personal loans?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. This tool operates as a versatile monthly payment calculator suitable for personal loans, auto loans, mortgages, and consumer financing with terms up to 600 months."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How does adding an extra monthly payment reduce my total interest and loan term?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Every extra monthly payment directly diminishes your outstanding principal balance, reducing future compound interest and shortening your total repayment duration."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/loan-calculator/#webapp",
+      "name": "Loan Calculator",
+      "url": "https://fileshrink.vercel.app/loan-calculator/",
+      "description": "Estimate your monthly loan payments, interest charges, and full amortization schedule with our free loan calculator. Fast, private, with no signup needed.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/loan-calculator/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Financial Calculators",
+          "item": "https://fileshrink.vercel.app/#property-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Loan Calculator",
+          "item": "https://fileshrink.vercel.app/loan-calculator/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/loan-calculator/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is monthly loan EMI calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The mathematical formula is: `EMI = [P × r × (1 + r)^n] ÷ [(1 + r)^n − 1]`, where P is principal, r is the monthly interest rate, and n is the total number of monthly payments."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does early loan prepayment save so much money in interest?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Any extra money paid directly reduces your principal balance. Because subsequent monthly interest is computed on the smaller principal, your future interest charges shrink permanently."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between a fixed-rate loan and a variable-rate loan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A fixed-rate loan guarantees the same interest rate and monthly payment throughout the loan term. A variable (floating) rate adjusts periodically based on benchmark bank rates."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use this calculator for both commercial and personal loans?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. It accurately models home mortgages, auto loans, student loans, and commercial business equipment financing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my private financial information stored or tracked?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. All loan amortization calculations run in your web browser memory. No financial details are ever logged or transmitted."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

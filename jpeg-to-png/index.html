@@ -26,79 +26,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://fileshrink.vercel.app/jpeg-to-png/#app",
-        "name": "JPEG to PNG Converter",
-        "url": "https://fileshrink.vercel.app/jpeg-to-png/",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Free online browser tool to convert JPEG to PNG without uploading files."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://fileshrink.vercel.app/jpeg-to-png/#breadcrumbs",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Converters",
-            "item": "https://fileshrink.vercel.app/#converters"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "JPEG to PNG",
-            "item": "https://fileshrink.vercel.app/jpeg-to-png/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://fileshrink.vercel.app/jpeg-to-png/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Why should I convert jpeg to png?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "PNG uses lossless compression, making it ideal for diagrams, logos, and graphics where sharp text and lines are crucial."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I convert multiple JPEG files to PNG at the same time?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, you can upload multiple pictures at once and download them individually or as a single ZIP archive."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is this JPEG to PNG converter safe for private documents?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, 100% safe. Every file is processed directly inside your browser without being uploaded to any server."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/jpeg-to-png/#webapp",
+      "name": "JPEG to PNG",
+      "url": "https://fileshrink.vercel.app/jpeg-to-png/",
+      "description": "Convert JPEG to PNG online for free in your browser. Fast batch image converter with no signup and no watermark. High quality lossless PNG export.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/jpeg-to-png/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Converters",
+          "item": "https://fileshrink.vercel.app/#converters"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "JPEG to PNG",
+          "item": "https://fileshrink.vercel.app/jpeg-to-png/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/jpeg-to-png/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does converting JPEG to PNG improve or restore original photo quality?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Converting to PNG cannot magically bring back data that was discarded during the original JPEG creation, but it guarantees that zero additional quality loss will occur during future editing and saving."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is the PNG file size usually larger than the original JPEG?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PNG uses lossless compression algorithms (similar to ZIP), storing every single pixel without approximations. This results in larger file sizes but guarantees 100% visual fidelity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I add transparency to a converted PNG image?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Once converted to PNG, your image is saved in a format that supports an alpha transparency channel, allowing you to edit or remove backgrounds in graphic design software."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is PNG better than JPEG for printing diagrams and text graphics?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. For charts, line drawings, text screenshots, and logos, PNG produces sharper printed edges without the blurry halo artifacts common in JPEGs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my converted images kept secure and private?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. All image processing runs locally in your device's memory. Your files are never uploaded to any remote server."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

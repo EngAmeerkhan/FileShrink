@@ -129,79 +129,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://fileshrink.vercel.app/signature-resizer/#app",
-        "name": "Signature Resizer",
-        "url": "https://fileshrink.vercel.app/signature-resizer/",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Free online signature resizer tool to adjust signature dimensions and file size."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://fileshrink.vercel.app/signature-resizer/#breadcrumbs",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Image Tools",
-            "item": "https://fileshrink.vercel.app/#image-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Signature Resizer",
-            "item": "https://fileshrink.vercel.app/signature-resizer/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://fileshrink.vercel.app/signature-resizer/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How do I use the signature resizer for online government and exam forms?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Upload a photo of your handwritten signature, pick standard dimensions like 140x60 px or 200x80 px, select a target size such as 20 KB, and download your resized signature image."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Why does my transparent PNG signature turn black and how does FileShrink fix it?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Standard JPEG conversions can turn transparent backgrounds black. Our signature resizer includes an automatic white background option to keep your signature clean and readable."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is my digital signature kept private and safe on FileShrink?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, absolutely. The signature resizer runs 100% in your browser. Your signature image is never sent to any server or stored online."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/signature-resizer/#webapp",
+      "name": "Signature Resizer",
+      "url": "https://fileshrink.vercel.app/signature-resizer/",
+      "description": "Signature resizer online for free. Resize digital signatures to exact pixels and KB for job and admission forms with no signup and no watermark.",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/signature-resizer/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Image Tools",
+          "item": "https://fileshrink.vercel.app/#image-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Signature Resizer",
+          "item": "https://fileshrink.vercel.app/signature-resizer/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/signature-resizer/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are the standard dimensions for signature uploads on exam forms?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most competitive exams and recruitment portals require signatures measuring approximately 140 by 60 pixels or 200 by 100 pixels, with a file size between 10 KB and 20 KB."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I make the gray paper background behind my signature white?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Take the photo under direct natural sunlight or bright indoor light. Our tool automatically enhances ink-to-paper contrast so the background appears clean and white."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I upload my signature as a JPG or a PNG?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most government and bank portals specifically mandate JPG format. This tool exports clean, portal-compliant JPG files that upload without errors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I crop blank margins around my signature in this tool?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Cropping extra margins before resizing ensures your signature fills the allotted canvas properly and stays readable on admit cards and IDs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it safe to process my personal signature here?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, completely. Your signature is processed entirely in your browser's local memory. It is never transmitted across the network or stored on any server."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

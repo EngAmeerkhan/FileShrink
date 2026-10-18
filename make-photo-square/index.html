@@ -27,79 +27,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://fileshrink.vercel.app/make-photo-square/#app",
-        "name": "Make Photo Square",
-        "url": "https://fileshrink.vercel.app/make-photo-square/",
-        "applicationCategory": "DesignApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Free online browser tool to make photo square with blur or solid backgrounds without cropping."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://fileshrink.vercel.app/make-photo-square/#breadcrumbs",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Image Tools",
-            "item": "https://fileshrink.vercel.app/#image-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Make Photo Square",
-            "item": "https://fileshrink.vercel.app/make-photo-square/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://fileshrink.vercel.app/make-photo-square/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How do I make photo square without cropping?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Choose 'Keep the whole photo' to expand the shorter sides with a blurred, white, or black background so none of your original picture is lost."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "When should I choose a square crop image instead of adding padding?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "If your subject is centered and you want a clean borderless 1:1 post, select the crop option to trim excess side margins."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does adding background padding reduce photo quality?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No, your original photo is rendered at full native resolution without compression loss."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/make-photo-square/#webapp",
+      "name": "Make Photo Square",
+      "url": "https://fileshrink.vercel.app/make-photo-square/",
+      "description": "Convert images and make photo square online for free. Add stylish backgrounds or square crop image with no signup and no watermark on phone.",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/make-photo-square/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Image Tools",
+          "item": "https://fileshrink.vercel.app/#image-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Make Photo Square",
+          "item": "https://fileshrink.vercel.app/make-photo-square/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/make-photo-square/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How can I make a photo square without cutting off the subject?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Choose the padding mode. This places your original rectangular photo inside a square canvas and fills the extra side space with white, black, or soft blurred margins so no part of the photo is cropped."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do social media platforms favor 1:1 square images?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Square photos fit evenly into mobile grid layouts without dynamic resizing, ensuring that thumbnails look clean and uniform on both small smartphones and wide desktop screens."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use this tool for eCommerce product photos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Online marketplaces like Amazon, eBay, and Shopify strongly recommend 1:1 square photos with white backgrounds for clean product listings."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will making a photo square lower its sharpness or resolution?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The tool maintains original pixel fidelity and exports high-resolution JPG or PNG files without quality degradation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I create square photos on my smartphone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The interface is fully responsive and touch-friendly, allowing you to create square pictures on iPhone and Android devices easily."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

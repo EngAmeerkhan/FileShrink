@@ -25,70 +25,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "House Construction Cost Calculator",
-        "url": "https://fileshrink.vercel.app/house-construction-cost-calculator/",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "All",
-        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "House Construction Cost Calculator",
-            "item": "https://fileshrink.vercel.app/house-construction-cost-calculator/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How does this house construction cost calculator estimate total building expenses?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The tool converts your plot measurements into total covered square footage across all floors, then multiplies that area by your local contractor rates for grey structure and finishing before adding optional project fees and contingency buffers."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the difference between grey structure and finishing costs?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Grey structure covers foundational concrete, brick masonry, plaster, and basic pipework. Finishing includes flooring tiles, paint, woodwork, kitchen cabinetry, sanitary fixtures, and electrical fittings."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Why should I add an extra contingency buffer percentage to my estimate?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Material prices like steel and cement fluctuate during construction, and unexpected on-site adjustments often occur. Adding a 5% to 15% buffer ensures your budget remains realistic from ground-breaking to handover."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/house-construction-cost-calculator/#webapp",
+      "name": "House Construction Cost Calculator",
+      "url": "https://fileshrink.vercel.app/house-construction-cost-calculator/",
+      "description": "Estimate building expenses with our free house construction cost calculator. Accurate results, no signup, no watermark. Instant online estimates.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/house-construction-cost-calculator/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Property Tools",
+          "item": "https://fileshrink.vercel.app/#property-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "House Construction Cost Calculator",
+          "item": "https://fileshrink.vercel.app/house-construction-cost-calculator/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/house-construction-cost-calculator/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the difference between Grey Structure and Turnkey Finishing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Grey Structure covers the raw structural skeleton (concrete, steel, brick walls, roof slabs, and basic plumbing/wiring pipes). Turnkey Finishing includes all cosmetic and functional installations (tiles, paint, doors, bathroom fittings, and lighting)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which building materials represent the largest share of construction costs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Steel rebar, cement, bricks, and skilled/unskilled labor collectively account for over 65% of the total grey structure expenditure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much extra contingency money should I budget for a house build?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Always budget an extra 10% to 15% above your initial contractor estimate to cover unexpected price fluctuations in raw materials, municipal fees, and design changes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does total covered area differ from plot area?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Plot area is the total land boundary. Covered area is the actual square footage constructed across the ground floor, first floor, and mumty/basement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are contractor labor rates included in this cost estimation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The cost-per-square-foot estimates incorporate current market labor contract rates alongside material costs."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

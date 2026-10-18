@@ -25,77 +25,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "WhatsApp Link Generator",
-        "url": "https://fileshrink.vercel.app/whatsapp-link-generator/",
-        "applicationCategory": "CommunicationApplication",
-        "operatingSystem": "All",
-        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Generate custom click-to-chat WhatsApp links and QR codes with pre-filled text."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Generators",
-            "item": "https://fileshrink.vercel.app/#generator-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "WhatsApp Link Generator",
-            "item": "https://fileshrink.vercel.app/whatsapp-link-generator/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How does this whatsapp link generator create direct chat URLs?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The tool uses WhatsApp official wa.me shortlink protocol. It sanitizes your international dialing code and local digits, and formats optional greeting text into standard percent-encoded URI parameters."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do customers need to save my number to use a whatsapp chat link?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No, that is the primary benefit of a whatsapp chat link. Anyone who clicks your link or scans the QR code can open an instant conversation without adding your contact to their phone address book."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I include emojis or Urdu text inside my click to chat link?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, our click to chat link builder supports full Unicode encoding. You can include product inquiries, greetings in Urdu or Arabic, and emojis seamlessly."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/whatsapp-link-generator/#webapp",
+      "name": "WhatsApp Link Generator",
+      "url": "https://fileshrink.vercel.app/whatsapp-link-generator/",
+      "description": "Create direct click-to-chat links and QR codes with our free WhatsApp link generator. Fast, custom pre-filled messages, no signup and completely private.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/whatsapp-link-generator/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Generators",
+          "item": "https://fileshrink.vercel.app/#generator-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "WhatsApp Link Generator",
+          "item": "https://fileshrink.vercel.app/whatsapp-link-generator/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/whatsapp-link-generator/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does a WhatsApp click-to-chat link work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It uses the official `https://wa.me/` protocol. When clicked, it instructs WhatsApp to open a direct chat window with that specific phone number without requiring the user to save it in their address book."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why should I omit the plus sign and leading zero from the phone number?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The `wa.me` standard requires pure numeric digits in international format (e.g. `923001234567` instead of `+92-0300-1234567`). Our tool automatically strips plus signs, spaces, and leading zeros for you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I include emojis and punctuation in the pre-filled greeting message?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can include standard text, punctuation, and emojis. The tool URL-encodes special characters so your message appears perfectly formatted in the customer's chat bar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where are the best places to share my WhatsApp link and QR code?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Add it to your Instagram bio link, TikTok profile, website header, business card, product packaging, restaurant table cards, and email signatures for instant customer engagement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do these generated WhatsApp links or QR codes ever expire?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Never. Because they link directly to your personal or business phone number without using intermediary redirect servers, they remain permanently active."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

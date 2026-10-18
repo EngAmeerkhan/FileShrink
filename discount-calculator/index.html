@@ -25,77 +25,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Discount Calculator",
-        "url": "https://fileshrink.vercel.app/discount-calculator/",
-        "applicationCategory": "FinancialApplication",
-        "operatingSystem": "All",
-        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Calculate promotional discounts, sale prices, original prices, double extra markdowns, and sales tax online."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Calculators",
-            "item": "https://fileshrink.vercel.app/#financial-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Discount Calculator",
-            "item": "https://fileshrink.vercel.app/discount-calculator/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How does this discount calculator compare to a standalone percentage discount calculator?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "While a standalone percentage discount calculator only finds the reduction, this tool provides four calculation modes including original price reversal, multi-step stacked promotions, and post-discount sales tax."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How are stacked or double discounts calculated on sale items?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Stacked discounts are applied sequentially rather than added together. The second discount percentage is deducted from the already reduced intermediate price."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How is sales tax applied to discounted items?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "In accordance with standard retail practices, sales tax is computed upon the final discounted price and added to determine your total checkout expense."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/discount-calculator/#webapp",
+      "name": "Discount Calculator",
+      "url": "https://fileshrink.vercel.app/discount-calculator/",
+      "description": "Calculate final sale prices, percentage discounts, and sales tax with our free online discount calculator. Instant, accurate results with no signup needed.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/discount-calculator/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Financial Calculators",
+          "item": "https://fileshrink.vercel.app/#property-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Discount Calculator",
+          "item": "https://fileshrink.vercel.app/discount-calculator/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/discount-calculator/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does a sequential double discount (stacked coupon) work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A double discount applies the second discount to the already reduced price, not the original price. For example, a $100 item with 40% off becomes $60; an extra 20% off takes $12 off the $60, resulting in a final price of $48 (a 52% total savings, not 60%)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I calculate the final price including sales tax?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sales tax is calculated on the discounted sale price, not the original sticker price. Our calculator automatically applies your local tax rate to the final sale amount."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the formula for calculating a percentage discount?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Discount Amount = Original Price × (Discount % ÷ 100). Final Price = Original Price − Discount Amount."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can this calculator help compare competing store sales?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can quickly test different store deals (such as 30% off vs $15 flat coupon) to see which retailer offers the lowest final price."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my financial calculation data stored or shared?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. All calculations run locally in your web browser memory. None of your pricing numbers are ever recorded or transmitted."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

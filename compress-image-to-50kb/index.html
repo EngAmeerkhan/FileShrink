@@ -26,79 +26,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://fileshrink.vercel.app/compress-image-to-50kb/#app",
-        "name": "Compress Image to 50KB",
-        "url": "https://fileshrink.vercel.app/compress-image-to-50kb/",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Free online browser tool to compress image to 50kb without uploading files."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://fileshrink.vercel.app/compress-image-to-50kb/#breadcrumbs",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Image Tools",
-            "item": "https://fileshrink.vercel.app/#image-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Compress Image to 50KB",
-            "item": "https://fileshrink.vercel.app/compress-image-to-50kb/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://fileshrink.vercel.app/compress-image-to-50kb/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How do I compress image to 50kb for online job or exam forms?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Upload your photo or document picture above, and FileShrink will quickly reduce photo size in kb to under 50 KB while keeping clear visual quality."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is my personal photo or ID safe on this website?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, 100% safe. All compression happens directly inside your web browser, so your files are never uploaded to any server."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What image formats can I upload to compress to 50 KB?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "You can upload JPG, JPEG, PNG, or WEBP files, and the tool will deliver a compressed JPG ready for submission."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/compress-image-to-50kb/#webapp",
+      "name": "Compress Image to 50KB",
+      "url": "https://fileshrink.vercel.app/compress-image-to-50kb/",
+      "description": "Compress image to 50kb online for free. Reduce photo size in kb for job and admission forms with no signup and no watermark. Fast and secure.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/compress-image-to-50kb/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Image Tools",
+          "item": "https://fileshrink.vercel.app/#image-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Compress Image to 50KB",
+          "item": "https://fileshrink.vercel.app/compress-image-to-50kb/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/compress-image-to-50kb/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why is 50 KB the most common photo size requirement for competitive exams?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Examinations like JEE, NEET, GATE, and civil service tests choose 50 KB because it offers the perfect balance: it is small enough for rapid server processing while large enough to show facial features clearly on printed examination hall registers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I do if my photo still exceeds 50 KB after compression?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our tool guarantees the output is under 50 KB. If your source image is unusually large, the engine automatically adjusts resolution so the file never exceeds the 50 KB ceiling."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I convert a high-resolution PNG image into a 50 KB JPG?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Simply drop your PNG file into the tool. It will automatically convert the image format and compress it under 50 KB in one smooth action."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will compressing my photo remove the date and name stamp?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. If your photo already has your name and date printed at the bottom, the compression preserves those text characters clearly so portal examiners can read them."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my personal photos stored on your server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. All image resizing and compression happens locally inside your browser memory. Nothing is ever uploaded to a server or saved to a database."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

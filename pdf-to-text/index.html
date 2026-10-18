@@ -27,79 +27,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://fileshrink.vercel.app/pdf-to-text/#app",
-        "name": "PDF to Text",
-        "url": "https://fileshrink.vercel.app/pdf-to-text/",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Free online browser tool to convert digital PDF documents into editable plain text."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://fileshrink.vercel.app/pdf-to-text/#breadcrumbs",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "PDF Tools",
-            "item": "https://fileshrink.vercel.app/#pdf-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "PDF to Text",
-            "item": "https://fileshrink.vercel.app/pdf-to-text/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://fileshrink.vercel.app/pdf-to-text/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How does the pdf to text extraction work?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Our engine parses the internal vector text characters in your document, arranges items into natural lines, and displays clean editable text right on your screen."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I extract text from scanned paper PDF documents?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "This tool works on PDFs containing digital text layers. Scanned photocopy pages are saved as images and require an optical character recognition (OCR) scanner."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Why do some tables or columns have extra spacing?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "PDF files store text in floating positional coordinates rather than continuous paragraphs. Complex multi-column layouts or tables may need minor manual touch-ups."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/pdf-to-text/#webapp",
+      "name": "PDF to Text",
+      "url": "https://fileshrink.vercel.app/pdf-to-text/",
+      "description": "Convert any file with our pdf to text tool for free. Easily copy notes with no signup and no watermark. Fast client-side conversion in your web browser.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/pdf-to-text/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "PDF Tools",
+          "item": "https://fileshrink.vercel.app/#pdf-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "PDF to Text",
+          "item": "https://fileshrink.vercel.app/pdf-to-text/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/pdf-to-text/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can this tool extract text from scanned paper PDFs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This tool extracts digital text streams from native PDFs. If your PDF is a flat image scan from a physical printer, you will need an OCR (optical character recognition) tool to recognize text from pixels."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does extracted text sometimes have unusual line breaks?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PDFs position words using exact geometric coordinates on a page rather than continuous paragraphs. Our tool intelligently reconstructs sentences to provide clean, readable text."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I copy all extracted text with a single click?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Click the 'Copy Text' button to immediately copy the entire extracted document to your clipboard, or download it as a clean .txt file."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this tool work on multi-column research papers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The extraction algorithm parses text streams sequentially to maintain readable reading order across multi-column layouts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a limit on document length?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can extract text from documents spanning dozens or hundreds of pages without restrictions or fees."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

@@ -27,79 +27,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://fileshrink.vercel.app/black-and-white-photo-converter/#app",
-        "name": "Black and White Photo Converter",
-        "url": "https://fileshrink.vercel.app/black-and-white-photo-converter/",
-        "applicationCategory": "DesignApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Free online browser tool to convert photos to black and white with brightness and contrast adjustments."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://fileshrink.vercel.app/black-and-white-photo-converter/#breadcrumbs",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Image Tools",
-            "item": "https://fileshrink.vercel.app/#image-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Black and White Photo Converter",
-            "item": "https://fileshrink.vercel.app/black-and-white-photo-converter/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://fileshrink.vercel.app/black-and-white-photo-converter/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How does this black and white photo converter calculate grayscale values?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The tool uses the accurate ITU-R BT.709 luminance formula (0.2126 R + 0.7152 G + 0.0722 B) matching human eye perception for natural tone balance."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I create a grayscale image online and keep transparent backgrounds?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, choose PNG export to preserve your alpha transparency channel intact while converting color pixels to grayscale."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the high contrast threshold mode used for?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Threshold mode converts gray pixels into pure black or pure white stamps, ideal for signatures, line art, and stencil graphics."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/black-and-white-photo-converter/#webapp",
+      "name": "Black and White Photo Converter",
+      "url": "https://fileshrink.vercel.app/black-and-white-photo-converter/",
+      "description": "Transform images with our black and white photo converter for free. Turn grayscale image online with no signup and no watermark on your device.",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/black-and-white-photo-converter/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Image Tools",
+          "item": "https://fileshrink.vercel.app/#image-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Black and White Photo Converter",
+          "item": "https://fileshrink.vercel.app/black-and-white-photo-converter/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/black-and-white-photo-converter/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does luminance-weighted grayscale differ from simple desaturation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Simple desaturation averages RGB values, often making images look flat and muddy. Luminance weighting mirrors human visual perception (giving more weight to green and red light), producing richer contrast and authentic depth."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will converting my photo to black and white lower its resolution?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not at all. The conversion modifies only color channel data. Every single pixel and detail from your original image is preserved at full resolution."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this tool good for scanning and restoring old family photos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Converting yellowed or faded historic photos to monochrome evens out paper discoloration and enhances facial contrast beautifully."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I print black and white photos on standard home printers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. High-contrast monochrome images print crisply on standard inkjet and laser printers without using expensive color ink cartridges."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my personal photos uploaded to any server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The entire monochrome transformation runs locally in your web browser, guaranteeing total privacy for family and personal portraits."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

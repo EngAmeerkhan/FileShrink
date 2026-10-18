@@ -26,79 +26,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://fileshrink.vercel.app/reduce-image-size-in-kb/#app",
-        "name": "Reduce Image Size in KB",
-        "url": "https://fileshrink.vercel.app/reduce-image-size-in-kb/",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Free online browser tool to reduce image size in kb and compress image to exact size."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://fileshrink.vercel.app/reduce-image-size-in-kb/#breadcrumbs",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Image Tools",
-            "item": "https://fileshrink.vercel.app/#image-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Reduce Image Size in KB",
-            "item": "https://fileshrink.vercel.app/reduce-image-size-in-kb/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://fileshrink.vercel.app/reduce-image-size-in-kb/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How do I compress image to exact size specified by my application form?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Simply enter your required file weight in the target KB input or click a preset, and FileShrink will automatically reduce image size in kb to meet your criteria."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I resize photo in kb for custom dimensions and weight?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, our smart engine automatically balances image resolution and compression quality to reach your exact KB target without manual math."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is there a limit on how small or large of a custom KB size I can pick?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "You can enter any target size from 5 KB up to 10,000 KB for complete flexibility with any upload portal."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/reduce-image-size-in-kb/#webapp",
+      "name": "Reduce Image Size in KB",
+      "url": "https://fileshrink.vercel.app/reduce-image-size-in-kb/",
+      "description": "Reduce image size in kb online for free. Resize photo in kb and compress image to exact size with no signup and no watermark. Fast and secure browser tool.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/reduce-image-size-in-kb/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Image Tools",
+          "item": "https://fileshrink.vercel.app/#image-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Reduce Image Size in KB",
+          "item": "https://fileshrink.vercel.app/reduce-image-size-in-kb/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/reduce-image-size-in-kb/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I choose the right target KB size for my application?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Check the guidelines on the application portal you are submitting to. Always enter a target slightly below the maximum allowed (for example, enter 48 KB if the portal limit is 50 KB) to ensure effortless acceptance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if my requested KB target is too small for my photo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If you request an extremely low size (like 5 KB for a large group photo), the tool will scale the dimensions down so the file fits the target. For best visual quality, crop the image tightly first."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I reduce PNG images with transparent backgrounds?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The tool converts the image into an optimized JPG format with a clean background to achieve the exact kilobyte size you requested."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How fast is the custom reduction process?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because all calculations run directly on your device's processor using client-side JavaScript, compression usually takes less than one second."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my original image files altered on my computer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The tool never modifies or overwrites your original files. It generates a newly compressed copy ready for you to download."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

@@ -25,77 +25,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Case Converter",
-        "url": "https://fileshrink.vercel.app/case-converter/",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "All",
-        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Convert text into UPPERCASE, lowercase, Title Case, Sentence case, camelCase, snake_case, and more."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Text Tools",
-            "item": "https://fileshrink.vercel.app/#text-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Case Converter",
-            "item": "https://fileshrink.vercel.app/case-converter/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How does this case converter handle words with apostrophes?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The case converter treats contractions as single words. When using Capitalize Each Word, terms like \"don't\" become \"Don't\" rather than capitalizing after the apostrophe."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Which words stay lowercase in title case mode?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Short prepositions, conjunctions, and articles such as a, an, and, as, at, but, by, for, in, of, on, or, the, to, and with stay lowercase unless they appear as the first or last word."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I process large files of 1 MB or more without browser lag?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, our conversion routines run directly in your browser using optimized regex loops that transform hundreds of thousands of characters in milliseconds."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/case-converter/#webapp",
+      "name": "Case Converter",
+      "url": "https://fileshrink.vercel.app/case-converter/",
+      "description": "Convert text case with our free online case converter with no signup and no watermark. Easily switch uppercase to lowercase, title case, and more.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/case-converter/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Text Tools",
+          "item": "https://fileshrink.vercel.app/#text-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Case Converter",
+          "item": "https://fileshrink.vercel.app/case-converter/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/case-converter/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which words stay lowercase when using Title Case mode?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Standard editorial rules keep short prepositions, conjunctions, and articles lowercase (including a, an, and, as, at, but, by, for, in, of, on, or, the, to, and with) unless they appear as the first or last word of a headline."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Sentence case know where a sentence ends?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The algorithm identifies terminal punctuation marks (periods, question marks, and exclamation marks) followed by whitespace, automatically capitalizing the subsequent letter while keeping the rest lowercase."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between camelCase, PascalCase, and snake_case?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "camelCase starts with a lowercase letter and capitalizes subsequent words (`userProfileName`). PascalCase capitalizes all words (`UserProfileName`). snake_case separates words with underscores (`user_profile_name`)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I convert thousands of words or entire essays at once?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The converter handles large text blocks of tens of thousands of words instantly with zero lag or browser freeze."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my text stored or tracked on any database?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. All text transformations are performed locally inside your browser's JavaScript engine. Your writing is never uploaded or saved."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

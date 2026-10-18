@@ -25,70 +25,90 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Percentage Calculator",
-        "url": "https://fileshrink.vercel.app/percentage-calculator/",
-        "applicationCategory": "EducationalApplication",
-        "operatingSystem": "All",
-        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Percentage Calculator",
-            "item": "https://fileshrink.vercel.app/percentage-calculator/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How is percentage increase or decrease calculated?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Percentage change subtracts the initial number from the final number, divides the difference by the absolute initial value, and multiplies by 100. A positive outcome indicates an increase, while negative indicates a decrease."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do I calculate exam marks percentage from practical and theory scores?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Use the 'Marks Percentage' tab. Add up your obtained scores in theory and practicals for the first box, then sum the maximum available marks for the second box. The tool divides obtained by total."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can this tool handle decimal values and fractions?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. You can enter any positive or negative decimal numbers. Calculations preserve full mathematical precision and round only for display without scientific notation."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/percentage-calculator/#webapp",
+      "name": "Percentage Calculator",
+      "url": "https://fileshrink.vercel.app/percentage-calculator/",
+      "description": "Calculate percentages, percent change, marks, and fraction values fast. Free online percentage calculator with instant results, no signup, no watermark.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/percentage-calculator/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Percentage Calculator",
+          "item": "https://fileshrink.vercel.app/percentage-calculator/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/percentage-calculator/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I calculate percentage increase between two numbers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Subtract the old value from the new value, divide the difference by the old value, and multiply by 100: `Percentage Increase = ((New − Old) ÷ Old) × 100`."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the easiest way to calculate a 15% or 20% restaurant tip?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To find 10%, move the decimal point one place to the left. For a 20% tip, double that 10% amount. For a 15% tip, add half of the 10% amount to the 10% figure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I find what percentage of a total a specific number represents?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Divide the part by the whole and multiply by 100. For example, if you scored 45 marks out of 60: `(45 ÷ 60) × 100 = 75%`."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can this calculator handle negative numbers and decimal values?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. It seamlessly computes negative percentage changes (declines), negative baselines, and fractional decimals with high mathematical precision."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are there any usage limits on this calculator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The tool is 100% free with unlimited calculations and no account registration required."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

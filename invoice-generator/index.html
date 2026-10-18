@@ -25,77 +25,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Invoice Generator",
-        "url": "https://fileshrink.vercel.app/invoice-generator/",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "All",
-        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Create professional itemized invoices with live tax calculations, payment status, and instant PDF download."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Business Tools",
-            "item": "https://fileshrink.vercel.app/#business-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Invoice Generator",
-            "item": "https://fileshrink.vercel.app/invoice-generator/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How does this invoice generator track partial payments and balance due?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Entering an amount in the Amount Paid field automatically recalculates the remaining Balance Due and updates the payment status mark on the invoice."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How are due dates calculated for net 15 or net 30 invoices?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The tool computes due dates using exact calendar days, automatically adjusting across month ends and leap years from the invoice issue date."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I download my invoice as an image or print directly?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, in addition to vector PDF export, you can download a high-resolution JPG image or print directly using your browser's print dialog."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/invoice-generator/#webapp",
+      "name": "Invoice Generator",
+      "url": "https://fileshrink.vercel.app/invoice-generator/",
+      "description": "Create professional business bills with our free invoice generator with no signup and no watermark. Add tax, discounts, and export clean PDF instantly.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/invoice-generator/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Business Tools",
+          "item": "https://fileshrink.vercel.app/#business-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Invoice Generator",
+          "item": "https://fileshrink.vercel.app/invoice-generator/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/invoice-generator/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What information is legally required on a business invoice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A valid invoice requires the word 'Invoice', a unique invoice number, date of issue, payment due date, your business name and address, client name and address, itemized descriptions of goods/services, tax rates, and total amount due."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I add my company logo and custom payment terms?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can upload your business logo, select brand colors, and add personalized payment notes, bank wire details, and late payment policies."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the generator calculate taxes, discounts, and totals automatically?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Enter your line items, quantities, and rates; the tool automatically calculates line totals, subtotals, custom tax percentages, discounts, and final balance due."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I download the invoice as a print-ready PDF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Click 'Download PDF' to receive a crisp, vector A4 PDF invoice formatted to international corporate standards."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my sensitive client and financial data kept confidential?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, 100%. The invoice generator runs completely in your web browser. None of your rates, client names, or financial numbers are ever uploaded to any server."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

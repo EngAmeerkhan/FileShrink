@@ -25,70 +25,90 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "GPA Calculator",
-        "url": "https://fileshrink.vercel.app/gpa-calculator/",
-        "applicationCategory": "EducationalApplication",
-        "operatingSystem": "All",
-        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "GPA Calculator",
-            "item": "https://fileshrink.vercel.app/gpa-calculator/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How do I calculate my GPA if my university uses a different grading scale?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Open the Customize Grade Scale section below the calculator. Edit the grade point values to match your university's exact syllabus. The calculator updates immediately with your custom values."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What should I do with repeat courses or pass/fail subjects?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "For repeat courses, enter only the final recognized grade and credit hours according to your department rules. If a course is ungraded pass/fail with 0 quality points, omit it or do not include its credits in weighted GPA."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I use this GPA calculator for scholarship and job applications?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. This tool computes standard semester grade point averages. You can copy the exact GPA, total earned credits, and grade points directly for verification in application forms."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/gpa-calculator/#webapp",
+      "name": "GPA Calculator",
+      "url": "https://fileshrink.vercel.app/gpa-calculator/",
+      "description": "Calculate semester GPA with custom credit hours and editable grade scales. Free online gpa calculator with instant results, no signup, and no watermark.",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/gpa-calculator/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "GPA Calculator",
+          "item": "https://fileshrink.vercel.app/gpa-calculator/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/gpa-calculator/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do credit hours affect my semester GPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Courses with higher credit hours (like a 4-credit organic chemistry lecture) have a much greater impact on your GPA than lower-credit courses (like a 1-credit lab). A high grade in a 4-credit class pulls your average up significantly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are standard grade point values for plus and minus letter grades?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most universities use: A = 4.0, A- = 3.7, B+ = 3.3, B = 3.0, B- = 2.7, C+ = 2.3, C = 2.0, C- = 1.7, D = 1.0, and F = 0.0."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I calculate both weighted high school GPA and unweighted college GPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can calculate standard unweighted 4.0 GPA or incorporate honors and AP weighting increments depending on your school system."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I raise my GPA if I received a low grade early on?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Focus your study efforts on courses carrying 3 or 4 credits. Earning an A in heavy-credit courses raises your cumulative GPA much faster than in 1-credit electives."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this GPA calculator free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. It is 100% free with no limits on the number of courses or semesters you can calculate."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

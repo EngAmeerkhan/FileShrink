@@ -26,79 +26,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://fileshrink.vercel.app/heic-to-jpg/#app",
-        "name": "HEIC to JPG Converter",
-        "url": "https://fileshrink.vercel.app/heic-to-jpg/",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Free online browser tool to convert HEIC to JPG without uploading files."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://fileshrink.vercel.app/heic-to-jpg/#breadcrumbs",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Converters",
-            "item": "https://fileshrink.vercel.app/#converters"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "HEIC to JPG",
-            "item": "https://fileshrink.vercel.app/heic-to-jpg/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://fileshrink.vercel.app/heic-to-jpg/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Why do iPhone photos need conversion from heic to jpg?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Apple iPhones save photos in HEIC format by default, but most government portals, Windows PCs, and admission forms only accept JPG."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I convert multiple iPhone HEIC photos at the same time?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, select multiple HEIC or HEIF files and FileShrink will convert them all in your browser and allow single-click ZIP download."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does converting HEIC reduce photo quality?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No, we encode the resulting JPG at 95% high quality so all original sharpness and color depth are fully preserved."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/heic-to-jpg/#webapp",
+      "name": "HEIC to JPG",
+      "url": "https://fileshrink.vercel.app/heic-to-jpg/",
+      "description": "Convert HEIC to JPG online for free. Transform Apple iPhone HEIC photos to compatible JPG images with no signup and no watermark. Fast and secure.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/heic-to-jpg/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Converters",
+          "item": "https://fileshrink.vercel.app/#converters"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "HEIC to JPG",
+          "item": "https://fileshrink.vercel.app/heic-to-jpg/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/heic-to-jpg/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why does my iPhone take photos in HEIC format instead of JPG?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Apple sets HEIC as default because it cuts photo storage in half while supporting 16-bit color and live photo bursts. You can switch your iPhone settings to 'Most Compatible' if you prefer JPG by default."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does converting HEIC to JPG lose photo quality or sharpness?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our tool converts HEIC files at maximum JPEG quality, preserving crisp details, natural skin tones, and rich dynamic range so you notice no difference."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will my photo's orientation and colors remain accurate after conversion?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The conversion engine accurately maps color profiles and respects internal orientation tags so your photos never turn sideways or wash out."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Windows view HEIC files without installing extra codecs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "By converting your HEIC files to JPG with this tool, you can open and view them instantly on any Windows PC, Chromebook, or Android device without installing extra codecs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my personal iPhone photos uploaded to any server during conversion?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The conversion runs entirely inside your device's web browser. Your private photos never leave your computer or phone."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

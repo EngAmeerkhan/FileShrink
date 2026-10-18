@@ -25,70 +25,90 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "CGPA to Percentage",
-        "url": "https://fileshrink.vercel.app/cgpa-to-percentage/",
-        "applicationCategory": "EducationalApplication",
-        "operatingSystem": "All",
-        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "CGPA to Percentage",
-            "item": "https://fileshrink.vercel.app/cgpa-to-percentage/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Why is there no single standard formula for converting CGPA to percentage?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Academic evaluation systems differ globally. Some institutions use direct proportional scaling (CGPA / Max × 100), while others assign custom multipliers based on historical grading distributions."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is an institution multiplier, and where do I find mine?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "A multiplier is a fixed number specified by your college or university on the back of your official transcript. If your transcript states a conversion factor, enter that value in the custom multiplier box."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do I convert percentage back to CGPA for international applications?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Toggle the 'Convert Percentage to CGPA' switch. The tool will calculate your equivalent CGPA on your chosen scale (such as a 4.0 or 10.0 scale) using the reverse conversion formula."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/cgpa-to-percentage/#webapp",
+      "name": "CGPA to Percentage",
+      "url": "https://fileshrink.vercel.app/cgpa-to-percentage/",
+      "description": "Convert CGPA to percentage or percentage to CGPA with custom scale. Free online cgpa to percentage tool with instant results, no signup, no watermark.",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/cgpa-to-percentage/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "CGPA to Percentage",
+          "item": "https://fileshrink.vercel.app/cgpa-to-percentage/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/cgpa-to-percentage/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why does CBSE multiply 10-point CGPA by 9.5 instead of 10?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CBSE analyzed historical board examination mark distributions and determined that a 9.5 multiplier correlates most accurately with actual percentage performance across student cohorts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I convert a 4.0 scale CGPA into a percentage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For standard 4.0 grading systems, the universal formula is `(CGPA ÷ 4.0) × 100`. For example, a 3.6 CGPA on a 4.0 scale equals 90.0%."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use this calculated percentage on official civil service forms?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Our calculator shows the specific mathematical formula alongside the result so you can reference the exact conversion rule requested by your recruitment portal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I do if my university transcript specifies its own conversion formula?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Always prioritize the official formula printed on the reverse side of your university degree or transcript over general board rules."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this conversion tool completely free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can run unlimited conversions for any grading scale without fees or registration."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

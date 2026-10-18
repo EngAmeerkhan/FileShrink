@@ -27,79 +27,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://fileshrink.vercel.app/blur-image-online/#app",
-        "name": "Blur Image Online",
-        "url": "https://fileshrink.vercel.app/blur-image-online/",
-        "applicationCategory": "SecurityApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Free online browser tool to blur image online, censor private details, and blur faces."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://fileshrink.vercel.app/blur-image-online/#breadcrumbs",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Image Tools",
-            "item": "https://fileshrink.vercel.app/#image-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Blur Image Online",
-            "item": "https://fileshrink.vercel.app/blur-image-online/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://fileshrink.vercel.app/blur-image-online/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How do I blur image online without uploading my photo to a server?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "FileShrink blurs your photo directly inside your browser canvas using JavaScript, meaning private documents and faces never touch any cloud server."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How can I blur face in photo or license plates?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Select 'Blur an area', then click and drag rectangles or circles directly across private faces or ID numbers."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does blurring the whole image remove metadata and background details?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, whole image blur smooths out background clutter and newly generated files strip original EXIF tracking coordinates."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/blur-image-online/#webapp",
+      "name": "Blur Image Online",
+      "url": "https://fileshrink.vercel.app/blur-image-online/",
+      "description": "Easily blur image online for free. Hide sensitive details or blur face in photo with zero uploads, no signup, and no watermark on your device.",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/blur-image-online/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Image Tools",
+          "item": "https://fileshrink.vercel.app/#image-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Blur Image Online",
+          "item": "https://fileshrink.vercel.app/blur-image-online/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/blur-image-online/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can someone unblur or reverse the blurred areas in my photo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Our tool applies a permanent Gaussian blur algorithm that averages and redistributes pixel values. The original pixel data beneath the blur is completely destroyed and cannot be reversed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How strong should the blur intensity be to hide printed text?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A medium-to-high blur intensity is recommended for numbers and text to ensure that even automated OCR algorithms cannot recognize characters."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I blur multiple separate areas on a single photo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can add as many blur boxes as needed to cover faces, license plates, and private badges simultaneously."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will blurring reduce the visual quality of the unblurred areas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Only the specific rectangular zones you select are blurred; the rest of your photo retains 100% of its original resolution and sharpness."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my sensitive photos uploaded to any remote server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Never. FileShrink runs entirely inside your web browser. Your confidential photos and documents never leave your computer or phone."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

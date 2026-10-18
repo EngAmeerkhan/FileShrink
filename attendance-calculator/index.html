@@ -25,70 +25,90 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Attendance Calculator",
-        "url": "https://fileshrink.vercel.app/attendance-calculator/",
-        "applicationCategory": "EducationalApplication",
-        "operatingSystem": "All",
-        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Attendance Calculator",
-            "item": "https://fileshrink.vercel.app/attendance-calculator/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How many consecutive lectures do I need to attend after taking sick leave?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The tool uses the target recovery formula: Consecutive Classes Needed = ⌈(Required % × Held - Attended) ÷ (1 - Required %)⌉. It calculates the exact number of back-to-back classes you must attend without absence."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can attendance be calculated if my course includes laboratory sessions?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. If labs carry equal attendance weight, sum lab sessions into classes held and attended. If labs are calculated separately by your department, run the calculator once for lectures and once for lab hours."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What happens if I miss a class after reaching the minimum attendance percentage?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Enter the total planned classes for your course into the optional box. The calculator will determine exactly how many more classes you can safely miss while keeping your attendance above your institution threshold."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/attendance-calculator/#webapp",
+      "name": "Attendance Calculator",
+      "url": "https://fileshrink.vercel.app/attendance-calculator/",
+      "description": "Calculate attendance percentage and find classes needed to meet target. Free online attendance calculator with instant results, no signup, no watermark.",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/attendance-calculator/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Attendance Calculator",
+          "item": "https://fileshrink.vercel.app/attendance-calculator/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/attendance-calculator/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does the 'safe bunks' number mean in this calculator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Safe bunks indicates the exact number of future lectures you can afford to skip while keeping your overall attendance percentage safely at or above your required threshold (such as 75%)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many consecutive classes must I attend to recover from low attendance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If your attendance is below 75%, our calculator tells you the exact number of upcoming classes you must attend in a row without missing a single lecture to bring your average back into good standing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if my college requires an 80% or 85% attendance rule?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can easily adjust the target threshold slider or input box to 80%, 85%, or any custom percentage mandated by your university department."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I factor in approved medical leave or extracurricular duty leaves?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Add approved medical or sports duty leaves to your 'Classes Attended' count if your college administration officially credits them toward your attendance record."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my personal attendance data saved or tracked online?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The calculation runs 100% locally in your web browser memory. No student data or university details are ever saved or transmitted."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

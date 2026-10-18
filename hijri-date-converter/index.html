@@ -25,77 +25,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Hijri Date Converter",
-        "url": "https://fileshrink.vercel.app/hijri-date-converter/",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "All",
-        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "Convert between Gregorian and Islamic Hijri dates using the Umm al-Qura calendar system."
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Converters",
-            "item": "https://fileshrink.vercel.app/#text-tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Hijri Date Converter",
-            "item": "https://fileshrink.vercel.app/hijri-date-converter/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How does this hijri date converter calculate Islamic calendar dates?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The calculator utilizes the standardized Umm al-Qura calendar via the browser Intl.DateTimeFormat API to convert accurately between solar Gregorian dates and lunar Hijri dates."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Why might an islamic date converter differ by one day from local announcements?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Islamic calendar months depend on the physical sighting of the crescent moon. Because atmospheric conditions and geographical latitudes vary, regional moon sightings may differ by plus or minus one day from astronomical calculations."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I convert an english to hijri date for upcoming Islamic holidays?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, you can easily convert any English to Hijri date across the supported range (1356 AH to 1500 AH) to anticipate Ramadan, Eid al-Fitr, Eid al-Adha, or the Islamic New Year."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/hijri-date-converter/#webapp",
+      "name": "Hijri Date Converter",
+      "url": "https://fileshrink.vercel.app/hijri-date-converter/",
+      "description": "Convert between Gregorian and Islamic calendar dates with our free Hijri date converter. Features moon adjustments and instant results with no signup.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/hijri-date-converter/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Converters",
+          "item": "https://fileshrink.vercel.app/#text-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Hijri Date Converter",
+          "item": "https://fileshrink.vercel.app/hijri-date-converter/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/hijri-date-converter/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why can Islamic Hijri dates differ by one day between countries?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Islamic months begin with the physical sighting of the crescent moon (hilal). Due to weather, cloud cover, and geographical coordinates, religious authorities in different countries may declare the month start on different days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the Umm al-Qura calendar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Umm al-Qura calendar is the official astronomical lunar calendar calculated and published by Saudi Arabia, used widely across the Middle East as an administrative calendar standard."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the four sacred months in the Islamic calendar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The four sacred months (Al-Ashhur Al-Hurum) mentioned in the Quran are Muharram, Rajab, Dhu al-Qadah, and Dhu al-Hijjah."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I convert dates backwards from Hijri to Gregorian?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Our converter works both ways: Gregorian to Hijri and Hijri to Gregorian with accurate weekday matching."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I convert historical dates from centuries ago?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The astronomical mathematical algorithm converts historical dates throughout Islamic history accurately."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

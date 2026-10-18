@@ -25,70 +25,90 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "CGPA Calculator",
-        "url": "https://fileshrink.vercel.app/cgpa-calculator/",
-        "applicationCategory": "EducationalApplication",
-        "operatingSystem": "All",
-        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "CGPA Calculator",
-            "item": "https://fileshrink.vercel.app/cgpa-calculator/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How is CGPA different from GPA?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "GPA measures your academic performance in a single semester or term. CGPA (Cumulative Grade Point Average) combines all your completed semesters together, weighted by total credit hours."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What should I do if my college gives only GPAs without credit hours?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Turn on the toggle 'My university does not use credit hours'. The calculator will then compute an unweighted average of your semester GPAs directly."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How is the required next semester GPA calculated?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The tool uses the target cumulative average formula: Needed GPA = [Target × (Current Credits + Next Credits) - Current Grade Points] ÷ Next Credits. If the needed score exceeds your scale maximum, it lets you know immediately."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/cgpa-calculator/#webapp",
+      "name": "CGPA Calculator",
+      "url": "https://fileshrink.vercel.app/cgpa-calculator/",
+      "description": "Calculate cumulative GPA across all semesters and plan target grades. Free online cgpa calculator with instant results, no signup, and no watermark.",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/cgpa-calculator/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "CGPA Calculator",
+          "item": "https://fileshrink.vercel.app/cgpa-calculator/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/cgpa-calculator/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why is averaging semester GPAs mathematically inaccurate for CGPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Simple averaging assumes all semesters have equal weight. In reality, a semester with 21 credit hours carries significantly more academic weight than a semester with only 14 credit hours. True CGPA is weighted by total credits."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I calculate CGPA for both 4.0 and 10.0 scale grading systems?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our calculator provides dedicated toggles for both the international 4.0 scale (common in the US, Canada, and Pakistan) and the 10.0 scale (standard across Indian engineering and commerce universities)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I calculate what GPA I need next semester to reach my target CGPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. By testing future semester credit projections, you can determine the exact semester GPA needed to graduate with honors, a distinction, or a first-class degree."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How are Pass/Fail and non-credit courses treated in CGPA calculations?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pass/Fail or zero-credit courses do not carry grade points and should be omitted from the credit-hour tally to keep your CGPA calculation accurate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I export or save my semester grades table?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can print or save your calculated semester matrix as a clean PDF summary directly from your browser."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

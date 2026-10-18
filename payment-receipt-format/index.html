@@ -25,70 +25,96 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Payment Receipt Format",
-        "url": "https://fileshrink.vercel.app/payment-receipt-format/",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "All",
-        "browserRequirements": "Requires JavaScript. Works directly in your browser.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://fileshrink.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Payment Receipt Format",
-            "item": "https://fileshrink.vercel.app/payment-receipt-format/"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "When should a token receipt format be used in property or vehicle deals?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "A token receipt format is typically created when an initial earnest deposit is given to confirm an intention to purchase while final agreements are being prepared."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What information should be documented on a general payment receipt format?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "A standard payment receipt format should clearly identify who paid, who received the funds, the payment date, the specific transaction purpose, and the payment mode."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Why is making a duplicate copy of a payment receipt helpful?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Printing two copies on one page gives both the payer and receiver an identical written record of the transaction, helping prevent misunderstandings about balances or payment dates."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fileshrink.vercel.app/payment-receipt-format/#webapp",
+      "name": "Payment Receipt Format",
+      "url": "https://fileshrink.vercel.app/payment-receipt-format/",
+      "description": "Generate custom receipts with our free payment receipt format tool. Includes token receipt format presets, live preview, no signup, no watermark. Free PDF.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://fileshrink.vercel.app/payment-receipt-format/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://fileshrink.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Property Tools",
+          "item": "https://fileshrink.vercel.app/#property-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Payment Receipt Format",
+          "item": "https://fileshrink.vercel.app/payment-receipt-format/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://fileshrink.vercel.app/payment-receipt-format/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What makes a payment receipt legally binding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A valid receipt must clearly state the date, payer name, payee name, transaction amount in figures and words, the specific reason for payment, and the authorized receiver's signature or stamp."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between an invoice and a payment receipt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An invoice is a request for payment sent before money changes hands. A receipt is an acknowledgment issued after the payment has been successfully received."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I print the receipt or save it as a PDF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can download a print-ready A4 or half-page PDF receipt with clean borders, signature lines, and professional corporate typography."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the tool support multiple global currencies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can select standard currency symbols ($, £, €, PKR, INR, AED, CAD, and more) to match your local market."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is financial transaction data saved on your servers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The receipt is generated locally in your browser memory. Your client names, payment amounts, and business details remain 100% private."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
