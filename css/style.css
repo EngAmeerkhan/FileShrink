@@ -707,6 +707,34 @@ a:hover, a:focus-visible {
   margin-top: 2px;
 }
 
+/* Benefits / Why Use List */
+.benefits-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 0.75rem;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.benefit-item svg {
+  color: var(--success);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.benefit-item strong {
+  color: var(--text-main);
+}
+
 /* FAQ Accordion / List */
 .faq-list {
   display: flex;
